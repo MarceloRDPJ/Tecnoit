@@ -12,7 +12,7 @@ Navegue pelos nossos projetos para conhecer mais sobre o que fazemos. Cada um po
 
 | Projeto                                                                        | Descrição                                                                                                                                     | Tecnologias                      |
 | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| [Validador de MACs para Firewall](./projects/validador-firewall/README.md)     | Uma ferramenta front-end que valida e converte listas de endereços MAC em scripts de configuração de firewall, automatizando uma tarefa crítica de TI. | HTML, Tailwind CSS, JavaScript |
+| [Validador de MACs para Firewall](./projects/validador-firewall/Validador_firewall.html)     | Uma ferramenta front-end que valida e converte listas de endereços MAC em scripts de configuração de firewall, automatizando uma tarefa crítica de TI. | HTML, Tailwind CSS, JavaScript |
 
 ---
 *TecnoIT - Inovação e Tecnologia © 2025*
