@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validador TecnoIT - Firewall MACs</title>
+    <link rel="icon" type="image/png" href="../../favicon.png">
     <!-- Carrega o Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonte Inter e Roboto Mono para dados -->
@@ -93,20 +94,31 @@
         }
     </style>
 </head>
-<body class="selection:bg-orange-500 selection:text-white">
-
-    <!-- Botão Voltar ao Hub -->
-    <a href="../../index.html" class="btn-glass-secondary fixed top-4 left-4 z-50 inline-flex items-center text-sm font-bold py-2 px-4 rounded-lg transition-all group text-orange-400">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-        Voltar ao Hub
-    </a>
+<body class="p-4 md:p-8 selection:bg-orange-500 selection:text-white">
 
     <!-- Container Principal -->
-    <div class="flex items-center justify-center min-h-screen p-4">
-        <div class="glass-panel p-8 rounded-3xl w-full max-w-xl mx-auto relative overflow-hidden animate-fade-in-up">
+    <div class="w-full max-w-xl mx-auto relative">
 
+        <!-- Cabeçalho com Botão Voltar e Logo (PADRONIZADO) -->
+        <header class="flex items-center justify-between mb-6 animate-fade-in-up">
+            <div>
+                <a href="../../index.html" class="btn-glass-secondary inline-flex items-center text-sm font-bold py-2 px-4 rounded-lg transition-all group text-orange-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Voltar ao Hub
+                </a>
+            </div>
+            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-black/30 ring-1 ring-orange-500/30">
+                <img src="../../logo.png" alt="Logo TecnoIT" class="h-8 w-8 object-contain" onerror="this.style.display='none'; document.getElementById('fallback-icon-header').style.display='block';">
+                <svg id="fallback-icon-header" style="display:none;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- Painel do Projeto -->
+        <div class="glass-panel p-8 rounded-3xl w-full relative overflow-hidden animate-fade-in-up delay-100">
             <!-- Decoração de Topo (Laranja da marca) -->
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-500"></div>
 

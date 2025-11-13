@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. TÍTULO DO PROJETO (Alterar) -->
+    <title>Projeto: NOME DO SEU PROJETO AQUI</title>
+
+    <!-- 2. FAVICON (Padrão, não alterar) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- 3. ESTILOS E FONTES (Padrão) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- 4. CSS CUSTOMIZADO (Padrão + Adicionar estilos específicos aqui se necessário) -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            background-image:
+                radial-gradient(at 0% 0%, hsla(24, 90%, 15%, 0.6) 0, transparent 50%),
+                radial-gradient(at 50% 100%, hsla(20, 80%, 10%, 0.8) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(0, 0%, 15%, 1) 0, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0; /* slate-200 */
+        }
+        .font-mono { font-family: 'Roboto Mono', monospace; }
+        .glass-panel {
+            background: rgba(20, 20, 25, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 140, 0, 0.15);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+        .btn-glass-secondary {
+            background: rgba(20, 20, 25, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .btn-glass-secondary:hover {
+            border-color: rgba(255, 140, 0, 0.7);
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
+            transform: translateY(-2px);
+            color: #fb923c; /* orange-300 */
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 selection:bg-orange-500 selection:text-white">
+
+    <!-- Container Principal -->
+    <div class="w-full max-w-4xl mx-auto relative">
+
+        <!-- 5. CABEÇALHO PADRÃO (Não alterar) -->
+        <!-- O caminho do link e da imagem já estão corretos para um projeto dentro da pasta /projects/NOME_PROJETO/ -->
+        <header class="flex items-center justify-between mb-6 animate-fade-in-up">
+            <div>
+                <a href="../../index.html" class="btn-glass-secondary inline-flex items-center text-sm font-bold py-2 px-4 rounded-lg transition-all group text-orange-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Voltar ao Hub
+                </a>
+            </div>
+            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-black/30 ring-1 ring-orange-500/30">
+                <img src="../../logo.png" alt="Logo TecnoIT" class="h-8 w-8 object-contain" onerror="this.style.display='none'; document.getElementById('fallback-icon-header').style.display='block';">
+                <svg id="fallback-icon-header" style="display:none;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- 6. PAINEL DO PROJETO (Área de conteúdo principal) -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl w-full relative overflow-hidden animate-fade-in-up" style="animation-delay: 0.1s;">
+            <!-- Decoração de Topo (Padrão) -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-500"></div>
+
+            <!-- Título e Descrição (Alterar) -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl font-bold text-white tracking-tight mt-4">
+                    <!-- Coloque o nome do projeto aqui -->
+                    Nome do Projeto
+                </h1>
+                <p class="text-gray-400 mt-2 text-xs uppercase tracking-[0.2em] font-semibold">
+                    <!-- Coloque a descrição do projeto aqui -->
+                    Subtítulo ou breve descrição do projeto
+                </p>
+            </div>
+
+            <!-- =============================================================== -->
+            <!--                                                                 -->
+            <!--      >>> INÍCIO DA ÁREA DE CONTEÚDO ESPECÍFICO DO PROJETO <<<    -->
+            <!--      Adicione aqui os elementos da sua página (inputs,         -->
+            <!--      botões, resultados, etc.)                                  -->
+            <!--                                                                 -->
+            <!-- =============================================================== -->
+
+            <div class="bg-slate-900/50 border border-slate-700 rounded-xl p-5 mb-8 text-center">
+                <p class="text-gray-300">Este é o painel de conteúdo. Substitua este `div` pelo conteúdo do seu projeto.</p>
+            </div>
+
+
+            <!-- =============================================================== -->
+            <!--                                                                 -->
+            <!--      >>> FIM DA ÁREA DE CONTEÚDO ESPECÍFICO DO PROJETO <<<       -->
+            <!--                                                                 -->
+            <!-- =============================================================== -->
+
+
+            <!-- Rodapé (Padrão) -->
+            <div class="mt-8 text-center">
+                <p class="opacity-30 text-[10px] font-light tracking-[0.3em] hover:text-orange-500 transition-colors cursor-default">POWERED BY TECNOIT © 2025</p>
+            </div>
+        </div>
+
+    </div> <!-- Fim do Container Principal -->
+
+    <!-- 7. SCRIPTS JS (Adicionar scripts específicos do projeto aqui) -->
+    <script>
+        // Scripts JS específicos do seu projeto viriam aqui.
+        console.log("Página do projeto carregada!");
+    </script>
+</body>
+</html>
