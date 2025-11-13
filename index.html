@@ -3,24 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoIT - Portfólio de Projetos</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TecnoIT - Hub de Projetos</title>
+
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontes: Inter (UI) e Roboto Mono (Dados/Stats) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Ícone -->
     <link rel="icon" href="image.png" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Fundo "Tech" (ardósia 900) com gradientes radiais, inspirado no seu outro projeto */
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(24, 90%, 15%, 0.6) 0, transparent 50%),
+                radial-gradient(at 50% 100%, hsla(20, 80%, 10%, 0.8) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(0, 0%, 15%, 1) 0, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0; /* slate-200 */
+            /* ANIMAÇÃO DE FUNDO ADICIONADA */
+            animation: moveBackground 25s ease infinite;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Efeito Glassmorphism para os Paineis */
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7); /* slate-900 com 70% de opacidade */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            /* Borda sutil laranja (cor da marca) */
+            border: 1px solid rgba(234, 88, 12, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .glass-panel:hover {
+            /* ANIMAÇÃO 3D HOVER + SOMBRA MAIS FORTE */
+            transform: translateY(-8px) perspective(1000px) rotateX(3deg) rotateY(1.5deg);
+            border-color: rgba(234, 88, 12, 0.4);
+            box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Botão Padrão TecnoIT (Laranja) */
+        .btn-tecnoit {
+            background-image: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+            background-size: 200% auto;
+            transition: all 0.4s ease;
+        }
+        .btn-tecnoit:hover:not(:disabled) {
+            background-position: right center;
+            transform: translateY(-2px);
+            /* ANIMAÇÃO DE PULSE/GLOW ADICIONADA */
+            animation: pulseGlow 1.5s infinite ease-in-out;
+            box-shadow: 0 0 25px rgba(234, 88, 12, 0.5);
+        }
+
+        /* Animação de entrada */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        /* NOVOS DELAYS PARA A CASCATA */
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* NOVOS KEYFRAMES PARA AS ANIMAÇÕES */
+        @keyframes moveBackground {
+            0%   { background-position: 0% 0%, 50% 100%, 100% 0%; }
+            50%  { background-position: 100% 50%, 0% 50%, 50% 0%; }
+            100% { background-position: 0% 0%, 50% 100%, 100% 0%; }
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 25px rgba(234, 88, 12, 0.5); }
+            50% { box-shadow: 0 0 45px rgba(234, 88, 12, 0.8); }
+        }
+
+        /* NOVAS ANIMAÇÕES PARA O MODAL (PAINEL SOBRE) */
+        @keyframes slideInFromRight {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeOutToRight {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(100%); }
+        }
+        .animate-slide-in-right {
+            animation: slideInFromRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-out-right {
+            animation: fadeOutToRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+    </style>
 </head>
-<body>
-    <header>
-        <img src="logo.png" alt="TecnoIT Logo" class="logo">
-        <h1>Portfólio de Projetos</h1>
+<body class="selection:bg-orange-500 selection:text-white overflow-x-hidden">
+
+    <!-- Cabeçalho -->
+    <header class="py-6 px-4 md:px-8 w-full z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Logo -->
+                <img src="logo.png" alt="TecnoIT Logo" class="w-10 h-10 md:w-12 md:h-12 rounded-lg animate-fade-in-up">
+                <h1 class="text-2xl md:text-3xl font-bold text-white tracking-tight animate-fade-in-up delay-100">
+                    TecnoIT <span class="font-light opacity-50">Hub</span>
+                </h1>
+            </div>
+
+            <!-- Botão de Informação (Sobre) -->
+            <button id="openAboutModal" class="text-orange-400 opacity-50 hover:opacity-100 transition-opacity duration-300 animate-fade-in-up delay-200" title="Sobre este Hub">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </button>
+        </div>
     </header>
-    <main>
-        <section class="project-card">
-            <h2>Validador de MACs para Firewall</h2>
-            <p>Uma ferramenta front-end para otimizar e automatizar a criação de scripts de configuração de firewall.</p>
-            <a href="projects/validador-firewall/index.html" class="button">Ver Projeto</a>
-        </section>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto p-4 md:p-8">
+
+        <div class="mb-8 px-2">
+            <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight animate-fade-in-up delay-200">Projetos Disponíveis</h2>
+            <p class="text-gray-400 mt-2 animate-fade-in-up delay-300">Ferramentas e utilitários para automação e análise.</p>
+        </div>
+
+        <!-- Grid de Projetos -->
+        <!--
+            COMENTÁRIO PARA MANUTENÇÃO:
+            Para adicionar um novo projeto, copie e cole todo o bloco <div class="glass-panel ...">...</div> abaixo.
+            Altere os textos (h3, p), o ícone SVG e, o mais importante:
+            1. Atualize o 'id' do span (ex: id="clicks-novo-projeto")
+            2. Atualize o 'data-project-id' do botão (ex: data-project-id="novo-projeto")
+            3. Atualize o 'data-href' do botão para o link correto do projeto.
+            O script de contagem cuidará do resto automaticamente.
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+            <!-- Projeto 1: Validador (O que já existe) -->
+            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col animate-fade-in-up delay-300">
+                <!-- Cabeçalho do Card -->
+                <div class="p-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Validador de MACs</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Converte listas CSV em scripts de configuração de firewall (MAC Address).</p>
+                </div>
+
+                <!-- Rodapé do Card (Stats e Ação) -->
+                <div class="mt-auto bg-slate-900/50 p-6 border-t border-orange-500/10 flex justify-between items-center">
+                    <!-- Contador de Cliques -->
+                    <div class="flex items-center gap-2 text-gray-500" title="Total de acessos">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                        <span id="clicks-validator-firewall" class="font-mono text-sm">0</span>
+                    </div>
+                    <!-- Botão de Ação -->
+                    <!--
+                        COMENTÁRIO PARA MANUTENÇÃO (Botão):
+                        O script de contagem (data-project-id) é ativado primeiro.
+                        Depois, o 'data-href' redireciona para o projeto em uma nova aba.
+                        Lembre-se: O projeto (ex: validador-firewall/index.html) deve
+                        ter um botão "Voltar" que aponte de volta para este Hub.
+                    -->
+                    <button class="btn-tecnoit text-white font-bold py-2 px-5 rounded-lg text-sm"
+                            data-project-id="validator-firewall"
+                            data-href="projects/validador-firewall/index.html">
+                        Acessar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projeto 2: (Exemplo) -->
+            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col animate-fade-in-up delay-400">
+                <div class="p-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Analisador de Logs</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Ferramenta para carregar, filtrar e analisar arquivos de log de sistema em tempo real.</p>
+                </div>
+                <div class="mt-auto bg-slate-900/50 p-6 border-t border-orange-500/10 flex justify-between items-center">
+                    <div class="flex items-center gap-2 text-gray-500" title="Total de acessos">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                        <span id="clicks-log-analyzer" class="font-mono text-sm">0</span>
+                    </div>
+                    <button class="btn-tecnoit text-white font-bold py-2 px-5 rounded-lg text-sm"
+                            data-project-id="log-analyzer"
+                            data-href="#">
+                        Acessar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projeto 3: (Exemplo) -->
+            <div class="glass-panel rounded-2xl overflow-hidden flex flex-col animate-fade-in-up delay-500">
+                <div class="p-6">
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Dashboard de Rede</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Visualização de status de rede, consumo de banda e dispositivos conectados.</p>
+                </div>
+                <div class="mt-auto bg-slate-900/50 p-6 border-t border-orange-500/10 flex justify-between items-center">
+                    <div class="flex items-center gap-2 text-gray-500" title="Total de acessos">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                        <span id="clicks-network-dashboard" class="font-mono text-sm">0</span>
+                    </div>
+                    <button class="btn-tecnoit text-white font-bold py-2 px-5 rounded-lg text-sm"
+                            data-project-id="network-dashboard"
+                            data-href="#">
+                        Acessar
+                    </button>
+                </div>
+            </div>
+
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2024 TecnoIT. Todos os direitos reservados.</p>
+
+    <!-- Rodapé -->
+    <footer class="text-center p-8 mt-16">
+        <p class="text-xs text-gray-500 opacity-50">&copy; 2024-2025 TecnoIT. Todos os direitos reservados.</p>
     </footer>
+
+    <!--
+        MODAL (PAINEL SOBRE)
+        HTML para o painel de informações
+    -->
+    <div id="aboutModalOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+    <div id="aboutModalPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900/80 backdrop-blur-2xl border-l border-orange-500/20 shadow-2xl z-50 hidden transform translate-x-full">
+        <!-- Conteúdo do Modal -->
+        <div class="p-6 md:p-8 h-full flex flex-col overflow-y-auto">
+
+            <!-- Cabeçalho do Modal -->
+            <div class="flex items-center justify-between pb-4 border-b border-slate-700/50">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="TecnoIT Logo" class="w-10 h-10 rounded-lg">
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Sobre o TecnoIT Hub</h3>
+                        <p class="text-sm text-gray-400">Informações e Links</p>
+                    </div>
+                </div>
+                <button id="closeAboutModal" class="text-gray-500 hover:text-orange-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
+
+            <!-- Descrição -->
+            <div class="py-6 space-y-4 text-gray-300 text-sm leading-relaxed">
+                <p>Este Hub foi uma iniciativa própria, desenvolvido por mim (Marcelo Rodrigues) durante minha atuação como prestador de serviços (PJ) para a <span class="font-bold text-orange-400">TecnoIT</span>.</p>
+                <p>O intuito principal é <span class="font-bold text-orange-400">otimizar meu tempo</span> e automatizar processos recorrentes no meu trabalho como Analista de Service Desk.</p>
+                <p class="text-gray-400 text-xs italic">Este portal continuará em atualização com novos projetos, de acordo com as demandas que identifico.</p>
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="py-6 border-y border-slate-700/50">
+                <h4 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Estatísticas (Local)</h4>
+                <div class="bg-slate-800/50 p-4 rounded-lg flex items-center justify-between">
+                    <span class="text-sm font-medium text-white">Total de Cliques (Todos os Projetos)</span>
+                    <span id="totalClicksDisplay" class="font-mono text-2xl font-bold text-orange-400">0</span>
+                </div>
+            </div>
+
+            <!-- Links Externos (Rodapé do Modal) -->
+            <div class="mt-auto pt-6 space-y-3">
+                <a href="https://github.com/MarceloRDPJ" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-3 w-full bg-gray-700/50 hover:bg-gray-700 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300">
+                    <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub (MarceloRDPJ)
+                </a>
+                <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-center gap-3 w-full bg-blue-600/80 hover:bg-blue-600 text-white font-bold py-3 px-5 rounded-lg transition-all duration-300">
+                    <svg class="w-5 h-5 opacity-70 group-hover:opacity-100" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v4.577h2.401v-4.93c0-2.616-1.417-3.85-3.303-3.85-1.55 0-2.26.86-2.63 1.439h.016v-1.2h-2.4v7.225h2.401z"/></svg>
+                    LinkedIn (Marcelo Rodrigues)
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectButtons = document.querySelectorAll('[data-project-id]');
+
+            // --- INÍCIO DA LÓGICA DO MODAL (SOBRE) ---
+            const openModalButton = document.getElementById('openAboutModal');
+            const closeModalButton = document.getElementById('closeAboutModal');
+            const modalOverlay = document.getElementById('aboutModalOverlay');
+            const modalPanel = document.getElementById('aboutModalPanel');
+            const totalClicksDisplay = document.getElementById('totalClicksDisplay');
+
+            function calculateTotalClicks() {
+                let totalClicks = 0;
+                projectButtons.forEach(button => {
+                    const projectId = button.dataset.projectId;
+                    const storageKey = 'projectClicks_' + projectId;
+                    const clickCount = parseInt(localStorage.getItem(storageKey) || 0, 10);
+                    totalClicks += clickCount;
+                });
+                totalClicksDisplay.textContent = totalClicks;
+            }
+
+            function openModal() {
+                calculateTotalClicks(); // Calcula o total de cliques ao abrir
+                modalOverlay.classList.remove('hidden');
+                modalPanel.classList.remove('hidden');
+
+                modalOverlay.offsetHeight; // Força o reflow
+                modalPanel.offsetHeight; // Força o reflow
+
+                modalOverlay.classList.remove('opacity-0');
+                modalPanel.classList.remove('translate-x-full');
+                modalPanel.classList.add('animate-slide-in-right'); // Adiciona animação de entrada
+            }
+
+            function closeModal() {
+                modalOverlay.classList.add('opacity-0');
+                modalPanel.classList.add('animate-fade-out-right'); // Adiciona animação de saída
+
+                // Espera a animação de saída terminar antes de esconder
+                setTimeout(() => {
+                    modalOverlay.classList.add('hidden');
+                    modalPanel.classList.add('hidden');
+                    modalPanel.classList.remove('animate-fade-out-right'); // Reseta a animação
+                }, 400); // Tempo da animação
+            }
+
+            openModalButton.addEventListener('click', openModal);
+            closeModalButton.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+            // --- FIM DA LÓGICA DO MODAL ---
+
+
+            // 1. Função para Carregar Contagens na Inicialização
+            function loadClickCounts() {
+                projectButtons.forEach(button => {
+                    const projectId = button.dataset.projectId;
+                    const storageKey = 'projectClicks_' + projectId;
+                    const clickCount = localStorage.getItem(storageKey) || 0;
+
+                    const displayElement = document.getElementById('clicks-' + projectId);
+                    if (displayElement) {
+                        displayElement.textContent = clickCount;
+                    }
+                });
+            }
+
+            // 2. Adicionar Event Listeners para Contagem e Redirecionamento
+            projectButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const projectId = button.dataset.projectId;
+                    const href = button.dataset.href;
+                    const storageKey = 'projectClicks_' + projectId;
+
+                    // Incrementar a contagem
+                    let currentCount = parseInt(localStorage.getItem(storageKey) || 0, 10);
+                    const newCount = currentCount + 1;
+
+                    // Salvar no localStorage
+                    localStorage.setItem(storageKey, newCount);
+
+                    // Atualizar a UI imediatamente
+                    const displayElement = document.getElementById('clicks-' + projectId);
+                    if (displayElement) {
+                        displayElement.textContent = newCount;
+                    }
+
+                    // Se houver um link válido (não '#'), abrir em nova aba
+                    if (href && href !== '#') {
+                        window.open(href, '_blank');
+                    }
+                });
+            });
+
+            // Carregar contagens quando a página abrir
+            loadClickCounts();
+        });
+    </script>
 </body>
 </html>
