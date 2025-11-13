@@ -1,0 +1,98 @@
+/* --- CÓDIGO DA ANIMAÇÃO IMERSIVA (CARD 3D) --- */
+
+/* 1. O Card (O que se move) */
+.glass-panel {
+    /* Mantém o fundo e a borda originais do tema, mas adiciona as transições e transformações 3D */
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1),
+                box-shadow 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 2. O Efeito de Brilho Suave (Glare) */
+.card-glare {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 1.5rem; /* Correspondente ao 'rounded-3xl' */
+    background: radial-gradient(circle at 50% 50%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    background-position: -100% -100%;
+    background-size: 200% 200%;
+    opacity: 0;
+    transition: opacity 0.4s ease, background-position 0.1s linear;
+    pointer-events: none;
+    z-index: 15; /* Acima da janela de preview */
+}
+
+/* 3. O Brilho de Borda */
+.card-border-glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 1.5rem; /* Correspondente ao 'rounded-3xl' */
+    background: radial-gradient(
+        400px circle at 50% 50%,
+        rgba(234, 88, 12, 0.4), /* Cor laranja da marca */
+        transparent 60%
+    );
+    background-position: -500px -500px;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.4s ease, background-position 0.1s linear;
+    pointer-events: none;
+    z-index: 10; /* Acima do conteúdo, abaixo do glare */
+}
+
+/* 4. Conteúdo 3D (Títulos, Botões, etc.) */
+#card-content {
+    position: relative;
+    z-index: 5; /* Atrás dos brilhos */
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1),
+                opacity 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+#card-title {
+    transform: translateZ(50px);
+    transition: transform 0.1s linear;
+}
+#card-text {
+    transform: translateZ(20px);
+    transition: transform 0.1s linear;
+}
+
+/* 5. A Janela de Preview */
+#card-preview-window {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1; /* A camada mais funda */
+    opacity: 0;
+    transform: translateZ(0px); /* Começa no fundo do card */
+    transition: opacity 0.4s ease-in-out,
+                background-position 0.1s linear,
+                transform 0.1s linear;
+}
+
+/* 6. Lógica de Hover */
+.perspective-container:hover #card-content {
+    opacity: 0;
+    transform: translateZ(-100px);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1),
+                opacity 0.3s ease-out;
+}
+.perspective-container:hover #card-preview-window {
+    opacity: 1;
+}
+
+/* 7. Adaptação do Botão */
+#card-button {
+    transform: translateZ(35px);
+    transition: all 0.4s ease, transform 0.1s linear;
+}
+#card-button:hover:not(:disabled) {
+    /* A animação 'pulseGlow' e o 'translateY' já vêm da classe '.btn-tecnoit' */
+    transform: translateY(-2px) translateZ(35px);
+}
