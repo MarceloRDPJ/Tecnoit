@@ -269,6 +269,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const projectButtons = document.querySelectorAll('[data-project-id]');
+            const namespace = 'tecnoit.hub'; // Namespace único para este site
 
             // --- INÍCIO DA LÓGICA DO MODAL (SOBRE) ---
             const openModalButton = document.getElementById('openAboutModal');
@@ -277,40 +278,40 @@
             const modalPanel = document.getElementById('aboutModalPanel');
             const totalClicksDisplay = document.getElementById('totalClicksDisplay');
 
+            // Desabilita o botão do modal até que os dados sejam carregados
+            openModalButton.disabled = true;
+
             function calculateTotalClicks() {
                 let totalClicks = 0;
                 projectButtons.forEach(button => {
                     const projectId = button.dataset.projectId;
-                    const storageKey = 'projectClicks_' + projectId;
-                    const clickCount = parseInt(localStorage.getItem(storageKey) || 0, 10);
-                    totalClicks += clickCount;
+                    const displayElement = document.getElementById('clicks-' + projectId);
+                    if (displayElement) {
+                        totalClicks += parseInt(displayElement.textContent || 0, 10);
+                    }
                 });
                 totalClicksDisplay.textContent = totalClicks;
             }
 
             function openModal() {
-                calculateTotalClicks(); // Calcula o total de cliques ao abrir
+                calculateTotalClicks();
                 modalOverlay.classList.remove('hidden');
                 modalPanel.classList.remove('hidden');
-
-                modalOverlay.offsetHeight; // Força o reflow
-                modalPanel.offsetHeight; // Força o reflow
-
+                modalOverlay.offsetHeight;
+                modalPanel.offsetHeight;
                 modalOverlay.classList.remove('opacity-0');
                 modalPanel.classList.remove('translate-x-full');
-                modalPanel.classList.add('animate-slide-in-right'); // Adiciona animação de entrada
+                modalPanel.classList.add('animate-slide-in-right');
             }
 
             function closeModal() {
                 modalOverlay.classList.add('opacity-0');
-                modalPanel.classList.add('animate-fade-out-right'); // Adiciona animação de saída
-
-                // Espera a animação de saída terminar antes de esconder
+                modalPanel.classList.add('animate-fade-out-right');
                 setTimeout(() => {
                     modalOverlay.classList.add('hidden');
                     modalPanel.classList.add('hidden');
-                    modalPanel.classList.remove('animate-fade-out-right'); // Reseta a animação
-                }, 400); // Tempo da animação
+                    modalPanel.classList.remove('animate-fade-out-right');
+                }, 400);
             }
 
             openModalButton.addEventListener('click', openModal);
@@ -318,19 +319,27 @@
             modalOverlay.addEventListener('click', closeModal);
             // --- FIM DA LÓGICA DO MODAL ---
 
-
             // 1. Função para Carregar Contagens na Inicialização
             function loadClickCounts() {
+                const fetchPromises = [];
                 projectButtons.forEach(button => {
                     const projectId = button.dataset.projectId;
-                    const storageKey = 'projectClicks_' + projectId;
-                    const clickCount = localStorage.getItem(storageKey) || 0;
-
                     const displayElement = document.getElementById('clicks-' + projectId);
+
                     if (displayElement) {
-                        displayElement.textContent = clickCount;
+                        const promise = fetch(`https://abacus.jasoncameron.dev/get/${namespace}/${projectId}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                displayElement.textContent = data.value || 0;
+                            })
+                            .catch(error => {
+                                console.error('Erro ao carregar contagem para o projeto:', projectId, error);
+                                displayElement.textContent = 0;
+                            });
+                        fetchPromises.push(promise);
                     }
                 });
+                return Promise.all(fetchPromises);
             }
 
             // 2. Adicionar Event Listeners para Contagem e Redirecionamento
@@ -338,30 +347,30 @@
                 button.addEventListener('click', () => {
                     const projectId = button.dataset.projectId;
                     const href = button.dataset.href;
-                    const storageKey = 'projectClicks_' + projectId;
-
-                    // Incrementar a contagem
-                    let currentCount = parseInt(localStorage.getItem(storageKey) || 0, 10);
-                    const newCount = currentCount + 1;
-
-                    // Salvar no localStorage
-                    localStorage.setItem(storageKey, newCount);
-
-                    // Atualizar a UI imediatamente
                     const displayElement = document.getElementById('clicks-' + projectId);
+
                     if (displayElement) {
-                        displayElement.textContent = newCount;
+                         fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${projectId}`)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.value) {
+                                    displayElement.textContent = data.value;
+                                }
+                            })
+                            .catch(error => console.error('Erro ao incrementar contagem para o projeto:', projectId, error));
                     }
 
-                    // Se houver um link válido (não '#'), abrir em nova aba
                     if (href && href !== '#') {
                         window.open(href, '_blank');
                     }
                 });
             });
 
-            // Carregar contagens quando a página abrir
-            loadClickCounts();
+            // Carregar contagens e, em seguida, habilitar o botão do modal
+            loadClickCounts().then(() => {
+                openModalButton.disabled = false;
+                console.log("Contagens carregadas. Botão do modal habilitado.");
+            });
         });
     </script>
 </body>
