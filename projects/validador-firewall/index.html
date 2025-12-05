@@ -178,7 +178,7 @@
 
             <!-- Área de Entrada de Dados -->
             <div class="space-y-5 animate-fade-in-up delay-200">
-
+feature/mac-validator-text-input
                 <!-- Botão de Upload / Dropzone (RESTAURADO) -->
                 <label for="fileInput" class="group flex items-center justify-center w-full py-3 bg-slate-800/50 hover:bg-slate-800 border border-dashed border-slate-600 hover:border-orange-500 rounded-xl cursor-pointer transition-all duration-300">
                     <div class="flex items-center space-x-2">
@@ -190,6 +190,7 @@
                     <input type="file" id="fileInput" class="hidden" accept=".csv,.txt">
                 </label>
 
+main
                 <div class="relative group">
                     <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-600 to-yellow-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <textarea id="dataInput" class="relative block w-full bg-slate-900 border border-slate-700 text-gray-300 rounded-lg p-4 font-mono text-xs focus:ring-2 focus:ring-orange-500 focus:outline-none transition-all resize-y min-h-[200px] placeholder-gray-600" placeholder="Exemplo de entrada:&#10;SME-MICR-302390    30-DE-4B-E7-DC-B2&#10;SME-MICR-302395    9C-A2-F4-C2-F6-84&#10;&#10;Ou CSV:&#10;Equipamento;MAC&#10;PC-01;AA:BB:CC:11:22:33"></textarea>
@@ -246,7 +247,10 @@
     <script>
         /* Referências DOM */
         const dataInput = document.getElementById('dataInput');
+ feature/mac-validator-text-input
         const fileInput = document.getElementById('fileInput');
+
+ main
         const processButton = document.getElementById('processButton');
         const clearButton = document.getElementById('clearButton');
         const resultsArea = document.getElementById('resultsArea');
@@ -259,6 +263,7 @@
         /* 1. Limpar Dados */
         clearButton.addEventListener('click', () => {
             dataInput.value = '';
+feature/mac-validator-text-input
             fileInput.value = ''; // Reseta o input file também
             dataInput.focus();
             resultsArea.classList.add('hidden');
@@ -277,6 +282,10 @@
                 };
                 reader.readAsText(file, 'iso-8859-1'); // Mantém codificação compatível
             }
+
+            dataInput.focus();
+            resultsArea.classList.add('hidden');
+main
         });
 
         /* 2. Processamento */
