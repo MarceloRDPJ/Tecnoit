@@ -14,9 +14,6 @@
     <!-- Ícone -->
     <link rel="icon" href="favicon.png" type="image/png">
 
-    <!-- CSS da Animação do Card -->
-    <link rel="stylesheet" href="css/card-animation.css">
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -28,7 +25,7 @@
                 radial-gradient(at 100% 0%, hsla(0, 0%, 15%, 1) 0, transparent 50%);
             background-attachment: fixed;
             color: #e2e8f0; /* slate-200 */
-            /* ANIMAÇÃO DE FUNDO ADICIONADA */
+            /* ANIMAÇÃO DE FUNDO */
             animation: moveBackground 25s ease infinite;
         }
 
@@ -36,21 +33,25 @@
             font-family: 'Roboto Mono', monospace;
         }
 
-        /* Efeito Glassmorphism para os Paineis */
+        /* Efeito Glassmorphism Moderno e Clean */
         .glass-panel {
-            background: rgba(15, 23, 42, 0.7); /* slate-900 com 70% de opacidade */
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            /* Borda sutil laranja (cor da marca) */
-            border: 1px solid rgba(234, 88, 12, 0.15);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: rgba(15, 23, 42, 0.6); /* Mais transparente */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Borda muito sutil */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* Novo Hover "Chic" - Lift & Glow */
         .glass-panel:hover {
-            /* ANIMAÇÃO 3D HOVER + SOMBRA MAIS FORTE */
-            transform: translateY(-8px) perspective(1000px) rotateX(3deg) rotateY(1.5deg);
-            border-color: rgba(234, 88, 12, 0.4);
-            box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.8);
+            transform: translateY(-5px) scale(1.01);
+            background: rgba(15, 23, 42, 0.8);
+            border-color: rgba(234, 88, 12, 0.3); /* Laranja sutil */
+            box-shadow:
+                0 20px 25px -5px rgba(0, 0, 0, 0.5),
+                0 10px 10px -5px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(234, 88, 12, 0.15); /* Glow laranja muito suave */
         }
 
         /* Botão Padrão TecnoIT (Laranja) */
@@ -62,9 +63,9 @@
         .btn-tecnoit:hover:not(:disabled) {
             background-position: right center;
             transform: translateY(-2px);
-            /* ANIMAÇÃO DE PULSE/GLOW ADICIONADA */
+            /* ANIMAÇÃO DE PULSE/GLOW */
             animation: pulseGlow 1.5s infinite ease-in-out;
-            box-shadow: 0 0 25px rgba(234, 88, 12, 0.5);
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
         }
 
         /* Animação de entrada */
@@ -85,7 +86,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* NOVOS KEYFRAMES PARA AS ANIMAÇÕES */
+        /* KEYFRAMES PARA AS ANIMAÇÕES */
         @keyframes moveBackground {
             0%   { background-position: 0% 0%, 50% 100%, 100% 0%; }
             50%  { background-position: 100% 50%, 0% 50%, 50% 0%; }
@@ -93,11 +94,11 @@
         }
 
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 25px rgba(234, 88, 12, 0.5); }
-            50% { box-shadow: 0 0 45px rgba(234, 88, 12, 0.8); }
+            0%, 100% { box-shadow: 0 0 20px rgba(234, 88, 12, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(234, 88, 12, 0.6); }
         }
 
-        /* NOVAS ANIMAÇÕES PARA O MODAL (PAINEL SOBRE) */
+        /* ANIMAÇÕES PARA O MODAL (PAINEL SOBRE) */
         @keyframes slideInFromRight {
             from { opacity: 0; transform: translateX(100%); }
             to { opacity: 1; transform: translateX(0); }
@@ -158,12 +159,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
             <!-- Projeto 1: Validador de MACs -->
-            <div class="perspective-container w-full max-w-sm animate-fade-in-up delay-300" style="perspective: 1000px;">
-                <div class="glass-panel p-8 rounded-3xl w-full h-96 flex flex-col justify-between">
-                    <div class="card-glare"></div>
+            <div class="w-full max-w-sm animate-fade-in-up delay-300">
+                <div class="glass-panel p-8 rounded-3xl w-full h-96 flex flex-col justify-between cursor-default">
                     <div>
-                        <h3 class="text-2xl font-bold text-white tracking-tight" style="transform: translateZ(30px);">Validador de MACs</h3>
-                        <p class="text-gray-400 mt-2 text-sm leading-relaxed" style="transform: translateZ(10px);">Converte listas CSV em scripts de configuração de firewall.</p>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Validador de MACs</h3>
+                        <p class="text-gray-400 mt-2 text-sm leading-relaxed">Converte listas CSV em scripts de configuração de firewall.</p>
                     </div>
                     <div class="flex justify-between items-center mt-6">
                         <div class="flex items-center gap-2 text-gray-500" title="Total de acessos">
@@ -180,12 +180,11 @@
             </div>
 
             <!-- Projeto 2: Abertura de Chamados GLPI -->
-            <div class="perspective-container w-full max-w-sm animate-fade-in-up delay-400" style="perspective: 1000px;">
-                <div class="glass-panel p-8 rounded-3xl w-full h-96 flex flex-col justify-between">
-                    <div class="card-glare"></div>
+            <div class="w-full max-w-sm animate-fade-in-up delay-400">
+                <div class="glass-panel p-8 rounded-3xl w-full h-96 flex flex-col justify-between cursor-default">
                     <div>
-                        <h3 class="text-2xl font-bold text-white tracking-tight" style="transform: translateZ(30px);">Abertura de Chamados em Massa GLPI</h3>
-                        <p class="text-gray-400 mt-2 text-sm leading-relaxed" style="transform: translateZ(10px);">Automação para abertura de chamados em massa no GLPI.</p>
+                        <h3 class="text-2xl font-bold text-white tracking-tight">Abertura de Chamados em Massa GLPI</h3>
+                        <p class="text-gray-400 mt-2 text-sm leading-relaxed">Automação para abertura de chamados em massa no GLPI.</p>
                     </div>
                     <div class="flex justify-between items-center mt-6">
                        <div class="flex items-center gap-2 text-gray-500" title="Total de acessos">
@@ -371,6 +370,5 @@
             });
         });
     </script>
-    <script src="js/card-animation.js"></script>
 </body>
 </html>
