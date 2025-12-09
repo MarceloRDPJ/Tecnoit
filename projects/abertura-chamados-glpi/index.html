@@ -3,117 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto: Abertura de Chamados em Massa GLPI</title>
+    <title>Automação GLPI - TecnoIT</title>
     <link rel="icon" type="image/png" href="../../favicon.png">
-    <!-- Carrega o Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fontes do Hub -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Biblioteca Highlight.js para sintaxe do Python -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Fundo 'ardósia' (azulado) que você pediu, com a animação */
-            background-color: #0f172a; /* slate-900 */
+            background-color: #0f172a;
             background-image:
-                radial-gradient(at 0% 0%, hsla(24, 90%, 15%, 0.6) 0, transparent 50%),
-                radial-gradient(at 50% 100%, hsla(20, 80%, 10%, 0.8) 0, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(0, 0%, 15%, 1) 0, transparent 50%);
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
             background-attachment: fixed;
-            color: #e2e8f0; /* slate-200 */
-            min-height: 100vh;
-            /* Removida a animação para ficar igual ao Validador */
-            /* animation: subtle-bg-move 25s cubic-bezier(0.4, 0, 0.2, 1) infinite; */
+            color: #e2e8f0;
+            overflow-x: hidden;
         }
 
-        /* Animação removida */
-        /*
-        @keyframes subtle-bg-move {
-            0%   { background-position: 0% 50%, 0% 50%, 0% 50%; }
-            50%  { background-position: 100% 50%, 100% 50%, 100% 50%; }
-            100% { background-position: 0% 50%, 0% 50%, 0% 50%; }
-        }
-        */
-
-        .font-mono { font-family: 'Roboto Mono', monospace; }
-
-        /* Estilo Glass Panel */
-        .glass-panel {
-            background: rgba(20, 20, 25, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 140, 0, 0.15);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Botão Secundário Estilo "Glass" (Botão Voltar) */
-        .btn-glass-secondary {
-            background: rgba(20, 20, 25, 0.5);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 140, 0, 0.2);
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(99, 102, 241, 0.3); /* Indigo tint */
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+        }
+
+        /* Primary Button */
+        .btn-glow {
+            background: linear-gradient(to right, #4f46e5, #9333ea);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
-        .btn-glass-secondary:hover {
-            border-color: rgba(255, 140, 0, 0.7);
-            box-shadow: 0 0 20px rgba(234, 88, 12, 0.4);
-            transform: translateY(-2px);
-            color: #fb923c; /* orange-300 */
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, #4338ca, #7e22ce);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        .btn-glow:hover::before {
+            opacity: 1;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            transform: scale(1.05);
         }
 
-        /* Botão Primário Laranja (Copiar) */
-        .btn-tecnoit {
-            background-image: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
-            background-size: 200% auto;
-            transition: all 0.4s ease;
+        /* Folder Tree Connection Lines */
+        .tree-line {
+            position: absolute;
+            left: 24px;
+            top: 36px;
+            bottom: -20px;
+            width: 2px;
+            background: linear-gradient(to bottom, #475569 0%, transparent 100%);
+        }
+        .tree-item {
             position: relative;
-            overflow: hidden;
         }
-        .btn-tecnoit:hover:not(:disabled) {
-            background-position: right center;
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(234, 88, 12, 0.5);
+        .tree-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 20px;
+            height: 2px;
+            background-color: #475569;
         }
 
-        /* Animação de entrada */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 10px rgba(99, 102, 241, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(99, 102, 241, 0.6); }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 3s infinite;
+        }
+
+        .fade-in-up {
             opacity: 0;
             transform: translateY(20px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scrollbar customizada para o bloco de código */
-        pre code::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        pre code::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.2);
-            border-radius: 4px;
-        }
-        pre code::-webkit-scrollbar-thumb {
-            background: #ea580c;
-            border-radius: 4px;
-        }
-        pre code::-webkit-scrollbar-thumb:hover {
-            background: #c2410c;
-        }
-
+        /* Footer Protection (Mandatory) */
         .watermark-container::after {
             content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
-            font-size: 0.65rem; /* ~10px */
-            color: #94a3b8; /* slate-400 */
+            font-size: 0.65rem;
+            color: #94a3b8;
             opacity: 0.3;
             font-weight: 300;
             letter-spacing: 0.2em;
@@ -125,10 +141,9 @@
             transition: color 0.3s ease;
         }
         .watermark-container:hover::after {
-            color: #f97316; /* orange-500 */
+            color: #f97316; /* orange-500 matches logo usually, keeping consistent */
             opacity: 0.8;
         }
-        /* Proteção contra ocultação simples */
         body:not(:has(.watermark-container))::after {
             content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
             position: fixed;
@@ -141,447 +156,232 @@
         }
     </style>
 </head>
-<body class="p-4 md:p-8 selection:bg-orange-500 selection:text-white">
+<body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- Container Principal -->
-    <div class="w-full max-w-4xl mx-auto relative">
+    <!-- Background Elements -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-900/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-900/20 rounded-full blur-[120px]"></div>
+    </div>
 
-        <!-- Cabeçalho com Botão Voltar e Logo -->
-        <header class="flex items-center justify-between mb-6 animate-fade-in-up">
-            <div>
-                <!-- O link volta para o diretório raiz (o Hub) -->
-                <a href="../../index.html" class="btn-glass-secondary inline-flex items-center text-sm font-bold py-2 px-4 rounded-lg transition-all group text-orange-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+    <div class="max-w-7xl mx-auto px-6 py-12">
+
+        <!-- Nav / Header -->
+        <header class="flex justify-between items-center mb-16 fade-in-up">
+            <a href="../../index.html" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
+                <div class="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-indigo-500/50 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
                     </svg>
-                    Voltar ao Hub
-                </a>
-            </div>
-            <div class="h-10 w-10 flex items-center justify-center rounded-full bg-black/30 ring-1 ring-orange-500/30">
-                <!-- Tenta carregar a logo do diretório raiz -->
-                <img src="../../logo.png" alt="Logo TecnoIT" class="h-8 w-8 object-contain" onerror="this.style.display='none'; document.getElementById('fallback-icon-header').style.display='block';">
-                <svg id="fallback-icon-header" style="display:none;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                </svg>
+                </div>
+                <span class="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                    Automação v4.0
+                </span>
+                <img src="../../logo.png" alt="Logo" class="h-8 w-8 opacity-80" onerror="this.style.display='none'">
             </div>
         </header>
 
-        <!-- Painel do Projeto -->
-        <div class="glass-panel p-6 md:p-8 rounded-3xl w-full relative overflow-hidden animate-fade-in-up delay-100">
-            <!-- Decoração de Topo -->
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-yellow-500"></div>
-
-            <!-- Título e Descrição -->
-            <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold text-white tracking-tight mt-4">
-                    Abertura de Chamados em Massa <span class="text-orange-500">GLPI</span>
+        <!-- Hero Section -->
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            <div class="fade-in-up delay-100">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Automação de <br>
+                    <span class="text-gradient">Chamados GLPI</span>
                 </h1>
-                <p class="text-gray-400 mt-2 text-xs uppercase tracking-[0.2em] font-semibold">Script de Automação para Abertura de Chamados em Massa no GLPI</p>
-            </div>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-lg">
+                    Revolucione a gestão de preventivas. Um script Python poderoso que varre diretórios locais, identifica evidências fotográficas e cria tickets no GLPI automaticamente via API, com upload de anexos garantido.
+                </p>
 
-            <!-- Botão de Copiar (Topo) -->
-            <div class="flex justify-end mb-2">
-                <button id="copyButtonTop" class="btn-tecnoit text-white font-bold py-2 px-4 rounded-lg text-xs uppercase flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 4h8a2 2 0 012 2v8a2 2 0 01-2 2h-8a2 2 0 01-2-2v-8a2 2 0 012-2z" />
-                    </svg>
-                    <span id="copyButtonTextTop">Copiar Código</span>
-                </button>
-            </div>
-
-            <!-- Código Python -->
-            <div class="rounded-xl overflow-hidden bg-[#282c34] border border-slate-700">
-                <pre><code id="pythonCode" class="language-python" style="max-height: 400px; display: block;">
-import os
-import requests
-import getpass
-import json
-import mimetypes
-from collections import OrderedDict
-from pathlib import Path # Usado para manipulação moderna de caminhos
-
-# =============================
-# CONFIGURAÇÃO
-# =============================
-BASE_URL = "https://suporte.tecnoit.com.br/apirest.php"
-# Usando Path para definir o caminho base
-CAMINHO_BASE = Path(r"C:\Users\MarceloRodriguesdosP\Downloads\CHAMADOS OUTUBRO")
-
-# =============================
-# FUNÇÕES AUXILIARES
-# =============================
-
-def autenticar_glpi(usuario, senha):
-    """Obtém um session_token temporário usando login/senha."""
-    url = f"{BASE_URL}/initSession"
-    dados = {"login": usuario, "password": senha}
-    headers = {"Content-Type": "application/json"}
-
-    print("\n🔐 Realizando login no GLPI...")
-
-    try:
-        resp = requests.post(url, json=dados, headers=headers)
-
-        if resp.status_code == 200 and "session_token" in resp.json():
-            token = resp.json()["session_token"]
-            print("✅ Login realizado com sucesso!")
-            return token
-        else:
-            print(f"❌ Falha no login (HTTP {resp.status_code}). Resposta:")
-            print(resp.text)
-            exit()
-    except requests.exceptions.RequestException as e:
-        print(f"❌ Erro de conexão ao tentar logar: {e}")
-        exit()
-
-def listar_entidades(token):
-    """Lista entidades e pede ao usuário para selecionar uma."""
-    headers = {"Session-Token": token}
-    url = f"{BASE_URL}/Entity"
-    resp = requests.get(url, headers=headers)
-
-    if resp.status_code != 200:
-        print("❌ Erro ao listar entidades.")
-        print(resp.text)
-        exit()
-
-    entidades = resp.json()
-    if not entidades:
-        print("❌ Nenhuma entidade encontrada para este usuário.")
-        exit()
-
-    print("\n🏢 Entidades encontradas:")
-    for i, e in enumerate(entidades, start=1):
-        print(f"{i}. {e['completename']} (ID: {e['id']})")
-
-    while True:
-        try:
-            escolha = int(input("\nDigite o número da entidade onde deseja criar os chamados: "))
-            if 1 <= escolha <= len(entidades):
-                entidade_escolhida = entidades[escolha - 1]
-                print(f"✅ Entidade selecionada: {entidade_escolhida['completename']}\n")
-                # Retorna o ID e o Nome da entidade
-                return entidade_escolhida["id"], entidade_escolhida["completename"]
-            else:
-                print("Opção inválida. Digite um número da lista.")
-        except ValueError:
-            print("Entrada inválida. Digite apenas o número.")
-
-def listar_pastas_principais(caminho_base):
-    """Lista as pastas dentro do CAMINHO_BASE para o usuário escolher."""
-    if not caminho_base.exists():
-        print(f"❌ O caminho base não foi encontrado: {caminho_base}")
-        exit()
-
-    pastas = [p.name for p in caminho_base.iterdir() if p.is_dir()]
-    if not pastas:
-        print(f"❌ Nenhuma pasta encontrada em: {caminho_base}")
-        exit()
-
-    print("📂 Tipos de pastas encontradas:")
-    for i, pasta in enumerate(pastas, start=1):
-        print(f"{i}. {pasta}")
-
-    while True:
-        try:
-            escolha = int(input("\nDigite o número do tipo de pasta que deseja criar chamados: "))
-            if 1 <= escolha <= len(pastas):
-                pasta_escolhida = pastas[escolha - 1]
-                print(f"✅ Pasta selecionada: {pasta_escolhida}\n")
-                return pasta_escolhida
-            else:
-                print("Opção inválida. Digite um número da lista.")
-        except ValueError:
-            print("Entrada inválida. Digite apenas o número.")
-
-def montar_estrutura_chamados(caminho_base, tipo_pasta):
-    """Lê as subpastas e prepara a lista de chamados a serem criados."""
-    caminho_tipo = caminho_base / tipo_pasta
-    chamados = []
-
-    # Usando rglob para encontrar todas as subpastas
-    for subdir in caminho_tipo.iterdir():
-        if not subdir.is_dir():
-            continue
-
-        # Encontra imagens na subpasta
-        imagens = [f for f in subdir.glob("*") if f.suffix.lower() in (".jpg", ".jpeg", ".png")]
-
-        if imagens:
-            nome_pasta = subdir.name # Nome da subpasta
-
-            # Lógica para nomear o chamado
-            if "camera" in tipo_pasta.lower():
-                nome_chamado = f"Camera {nome_pasta}"
-            elif "terminal" in tipo_pasta.lower():
-                nome_chamado = f"PCI Terminal {nome_pasta}"
-            elif "pci" in tipo_pasta.lower():
-                nome_chamado = f"PCI {nome_pasta}"
-            else:
-                nome_chamado = nome_pasta
-
-            chamados.append({
-                "tipo": tipo_pasta,
-                "nome": nome_chamado,
-                "descricao": "Manutenção preventiva",
-                "fotos": imagens, # Lista de nomes de arquivos
-                "caminho_pasta": subdir # O objeto Path completo da pasta
-            })
-
-    if not chamados:
-        print(f"⚠️ Nenhum chamado com imagens encontrado na pasta '{tipo_pasta}'. Verifique as subpastas.")
-
-    return chamados
-
-def mostrar_previa(chamados, entidade_nome):
-    """Mostra um resumo dos chamados que serão criados."""
-    if not chamados:
-        return
-
-    print("\n" + "="*25 + " PRÉVIA " + "="*25)
-    # Mostra prévia dos 3 primeiros para não poluir o terminal
-    for ch in chamados[:3]:
-        print(f"🏷️ Nome do chamado: {ch['nome']}")
-        print(f"📝 Descrição: {ch['descricao']}")
-        print(f"🏢 Entidade: {entidade_nome}")
-        print(f"📎 Fotos: {len(ch['fotos'])} ({', '.join([f.name for f in ch['fotos'][:2]])}{'...' if len(ch['fotos']) > 2 else ''})")
-        print(f"📍 Caminho: {ch['caminho_pasta']}")
-        print("-" * 60)
-
-    if len(chamados) > 3:
-        print(f"... e mais {len(chamados) - 3} chamados.")
-    print("="*60)
-
-
-def criar_chamado_glpi(token, entidade_id, chamado):
-    """Cria o Ticket principal no GLPI."""
-    headers = {"Session-Token": token}
-    url = f"{BASE_URL}/Ticket"
-    payload = {
-        "input": {
-            "name": chamado["nome"],
-            "content": chamado["descricao"],
-            "itilcategories_id": 0, # Categoria (0 = Padrão)
-            "entities_id": entidade_id, # Entidade selecionada
-            "status": 1 # 1 = Novo
-        }
-    }
-
-    try:
-        resp = requests.post(url, json=payload, headers=headers)
-        if resp.status_code == 201:
-            ticket_id = resp.json().get("id")
-            print(f"✅ Chamado criado: {chamado['nome']} (ID: {ticket_id})")
-            # Inicia o upload das fotos para este ticket
-            enviar_fotos_anexadas_ao_ticket(token, ticket_id, entidade_id, chamado)
-        else:
-            print(f"❌ Erro ao criar chamado {chamado['nome']} (HTTP {resp.status_code})")
-            print(f"   [Debug] Resposta: {resp.text}")
-    except requests.exceptions.RequestException as e:
-        print(f"❌ Erro de conexão ao criar chamado {chamado['nome']}: {e}")
-
-# ============================================
-# O PONTO CRÍTICO: UPLOAD DE ARQUIVOS
-# ============================================
-def enviar_fotos_anexadas_ao_ticket(token, ticket_id, entidade_id, chamado):
-    """Anexa as fotos diretamente ao TICKET (elas aparecerão na aba Documentos)."""
-
-    # Esta é a rota "aninhada", que se mostrou a única funcional
-    url = f"{BASE_URL}/Ticket/{ticket_id}/Document"
-    headers = {"Session-Token": token}
-
-    print(f"   [Debug] Anexando fotos diretamente ao TICKET ID: {ticket_id}...")
-
-    for foto in chamado["fotos"]:
-        caminho_foto = chamado["caminho_pasta"] / foto.name
-        mime_type, _ = mimetypes.guess_type(caminho_foto)
-        if mime_type is None:
-            mime_type = "application/octet-stream"
-
-        try:
-            # 1. Preparar o manifesto JSON (o "cérebro" do upload)
-            upload_manifest_data = {
-                "input": {
-                    "name": f"Foto Preventiva - {foto.name}",
-                    "itemtype": "Ticket", # Redundante, mas crítico
-                    "items_id": ticket_id, # Redundante, mas crítico
-                    "entities_id": entidade_id, # CRÍTICO: Para lincar o doc à entidade
-                    "_filename": foto.name
-                }
-            }
-            manifest_json = json.dumps(upload_manifest_data)
-
-            print(f"   [Debug] Enviando foto: {foto.name} para TICKET ID: {ticket_id}")
-            print(f"   [Debug] Manifest JSON: {manifest_json}")
-
-            with open(caminho_foto, "rb") as f:
-                # 2. Preparar os ARQUIVOS (forçando a ordem)
-                files_list = [
-                    # CRÍTICO: O nome DEVE ser 'uploadManifest' (com 'M' maiúsculo)
-                    ('uploadManifest', (None, manifest_json, 'application/json')),
-                    # CRÍTICO: O nome DEVE ser 'filename[0]'
-                    ('filename[0]', (foto.name, f, mime_type))
-                ]
-
-                resp = requests.post(url, headers=headers, files=files_list)
-
-            if resp.status_code == 201:
-                print(f"   📎 Anexo enviado: {foto.name} (anexado ao Ticket {ticket_id})")
-            else:
-                print(f"   ⚠️ Falha ao anexar {foto.name} (HTTP {resp.status_code})")
-                try:
-                    print("   [Debug] Resposta:", resp.json())
-                except json.JSONDecodeError:
-                    print("   [Debug] Resposta bruta:", resp.text)
-
-        except FileNotFoundError:
-            print(f"   ❌ Erro: Arquivo não encontrado: {caminho_foto}")
-        except Exception as e:
-            print(f"   ❌ Erro inesperado ao enviar {foto.name}: {e}")
-
-# =============================
-# EXECUÇÃO PRINCIPAL
-# =============================
-
-if __name__ == "__main__":
-    print("=== GLPI - CRIAÇÃO AUTOMÁTICA DE CHAMADOS DE PREVENTIVA ===\n")
-
-    usuario = input("Usuário GLPI: ")
-    senha = getpass.getpass("Senha: ")
-
-    token = autenticar_glpi(usuario, senha)
-    entidade_id, entidade_nome = listar_entidades(token)
-    tipo_pasta = listar_pastas_principais(CAMINHO_BASE)
-    chamados = montar_estrutura_chamados(CAMINHO_BASE, tipo_pasta)
-
-    if not chamados:
-        print("\nNenhum chamado a ser criado. Encerrando.")
-        exit()
-
-    print("\n🧾 PRÉVIA DOS CHAMADOS ENCONTRADOS:\n")
-    mostrar_previa(chamados, entidade_nome)
-
-    confirmar = input("\n🚀 Deseja criar esses chamados e enviar as fotos? (S/N): ").strip().lower()
-    if confirmar == "s":
-        print("\nIniciando criação de chamados...")
-        for ch in chamados:
-            criar_chamado_glpi(token, entidade_id, ch)
-        print("\n✅ Todos os chamados foram criados e as imagens enviadas.")
-    else:
-        print("\n❌ A criação de chamados foi cancelada.")
-
-                </code></pre>
-            </div>
-
-            <!-- Seção "Como Usar" -->
-            <div class="mt-8">
-                <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-orange-500 pl-3">Como Usar</h2>
-                <div class="space-y-4 text-gray-300">
-                    <div>
-                        <h3 class="font-bold text-orange-400 text-sm uppercase tracking-wider">Pré-requisitos</h3>
-                        <ul class="list-disc list-inside mt-2 space-y-1 pl-2 font-mono text-sm">
-                            <li>Python 3.x instalado.</li>
-                            <li>Biblioteca `requests`: <code class="bg-slate-800 px-2 py-0.5 rounded">pip install requests</code></li>
-                            <li>Permissões de escrita corretas no servidor GLPI (ex: <code class="bg-slate-800 px-2 py-0.5 rounded">chown www-data</code>).</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-orange-400 text-sm uppercase tracking-wider">Estrutura de Pastas</h3>
-                        <p class="mt-2 text-sm">O script espera uma estrutura específica. Altere <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">CAMINHO_BASE</code> no script para sua pasta principal.</p>
-                        <pre class="bg-slate-900/50 border border-slate-700 rounded-lg p-3 mt-2 text-xs font-mono overflow-x-auto">
-C:\...\CHAMADOS OUTUBRO\  <-- (CAMINHO_BASE)
-└───PCI\                    <-- (Tipo de Pasta)
-    ├───C-BU-01TA\          <-- (Torna-se "PCI C-BU-01TA")
-    │   ├───Screenshot_1.jpg
-    │   └───Screenshot_2.jpg
-    └───C-BU-02TA\
-        └───foto.jpg
-</pre>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-orange-400 text-sm uppercase tracking-wider">Execução</h3>
-                        <ol class="list-decimal list-inside mt-2 space-y-1 pl-2 text-sm">
-                            <li>Salve o código como <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">glpi_automator.py</code>.</li>
-                            <li>Abra um terminal (CMD, PowerShell, etc).</li>
-                            <li>Execute o script: <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">python glpi_automator.py</code></li>
-                            <li>Siga as instruções (Login, Entidade, Tipo de Pasta).</li>
-                            <li>Confirme a prévia para iniciar o upload.</li>
-                        </ol>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://drive.google.com/drive/folders/1qFaYNs4dK3T-Wgg7dZ7K6tpkWOBxq1GA?usp=sharing" target="_blank" class="btn-glow inline-flex justify-center items-center gap-3 px-8 py-4 rounded-xl text-white font-bold text-lg shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                        Solicitar Acesso ao Script
+                    </a>
+                    <div class="flex items-center gap-2 px-6 py-4 rounded-xl border border-white/5 bg-white/5 text-slate-400 text-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span>Acesso Restrito (Drive)</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Seção "Pontos Críticos" -->
-            <div class="mt-8">
-                <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-orange-500 pl-3">Pontos Críticos da API</h2>
-                <p class="text-gray-400 mb-4 text-sm">Este script foi desenvolvido para uma versão específica do GLPI (v10) e sua API é muito rigorosa. Alterar os pontos abaixo pode causar falhas no upload.</p>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <!-- Ponto Crítico 1 -->
-                    <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                        <h4 class="font-bold text-orange-400">1. A Rota da API</h4>
-                        <p class="mt-1 text-gray-300">A única rota funcional para anexar a um chamado existente é a rota "aninhada":</p>
-                        <code class="block bg-slate-800 px-2 py-1 rounded mt-2 font-mono text-xs text-red-400">/Ticket/{ticket_id}/Document</code>
+            <!-- Visual Decoration / 3D-ish Element -->
+            <div class="relative fade-in-up delay-200 hidden lg:block">
+                <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+                <div class="relative glass-card p-8 rounded-2xl border border-indigo-500/30 animate-float">
+                    <div class="flex items-center gap-4 mb-6 border-b border-white/10 pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-auto text-xs font-mono text-slate-500">glpi_automator.py</span>
                     </div>
-                    <!-- Ponto Crítico 2 -->
-                    <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                        <h4 class="font-bold text-orange-400">2. O Nome do Manifesto</h4>
-                        <p class="mt-1 text-gray-300">O servidor (Linux) é case-sensitive. O manifesto JSON *deve* se chamar <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">uploadManifest</code> (com 'M' maiúsculo).</p>
-                    </div>
-                    <!-- Ponto Crítico 3 -->
-                    <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                        <h4 class="font-bold text-orange-400">3. A Ordem do Upload</h4>
-                        <p class="mt-1 text-gray-300">A API exige que o <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">uploadManifest</code> (JSON) venha *antes* do <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">filename[0]</code> (o arquivo) na requisição.</p>
-                    </div>
-                    <!-- Ponto Crítico 4 -->
-                    <div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4">
-                        <h4 class="font-bold text-orange-400">4. O Manifesto (entities_id)</h4>
-                        <p class="mt-1 text-gray-300">O JSON do manifesto *precisa* conter o <code class="bg-slate-800 px-2 py-0.5 rounded font-mono text-xs">entities_id</code>. Sem ele, o anexo é criado na entidade raiz e "desaparece" do chamado.</p>
+                    <div class="space-y-3 font-mono text-sm">
+                        <div class="flex items-center gap-3 text-green-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Conectando API GLPI... <span class="text-white">OK</span></span>
+                        </div>
+                        <div class="flex items-center gap-3 text-green-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Autenticando usuário... <span class="text-white">Token Recebido</span></span>
+                        </div>
+                        <div class="flex items-center gap-3 text-blue-400">
+                            <svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                            <span>Varrendo diretório 'CHAMADOS'...</span>
+                        </div>
+                        <div class="pl-7 text-slate-500 text-xs">
+                            > Encontrado: C-BU-01TA (2 fotos)<br>
+                            > Encontrado: CAMERA-HALL (4 fotos)
+                        </div>
+                        <div class="flex items-center gap-3 text-purple-400 mt-4">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            <span>Upload em progresso...</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Rodapé -->
-            <div class="mt-8 text-center relative z-50">
-                <div class="watermark-container"></div>
             </div>
         </div>
 
-    </div> <!-- Fim do Container Principal -->
+        <!-- Workflow Section -->
+        <div class="mb-24 fade-in-up delay-300">
+            <h2 class="text-3xl font-bold mb-12 text-center">Fluxo de Trabalho Simplificado</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/10 rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-400 mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-xl font-bold mb-2">Organize</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Coloque as fotos das preventivas em pastas nomeadas corretamente. O script usa o nome da pasta para titular o chamado.
+                    </p>
+                </div>
 
-    <script>
-        // Ativa o highlight.js
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.querySelectorAll('pre code').forEach((el) => {
-                hljs.highlightElement(el);
-            });
-        });
+                <!-- Step 2 -->
+                <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-purple-500/10 rounded-full group-hover:bg-purple-500/20 transition-colors"></div>
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center text-purple-400 mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-xl font-bold mb-2">Execute</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Rode o script Python. Ele pedirá suas credenciais GLPI e escaneará automaticamente a estrutura de pastas em busca de evidências.
+                    </p>
+                </div>
 
-        // Funcionalidade do Botão de Copiar
-        const copyButtonTop = document.getElementById('copyButtonTop');
-        const copyButtonTextTop = document.getElementById('copyButtonTextTop');
-        const pythonCode = document.getElementById('pythonCode');
+                <!-- Step 3 -->
+                <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute -right-4 -top-4 w-24 h-24 bg-green-500/10 rounded-full group-hover:bg-green-500/20 transition-colors"></div>
+                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-xl font-bold mb-2">Relaxe</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        O sistema cria os tickets na entidade correta e realiza o upload das fotos via API. Um log de auditoria é gerado ao final.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-        const copyHandler = (button, textElement) => {
-            const code = pythonCode.innerText;
+        <!-- Folder Structure Visualizer -->
+        <div class="grid lg:grid-cols-2 gap-12 items-start mb-24 fade-in-up delay-400">
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Estrutura Inteligente</h2>
+                <p class="text-slate-400 mb-6">
+                    O script entende hierarquia. Basta organizar suas pastas da maneira padrão e a automação cuida do resto.
+                </p>
+                <ul class="space-y-4 text-sm text-slate-300">
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        Detecção automática de subníveis
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        Filtro inteligente de imagens (JPG, PNG)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-6 h-6 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        Ignora arquivos de sistema e pastas vazias
+                    </li>
+                </ul>
+            </div>
 
-            // Usando a API de Clipboard (moderna e segura)
-            navigator.clipboard.writeText(code).then(() => {
-                textElement.innerText = "COPIADO!";
-                button.classList.add('bg-green-600', 'hover:bg-green-700');
-                button.classList.remove('btn-tecnoit');
+            <!-- CSS Folder Tree Visualization -->
+            <div class="glass-card p-8 rounded-2xl relative font-mono text-sm">
+                <div class="absolute top-4 right-4 text-xs text-slate-500 uppercase tracking-widest font-bold">Exemplo de Diretório</div>
 
-                setTimeout(() => {
-                    textElement.innerText = "Copiar Código";
-                    button.classList.remove('bg-green-600', 'hover:bg-green-700');
-                    button.classList.add('btn-tecnoit');
-                }, 2000);
-            }).catch(err => {
-                textElement.innerText = "Falhou!";
-                console.error('Falha ao copiar: ', err);
-            });
-        };
+                <!-- Root -->
+                <div class="flex items-center gap-2 text-indigo-300 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                    </svg>
+                    <span class="font-bold">CHAMADOS_OUTUBRO/</span>
+                </div>
 
-        copyButtonTop.addEventListener('click', () => copyHandler(copyButtonTop, copyButtonTextTop));
-    </script>
+                <div class="relative pl-8 border-l border-slate-700/50 space-y-6">
+
+                    <!-- Branch 1: PCI -->
+                    <div class="relative">
+                        <div class="absolute -left-8 top-3 w-6 h-[1px] bg-slate-700/50"></div>
+                        <div class="flex items-center gap-2 text-slate-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500/80" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                            </svg>
+                            <span>PCI/</span>
+                        </div>
+
+                        <!-- Sub-branches -->
+                        <div class="mt-3 pl-8 relative border-l border-slate-700/30 space-y-3">
+                            <div class="relative group">
+                                <div class="absolute -left-8 top-3 w-6 h-[1px] bg-slate-700/30"></div>
+                                <div class="flex items-center gap-2 text-slate-400 group-hover:text-white transition-colors cursor-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500/50" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                                    </svg>
+                                    <span>TERMINAL-01/</span>
+                                    <span class="ml-auto text-xs bg-indigo-500/20 text-indigo-400 px-2 rounded">Cria Ticket</span>
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <div class="absolute -left-8 top-3 w-6 h-[1px] bg-slate-700/30"></div>
+                                <div class="flex items-center gap-2 text-slate-400 group-hover:text-white transition-colors cursor-default">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500/50" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                                    </svg>
+                                    <span>TERMINAL-02/</span>
+                                    <span class="ml-auto text-xs bg-indigo-500/20 text-indigo-400 px-2 rounded">Cria Ticket</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Branch 2: CAMERAS -->
+                    <div class="relative">
+                        <div class="absolute -left-8 top-3 w-6 h-[1px] bg-slate-700/50"></div>
+                        <div class="flex items-center gap-2 text-slate-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500/80" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                            </svg>
+                            <span>CAMERAS/</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer (Impregnated) -->
+        <div class="mt-20 text-center relative z-50 border-t border-slate-800 pt-8">
+            <div class="watermark-container"></div>
+        </div>
+
+    </div>
+
 </body>
 </html>
