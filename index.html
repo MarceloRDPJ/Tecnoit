@@ -232,9 +232,35 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="text-center p-8 mt-16">
-        <p class="text-xs text-gray-500 opacity-50">&copy; 2024-2025 TecnoIT. Todos os direitos reservados.</p>
+    <footer class="text-center p-8 mt-16 relative z-50">
+        <div class="watermark-container"></div>
     </footer>
+
+    <style>
+        .watermark-container::after {
+            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
+            font-size: 0.75rem;
+            color: #64748b;
+            opacity: 0.5;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        /* Proteção contra ocultação simples */
+        body:not(:has(.watermark-container))::after {
+            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: red;
+            background: black;
+            padding: 10px;
+            z-index: 9999;
+        }
+    </style>
 
     <!--
         MODAL (PAINEL SOBRE)
