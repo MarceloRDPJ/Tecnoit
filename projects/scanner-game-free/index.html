@@ -23,115 +23,109 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* --- BRANDBOOK CORE STYLES --- */
         :root {
-            --neon-green: #00ff41;
-            --neon-blue: #00f3ff;
-            --neon-red: #ff003c;
-            --cyber-black: #050a10;
-            --cyber-gray: #111822;
+            /* Adapting Neon Theme to Ultra Modern Palette */
+            --neon-green: #34d399; /* Emerald 400 */
+            --neon-blue: #818cf8; /* Indigo 400 */
+            --neon-red: #f472b6; /* Pink 400 */
         }
 
         body {
-            background-color: var(--cyber-black);
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background-attachment: fixed;
             color: #e2e8f0;
-            font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
         }
 
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+        }
+
+        /* Specific Scanner Overrides */
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-
-        /* CRT Scanline Effect */
-        .scanlines {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(255,255,255,0),
-                rgba(255,255,255,0) 50%,
-                rgba(0,0,0,0.1) 50%,
-                rgba(0,0,0,0.1)
-            );
-            background-size: 100% 4px;
-            pointer-events: none;
-            z-index: 999;
-            opacity: 0.3;
-        }
-
-        /* Glitch Animation */
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
-        .glitch-hover:hover {
-            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-            color: var(--neon-red);
-        }
-
-        /* Cyber Borders */
-        .cyber-border {
-            position: relative;
-            background: var(--cyber-gray);
-            border: 1px solid #334155;
-            clip-path: polygon(
-                0 0,
-                100% 0,
-                100% calc(100% - 15px),
-                calc(100% - 15px) 100%,
-                0 100%
-            );
-        }
-        .cyber-border::before {
-            content: '';
-            position: absolute;
-            bottom: 0; right: 0;
-            width: 15px; height: 15px;
-            background: linear-gradient(135deg, transparent 50%, #334155 50%);
-        }
+        .font-tech { font-family: 'Rajdhani', sans-serif; }
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #334155; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--neon-blue); }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.5); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.8); }
 
-        /* Neon Glows */
-        .glow-text-blue { text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
-        .glow-text-green { text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
-        .glow-box-blue { box-shadow: 0 0 15px rgba(0, 243, 255, 0.1); }
+        /* Footer Protection */
+        .watermark-container::after {
+            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
+            font-size: 0.65rem;
+            color: #94a3b8;
+            opacity: 0.3;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: default;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: color 0.3s ease;
+        }
+        .watermark-container:hover::after {
+            color: #f97316;
+            opacity: 0.8;
+        }
+        body:not(:has(.watermark-container))::after {
+            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            background: red;
+            padding: 10px;
+            z-index: 9999;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
     <div id="root"></div>
-    <div class="scanlines"></div>
 
     <script type="text/babel">
         // ==========================================
         // WORKER & CONFIG
         // ==========================================
-
-        const hashWorkerCode = `
-            importScripts('https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js');
-            self.addEventListener('message', async (event) => {
-                const { type, data, id } = event.data;
-                if (type === 'CALCULATE_HASH') {
-                    try {
-                        const str = typeof data === 'string' ? data : JSON.stringify(data);
-                        self.postMessage({
-                            type: 'HASH_RESULT', id,
-                            result: { sha256: CryptoJS.SHA256(str).toString(), timestamp: Date.now() }
-                        });
-                    } catch (e) { self.postMessage({ type: 'ERROR', id, error: e.message }); }
-                }
-            });
-        `;
-        const hashWorkerUrl = URL.createObjectURL(new Blob([hashWorkerCode], { type: 'application/javascript' }));
 
         const SYSTEM_CONFIG = {
             ENDPOINTS: ['https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions'],
@@ -154,7 +148,6 @@
                 const results = { current: [], upcoming: [], mystery: [], raw: null, metadata: {} };
                 const endpoint = SYSTEM_CONFIG.ENDPOINTS[0];
 
-                // Try proxies with "failover" simulation
                 for (const proxy of SYSTEM_CONFIG.PROXIES) {
                     try {
                         const start = performance.now();
@@ -166,7 +159,6 @@
                         const data = await response.json();
                         const latency = Math.round(performance.now() - start);
 
-                        // Capture Metadata for UI
                         results.metadata = {
                             proxy: proxy.name,
                             latency: `${latency}ms`,
@@ -175,7 +167,7 @@
                             server: response.headers.get('server') || 'EPIC-EDGE-V4'
                         };
 
-                        results.raw = data; // Keep raw for inspector
+                        results.raw = data;
                         this.parseData(data, results);
                         return results;
 
@@ -192,24 +184,17 @@
                 elements.forEach(game => {
                     const title = game.title;
                     const promotions = game.promotions;
-
-                    // Logic: Active Offers
                     const currentOffers = promotions?.promotionalOffers?.[0]?.promotionalOffers || [];
                     currentOffers.forEach(offer => {
                         if (offer.discountSetting?.discountPercentage === 0) {
                             results.current.push({ ...game, offerDetails: offer });
                         }
                     });
-
-                    // Logic: Upcoming
                     const upcomingOffers = promotions?.upcomingPromotionalOffers?.[0]?.promotionalOffers || [];
                     upcomingOffers.forEach(offer => {
                         const gameObj = { ...game, offerDetails: offer };
-                        if (this.isMystery(title)) {
-                            results.mystery.push(gameObj);
-                        } else {
-                            results.upcoming.push(gameObj);
-                        }
+                        if (this.isMystery(title)) results.mystery.push(gameObj);
+                        else results.upcoming.push(gameObj);
                     });
                 });
             }
@@ -226,26 +211,45 @@
 
         const Icon = ({ name, className }) => <i className={`fa-solid fa-${name} ${className}`}></i>;
 
+        const Header = () => (
+            <header className="flex justify-between items-center mb-16 fade-in-up">
+                <a href="../../index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-indigo-500/50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                        </svg>
+                    </div>
+                    <span className="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
+                </a>
+                <div className="flex items-center gap-3">
+                    <span className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                        Scanner v4.1
+                    </span>
+                    <img src="../../logo.png" alt="Logo" className="h-8 w-8 opacity-80" onError={(e) => e.target.style.display='none'} />
+                </div>
+            </header>
+        );
+
         const Terminal = ({ logs }) => {
             const endRef = React.useRef(null);
             React.useEffect(() => endRef.current?.scrollIntoView({ behavior: 'smooth' }), [logs]);
 
             return (
-                <div className="cyber-border h-64 p-4 font-mono text-xs overflow-hidden flex flex-col bg-black/50">
-                    <div className="flex justify-between text-gray-500 mb-2 border-b border-gray-800 pb-1">
+                <div className="glass-card h-64 p-4 font-mono text-xs overflow-hidden flex flex-col rounded-xl">
+                    <div className="flex justify-between text-slate-500 mb-2 border-b border-white/5 pb-2">
                         <span>// TERMINAL_OUTPUT</span>
-                        <span>NET_V1.0.4</span>
+                        <span className="text-[var(--neon-blue)]">NET_V1.0.4</span>
                     </div>
-                    <div className="flex-1 overflow-y-auto space-y-1">
+                    <div className="flex-1 overflow-y-auto space-y-1 custom-scrollbar">
                         {logs.map(log => (
                             <div key={log.id} className="opacity-90">
-                                <span className="text-gray-500 mr-2">[{log.time}]</span>
+                                <span className="text-slate-500 mr-2">[{log.time}]</span>
                                 <span className={`font-bold mr-2 ${
-                                    log.type === 'ERR' ? 'text-red-500' :
+                                    log.type === 'ERR' ? 'text-red-400' :
                                     log.type === 'SUC' ? 'text-[var(--neon-green)]' :
-                                    log.type === 'WARN' ? 'text-yellow-400' : 'text-blue-400'
+                                    log.type === 'WARN' ? 'text-yellow-400' : 'text-[var(--neon-blue)]'
                                 }`}>{log.type}</span>
-                                <span className="text-gray-300">{log.msg}</span>
+                                <span className="text-slate-300">{log.msg}</span>
                             </div>
                         ))}
                         <div ref={endRef} />
@@ -256,55 +260,47 @@
 
         const NetworkMap = ({ active }) => {
             const canvasRef = React.useRef(null);
-
             React.useEffect(() => {
                 const cvs = canvasRef.current;
                 const ctx = cvs.getContext('2d');
                 let frame = 0;
+                let animId;
 
                 const draw = () => {
-                    ctx.fillStyle = '#050a10';
-                    ctx.fillRect(0, 0, cvs.width, cvs.height);
+                    ctx.clearRect(0, 0, cvs.width, cvs.height);
 
                     // Grid
-                    ctx.strokeStyle = '#1e293b';
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
                     ctx.lineWidth = 1;
                     for(let i=0; i<cvs.width; i+=20) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,cvs.height); ctx.stroke(); }
                     for(let i=0; i<cvs.height; i+=20) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(cvs.width,i); ctx.stroke(); }
 
-                    // Center Node (You)
+                    // Center (You)
                     const cx = cvs.width/2, cy = cvs.height/2;
-                    ctx.fillStyle = '#00f3ff';
+                    ctx.fillStyle = '#818cf8';
                     ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI*2); ctx.fill();
 
-                    // Target Node (Epic)
+                    // Target (Epic)
                     const tx = cx + Math.sin(frame*0.02)*50, ty = cy + Math.cos(frame*0.03)*30;
-                    ctx.fillStyle = active ? '#00ff41' : '#ff003c';
+                    ctx.fillStyle = active ? '#34d399' : '#f472b6';
                     ctx.beginPath(); ctx.arc(tx, ty, 6, 0, Math.PI*2); ctx.fill();
 
-                    // Connection Line
                     if(active) {
-                        ctx.strokeStyle = `rgba(0, 255, 65, ${Math.random()})`;
+                        ctx.strokeStyle = `rgba(52, 211, 153, ${Math.random()})`;
                         ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(tx, ty); ctx.stroke();
-
-                        // Particles
-                        ctx.fillStyle = '#fff';
-                        const px = cx + (tx-cx) * ((frame%100)/100);
-                        const py = cy + (ty-cy) * ((frame%100)/100);
-                        ctx.fillRect(px, py, 2, 2);
                     }
 
                     frame++;
-                    requestAnimationFrame(draw);
+                    animId = requestAnimationFrame(draw);
                 };
                 draw();
+                return () => cancelAnimationFrame(animId);
             }, [active]);
 
             return (
-                <div className="cyber-border h-64 relative bg-black/50">
-                    <canvas ref={canvasRef} width={300} height={254} className="w-full h-full opacity-80" />
-                    <div className="absolute top-2 left-2 text-[10px] text-[var(--neon-blue)] font-mono">
-                        // NET_TOPOLOGY<br/>
+                <div className="glass-card h-64 relative rounded-xl overflow-hidden">
+                    <canvas ref={canvasRef} width={300} height={254} className="w-full h-full" />
+                    <div className="absolute top-2 left-2 text-[10px] text-[var(--neon-blue)] font-mono bg-black/40 px-2 py-1 rounded">
                         STATUS: {active ? 'UPLINK_ESTABLISHED' : 'IDLE'}
                     </div>
                 </div>
@@ -315,30 +311,30 @@
             const img = game.keyImages?.find(i => i.type === 'Thumbnail')?.url || '';
 
             return (
-                <div className="cyber-border bg-slate-900/50 p-4 group hover:bg-slate-900 transition-colors">
-                    <div className="flex justify-between items-start mb-3">
-                        <div className="text-[10px] font-mono text-[var(--neon-blue)] border border-[var(--neon-blue)] px-1">
-                            CONFIDENTIAL // {type.toUpperCase()}
+                <div className="glass-card p-4 rounded-xl group hover:bg-slate-800/50 transition-colors">
+                    <div className="flex justify-between items-center mb-3">
+                        <div className="text-[10px] font-mono text-[var(--neon-blue)] bg-[var(--neon-blue)]/10 px-2 py-0.5 rounded border border-[var(--neon-blue)]/20">
+                            {type.toUpperCase()}
                         </div>
                         {type === 'mystery' && <Icon name="user-secret" className="text-yellow-400 animate-pulse" />}
                     </div>
 
-                    <div className="relative aspect-video mb-3 overflow-hidden border border-slate-700 group-hover:border-[var(--neon-green)] transition-colors">
-                        {img && <img src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                    <div className="relative aspect-video mb-3 overflow-hidden rounded-lg border border-white/5 group-hover:border-[var(--neon-green)] transition-colors">
+                        {img && <img src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-105 duration-500" />}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
                     </div>
 
-                    <h3 className="font-bold text-lg leading-tight mb-2 truncate group-hover:text-[var(--neon-green)]">
+                    <h3 className="font-bold text-lg leading-tight mb-2 truncate text-white group-hover:text-[var(--neon-green)] transition-colors font-tech uppercase tracking-wide">
                         {game.title}
                     </h3>
 
-                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-gray-400">
+                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
                         <div>
-                            <span className="block text-gray-600">ID</span>
+                            <span className="block text-slate-500">ID_HASH</span>
                             {game.id.substr(0, 8)}...
                         </div>
                         <div>
-                            <span className="block text-gray-600">RELEASE</span>
+                            <span className="block text-slate-500">RELEASE_DATE</span>
                             {new Date(game.offerDetails?.startDate).toLocaleDateString()}
                         </div>
                     </div>
@@ -349,15 +345,15 @@
         const RawInspector = ({ data, active, onClose }) => {
             if (!active || !data) return null;
             return (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-                    <div className="w-full max-w-4xl h-[80vh] cyber-border bg-[#050a10] flex flex-col">
-                        <div className="flex justify-between items-center p-4 border-b border-gray-800">
-                            <h3 className="text-[var(--neon-blue)] font-mono text-lg">// RAW_PAYLOAD_INTERCEPT</h3>
-                            <button onClick={onClose} className="text-red-500 hover:text-white">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
+                    <div className="w-full max-w-4xl h-[80vh] glass-card flex flex-col rounded-2xl overflow-hidden ring-1 ring-indigo-500/30">
+                        <div className="flex justify-between items-center p-4 border-b border-white/5 bg-slate-900/50">
+                            <h3 className="text-[var(--neon-blue)] font-mono text-lg">// PAYLOAD_DATA</h3>
+                            <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
                                 <Icon name="xmark" className="text-xl" />
                             </button>
                         </div>
-                        <pre className="flex-1 overflow-auto p-4 text-[10px] font-mono text-green-500 custom-scrollbar">
+                        <pre className="flex-1 overflow-auto p-6 text-xs font-mono text-emerald-400 custom-scrollbar bg-[#0f172a]">
                             {JSON.stringify(data, null, 2)}
                         </pre>
                     </div>
@@ -384,15 +380,13 @@
 
             const runScan = async () => {
                 if (status === 'SCANNING') return;
-
                 setStatus('SCANNING');
                 addLog('Initializing scan sequence...', 'CMD');
 
-                // Simulation phases
                 const phases = ['Resolving Proxy Nodes...', 'Bypassing Firewalls...', 'Intercepting Handshake...'];
                 for(let p of phases) {
                     addLog(p, 'SYS');
-                    await new Promise(r => setTimeout(r, 600));
+                    await new Promise(r => setTimeout(r, 400));
                 }
 
                 try {
@@ -410,38 +404,30 @@
             React.useEffect(() => { runScan(); }, []);
 
             return (
-                <div className="min-h-screen p-4 md:p-8 flex flex-col max-w-7xl mx-auto">
-                    {/* Header */}
-                    <header className="flex justify-between items-end mb-8 border-b border-gray-800 pb-4">
-                        <div>
-                            <div className="flex items-center gap-3 mb-1">
-                                <Icon name="ghost" className="text-3xl text-[var(--neon-blue)] animate-pulse" />
-                                <h1 className="text-4xl font-bold tracking-tighter glow-text-blue">
-                                    S.C.A.N.N.E.R.
-                                </h1>
-                            </div>
-                            <p className="text-[10px] font-mono text-gray-500 tracking-[0.3em]">
-                                EPIC GAMES INTELLIGENCE UNIT // V.4.0.2
-                            </p>
-                        </div>
-                        <div className="text-right hidden md:block">
-                            <div className="text-[var(--neon-green)] font-mono text-sm">SYSTEM_ONLINE</div>
-                            <div className="text-gray-600 text-[10px]">ENC: AES-256-GCM</div>
-                        </div>
-                    </header>
+                <div className="max-w-7xl mx-auto px-6 py-12">
+                    <Header />
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                        {/* Column 1: Controls & Map */}
+                    <div className="text-center mb-12 fade-in-up delay-100">
+                        <h1 className="text-5xl font-extrabold mb-2 font-tech tracking-wider">
+                            S.C.A.N.N.E.R.
+                        </h1>
+                        <p className="text-[var(--neon-blue)] font-mono text-xs tracking-[0.5em] uppercase opacity-80">
+                            Epic Games Intelligence Unit
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 fade-in-up delay-200">
+                        {/* Control Panel */}
                         <div className="space-y-6">
-                            <div className="cyber-border p-6 bg-slate-900/30">
+                            <div className="glass-card p-6 rounded-xl">
                                 <div className="flex justify-between items-center mb-4">
-                                    <span className="text-xs font-mono text-gray-400">OPERATION CONTROL</span>
-                                    <span className={`w-2 h-2 rounded-full ${status === 'SCANNING' ? 'bg-[var(--neon-red)] animate-ping' : 'bg-gray-600'}`}></span>
+                                    <span className="text-xs font-mono text-slate-400">CONTROL_MODULE</span>
+                                    <span className={`w-2 h-2 rounded-full ${status === 'SCANNING' ? 'bg-[var(--neon-red)] animate-ping' : 'bg-slate-600'}`}></span>
                                 </div>
                                 <button
                                     onClick={runScan}
                                     disabled={status === 'SCANNING'}
-                                    className="w-full py-4 bg-[var(--neon-blue)] text-black font-bold tracking-widest hover:bg-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed clip-path-btn"
+                                    className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold tracking-widest rounded-lg shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-tech text-lg"
                                 >
                                     {status === 'SCANNING' ? 'SCANNING...' : 'INITIATE SCAN'}
                                 </button>
@@ -451,35 +437,33 @@
                             <Terminal logs={logs} />
                         </div>
 
-                        {/* Column 2 & 3: Results */}
-                        <div className="lg:col-span-2 space-y-8">
-
-                            {/* Stats Bar */}
+                        {/* Results Panel */}
+                        <div className="lg:col-span-2 space-y-6">
+                            {/* Dashboard */}
                             <div className="grid grid-cols-3 gap-4">
-                                <div className="cyber-border p-3 bg-slate-900/30">
-                                    <div className="text-[10px] text-gray-500 font-mono">TARGET_LATENCY</div>
-                                    <div className="text-xl text-[var(--neon-green)]">{results?.metadata?.latency || '--'}</div>
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <div className="text-[10px] text-slate-500 font-mono mb-1">LATENCY</div>
+                                    <div className="text-xl font-bold text-[var(--neon-green)] font-mono">{results?.metadata?.latency || '--'}</div>
                                 </div>
-                                <div className="cyber-border p-3 bg-slate-900/30 cursor-pointer hover:bg-slate-800" onClick={() => setShowInspector(true)}>
-                                    <div className="text-[10px] text-gray-500 font-mono flex items-center gap-1">
-                                        PAYLOAD_SIZE <Icon name="magnifying-glass" className="text-[10px]" />
+                                <div className="glass-card p-4 rounded-xl text-center cursor-pointer hover:bg-white/5 transition-colors" onClick={() => setShowInspector(true)}>
+                                    <div className="text-[10px] text-slate-500 font-mono mb-1 flex items-center justify-center gap-1">
+                                        PAYLOAD <Icon name="magnifying-glass" />
                                     </div>
-                                    <div className="text-xl text-[var(--neon-blue)]">{results?.metadata?.size || '--'}</div>
+                                    <div className="text-xl font-bold text-[var(--neon-blue)] font-mono">{results?.metadata?.size || '--'}</div>
                                 </div>
-                                <div className="cyber-border p-3 bg-slate-900/30">
-                                    <div className="text-[10px] text-gray-500 font-mono">OBJECTS_FOUND</div>
-                                    <div className="text-xl text-white">{results ? results.current.length + results.upcoming.length : 0}</div>
+                                <div className="glass-card p-4 rounded-xl text-center">
+                                    <div className="text-[10px] text-slate-500 font-mono mb-1">OBJECTS</div>
+                                    <div className="text-xl font-bold text-white font-mono">{results ? results.current.length + results.upcoming.length : 0}</div>
                                 </div>
                             </div>
 
-                            {/* Content Grid */}
+                            {/* Cards */}
                             {results && (
-                                <div className="space-y-6 animate-pulse-slow">
-
+                                <div className="space-y-8">
                                     {results.current.length > 0 && (
                                         <div>
-                                            <h2 className="text-[var(--neon-green)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-gray-800 pb-2">
-                                                <Icon name="unlock" /> ACTIVE_OPPORTUNITIES
+                                            <h2 className="text-[var(--neon-green)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-white/5 pb-2">
+                                                <Icon name="unlock" /> ACTIVE_OFFERS
                                             </h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 {results.current.map((g, i) => <IntelCard key={i} game={g} type="current" />)}
@@ -489,8 +473,8 @@
 
                                     {results.upcoming.length > 0 && (
                                         <div>
-                                            <h2 className="text-[var(--neon-blue)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-gray-800 pb-2">
-                                                <Icon name="clock" /> FUTURE_INTEL
+                                            <h2 className="text-[var(--neon-blue)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-white/5 pb-2">
+                                                <Icon name="clock" /> COMING_SOON
                                             </h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 {results.upcoming.map((g, i) => <IntelCard key={i} game={g} type="upcoming" />)}
@@ -501,18 +485,14 @@
                             )}
 
                             {!results && status === 'IDLE' && (
-                                <div className="h-64 flex items-center justify-center border border-dashed border-gray-800 text-gray-600 font-mono text-xs">
-                                    WAITING_FOR_USER_INPUT...
+                                <div className="h-64 flex flex-col items-center justify-center border border-dashed border-slate-700 rounded-xl text-slate-600 font-mono text-xs">
+                                    <Icon name="satellite-dish" className="text-4xl mb-4 opacity-20" />
+                                    <span>WAITING_FOR_USER_INPUT...</span>
                                 </div>
                             )}
                         </div>
                     </div>
 
-                    <a href="../../index.html" className="fixed bottom-8 right-8 text-gray-600 hover:text-[var(--neon-blue)] font-mono text-xs transition-colors">
-                        [ EXIT_TO_HUB ]
-                    </a>
-
-                    {/* Raw Inspector Modal */}
                     {showInspector && <RawInspector data={results?.raw} active={showInspector} onClose={() => setShowInspector(false)} />}
 
                     <footer className="mt-8 text-center relative z-50">
