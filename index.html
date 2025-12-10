@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoIT - Hub de Projetos</title>
+    <!-- TODO: REPLACE_BRANDING - Atualizar título com nome final da empresa/marca -->
+    <title>Hub - Portfólio Profissional</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -19,6 +20,7 @@
             background-attachment: fixed;
             color: #e2e8f0;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         /* Glassmorphism Cards */
@@ -31,16 +33,15 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .glass-card:hover {
             background: rgba(30, 41, 59, 0.6);
             border-color: rgba(99, 102, 241, 0.3);
             transform: translateY(-5px) scale(1.01);
-            box-shadow:
-                0 20px 25px -5px rgba(0, 0, 0, 0.2),
-                0 10px 10px -5px rgba(0, 0, 0, 0.1),
-                0 0 20px rgba(99, 102, 241, 0.1); /* Subtle Indigo Glow */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
         /* Gradient Text */
@@ -51,28 +52,56 @@
             background-image: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
         }
 
-        /* Header Button (About) */
-        .btn-header {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+        /* Nav Link */
+        .nav-link {
+            position: relative;
+            color: #94a3b8;
+            transition: color 0.3s;
         }
-        .btn-header:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        .nav-link:hover { color: #fff; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0; width: 0; height: 1px;
+            background: #818cf8;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Search & Filter */
+        .search-input {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #818cf8;
+            box-shadow: 0 0 15px rgba(129, 140, 248, 0.2);
         }
 
-        /* Primary Action Button (Access Project) */
-        .btn-action {
-            background: linear-gradient(to right, #4f46e5, #9333ea);
-            position: relative;
-            z-index: 10;
-            transition: all 0.3s ease;
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
         }
-        .btn-action:hover {
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
-            transform: scale(1.05);
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(129, 140, 248, 0.2);
+            border-color: rgba(129, 140, 248, 0.5);
+            color: white;
+            box-shadow: 0 0 10px rgba(129, 140, 248, 0.2);
+        }
+
+        /* Tags */
+        .tech-tag {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: #94a3b8;
         }
 
         /* Animations */
@@ -85,26 +114,11 @@
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
 
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-        /* Modal Animations */
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-
-        .modal-enter { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .modal-exit { animation: slideOutRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-
-        /* Footer Protection (Mandatory) */
+        /* Footer Protection */
         .watermark-container::after {
-            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
+            content: "© 2025 Marcelo Rodrigues. Portfolio Profissional.";
             font-size: 0.75rem;
             color: #64748b;
             opacity: 0.5;
@@ -116,166 +130,211 @@
             -webkit-user-select: none;
             transition: color 0.3s ease;
         }
-        .watermark-container:hover::after {
-            color: #f97316;
-            opacity: 0.9;
-        }
+        .watermark-container:hover::after { color: #f97316; opacity: 0.9; }
         body:not(:has(.watermark-container))::after {
-            content: "© 2025 TecnoIT. Desenvolvido por Marcelo Rodrigues.";
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            color: white;
-            background: red;
-            padding: 10px;
-            z-index: 9999;
+            content: "Copyright Protected";
+            position: fixed; bottom: 20px; right: 20px;
+            color: white; background: red; padding: 10px; z-index: 9999;
         }
     </style>
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- Background Decoration -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/10 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-indigo-900/10 rounded-full blur-[120px]"></div>
-    </div>
-
     <div class="max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col">
 
         <!-- Header -->
-        <header class="flex justify-between items-center mb-16 fade-in-up">
+        <header class="flex flex-col md:flex-row justify-between items-center mb-16 fade-in-up gap-6">
             <div class="flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-white/5">
-                    <img src="logo.png" alt="TecnoIT" class="w-8 h-8 opacity-90 drop-shadow-lg">
+                <!-- TODO: REPLACE_BRANDING - Substituir logo placeholder por logo final -->
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-white/5 relative group">
+                     <span class="font-bold text-xl text-white group-hover:scale-110 transition-transform duration-300">M</span>
+                     <div class="absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-indigo-500/50 transition-all"></div>
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold tracking-tight">TecnoIT <span class="text-indigo-400 font-light">Hub</span></h1>
-                    <p class="text-xs text-slate-500 font-mono tracking-widest uppercase">Portfolio & Tools</p>
+                    <!-- TODO: REPLACE_BRANDING - Substituir texto placeholder por nome final -->
+                    <h1 class="text-2xl font-bold tracking-tight text-white">Marcelo <span class="text-indigo-400 font-light">Rodrigues</span></h1>
+                    <p class="text-[10px] text-slate-500 font-mono tracking-[0.2em] uppercase">Engenharia de Software & Soluções</p>
                 </div>
             </div>
 
-            <button id="openAboutModal" class="btn-header p-3 rounded-xl text-slate-400 hover:text-white group" title="Sobre o Projeto">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 group-hover:rotate-12 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </button>
+            <!-- Navigation -->
+            <nav class="flex items-center gap-8 text-sm font-medium">
+                <button onclick="document.getElementById('aboutModalOverlay').classList.remove('hidden');" class="nav-link">Sobre</button>
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#contato" class="nav-link text-indigo-400 hover:text-indigo-300">Contato</a>
+            </nav>
         </header>
 
         <!-- Main Content -->
         <main class="flex-grow">
-            <!-- Section Title -->
-            <div class="mb-12 text-center md:text-left fade-in-up delay-100">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-                    Ferramentas <span class="text-gradient">Premium</span>
-                </h2>
-                <p class="text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
-                    Utilitários desenvolvidos para alta performance, automação e precisão técnica. Selecione uma ferramenta para começar.
-                </p>
+            <!-- Hero / Intro -->
+            <div class="mb-16 text-center md:text-left fade-in-up delay-100 flex flex-col md:flex-row justify-between items-end gap-6">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                        Engenharia <br>
+                        <span class="text-gradient">Criativa & Funcional</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
+                        Um ecossistema de ferramentas desenvolvidas para resolver problemas reais.
+                        Foco em automação, segurança e experiências imersivas.
+                    </p>
+                </div>
+
+                <!-- Search & Filter Bar -->
+                <div class="w-full md:w-auto flex flex-col gap-3 items-end">
+                    <div class="relative w-full md:w-80">
+                        <input type="text" id="searchInput" placeholder="Pesquisar projetos (ex: React, API)..." class="search-input w-full px-4 py-2 rounded-xl text-sm text-white placeholder-slate-500">
+                        <svg class="absolute right-3 top-2.5 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div class="flex gap-2 flex-wrap justify-end" id="filterContainer">
+                        <button class="filter-btn active px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="all">Todos</button>
+                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="seguranca">Segurança</button>
+                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="automacao">Automação</button>
+                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="geek">Geek</button>
+                    </div>
+                </div>
             </div>
 
             <!-- Projects Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="projetos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
 
                 <!-- Card: Validador Firewall -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col h-96 group fade-in-up delay-200">
-                    <!-- Icon/Badge -->
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-200 h-full"
+                     data-category="seguranca"
+                     data-tags="javascript firewall regex automacao">
+
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-orange-500/10 group-hover:border-orange-500/30 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 border border-white/5 text-xs font-mono text-slate-400">
-                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                            <span id="clicks-validator-firewall">0</span>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="px-2 py-1 rounded bg-orange-500/10 text-orange-400 text-[10px] font-bold uppercase tracking-wider border border-orange-500/20">Segurança</span>
+                            <div class="flex gap-1">
+                                <span class="tech-tag">JS</span>
+                                <span class="tech-tag">RegEx</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Content -->
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">Validador de MACs</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Engine robusta para conversão e validação de listas de acesso. Gera scripts Fortigate compatíveis instantaneamente.
+                        <!-- TODO: REPLACE_BRANDING - Se necessário remover nomes específicos -->
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">Validador de Acesso</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Engine para validação e sanitização de dados de rede. Converte listas CSV em scripts de configuração Fortigate instantaneamente.
                         </p>
                     </div>
 
-                    <!-- Action -->
-                    <div class="mt-6 pt-6 border-t border-white/5 flex justify-end">
-                        <button class="btn-action px-6 py-2.5 rounded-xl text-white text-sm font-bold uppercase tracking-wide shadow-lg"
+                    <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                             <span id="clicks-validator-firewall">0</span> views
+                        </div>
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-orange-500/20 border border-white/10 hover:border-orange-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
                                 data-project-id="validator-firewall"
                                 data-href="projects/validador-firewall/index.html">
-                            Acessar Ferramenta
+                            Acessar
                         </button>
                     </div>
                 </div>
 
                 <!-- Card: Automação GLPI -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col h-96 group fade-in-up delay-300">
-                    <!-- Icon/Badge -->
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-full"
+                     data-category="automacao"
+                     data-tags="python api integration backend">
+
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center border border-indigo-500/10 group-hover:border-indigo-500/30 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                             </svg>
                         </div>
-                        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 border border-white/5 text-xs font-mono text-slate-400">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-abertura-chamados-glpi">0</span>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-wider border border-indigo-500/20">Automação</span>
+                            <div class="flex gap-1">
+                                <span class="tech-tag">API</span>
+                                <span class="tech-tag">Integr.</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Content -->
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Automação GLPI</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Bot inteligente que varre diretórios locais e realiza abertura de tickets em massa via API com upload de evidências.
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Bot GLPI</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Agente autônomo para abertura massiva de tickets. Integração direta com API para upload de evidências e roteamento inteligente.
                         </p>
                     </div>
 
-                    <!-- Action -->
-                    <div class="mt-6 pt-6 border-t border-white/5 flex justify-end">
-                        <button class="btn-action px-6 py-2.5 rounded-xl text-white text-sm font-bold uppercase tracking-wide shadow-lg"
+                    <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                             <span id="clicks-abertura-chamados-glpi">0</span> views
+                        </div>
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
                                 data-project-id="abertura-chamados-glpi"
                                 data-href="projects/abertura-chamados-glpi/index.html">
-                            Acessar Ferramenta
+                            Acessar
                         </button>
                     </div>
                 </div>
 
                 <!-- Card: Epic Games Scanner -->
-                <div class="glass-card rounded-3xl p-8 flex flex-col h-96 group fade-in-up delay-300">
-                    <!-- Icon/Badge -->
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-full"
+                     data-category="geek"
+                     data-tags="react api frontend ai">
+
                     <div class="flex justify-between items-start mb-6">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/10 group-hover:border-purple-500/30 transition-colors">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
-                        <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 border border-white/5 text-xs font-mono text-slate-400">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-scanner-game-free">0</span>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="px-2 py-1 rounded bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider border border-purple-500/20">Geek</span>
+                            <div class="flex gap-1">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">UI</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Content -->
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Epic Games Scanner</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Sistema de detecção de jogos gratuitos com IA. Monitoramento em tempo real de ofertas e vazamentos.
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Scanner IA</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Monitoramento em tempo real de ofertas digitais. Utiliza análise de padrões para detectar vazamentos e promoções ocultas.
                         </p>
                     </div>
 
-                    <!-- Action -->
-                    <div class="mt-6 pt-6 border-t border-white/5 flex justify-end">
-                        <button class="btn-action px-6 py-2.5 rounded-xl text-white text-sm font-bold uppercase tracking-wide shadow-lg"
+                    <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
+                             <span id="clicks-scanner-game-free">0</span> views
+                        </div>
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
                                 data-project-id="scanner-game-free"
                                 data-href="projects/scanner-game-free/index.html">
-                            Acessar Ferramenta
+                            Acessar
                         </button>
                     </div>
                 </div>
 
             </div>
+
+            <!-- Contact Section -->
+            <section id="contato" class="mt-24 pt-12 border-t border-slate-800 text-center">
+                <h3 class="text-2xl font-bold text-white mb-8">Vamos Conversar?</h3>
+                <div class="flex justify-center gap-6 flex-wrap">
+                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-blue-600/10 border-blue-500/20 flex items-center gap-3 group">
+                        <svg class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v4.577h2.401v-4.93c0-2.616-1.417-3.85-3.303-3.85-1.55 0-2.26.86-2.63 1.439h.016v-1.2h-2.4v7.225h2.401z"/></svg>
+                        <span class="text-sm font-bold text-slate-300 group-hover:text-white">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/MarceloRDPJ" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-slate-700/50 border-white/10 flex items-center gap-3 group">
+                        <svg class="w-5 h-5 text-slate-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        <span class="text-sm font-bold text-slate-300 group-hover:text-white">GitHub</span>
+                    </a>
+                </div>
+            </section>
         </main>
 
         <!-- Footer -->
@@ -285,59 +344,26 @@
 
     </div>
 
-    <!-- About Modal (Glassmorphism Redesign) -->
+    <!-- About Modal -->
     <div id="aboutModalOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
-
-    <div id="aboutModalPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900/90 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-50 hidden translate-x-full">
+    <div id="aboutModalPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900/90 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-50 hidden translate-x-full transition-transform duration-300">
         <div class="p-8 h-full flex flex-col overflow-y-auto">
-
-            <!-- Header -->
             <div class="flex items-center justify-between mb-8 pb-8 border-b border-white/10">
-                <div class="flex items-center gap-4">
-                    <img src="logo.png" alt="Logo" class="w-10 h-10 rounded-xl">
-                    <div>
-                        <h3 class="text-xl font-bold text-white">Sobre</h3>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest">TecnoIT Hub</p>
-                    </div>
-                </div>
-                <button id="closeAboutModal" class="p-2 rounded-lg hover:bg-white/10 text-slate-400 hover:text-white transition-colors">
+                <h3 class="text-xl font-bold text-white">Sobre o Portfólio</h3>
+                <button onclick="document.getElementById('aboutModalOverlay').classList.add('hidden');" class="text-slate-400 hover:text-white">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </button>
             </div>
-
-            <!-- Content -->
             <div class="space-y-6 text-sm text-slate-300 leading-relaxed font-light">
-                <p>Este Hub é uma iniciativa independente desenvolvida por <strong class="text-white">Marcelo Rodrigues</strong>. Criado com foco em otimização de workflow e automação de processos de Service Desk.</p>
-
+                <p>Este espaço é uma demonstração prática de habilidades em engenharia de software, design de interfaces e automação de processos.</p>
                 <div class="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
-                    <p class="text-indigo-300 text-xs">
-                        🚀 <strong class="uppercase tracking-wider">Objetivo</strong><br>
-                        Centralizar ferramentas de alta utilidade, reduzindo tarefas repetitivas e aumentando a precisão técnica.
-                    </p>
+                    <p class="text-indigo-300 text-xs uppercase tracking-wider font-bold mb-2">Filosofia</p>
+                    <p>Cada ferramenta aqui apresentada foi construída para resolver uma dor real, unindo código limpo a uma experiência de usuário (UX) excepcional.</p>
                 </div>
-
-                <p class="text-xs text-slate-500 italic">Atualizações contínuas são aplicadas conforme novas demandas surgem no ambiente operacional.</p>
+                <p>A documentação rigorosa e a manutenção contínua são pilares deste trabalho. Confira o repositório para detalhes sobre a arquitetura.</p>
             </div>
-
-            <!-- Stats -->
-            <div class="mt-8 py-6 border-y border-white/10">
-                <h4 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Engajamento Global</h4>
-                <div class="flex justify-between items-end">
-                    <span class="text-sm text-slate-400">Total de Interações</span>
-                    <span id="totalClicksDisplay" class="text-3xl font-mono font-bold text-white">0</span>
-                </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="mt-auto space-y-3 pt-8">
-                <a href="https://github.com/MarceloRDPJ" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-white/5 hover:border-white/10 transition-all group">
-                    <svg class="w-5 h-5 text-slate-400 group-hover:text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                    <span class="font-bold text-slate-300 group-hover:text-white">GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/20 hover:border-blue-500/40 transition-all group">
-                    <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v4.577h2.401v-4.93c0-2.616-1.417-3.85-3.303-3.85-1.55 0-2.26.86-2.63 1.439h.016v-1.2h-2.4v7.225h2.401z"/></svg>
-                    <span class="font-bold text-blue-400 group-hover:text-blue-300">LinkedIn</span>
-                </a>
+            <div class="mt-auto pt-8 border-t border-white/10">
+                <p class="text-xs text-slate-500 text-center">Atualizado em: Dezembro 2025</p>
             </div>
         </div>
     </div>
@@ -347,113 +373,103 @@
             const projectButtons = document.querySelectorAll('[data-project-id]');
             const namespace = 'tecnoit.hub';
 
-            // --- Modal Logic ---
-            const openModalButton = document.getElementById('openAboutModal');
-            const closeModalButton = document.getElementById('closeAboutModal');
-            const modalOverlay = document.getElementById('aboutModalOverlay');
-            const modalPanel = document.getElementById('aboutModalPanel');
-            const totalClicksDisplay = document.getElementById('totalClicksDisplay');
+            // --- Search & Filter Logic ---
+            const searchInput = document.getElementById('searchInput');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projects = document.querySelectorAll('.glass-card[data-category]');
 
-            // Initially disable modal button until data loads
-            openModalButton.disabled = true;
+            function filterProjects() {
+                const query = searchInput.value.toLowerCase();
+                const activeCategory = document.querySelector('.filter-btn.active').dataset.filter;
 
-            function calculateTotalClicks() {
-                let totalClicks = 0;
-                projectButtons.forEach(button => {
-                    const projectId = button.dataset.projectId;
-                    const displayElement = document.getElementById('clicks-' + projectId);
-                    if (displayElement) {
-                        totalClicks += parseInt(displayElement.textContent || 0, 10);
+                projects.forEach(card => {
+                    const category = card.dataset.category;
+                    const tags = card.dataset.tags;
+                    const title = card.querySelector('h3').innerText.toLowerCase();
+                    const text = card.querySelector('p').innerText.toLowerCase();
+
+                    const matchesSearch = title.includes(query) || text.includes(query) || tags.includes(query);
+                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+                    if (matchesSearch && matchesCategory) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
                     }
                 });
-                totalClicksDisplay.textContent = totalClicks;
             }
 
-            function openModal() {
-                calculateTotalClicks();
-                modalOverlay.classList.remove('hidden');
-                modalPanel.classList.remove('hidden');
+            searchInput.addEventListener('input', filterProjects);
 
-                // Force reflow
-                void modalOverlay.offsetHeight;
-                void modalPanel.offsetHeight;
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterProjects();
+                });
+            });
 
-                modalOverlay.classList.remove('opacity-0');
-                modalPanel.classList.remove('translate-x-full');
-                modalPanel.classList.add('modal-enter');
+            // --- About Modal Toggle Logic ---
+            const overlay = document.getElementById('aboutModalOverlay');
+            const panel = document.getElementById('aboutModalPanel');
+
+            function toggleModal(show) {
+                if (show) {
+                    overlay.classList.remove('hidden');
+                    panel.classList.remove('hidden');
+                    // Reflow
+                    void overlay.offsetHeight;
+                    overlay.classList.remove('opacity-0');
+                    panel.classList.remove('translate-x-full');
+                } else {
+                    overlay.classList.add('opacity-0');
+                    panel.classList.add('translate-x-full');
+                    setTimeout(() => {
+                        overlay.classList.add('hidden');
+                        panel.classList.add('hidden');
+                    }, 300);
+                }
             }
 
-            function closeModal() {
-                modalOverlay.classList.add('opacity-0');
-                modalPanel.classList.remove('modal-enter');
-                modalPanel.classList.add('modal-exit');
+            // Expose globally for header button
+            window.toggleAboutModal = toggleModal;
 
-                setTimeout(() => {
-                    modalOverlay.classList.add('hidden');
-                    modalPanel.classList.add('hidden');
-                    modalPanel.classList.remove('modal-exit');
-                    modalPanel.classList.add('translate-x-full'); // Reset position
-                }, 400);
-            }
+            document.querySelector('[onclick*="aboutModalOverlay"]').onclick = (e) => {
+                e.preventDefault();
+                toggleModal(true);
+            };
 
-            openModalButton.addEventListener('click', openModal);
-            closeModalButton.addEventListener('click', closeModal);
-            modalOverlay.addEventListener('click', closeModal);
+            overlay.onclick = () => toggleModal(false);
 
-            // --- Click Tracking & Navigation ---
+            // --- Click Tracking ---
             function loadClickCounts() {
-                const fetchPromises = [];
                 projectButtons.forEach(button => {
                     const projectId = button.dataset.projectId;
                     const displayElement = document.getElementById('clicks-' + projectId);
-
                     if (displayElement) {
-                        const promise = fetch(`https://abacus.jasoncameron.dev/get/${namespace}/${projectId}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                displayElement.textContent = data.value || 0;
-                            })
-                            .catch(error => {
-                                console.error('Error loading count:', projectId, error);
-                                displayElement.textContent = 0;
-                            });
-                        fetchPromises.push(promise);
+                        fetch(`https://abacus.jasoncameron.dev/get/${namespace}/${projectId}`)
+                            .then(r => r.json())
+                            .then(d => displayElement.textContent = d.value || 0)
+                            .catch(console.error);
                     }
                 });
-                return Promise.all(fetchPromises);
             }
 
             projectButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const projectId = button.dataset.projectId;
                     const href = button.dataset.href;
-                    const displayElement = document.getElementById('clicks-' + projectId);
+                    // Optimistic
+                    const display = document.getElementById('clicks-' + projectId);
+                    if(display) display.textContent = parseInt(display.textContent||0) + 1;
 
-                    // Optimistic update
-                    if(displayElement) {
-                        let current = parseInt(displayElement.textContent || 0);
-                        displayElement.textContent = current + 1;
-                    }
+                    fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${projectId}`).catch(console.error);
 
-                    if (displayElement) {
-                         fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${projectId}`)
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.value) displayElement.textContent = data.value;
-                            })
-                            .catch(e => console.error(e));
-                    }
-
-                    if (href && href !== '#') {
-                        setTimeout(() => window.location.href = href, 150);
-                    }
+                    if(href) setTimeout(() => window.location.href = href, 150);
                 });
             });
 
-            loadClickCounts().then(() => {
-                openModalButton.disabled = false;
-                openModalButton.classList.remove('opacity-50');
-            });
+            loadClickCounts();
         });
     </script>
 </body>
