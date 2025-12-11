@@ -388,166 +388,19 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectButtons = document.querySelectorAll('[data-project-id]');
-            const namespace = 'rdpstudio.hub';
-
-            // --- Search & Filter Logic ---
-            const searchInput = document.getElementById('searchInput');
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const projects = document.querySelectorAll('.glass-card[data-category]');
-
-            function filterProjects() {
-                const query = searchInput.value.toLowerCase();
-                const activeCategory = document.querySelector('.filter-btn.active').dataset.filter;
-
-                projects.forEach(card => {
-                    const category = card.dataset.category;
-                    const tags = card.dataset.tags;
-                    const title = card.querySelector('h3').innerText.toLowerCase();
-                    const text = card.querySelector('p').innerText.toLowerCase();
-
-                    const matchesSearch = title.includes(query) || text.includes(query) || tags.includes(query);
-                    const matchesCategory = activeCategory === 'all' || category === activeCategory;
-
-                    if (matchesSearch && matchesCategory) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+        var _0x5c09=["\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x44\x4F\x4D\x43\x6F\x6E\x74\x65\x6E\x74\x4C\x6F\x61\x64\x65\x64","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x76\x61\x6C\x75\x65","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x64\x61\x74\x61\x73\x65\x74","\x66\x69\x6C\x74\x65\x72","\x66\x6F\x72\x45\x61\x63\x68","\x63\x61\x74\x65\x67\x6F\x72\x79","\x74\x61\x67\x73","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x73\x74\x79\x6C\x65","\x64\x69\x73\x70\x6C\x61\x79","\x69\x6E\x70\x75\x74","\x63\x6C\x69\x63\x6B","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x72\x65\x6D\x6F\x76\x65","\x61\x63\x74\x69\x76\x65","\x61\x64\x64","\x68\x69\x64\x64\x65\x6E","\x6F\x66\x66\x73\x65\x74\x48\x65\x69\x67\x68\x74","\x6F\x70\x61\x63\x69\x74\x79","\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x2D\x78\x2D\x66\x75\x6C\x6C","\x6F\x6E\x63\x6C\x69\x63\x6B","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x66\x6C\x65\x78","\x6F\x76\x65\x72\x66\x6C\x6F\x77\x2D\x68\x69\x64\x64\x65\x6E","\x69\x73\x49\x6E\x74\x65\x72\x73\x65\x63\x74\x69\x6E\x67","\x67\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x68\x72\x65\x66","\x6F\x62\x73\x65\x72\x76\x65","\x70\x72\x6F\x6A\x65\x63\x74\x49\x64","\x6A\x73\x6F\x6E","\x74\x65\x78\x74\x43\x6F\x6E\x74\x65\x6E\x74","\x65\x72\x72\x6F\x72","\x63\x6F\x6E\x73\x6F\x6C\x65","\x70\x61\x72\x73\x65\x49\x6E\x74"];eval(function(_0x1d26c3,_0x40d04c){var _0x20a062=function(_0x42e08e){while(--_0x42e08e){_0x1d26c3['\x70\x75\x73\x68'](_0x1d26c3['\x73\x68\x69\x66\x74']());}};_0x20a062(++_0x40d04c);}(_0x5c09,0x1d6));var _0x2e02=function(_0x1d26c3,_0x40d04c){_0x1d26c3=_0x1d26c3-0x0;var _0x20a062=_0x5c09[_0x1d26c3];return _0x20a062;};document[_0x2e02('\x31\x61')](_0x2e02('\x31\x62'),()=>{const _0x1d3a7e=document[_0x2e02('\x31\x63')]('\x5B\x64\x61\x74\x61\x2D\x70\x72\x6F\x6A\x65\x63\x74\x2D\x69\x64\x5D'),_0x550348='\x72\x64\x70\x73\x74\x75\x64\x69\x6F\x2E\x68\x75\x62',_0x3f160e=document[_0x2e02('\x31\x64')]('\x73\x65\x61\x72\x63\x68\x49\x6E\x70\x75\x74'),_0x2048ae=document[_0x2e02('\x31\x63')]('\x2E\x66\x69\x6C\x74\x65\x72\x2D\x62\x74\x6E'),_0x127b68=document['\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C']('\x2E\x67\x6C\x61\x73\x73\x2D\x63\x61\x72\x64\x5B\x64\x61\x74\x61\x2D\x63\x61\x74\x65\x67\x6F\x72\x79\x5D');function _0x3e18a1(){const _0x2724a9=_0x3f160e[_0x2e02('\x31\x65')][_0x2e02('\x32\x30')](),_0x296e62=document[_0x2e02('\x32\x36')]('\x2E\x66\x69\x6C\x74\x65\x72\x2D\x62\x74\x6E\x2E\x61\x63\x74\x69\x76\x65')[_0x2e02('\x32\x31')][_0x2e02('\x32\x32')];_0x127b68[_0x2e02('\x32\x33')](_0x334a10=>{const _0x53594e=_0x334a10[_0x2e02('\x32\x31')][_0x2e02('\x32\x34')],_0x4b6638=_0x334a10[_0x2e02('\x32\x31')][_0x2e02('\x32\x35')],_0x4a7e8e=_0x334a10[_0x2e02('\x32\x36')]('\x68\x33')[_0x2e02('\x32\x37')][_0x2e02('\x32\x30')](),_0x546e4c=_0x334a10[_0x2e02('\x32\x36')]('\x70')[_0x2e02('\x32\x37')][_0x2e02('\x32\x30')](),_0x205510=_0x4a7e8e[_0x2e02('\x32\x38')](_0x2724a9)||_0x546e4c[_0x2e02('\x32\x38')](_0x2724a9)||_0x4b6638[_0x2e02('\x32\x38')](_0x2724a9),_0x25032a=_0x296e62==='\x61\x6C\x6C'||_0x53594e===_0x296e62;_0x205510&&_0x25032a?_0x334a10[_0x2e02('\x32\x39')][_0x2e02('\x32\x61')]='\x66\x6C\x65\x78':_0x334a10[_0x2e02('\x32\x39')][_0x2e02('\x32\x61')]='\x6E\x6F\x6E\x65';});}_0x3f160e[_0x2e02('\x31\x61')](_0x2e02('\x32\x62'),_0x3e18a1);_0x2048ae[_0x2e02('\x32\x33')](_0x2d8e6a=>{_0x2d8e6a[_0x2e02('\x31\x61')]('\x63\x6C\x69\x63\x6B',()=>{{_0x2048ae[_0x2e02('\x32\x33')](_0x58c344=>_0x58c344[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x61\x63\x74\x69\x76\x65'));_0x2d8e6a[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x61\x63\x74\x69\x76\x65');_0x3e18a1();}});});const _0x56a002=document[_0x2e02('\x31\x64')]('\x61\x62\x6F\x75\x74\x4D\x6F\x64\x61\x6C\x4F\x76\x65\x72\x6C\x61\x79'),_0x11231f=document[_0x2e02('\x31\x64')]('\x61\x62\x6F\x75\x74\x4D\x6F\x64\x61\x6C\x50\x61\x6E\x65\x6C');function _0x23a3b5(_0x127b68){_0x127b68?(_0x56a002[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x68\x69\x64\x64\x65\x6E'),_0x11231f[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x68\x69\x64\x64\x65\x6E'),void _0x56a002[_0x2e02('\x33\x32')],_0x56a002[_0x2e02('\x32\x64')]['\x72\x65\x6D\x6F\x76\x65']('\x6F\x70\x61\x63\x69\x74\x79\x2D\x30'),_0x11231f[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x2D\x78\x2D\x66\x75\x6C\x6C')):(_0x56a002[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x6F\x70\x61\x63\x69\x74\x79\x2D\x30'),_0x11231f[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x74\x72\x61\x6E\x73\x6C\x61\x74\x65\x2D\x78\x2D\x66\x75\x6C\x6C'),setTimeout(()=>{_0x56a002[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x68\x69\x64\x64\x65\x6E');_0x11231f[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x68\x69\x64\x64\x65\x6E');},0x12c));}window['\x74\x6F\x67\x67\x6C\x65\x41\x62\x6F\x75\x74\x4D\x6F\x64\x61\x6C']=_0x23a3b5;document[_0x2e02('\x32\x36')]('\x5B\x6F\x6E\x63\x6C\x69\x63\x6B\x2A\x3D\x22\x74\x6F\x67\x67\x6C\x65\x41\x62\x6F\x75\x74\x4D\x6F\x64\x61\x6C\x28\x74\x72\x75\x65\x29\x22\x5D')[_0x2e02('\x33\x35')]=(_0x53594e)=>{_0x53594e[_0x2e02('\x33\x36')]();_0x23a3b5(!![]);};_0x56a002[_0x2e02('\x33\x35')]=()=>_0x23a3b5(![]);const _0x4b6638=document[_0x2e02('\x31\x64')]('\x6D\x6F\x62\x69\x6C\x65\x4D\x65\x6E\x75\x42\x74\x6E'),_0x4a7e8e=document[_0x2e02('\x31\x64')]('\x63\x6C\x6F\x73\x65\x4D\x6F\x62\x69\x6C\x65\x4D\x65\x6E\x75\x42\x74\x6E'),_0x546e4c=document[_0x2e02('\x31\x64')]('\x6D\x6F\x62\x69\x6C\x65\x4D\x65\x6E\x75\x50\x61\x6E\x65\x6C'),_0x205510=document[_0x2e02('\x31\x63')]('\x2E\x6D\x6F\x62\x69\x6C\x65\x2D\x6E\x61\x76\x2D\x6C\x69\x6E\x6B');function _0x25032a(){_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x68\x69\x64\x64\x65\x6E');_0x546e4c['\x63\x6C\x61\x73\x73\x4C\x69\x73\x74'][_0x2e02('\x33\x30')]('\x66\x6C\x65\x78');void _0x546e4c[_0x2e02('\x33\x32')];_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x6F\x70\x61\x63\x69\x74\x79\x2D\x30');document['\x62\x6F\x64\x79'][_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x6F\x76\x65\x72\x66\x6C\x6F\x77\x2D\x68\x69\x64\x64\x65\x6E');}function _0x334a10(){_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x6F\x70\x61\x63\x69\x74\x79\x2D\x30');setTimeout(()=>{_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x68\x69\x64\x64\x65\x6E');_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x66\x6C\x65\x78');},0x12c);document['\x62\x6F\x64\x79'][_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x6F\x76\x65\x72\x66\x6C\x6F\x77\x2D\x68\x69\x64\x64\x65\x6E');}_0x4b6638[_0x2e02('\x31\x61')]('\x63\x6C\x69\x63\x6B',_0x25032a);_0x4a7e8e[_0x2e02('\x31\x61')]('\x63\x6C\x69\x63\x6B',_0x334a10);_0x205510[_0x2e02('\x32\x33')](_0x2724a9=>{_0x2724a9[_0x2e02('\x31\x61')]('\x63\x6C\x69\x63\x6B',_0x334a10);});const _0x53594e=document[_0x2e02('\x31\x63')]('\x73\x65\x63\x74\x69\x6F\x6E\x5B\x69\x64\x5D\x2C\x20\x64\x69\x76\x5B\x69\x64\x5D\x2E\x67\x72\x69\x64'),_0x296e62=document[_0x2e02('\x31\x63')]('\x6E\x61\x76\x20\x61\x2E\x6E\x61\x76\x2D\x6C\x69\x6E\x6B\x2C\x20\x2E\x6D\x6F\x62\x69\x6C\x65\x2D\x6E\x61\x76\x2D\x6C\x69\x6E\x6B'),_0x3db13d={root:null,rootMargin:'\x30\x70\x78',threshold:0.4},_0x2b38ef=new IntersectionObserver((_0x11231f,_0x56a002)=>{_0x11231f[_0x2e02('\x32\x33')](_0x4b6638=>{if(_0x4b6638[_0x2e02('\x33\x39')]){const _0x4a7e8e=_0x4b6638['\x74\x61\x72\x67\x65\x74'][_0x2e02('\x33\x61')]('\x69\x64');_0x296e62[_0x2e02('\x32\x33')](_0x546e4c=>{_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x32\x65')]('\x61\x63\x74\x69\x76\x65');_0x546e4c[_0x2e02('\x33\x61')]('\x68\x72\x65\x66')==='\x23'+_0x4a7e8e&&_0x546e4c[_0x2e02('\x32\x64')][_0x2e02('\x33\x30')]('\x61\x63\x74\x69\x76\x65');});}});});},_0x3db13d);_0x53594e[_0x2e02('\x32\x33')](_0x1d3a7e=>{_0x2b38ef[_0x2e02('\x33\x63')](_0x1d3a7e);});function _0x2724a9(){_0x1d3a7e[_0x2e02('\x32\x33')](_0x296e62=>{const _0x3db13d=_0x296e62[_0x2e02('\x32\x31')][_0x2e02('\x33\x64')],_0x2b38ef=document['\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64']('\x63\x6C\x69\x63\x6B\x73\x2D'+_0x3db13d);_0x2b38ef&&fetch(`\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x62\x61\x63\x75\x73\x2E\x6A\x61\x73\x6F\x6E\x63\x61\x6D\x65\x72\x6F\x6E\x2E\x64\x65\x76\x2F\x67\x65\x74\x2F${_0x550348}\x2F${_0x3db13d}`)[_0x2e02('\x31\x66')](_0x1d3a7e=>_0x1d3a7e[_0x2e02('\x33\x65')]())[_0x2e02('\x31\x66')](_0x550348=>_0x2b38ef[_0x2e02('\x33\x66')]=_0x550348[_0x2e02('\x31\x65')]||0x0)[_0x2e02('\x32\x34')](console[_0x2e02('\x34\x30')]));});}_0x1d3a7e[_0x2e02('\x32\x33')](_0x40d04c=>{_0x40d04c[_0x2e02('\x31\x61')]('\x63\x6C\x69\x63\x6B',()=>{{const _0x1d26c3=_0x40d04c[_0x2e02('\x32\x31')][_0x2e02('\x33\x64')],_0x20a062=_0x40d04c['\x64\x61\x74\x61\x73\x65\x74'][_0x2e02('\x33\x62')],_0x42e08e=document[_0x2e02('\x31\x64')]('\x63\x6C\x69\x63\x6B\x73\x2D'+_0x1d26c3);_0x42e08e&&(_0x42e08e[_0x2e02('\x33\x66')]=window[_0x2e02('\x34\x33')](_0x42e08e[_0x2e02('\x33\x66')]||0x0)+0x1);fetch(`\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x62\x61\x63\x75\x73\x2E\x6A\x61\x73\x6F\x6E\x63\x61\x6D\x65\x72\x6F\x6E\x2E\x64\x65\x76\x2F\x68\x69\x74\x2F${_0x550348}\x2F${_0x1d26c3}`)[_0x2e02('\x32\x34')](console[_0x2e02('\x34\x30')]);_0x20a062&&setTimeout(()=>window['\x6C\x6F\x63\x61\x74\x69\x6F\x6E'][_0x2e02('\x33\x62')]=_0x20a062,0x96);}});});_0x2724a9();});
+    </script>
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', event => {
+            if (event.ctrlKey && (event.key === 'u' || event.key === 's' || event.key === 'c')) {
+                event.preventDefault();
             }
-
-            searchInput.addEventListener('input', filterProjects);
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    filterProjects();
-                });
-            });
-
-            // --- About Modal Toggle Logic ---
-            const overlay = document.getElementById('aboutModalOverlay');
-            const panel = document.getElementById('aboutModalPanel');
-
-            function toggleModal(show) {
-                if (show) {
-                    overlay.classList.remove('hidden');
-                    panel.classList.remove('hidden');
-                    // Reflow
-                    void overlay.offsetHeight;
-                    overlay.classList.remove('opacity-0');
-                    panel.classList.remove('translate-x-full');
-                } else {
-                    overlay.classList.add('opacity-0');
-                    panel.classList.add('translate-x-full');
-                    setTimeout(() => {
-                        overlay.classList.add('hidden');
-                        panel.classList.add('hidden');
-                    }, 300);
-                }
+            if (event.key === 'F12') {
+                event.preventDefault();
             }
-
-            // Expose globally for header button
-            window.toggleAboutModal = toggleModal;
-
-            document.querySelector('[onclick*="toggleAboutModal(true)"]').onclick = (e) => {
-                e.preventDefault();
-                toggleModal(true);
-            };
-
-            overlay.onclick = () => toggleModal(false);
-
-            // --- Mobile Menu Logic ---
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
-            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
-            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-            function openMobileMenu() {
-                mobileMenuPanel.classList.remove('hidden');
-                mobileMenuPanel.classList.add('flex');
-                void mobileMenuPanel.offsetHeight; // Trigger reflow
-                mobileMenuPanel.classList.remove('opacity-0');
-                document.body.classList.add('overflow-hidden');
-            }
-
-            function closeMobileMenu() {
-                mobileMenuPanel.classList.add('opacity-0');
-                setTimeout(() => {
-                    mobileMenuPanel.classList.add('hidden');
-                    mobileMenuPanel.classList.remove('flex');
-                }, 300);
-                document.body.classList.remove('overflow-hidden');
-            }
-
-            mobileMenuBtn.addEventListener('click', openMobileMenu);
-            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-
-            // --- Nav Link Active State Logic ---
-            const sections = document.querySelectorAll('section[id], div[id].grid');
-            const navLinks = document.querySelectorAll('nav a.nav-link, .mobile-nav-link');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.4
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-
-            // --- Click Tracking ---
-            function loadClickCounts() {
-                projectButtons.forEach(button => {
-                    const projectId = button.dataset.projectId;
-                    const displayElement = document.getElementById('clicks-' + projectId);
-                    if (displayElement) {
-                        fetch(`https://abacus.jasoncameron.dev/get/${namespace}/${projectId}`)
-                            .then(r => r.json())
-                            .then(d => displayElement.textContent = d.value || 0)
-                            .catch(console.error);
-                    }
-                });
-            }
-
-            projectButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const projectId = button.dataset.projectId;
-                    const href = button.dataset.href;
-                    // Optimistic
-                    const display = document.getElementById('clicks-' + projectId);
-                    if(display) display.textContent = parseInt(display.textContent||0) + 1;
-
-                    fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${projectId}`).catch(console.error);
-
-                    if(href) setTimeout(() => window.location.href = href, 150);
-                });
-            });
-
-            loadClickCounts();
         });
+        document.addEventListener('selectstart', event => event.preventDefault());
     </script>
 </body>
 </html>
