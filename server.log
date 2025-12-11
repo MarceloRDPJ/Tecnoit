@@ -1,3 +1,6 @@
-127.0.0.1 - - [11/Dec/2025 14:28:41] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [11/Dec/2025 14:28:41] "GET /logo.png HTTP/1.1" 200 -
-127.0.0.1 - - [11/Dec/2025 14:28:42] "GET /projects/assistente-vendas-ia/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:44] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:44] "GET /assets/images/clients/tecnoit.png HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:44] "GET /assets/images/branding/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:44] "GET /assets/images/clients/lume.png HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:47] "GET /sobre.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Dec/2025 18:07:48] "GET /projects/abertura-chamados-glpi/index.html HTTP/1.1" 200 -

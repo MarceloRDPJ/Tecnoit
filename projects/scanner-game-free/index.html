@@ -496,8 +496,27 @@
 
                     {showInspector && <RawInspector data={results?.raw} active={showInspector} onClose={() => setShowInspector(false)} />}
 
-                    <footer className="mt-8 text-center relative z-50">
-                        <div className="watermark-container"></div>
+                    <footer className="mt-20 border-t border-slate-800/50 pt-12 pb-8">
+                        <div className="max-w-7xl mx-auto px-6 text-center">
+                            <div className="flex justify-center gap-8 mb-8">
+                                <a href="https://instagram.com/marcelo_rpj" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:rdpstudio@gmail.com" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-regular fa-envelope"></i>
+                                </a>
+                            </div>
+                            <p className="text-sm text-slate-500 mb-2">
+                                © 2025 RDP STUDIO. Todos os direitos reservados.
+                            </p>
+                            <p className="text-xs text-slate-600">
+                                Desenvolvido por Marcelo Rodrigues
+                            </p>
+                            <div className="watermark-container hidden"></div>
+                        </div>
                     </footer>
                 </div>
             );
