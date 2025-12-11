@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S.C.A.N.N.E.R. // Epic Intelligence</title>
+    <title>S.C.A.N.N.E.R. // RDP Intelligence</title>
     <link rel="icon" type="image/png" href="../../favicon.png">
 
     <!-- React & ReactDOM -->
@@ -19,66 +19,121 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Crypto JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#1E3A5F',
+                        techGray: '#2D3748',
+                        vibrantCyan: '#00B4D8',
+                        energeticAmber: '#F59E0B',
+                        trustGreen: '#10B981',
+                        darkSlate: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* --- BRANDBOOK CORE STYLES --- */
-        :root {
-            /* Adapting Neon Theme to Ultra Modern Palette */
-            --neon-green: #34d399; /* Emerald 400 */
-            --neon-blue: #818cf8; /* Indigo 400 */
-            --neon-red: #f472b6; /* Pink 400 */
-        }
-
+        /* --- RDP STUDIO BRAND CORE --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            background-image:
-                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
-                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
-                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background-color: #020617; /* Dark Slate */
+            background-image: radial-gradient(circle at 15% 50%, rgba(30, 58, 95, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.1), transparent 25%);
             background-attachment: fixed;
-            color: #e2e8f0;
+            color: #F8FAFC;
             overflow-x: hidden;
+            position: relative;
         }
 
-        /* Glassmorphism */
+        /* NOISE TEXTURE */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Glassmorphism Refinado */
         .glass-card {
             background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .glass-card:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(99, 102, 241, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 180, 216, 0.3);
+            box-shadow: 0 0 30px rgba(0, 180, 216, 0.1);
+            transform: translateY(-2px);
         }
 
-        /* Gradient Text */
+        /* Text Gradients */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+            background-image: linear-gradient(to right, #00B4D8, #38bdf8, #10B981);
         }
 
-        /* Specific Scanner Overrides */
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .font-tech { font-family: 'Rajdhani', sans-serif; }
+        /* Buttons (Btn Glow) */
+        .btn-glow {
+            background: linear-gradient(to right, #00B4D8, #1E3A5F);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, #0ea5e9, #00B4D8);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        .btn-glow:hover::before { opacity: 1; }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+            transform: scale(1.02);
+        }
 
         /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
-        ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.5); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.8); }
+        ::-webkit-scrollbar-track { background: rgba(2, 6, 23, 0.5); }
+        ::-webkit-scrollbar-thumb { background: rgba(30, 58, 95, 0.8); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00B4D8; }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
         /* Footer Protection */
         .watermark-container::after {
@@ -95,28 +150,6 @@
             -webkit-user-select: none;
             transition: color 0.3s ease;
         }
-        .watermark-container:hover::after {
-            color: #f97316;
-            opacity: 0.8;
-        }
-        body:not(:has(.watermark-container))::after {
-            content: "© 2025 RDP STUDIO. Desenvolvido por Marcelo Rodrigues.";
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            color: white;
-            background: red;
-            padding: 10px;
-            z-index: 9999;
-        }
-
-        /* Animations */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -212,9 +245,9 @@
         const Icon = ({ name, className }) => <i className={`fa-solid fa-${name} ${className}`}></i>;
 
         const Header = () => (
-            <header className="flex justify-between items-center mb-16 fade-in-up">
+            <header className="flex flex-wrap justify-between items-center mb-16 gap-4 fade-in-up relative z-50">
                 <a href="../../index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
-                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-indigo-500/50 transition-colors">
+                    <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-vibrantCyan/50 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
                         </svg>
@@ -222,11 +255,10 @@
                     <span className="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
                 </a>
                 <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-wider">
-                        Scanner v4.1
+                     <span className="px-3 py-1 rounded-full bg-vibrantCyan/10 border border-vibrantCyan/20 text-vibrantCyan text-xs font-bold uppercase tracking-wider">
+                        S.C.A.N.N.E.R. v4.2
                     </span>
-                    {/* TODO: REPLACE_BRANDING - Atualizar logo */}
-                    <img src="../../logo.png" alt="Logo" className="h-8 w-8 opacity-80" onError={(e) => e.target.style.display='none'} />
+                    <img src="../../assets/images/branding/logo.png" alt="Logo" className="h-8 w-8 opacity-80" onError={(e) => e.target.style.display='none'} />
                 </div>
             </header>
         );
@@ -236,19 +268,19 @@
             React.useEffect(() => endRef.current?.scrollIntoView({ behavior: 'smooth' }), [logs]);
 
             return (
-                <div className="glass-card h-64 p-4 font-mono text-xs overflow-hidden flex flex-col rounded-xl">
+                <div className="glass-card h-64 p-4 font-mono text-xs overflow-hidden flex flex-col rounded-2xl border-l-4 border-l-deepBlue">
                     <div className="flex justify-between text-slate-500 mb-2 border-b border-white/5 pb-2">
-                        <span>// TERMINAL_OUTPUT</span>
-                        <span className="text-[var(--neon-blue)]">NET_V1.0.4</span>
+                        <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-vibrantCyan animate-pulse"></div> SYSTEM_LOGS</span>
+                        <span className="text-vibrantCyan opacity-70">NET_V1.0.4</span>
                     </div>
                     <div className="flex-1 overflow-y-auto space-y-1 custom-scrollbar">
                         {logs.map(log => (
-                            <div key={log.id} className="opacity-90">
-                                <span className="text-slate-500 mr-2">[{log.time}]</span>
+                            <div key={log.id} className="opacity-90 leading-relaxed">
+                                <span className="text-slate-600 mr-2">[{log.time}]</span>
                                 <span className={`font-bold mr-2 ${
                                     log.type === 'ERR' ? 'text-red-400' :
-                                    log.type === 'SUC' ? 'text-[var(--neon-green)]' :
-                                    log.type === 'WARN' ? 'text-yellow-400' : 'text-[var(--neon-blue)]'
+                                    log.type === 'SUC' ? 'text-trustGreen' :
+                                    log.type === 'WARN' ? 'text-energeticAmber' : 'text-vibrantCyan'
                                 }`}>{log.type}</span>
                                 <span className="text-slate-300">{log.msg}</span>
                             </div>
@@ -270,25 +302,47 @@
                 const draw = () => {
                     ctx.clearRect(0, 0, cvs.width, cvs.height);
 
-                    // Grid
-                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+                    // Grid Pattern
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
                     ctx.lineWidth = 1;
-                    for(let i=0; i<cvs.width; i+=20) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,cvs.height); ctx.stroke(); }
-                    for(let i=0; i<cvs.height; i+=20) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(cvs.width,i); ctx.stroke(); }
+                    const gridSize = 25;
+                    for(let i=0; i<cvs.width; i+=gridSize) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,cvs.height); ctx.stroke(); }
+                    for(let i=0; i<cvs.height; i+=gridSize) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(cvs.width,i); ctx.stroke(); }
 
-                    // Center (You)
+                    // Center Node (RDP HQ)
                     const cx = cvs.width/2, cy = cvs.height/2;
-                    ctx.fillStyle = '#818cf8';
-                    ctx.beginPath(); ctx.arc(cx, cy, 4, 0, Math.PI*2); ctx.fill();
+                    
+                    // Pulse Effect
+                    if(active) {
+                        ctx.beginPath();
+                        ctx.arc(cx, cy, 10 + Math.sin(frame*0.1)*5, 0, Math.PI*2);
+                        ctx.fillStyle = 'rgba(0, 180, 216, 0.2)'; // vibrantCyan alpha
+                        ctx.fill();
+                    }
 
-                    // Target (Epic)
-                    const tx = cx + Math.sin(frame*0.02)*50, ty = cy + Math.cos(frame*0.03)*30;
-                    ctx.fillStyle = active ? '#34d399' : '#f472b6';
+                    ctx.fillStyle = '#00B4D8'; // vibrantCyan
+                    ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI*2); ctx.fill();
+
+                    // Target Node (Epic Servers)
+                    const tx = cx + Math.sin(frame*0.02)*60, ty = cy + Math.cos(frame*0.03)*40;
+                    ctx.fillStyle = active ? '#10B981' : '#F59E0B'; // TrustGreen : Amber
                     ctx.beginPath(); ctx.arc(tx, ty, 6, 0, Math.PI*2); ctx.fill();
 
+                    // Connection Line
                     if(active) {
-                        ctx.strokeStyle = `rgba(52, 211, 153, ${Math.random()})`;
+                        const grad = ctx.createLinearGradient(cx, cy, tx, ty);
+                        grad.addColorStop(0, '#00B4D8');
+                        grad.addColorStop(1, '#10B981');
+                        ctx.strokeStyle = grad;
+                        ctx.lineWidth = 2;
                         ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(tx, ty); ctx.stroke();
+
+                        // Packets
+                        const packetPos = (frame % 50) / 50;
+                        const px = cx + (tx - cx) * packetPos;
+                        const py = cy + (ty - cy) * packetPos;
+                        ctx.fillStyle = '#fff';
+                        ctx.beginPath(); ctx.arc(px, py, 2, 0, Math.PI*2); ctx.fill();
                     }
 
                     frame++;
@@ -299,10 +353,13 @@
             }, [active]);
 
             return (
-                <div className="glass-card h-64 relative rounded-xl overflow-hidden">
+                <div className="glass-card h-64 relative rounded-2xl overflow-hidden border border-white/5">
                     <canvas ref={canvasRef} width={300} height={254} className="w-full h-full" />
-                    <div className="absolute top-2 left-2 text-[10px] text-[var(--neon-blue)] font-mono bg-black/40 px-2 py-1 rounded">
-                        STATUS: {active ? 'UPLINK_ESTABLISHED' : 'IDLE'}
+                    <div className="absolute top-3 left-3 flex items-center gap-2 bg-darkSlate/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
+                        <div className={`w-2 h-2 rounded-full ${active ? 'bg-trustGreen animate-pulse' : 'bg-slate-500'}`}></div>
+                        <span className="text-[10px] text-slate-300 font-mono tracking-wider">
+                            {active ? 'UPLINK_ESTABLISHED' : 'STANDBY_MODE'}
+                        </span>
                     </div>
                 </div>
             );
@@ -312,31 +369,39 @@
             const img = game.keyImages?.find(i => i.type === 'Thumbnail')?.url || '';
 
             return (
-                <div className="glass-card p-4 rounded-xl group hover:bg-slate-800/50 transition-colors">
+                <div className="glass-card p-4 rounded-xl group hover:bg-slate-800/50 transition-all duration-300 hover:-translate-y-1">
                     <div className="flex justify-between items-center mb-3">
-                        <div className="text-[10px] font-mono text-[var(--neon-blue)] bg-[var(--neon-blue)]/10 px-2 py-0.5 rounded border border-[var(--neon-blue)]/20">
-                            {type.toUpperCase()}
+                        <div className={`text-[10px] font-mono font-bold px-2 py-1 rounded border tracking-wide uppercase ${
+                            type === 'current' 
+                            ? 'text-trustGreen bg-trustGreen/10 border-trustGreen/20' 
+                            : 'text-vibrantCyan bg-vibrantCyan/10 border-vibrantCyan/20'
+                        }`}>
+                            {type === 'current' ? 'Disponível Agora' : 'Em Breve'}
                         </div>
-                        {type === 'mystery' && <Icon name="user-secret" className="text-yellow-400 animate-pulse" />}
+                        {type === 'mystery' && <Icon name="user-secret" className="text-energeticAmber animate-pulse" />}
                     </div>
 
-                    <div className="relative aspect-video mb-3 overflow-hidden rounded-lg border border-white/5 group-hover:border-[var(--neon-green)] transition-colors">
-                        {img && <img src={img} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity transform group-hover:scale-105 duration-500" />}
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                    <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-white/5 group-hover:border-vibrantCyan/30 transition-colors">
+                        {img && <img src={img} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all transform group-hover:scale-105 duration-700" />}
+                        <div className="absolute inset-0 bg-gradient-to-t from-darkSlate via-transparent to-transparent opacity-80"></div>
+                        
+                        <div className="absolute bottom-2 left-2 right-2">
+                             <h3 className="font-bold text-lg leading-tight text-white group-hover:text-vibrantCyan transition-colors drop-shadow-md">
+                                {game.title}
+                            </h3>
+                        </div>
                     </div>
 
-                    <h3 className="font-bold text-lg leading-tight mb-2 truncate text-white group-hover:text-[var(--neon-green)] transition-colors font-tech uppercase tracking-wide">
-                        {game.title}
-                    </h3>
-
-                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400">
+                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400 border-t border-white/5 pt-2">
                         <div>
-                            <span className="block text-slate-500">ID_HASH</span>
-                            {game.id.substr(0, 8)}...
+                            <span className="block text-slate-500 mb-0.5">IDENTIFICADOR</span>
+                            <span className="text-slate-300">{game.id.substr(0, 8)}...</span>
                         </div>
-                        <div>
-                            <span className="block text-slate-500">RELEASE_DATE</span>
-                            {new Date(game.offerDetails?.startDate).toLocaleDateString()}
+                        <div className="text-right">
+                            <span className="block text-slate-500 mb-0.5">DATA INÍCIO</span>
+                            <span className="text-white bg-white/5 px-1 rounded">
+                                {new Date(game.offerDetails?.startDate).toLocaleDateString()}
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -346,15 +411,18 @@
         const RawInspector = ({ data, active, onClose }) => {
             if (!active || !data) return null;
             return (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4">
-                    <div className="w-full max-w-4xl h-[80vh] glass-card flex flex-col rounded-2xl overflow-hidden ring-1 ring-indigo-500/30">
+                <div className="fixed inset-0 z-[100] flex items-center justify-center bg-darkSlate/90 backdrop-blur-md p-4 animate-[fadeIn_0.2s_ease-out]">
+                    <div className="w-full max-w-4xl h-[80vh] glass-card flex flex-col rounded-2xl overflow-hidden ring-1 ring-vibrantCyan/30 shadow-2xl">
                         <div className="flex justify-between items-center p-4 border-b border-white/5 bg-slate-900/50">
-                            <h3 className="text-[var(--neon-blue)] font-mono text-lg">// PAYLOAD_DATA</h3>
-                            <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">
-                                <Icon name="xmark" className="text-xl" />
+                            <div className="flex items-center gap-3">
+                                <Icon name="code" className="text-vibrantCyan" />
+                                <h3 className="text-white font-mono text-sm uppercase tracking-wider">JSON Payload Inspector</h3>
+                            </div>
+                            <button onClick={onClose} className="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-colors">
+                                <Icon name="xmark" />
                             </button>
                         </div>
-                        <pre className="flex-1 overflow-auto p-6 text-xs font-mono text-emerald-400 custom-scrollbar bg-[#0f172a]">
+                        <pre className="flex-1 overflow-auto p-6 text-xs font-mono text-trustGreen custom-scrollbar bg-[#0b101b] selection:bg-vibrantCyan selection:text-white">
                             {JSON.stringify(data, null, 2)}
                         </pre>
                     </div>
@@ -382,9 +450,9 @@
             const runScan = async () => {
                 if (status === 'SCANNING') return;
                 setStatus('SCANNING');
-                addLog('Initializing scan sequence...', 'CMD');
+                addLog('Iniciando sequência de varredura...', 'CMD');
 
-                const phases = ['Resolving Proxy Nodes...', 'Bypassing Firewalls...', 'Intercepting Handshake...'];
+                const phases = ['Resolvendo nós de proxy...', 'Contornando firewalls...', 'Interceptando handshake TLS...'];
                 for(let p of phases) {
                     addLog(p, 'SYS');
                     await new Promise(r => setTimeout(r, 400));
@@ -393,10 +461,10 @@
                 try {
                     const data = await scanner.current.scan();
                     setResults(data);
-                    addLog(`Payload Acquired: ${data.current.length + data.upcoming.length} Objects`, 'SUC');
-                    addLog(`Latency: ${data.metadata.latency} | Node: ${data.metadata.proxy}`, 'NET');
+                    addLog(`Payload Adquirido: ${data.current.length + data.upcoming.length} Objetos`, 'SUC');
+                    addLog(`Latência: ${data.metadata.latency} | Nó: ${data.metadata.proxy}`, 'NET');
                 } catch (e) {
-                    addLog(`Connection Failed: ${e.message}`, 'ERR');
+                    addLog(`Falha na conexão: ${e.message}`, 'ERR');
                 } finally {
                     setStatus('IDLE');
                 }
@@ -405,32 +473,48 @@
             React.useEffect(() => { runScan(); }, []);
 
             return (
-                <div className="max-w-7xl mx-auto px-6 py-12">
+                <div className="max-w-7xl mx-auto px-6 py-8 md:py-12">
+                    {/* Background Glows (RDP Style) */}
+                    <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+                        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-deepBlue/20 rounded-full blur-[120px]"></div>
+                        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-vibrantCyan/10 rounded-full blur-[120px]"></div>
+                    </div>
+
                     <Header />
 
                     <div className="text-center mb-12 fade-in-up delay-100">
-                        <h1 className="text-5xl font-extrabold mb-2 font-tech tracking-wider">
-                            S.C.A.N.N.E.R.
+                        <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-vibrantCyan tracking-widest uppercase">
+                            Intelligence Unit
+                        </div>
+                        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                            Epic Games <br />
+                            <span className="text-gradient">S.C.A.N.N.E.R.</span>
                         </h1>
-                        <p className="text-[var(--neon-blue)] font-mono text-xs tracking-[0.5em] uppercase opacity-80">
-                            Epic Games Intelligence Unit
+                        <p className="text-slate-400 font-light max-w-xl mx-auto leading-relaxed">
+                            Ferramenta de inteligência automatizada para monitoramento de ofertas promocionais e jogos gratuitos na infraestrutura da Epic Games Store.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 fade-in-up delay-200">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8 fade-in-up delay-200">
                         {/* Control Panel */}
                         <div className="space-y-6">
-                            <div className="glass-card p-6 rounded-xl">
-                                <div className="flex justify-between items-center mb-4">
-                                    <span className="text-xs font-mono text-slate-400">CONTROL_MODULE</span>
-                                    <span className={`w-2 h-2 rounded-full ${status === 'SCANNING' ? 'bg-[var(--neon-red)] animate-ping' : 'bg-slate-600'}`}></span>
+                            <div className="glass-card p-6 rounded-2xl border-t-4 border-t-vibrantCyan">
+                                <div className="flex justify-between items-center mb-6">
+                                    <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                                        <Icon name="sliders" /> Controle
+                                    </span>
+                                    <span className={`w-2.5 h-2.5 rounded-full ${status === 'SCANNING' ? 'bg-energeticAmber animate-ping' : 'bg-slate-700'}`}></span>
                                 </div>
                                 <button
                                     onClick={runScan}
                                     disabled={status === 'SCANNING'}
-                                    className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold tracking-widest rounded-lg shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed font-tech text-lg"
+                                    className="w-full btn-glow py-4 text-white font-bold tracking-widest rounded-xl shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm flex items-center justify-center gap-3 uppercase"
                                 >
-                                    {status === 'SCANNING' ? 'SCANNING...' : 'INITIATE SCAN'}
+                                    {status === 'SCANNING' ? (
+                                        <><Icon name="circle-notch" className="animate-spin" /> Varrendo Rede...</>
+                                    ) : (
+                                        <><Icon name="radar" /> Iniciar Varredura</>
+                                    )}
                                 </button>
                             </div>
 
@@ -439,34 +523,37 @@
                         </div>
 
                         {/* Results Panel */}
-                        <div className="lg:col-span-2 space-y-6">
-                            {/* Dashboard */}
+                        <div className="lg:col-span-2 space-y-8">
+                            {/* Dashboard Stats */}
                             <div className="grid grid-cols-3 gap-4">
-                                <div className="glass-card p-4 rounded-xl text-center">
-                                    <div className="text-[10px] text-slate-500 font-mono mb-1">LATENCY</div>
-                                    <div className="text-xl font-bold text-[var(--neon-green)] font-mono">{results?.metadata?.latency || '--'}</div>
+                                <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-trustGreen transition-all">
+                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Latência</div>
+                                    <div className="text-2xl font-bold text-trustGreen font-mono">{results?.metadata?.latency || '--'}</div>
                                 </div>
-                                <div className="glass-card p-4 rounded-xl text-center cursor-pointer hover:bg-white/5 transition-colors" onClick={() => setShowInspector(true)}>
-                                    <div className="text-[10px] text-slate-500 font-mono mb-1 flex items-center justify-center gap-1">
-                                        PAYLOAD <Icon name="magnifying-glass" />
+                                <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-vibrantCyan transition-all cursor-pointer group" onClick={() => setShowInspector(true)}>
+                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center justify-center gap-1 group-hover:text-vibrantCyan transition-colors">
+                                        Payload <Icon name="up-right-from-square" className="text-[8px]" />
                                     </div>
-                                    <div className="text-xl font-bold text-[var(--neon-blue)] font-mono">{results?.metadata?.size || '--'}</div>
+                                    <div className="text-2xl font-bold text-vibrantCyan font-mono">{results?.metadata?.size || '--'}</div>
                                 </div>
-                                <div className="glass-card p-4 rounded-xl text-center">
-                                    <div className="text-[10px] text-slate-500 font-mono mb-1">OBJECTS</div>
-                                    <div className="text-xl font-bold text-white font-mono">{results ? results.current.length + results.upcoming.length : 0}</div>
+                                <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-white transition-all">
+                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Objetos</div>
+                                    <div className="text-2xl font-bold text-white font-mono">{results ? results.current.length + results.upcoming.length : 0}</div>
                                 </div>
                             </div>
 
-                            {/* Cards */}
+                            {/* Game Cards */}
                             {results && (
-                                <div className="space-y-8">
+                                <div className="space-y-10 animate-[fadeIn_0.5s_ease-out]">
                                     {results.current.length > 0 && (
                                         <div>
-                                            <h2 className="text-[var(--neon-green)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-white/5 pb-2">
-                                                <Icon name="unlock" /> ACTIVE_OFFERS
+                                            <h2 className="text-white font-bold text-lg mb-6 flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-trustGreen/10 flex items-center justify-center text-trustGreen">
+                                                    <Icon name="unlock" />
+                                                </div>
+                                                Ofertas Ativas
                                             </h2>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 {results.current.map((g, i) => <IntelCard key={i} game={g} type="current" />)}
                                             </div>
                                         </div>
@@ -474,10 +561,13 @@
 
                                     {results.upcoming.length > 0 && (
                                         <div>
-                                            <h2 className="text-[var(--neon-blue)] font-mono mb-4 flex items-center gap-2 text-sm border-b border-white/5 pb-2">
-                                                <Icon name="clock" /> COMING_SOON
+                                            <h2 className="text-white font-bold text-lg mb-6 flex items-center gap-3">
+                                                <div className="w-8 h-8 rounded-lg bg-vibrantCyan/10 flex items-center justify-center text-vibrantCyan">
+                                                    <Icon name="clock" />
+                                                </div>
+                                                Próximas Semanas
                                             </h2>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 {results.upcoming.map((g, i) => <IntelCard key={i} game={g} type="upcoming" />)}
                                             </div>
                                         </div>
@@ -486,9 +576,11 @@
                             )}
 
                             {!results && status === 'IDLE' && (
-                                <div className="h-64 flex flex-col items-center justify-center border border-dashed border-slate-700 rounded-xl text-slate-600 font-mono text-xs">
-                                    <Icon name="satellite-dish" className="text-4xl mb-4 opacity-20" />
-                                    <span>WAITING_FOR_USER_INPUT...</span>
+                                <div className="h-80 glass-card rounded-2xl flex flex-col items-center justify-center text-slate-600 border border-dashed border-slate-700/50">
+                                    <div className="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mb-6 animate-pulse-slow">
+                                        <Icon name="satellite-dish" className="text-4xl text-slate-700" />
+                                    </div>
+                                    <span className="font-mono text-xs tracking-widest uppercase">Aguardando Comando do Usuário...</span>
                                 </div>
                             )}
                         </div>
@@ -497,27 +589,27 @@
                     {showInspector && <RawInspector data={results?.raw} active={showInspector} onClose={() => setShowInspector(false)} />}
 
                     <footer className="mt-20 border-t border-slate-800/50 pt-12 pb-8">
-            <div className="max-w-7xl mx-auto px-6 text-center">
-                <div className="flex justify-center gap-8 mb-8">
-                    <a href="https://instagram.com/marcelo_rpj" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
-                        <i className="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
-                        <i className="fa-brands fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:rdpstudio@gmail.com" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
-                        <i className="fa-regular fa-envelope"></i>
-                    </a>
-                </div>
-                <p className="text-sm text-slate-500 mb-2">
-                    © 2025 RDP STUDIO. Todos os direitos reservados.
-                </p>
-                <p className="text-xs text-slate-600">
-                    Desenvolvido por Marcelo Rodrigues
-                </p>
-                <div className="watermark-container hidden"></div>
-            </div>
-        </footer>
+                        <div className="max-w-7xl mx-auto px-6 text-center">
+                            <div className="flex justify-center gap-8 mb-8">
+                                <a href="https://instagram.com/marcelo_rpj" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="mailto:rdpstudio@gmail.com" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                                    <i className="fa-regular fa-envelope"></i>
+                                </a>
+                            </div>
+                            <p className="text-sm text-slate-500 mb-2">
+                                © 2025 RDP STUDIO. Todos os direitos reservados.
+                            </p>
+                            <p className="text-xs text-slate-600">
+                                Desenvolvido por Marcelo Rodrigues
+                            </p>
+                            <div className="watermark-container hidden"></div>
+                        </div>
+                    </footer>
                 </div>
             );
         }
