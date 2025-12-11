@@ -1,179 +1,400 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RDP STUDIO - Assistente de Vendas com IA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-  <style>
-    :root {
-      --background-color: #0F172A;
-      --main-text-color: #F8FAFC;
-      --highlight-color-1: #8B5CF6;
-      --highlight-color-2: #EC4899;
-      --glass-bg: rgba(30, 41, 59, 0.5);
-      --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de Vendas IA | RDP STUDIO</title>
+    <meta name="description" content="Agente de IA para automação de vendas e gestão de estoque via Telegram. Powered by Gemini.">
 
-    body {
-      background-color: var(--background-color);
-      color: var(--main-text-color);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 
-    .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      border: var(--glass-border);
-      border-radius: 1rem;
-    }
+    <!-- Styles & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    .text-gradient {
-      background: linear-gradient(90deg, var(--highlight-color-1), var(--highlight-color-2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            background-image:
+                radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+                radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+                radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
 
-    .chat-bubble {
-        max-width: 80%;
-        padding: 0.75rem 1rem;
-        border-radius: 1rem;
-        margin-bottom: 0.5rem;
-        word-wrap: break-word;
-    }
-    .user-bubble {
-        background-color: #383A40;
-        align-self: flex-end;
-        border-bottom-right-radius: 0.25rem;
-    }
-    .bot-bubble {
-        background-color: #2A2D31;
-        align-self: flex-start;
-        border-bottom-left-radius: 0.25rem;
-    }
-    .chat-icon {
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.8rem;
-    }
-  </style>
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #2dd4bf, #06b6d4, #3b82f6);
+        }
+
+        .text-gradient-purple {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #c084fc, #818cf8);
+        }
+
+        /* Chat UI */
+        .chat-container {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0c0c0c; /* Dark Theme Telegram */
+        }
+
+        .chat-bubble {
+            max-width: 85%;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            position: relative;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .user-bubble {
+            background: #8774e1; /* Telegram Purple */
+            color: white;
+            border-radius: 16px 16px 4px 16px;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .bot-bubble {
+            background: #212121;
+            color: white;
+            border-radius: 16px 16px 16px 4px;
+            align-self: flex-start;
+            margin-right: auto;
+        }
+
+        /* Animations */
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
+        /* Tech Tags */
+        .tech-pill {
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            transition: all 0.3s;
+        }
+        .tech-pill:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Typing Indicator */
+        .typing-dot {
+            width: 6px; height: 6px; background: #aaa; border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        /* Footer Protection */
+        .watermark-container::after {
+            content: "© 2025 RDP STUDIO. Todos os direitos reservados.";
+            font-size: 0.75rem;
+            color: #64748b;
+            opacity: 0.5;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: color 0.3s ease;
+        }
+        .watermark-container:hover::after { color: #f97316; opacity: 0.9; }
+        body:not(:has(.watermark-container))::after {
+            content: "Copyright Protected";
+            position: fixed; bottom: 20px; right: 20px;
+            color: white; background: red; padding: 10px; z-index: 9999;
+        }
+    </style>
 </head>
+<body class="antialiased selection:bg-teal-500 selection:text-white">
 
-<body class="bg-slate-900 text-slate-100 antialiased">
-
-  <header class="fixed top-0 left-0 right-0 z-10 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="../../index.html" class="glass-card flex items-center gap-2 px-4 py-2 text-sm hover:bg-slate-700/50 transition-colors duration-300">
-        <i class="fas fa-arrow-left"></i>
-        <span>VOLTAR AO HUB</span>
-      </a>
-      <div class="flex items-center gap-4">
-        <span class="glass-card px-4 py-2 text-sm font-semibold">BOT V1.0</span>
-        <img src="../../logo.png" alt="Logo RDP Studio" class="h-10 w-10">
-      </div>
-    </div>
-  </header>
-
-  <main class="min-h-screen container mx-auto px-4 pt-32 pb-16 flex flex-col lg:flex-row items-center justify-center gap-16">
-
-    <div class="w-full lg:w-1/2 flex flex-col gap-4 text-center lg:text-left">
-      <h1 class="text-4xl md:text-6xl font-bold">
-        Assistente de Vendas com
-        <span class="text-gradient">Inteligência Artificial</span>
-      </h1>
-      <p class="text-slate-400 max-w-2xl mx-auto lg:mx-0">
-        Um bot assistente para gestão de estoque no Telegram. Utiliza IA (Gemini) para processar vendas, ler comprovantes, dar baixa em produtos e interagir com o empreendedor de forma inteligente e rápida.
-      </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6">
-        <a href="https://bot-revenda.onrender.com/" target="_blank" class="w-full sm:w-auto bg-violet-600 hover:bg-violet-700 transition-colors duration-300 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            Ver Página de Vendas
+    <!-- Nav / Back Button -->
+    <nav class="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center pointer-events-none">
+        <a href="../../index.html" class="pointer-events-auto glass-panel px-5 py-2.5 rounded-xl flex items-center gap-3 text-sm font-medium text-slate-300 hover:text-white hover:scale-105 transition-all group">
+            <i class="fa-solid fa-arrow-left text-teal-400 group-hover:-translate-x-1 transition-transform"></i>
+            Voltar ao Hub
         </a>
-        <div class="w-full sm:w-auto glass-card text-slate-300 font-semibold py-3 px-6 rounded-lg flex items-center justify-center gap-2">
-          <i class="fa-solid fa-check-circle text-green-400"></i>
-          <span>Disponível para Contratação</span>
+        <div class="pointer-events-auto glass-panel px-4 py-2 rounded-xl flex items-center gap-3">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Online v1.2</span>
         </div>
-      </div>
-    </div>
+    </nav>
 
-    <div class="w-full lg:w-1/2 flex items-center justify-center">
-        <div class="w-full max-w-sm glass-card shadow-2xl overflow-hidden">
-            <div class="bg-slate-900/50 p-3 flex items-center gap-3 border-b border-slate-700/50">
-                <div class="chat-icon bg-pink-500">LB</div>
-                <div class="flex-grow">
-                    <h2 class="font-bold">LumeBeautyBot</h2>
-                    <p class="text-xs text-slate-400">online</p>
+    <div class="max-w-7xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- Header Section -->
+        <header class="text-center mb-20 fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+                Case de Sucesso
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Assistente de Vendas <br>
+                <span class="text-gradient">Inteligente & Autônomo</span>
+            </h1>
+            <p class="text-lg text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                Revolucionando o atendimento no Telegram. Um agente de IA capaz de gerenciar estoques, ler comprovantes de pagamento via visão computacional e fechar vendas sem intervenção humana.
+            </p>
+        </header>
+
+        <!-- Main Showcase Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center mb-32">
+
+            <!-- Left: Context & Specs -->
+            <div class="space-y-12 fade-in delay-100">
+
+                <!-- Feature Block -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+                        <i class="fa-solid fa-microchip text-teal-400"></i> Arquitetura
+                    </h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        O sistema opera em uma arquitetura de microsserviços orientada a eventos. O núcleo, desenvolvido em <strong>Python</strong>, orquestra as interações entre a API do Telegram e o modelo <strong>Gemini 1.5 Pro</strong>.
+                    </p>
+                    <ul class="space-y-3 text-slate-300 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                            <span>Processamento de Linguagem Natural (NLP) para entender intenção de compra.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                            <span>Visão Computacional para OCR em comprovantes bancários (Pix).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-teal-500 mt-1"></i>
+                            <span>Persistência de dados ACID com PostgreSQL.</span>
+                        </li>
+                    </ul>
                 </div>
-                <i class="fas fa-ellipsis-v text-slate-400"></i>
+
+                <!-- Tech Stack -->
+                <div>
+                    <h4 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">Tech Stack</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-pill"><i class="fa-brands fa-python mr-2"></i>Python 3.11</span>
+                        <span class="tech-pill"><i class="fa-brands fa-google mr-2"></i>Gemini AI</span>
+                        <span class="tech-pill"><i class="fa-solid fa-database mr-2"></i>Supabase</span>
+                        <span class="tech-pill"><i class="fa-brands fa-telegram mr-2"></i>Telegram API</span>
+                        <span class="tech-pill"><i class="fa-solid fa-server mr-2"></i>Render</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex gap-4 pt-4">
+                    <a href="https://bot-revenda.onrender.com/" target="_blank" class="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-900 font-bold transition-all hover:scale-105 flex items-center gap-2 shadow-lg shadow-teal-500/20">
+                        <i class="fa-solid fa-play"></i> Live Demo
+                    </a>
+                    <a href="https://github.com/MarceloRDPJ" target="_blank" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold transition-all hover:scale-105 border border-slate-700">
+                        <i class="fa-brands fa-github"></i> Código
+                    </a>
+                </div>
+
             </div>
-            <div id="chat-conversation" class="p-4 h-96 flex flex-col bg-slate-800/50 overflow-y-auto">
-                <!-- Chat messages will be injected here by JavaScript -->
+
+            <!-- Right: Interactive Simulator -->
+            <div class="relative fade-in delay-200">
+                <!-- Phone Frame mockup -->
+                <div class="relative mx-auto border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl flex flex-col overflow-hidden">
+                    <div class="h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+
+                    <!-- Screen -->
+                    <div class="bg-[#0c0c0c] h-full w-full flex flex-col relative overflow-hidden">
+
+                        <!-- Status Bar -->
+                        <div class="h-8 bg-[#1c1c1d] w-full flex items-center justify-between px-4 text-[10px] text-white font-medium z-10">
+                            <span>19:41</span>
+                            <div class="flex gap-1">
+                                <i class="fa-solid fa-signal"></i>
+                                <i class="fa-solid fa-wifi"></i>
+                                <i class="fa-solid fa-battery-full"></i>
+                            </div>
+                        </div>
+
+                        <!-- Chat Header -->
+                        <div class="bg-[#1c1c1d] p-3 flex items-center gap-3 border-b border-white/5 z-10">
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-xs font-bold text-white">L</div>
+                            <div class="flex flex-col">
+                                <span class="text-sm font-semibold text-white">LumeBeauty Bot</span>
+                                <span class="text-[10px] text-teal-400">bot</span>
+                            </div>
+                        </div>
+
+                        <!-- Messages Area -->
+                        <div id="chat-viewport" class="flex-grow p-4 overflow-y-auto space-y-3 scroll-smooth pb-20">
+                            <!-- JS Injected Messages -->
+                        </div>
+
+                        <!-- Input Area (Mock) -->
+                        <div class="absolute bottom-0 w-full bg-[#1c1c1d] p-3 flex items-center gap-2 border-t border-white/5 z-20">
+                            <div class="w-6 h-6 rounded-full bg-[#2c2c2e] flex items-center justify-center"><i class="fa-solid fa-paperclip text-gray-500 text-xs"></i></div>
+                            <div class="flex-grow h-8 bg-[#000] rounded-full px-3 flex items-center text-xs text-gray-500">Mensagem...</div>
+                            <div class="w-8 h-8 rounded-full bg-[#8774e1] flex items-center justify-center"><i class="fa-solid fa-microphone text-white text-xs"></i></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -right-6 glass-card p-4 rounded-2xl flex items-center gap-3 animate-bounce">
+                    <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 uppercase font-bold">Status</p>
+                        <p class="text-sm font-bold text-white">Venda Aprovada</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Business Value Section -->
+        <div class="glass-card rounded-3xl p-8 md:p-12 fade-in delay-300">
+            <h3 class="text-2xl font-bold text-white mb-8 text-center">Impacto no Negócio</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-400 text-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">24/7 Disponível</h4>
+                    <p class="text-sm text-slate-400">Atendimento instantâneo a qualquer hora, eliminando filas de espera e aumentando a conversão.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 text-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Scalability</h4>
+                    <p class="text-sm text-slate-400">Capacidade de lidar com milhares de clientes simultâneos sem aumento de custo operacional.</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 text-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h4 class="font-bold text-white mb-2">Dados Precisos</h4>
+                    <p class="text-sm text-slate-400">Sincronização automática de estoque e relatórios financeiros gerados em tempo real.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-20 text-center relative z-50 pt-8 border-t border-slate-800/50 pb-8">
+            <div class="watermark-container"></div>
+        </footer>
+
     </div>
-  </main>
 
-  <script>
-    const conversation = [
-        { from: 'user', type: 'text', content: '/venda id:3 qtd:1' },
-        { from: 'bot', type: 'text', content: 'Venda registrada! Total: R$49,90. Aguardando comprovante...' },
-        { from: 'user', type: 'image', content: 'comprovante.jpg' },
-        { from: 'bot', type: 'processing', content: 'Analisando comprovante com IA...' },
-        { from: 'bot', type: 'success', content: 'Pagamento confirmado! Estoque atualizado.' }
-    ];
+    <script>
+        const conversation = [
+            { from: 'user', type: 'text', content: 'Olá, tem o Batom Matte Vermelho?' },
+            { from: 'bot', type: 'text', content: 'Olá! 👋 Deixa eu verificar no estoque...' },
+            { from: 'bot', type: 'text', content: 'Sim! Temos 3 unidades disponíveis. Custa R$ 29,90. Quer reservar?' },
+            { from: 'user', type: 'text', content: 'Quero 2 unidades.' },
+            { from: 'bot', type: 'text', content: 'Perfeito. Total: R$ 59,80. \nChave Pix: 12.345.678/0001-90 \n\nPor favor, envie o comprovante.' },
+            { from: 'user', type: 'image', content: 'comprovante-nubank.jpg' },
+            { from: 'bot', type: 'processing', content: 'Validando transação...' },
+            { from: 'bot', type: 'text', content: 'Pagamento confirmado! ✅ \nSeu pedido #4829 foi gerado. Obrigado!' }
+        ];
 
-    const chatContainer = document.getElementById('chat-conversation');
+        const chatContainer = document.getElementById('chat-viewport');
 
-    function createBubble(message) {
-        const bubble = document.createElement('div');
-        if (message.from === 'user') {
-            bubble.className = 'chat-bubble user-bubble';
-            if (message.type === 'text') {
-                bubble.innerHTML = `<span class="font-mono">${message.content}</span>`;
-            } else if (message.type === 'image') {
-                bubble.innerHTML = `<div class="flex items-center gap-2"><i class="fas fa-image text-slate-400"></i><span>${message.content}</span></div>`;
-            }
-        } else { // from bot
-            bubble.className = 'chat-bubble bot-bubble';
-            if (message.type === 'processing') {
-                bubble.innerHTML = `<div class="flex items-center gap-2"><i class="fas fa-spinner fa-spin text-blue-400"></i><span>${message.content}</span></div>`;
-            } else if (message.type === 'success') {
-                bubble.innerHTML = `<div class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i><span>${message.content}</span></div>`;
+        function createBubble(message) {
+            const bubble = document.createElement('div');
+
+            if (message.from === 'user') {
+                bubble.className = 'chat-bubble user-bubble slide-in-right';
+                if (message.type === 'image') {
+                    bubble.innerHTML = `<div class="flex items-center gap-2 text-xs"><i class="fa-solid fa-image"></i> ${message.content}</div>`;
+                } else {
+                    bubble.textContent = message.content;
+                }
             } else {
-                bubble.textContent = message.content;
+                bubble.className = 'chat-bubble bot-bubble slide-in-left';
+                if (message.type === 'processing') {
+                    bubble.innerHTML = `<div class="flex items-center gap-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+                } else {
+                    bubble.innerText = message.content; // Use innerText to respect \n
+                }
+            }
+
+            return bubble;
+        }
+
+        async function playConversation() {
+            chatContainer.innerHTML = '';
+
+            for (const msg of conversation) {
+                // Determine delay based on message length or type
+                const typingTime = msg.type === 'processing' ? 2000 : 800 + (msg.content.length * 20);
+
+                // If it's a bot, show typing indicator first (unless it is the processing msg itself)
+                if (msg.from === 'bot' && msg.type !== 'processing') {
+                    const typingBubble = createBubble({from: 'bot', type: 'processing', content: ''});
+                    chatContainer.appendChild(typingBubble);
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                    await new Promise(r => setTimeout(r, 1200)); // Fake typing delay
+                    typingBubble.remove();
+                }
+
+                // Append actual message
+                const bubble = createBubble(msg);
+                // Add fade animation style
+                bubble.style.animation = 'fadeIn 0.3s ease forwards';
+                chatContainer.appendChild(bubble);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+
+                await new Promise(r => setTimeout(r, msg.type === 'processing' ? 2000 : 1000));
             }
         }
-        bubble.style.opacity = '0';
-        bubble.style.transform = 'translateY(20px)';
-        bubble.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        return bubble;
-    }
 
-    let delay = 500;
-    conversation.forEach((msg, index) => {
-        setTimeout(() => {
-            const bubble = createBubble(msg);
-            chatContainer.appendChild(bubble);
-            setTimeout(() => {
-                bubble.style.opacity = '1';
-                bubble.style.transform = 'translateY(0)';
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-            }, 100);
-        }, delay);
-        delay += msg.from === 'bot' ? 1500 : 800;
-    });
+        // Start the loop
+        playConversation();
+        setInterval(playConversation, 20000); // Replay every 20s
 
-  </script>
-
+    </script>
 </body>
-
 </html>
