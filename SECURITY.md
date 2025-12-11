@@ -8,7 +8,7 @@ A RDP Studio leva a segurança a sério. Se você descobrir uma vulnerabilidade 
 
 Por favor, NÃO abra uma issue pública no GitHub para relatar uma vulnerabilidade de segurança. Em vez disso, envie um e-mail para:
 
-**contato@rdpstudio.com**
+**rdpstudio@gmail.com**
 
 No e-mail, inclua:
 *   Uma descrição da vulnerabilidade.

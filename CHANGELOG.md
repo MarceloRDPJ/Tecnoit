@@ -5,6 +5,15 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2025.1.1] - 2025-05-24
+
+### Changed
+- **Rodapé Global**: Padronização do rodapé em todas as páginas com links sociais (Instagram, LinkedIn) e email atualizados.
+- **Segurança**: Correção do email de contato em `SECURITY.md`.
+
+### Fixed
+- **Layout**: Ajuste de alinhamento do cabeçalho na página `sobre.html`.
+
 ## [2025.1.0] - 2025-05-23
 
 ### Added
