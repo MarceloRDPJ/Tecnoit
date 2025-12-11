@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Branding Updated: RDP STUDIO -->
     <title>RDP STUDIO - Hub Portfólio</title>
+    <meta name="description" content="Portfólio de Engenharia de Software, Automação e Soluções Digitais. RDP Studio.">
+
+    <!-- Icons -->
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="icon" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" sizes="512x512" href="android-chrome-512x512.png">
+
+    <!-- Styles & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        /* Base & Scrollbar */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
@@ -23,14 +30,18 @@
             background-attachment: fixed;
             color: #e2e8f0;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
 
         /* Glassmorphism Cards */
         .glass-card {
             background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -40,12 +51,24 @@
             flex-direction: column;
         }
 
-        .glass-card:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(99, 102, 241, 0.3);
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
         }
+
+        .glass-card:hover {
+            background: rgba(30, 41, 59, 0.7);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(99, 102, 241, 0.1);
+        }
+
+        .glass-card:hover::before { opacity: 1; }
 
         /* Gradient Text */
         .text-gradient {
@@ -60,16 +83,18 @@
             position: relative;
             color: #94a3b8;
             transition: color 0.3s;
+            font-weight: 500;
         }
-        .nav-link:hover { color: #fff; }
+        .nav-link:hover, .nav-link.active { color: #fff; }
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px; left: 0; width: 0; height: 1px;
+            bottom: -4px; left: 0; width: 0; height: 2px;
             background: #818cf8;
-            transition: width 0.3s;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
         }
-        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
         /* Search & Filter */
         .search-input {
@@ -80,7 +105,8 @@
         .search-input:focus {
             outline: none;
             border-color: #818cf8;
-            box-shadow: 0 0 15px rgba(129, 140, 248, 0.2);
+            box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+            background: rgba(30, 41, 59, 0.8);
         }
 
         .filter-btn {
@@ -88,23 +114,33 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s;
         }
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .filter-btn.active {
             background: rgba(129, 140, 248, 0.2);
             border-color: rgba(129, 140, 248, 0.5);
-            color: white;
-            box-shadow: 0 0 10px rgba(129, 140, 248, 0.2);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(129, 140, 248, 0.15);
         }
 
         /* Tags */
         .tech-tag {
             font-size: 0.65rem;
             text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 0.05em;
-            padding: 2px 8px;
+            padding: 4px 10px;
             border-radius: 999px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
             color: #94a3b8;
+            transition: all 0.2s;
+        }
+        .tech-tag:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-color: rgba(255,255,255,0.2);
         }
 
         /* Animations */
@@ -116,8 +152,42 @@
         .delay-100 { animation-delay: 0.1s; }
         .delay-200 { animation-delay: 0.2s; }
         .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
 
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .project-card-hidden {
+            display: none !important;
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform-origin: top;
+        }
+        #mobile-menu.hidden {
+            transform: scaleY(0);
+            opacity: 0;
+            pointer-events: none;
+        }
+        #mobile-menu:not(.hidden) {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+
+        /* Scroll Top Button */
+        #scrollTopBtn {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+        #scrollTopBtn.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
 
         /* Footer Protection */
         .watermark-container::after {
@@ -143,120 +213,127 @@
 </head>
 <body class="antialiased selection:bg-indigo-500 selection:text-white">
 
-    <div class="max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col">
+    <div class="max-w-7xl mx-auto px-6 py-8 min-h-screen flex flex-col relative">
 
         <!-- Header -->
-        <header class="flex flex-col md:flex-row justify-between items-center mb-16 fade-in-up gap-6">
+        <header class="flex justify-between items-center mb-16 fade-in-up relative z-30">
             <div class="flex items-center gap-4">
                 <!-- Branding Logo -->
-                <div class="w-12 h-12 rounded-2xl flex items-center justify-center relative group">
+                <div class="w-12 h-12 rounded-2xl flex items-center justify-center relative group overflow-hidden glass-card p-1">
                      <img src="logo.png" alt="RDP STUDIO Logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300">
                 </div>
                 <div>
                     <!-- Branding Name -->
-                    <h1 class="text-2xl font-bold tracking-tight text-white">RDP <span class="text-indigo-400 font-light">STUDIO</span></h1>
-                    <p class="text-[10px] text-slate-500 font-mono tracking-[0.2em] uppercase">Engenharia de Software & Soluções</p>
+                    <h1 class="text-2xl font-bold tracking-tight text-white leading-none">RDP <span class="text-indigo-400 font-light">STUDIO</span></h1>
+                    <p class="text-[10px] text-slate-500 font-mono tracking-[0.2em] uppercase mt-1">Engenharia de Software</p>
                 </div>
             </div>
 
-            <!-- Navigation -->
-            <nav class="flex items-center gap-8 text-sm font-medium">
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <button onclick="toggleAboutModal(true)" class="nav-link">Sobre</button>
                 <a href="#projetos" class="nav-link">Projetos</a>
                 <a href="#contato" class="nav-link text-indigo-400 hover:text-indigo-300">Contato</a>
             </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
         </header>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-24 left-6 right-6 z-20 glass-card rounded-2xl p-4 flex flex-col gap-4 text-center">
+            <button onclick="toggleAboutModal(true); toggleMobileMenu()" class="py-2 text-slate-300 hover:text-white font-medium border-b border-white/5">Sobre</button>
+            <a href="#projetos" onclick="toggleMobileMenu()" class="py-2 text-slate-300 hover:text-white font-medium border-b border-white/5">Projetos</a>
+            <a href="#contato" onclick="toggleMobileMenu()" class="py-2 text-indigo-400 hover:text-indigo-300 font-bold">Contato</a>
+        </div>
 
         <!-- Main Content -->
         <main class="flex-grow">
             <!-- Hero / Intro -->
-            <div class="mb-16 text-center md:text-left fade-in-up delay-100 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div class="mb-16 text-center md:text-left fade-in-up delay-100 flex flex-col md:flex-row justify-between items-end gap-8">
                 <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
                         Engenharia <br>
                         <span class="text-gradient">Criativa & Funcional</span>
                     </h2>
                     <p class="text-lg text-slate-400 max-w-2xl font-light leading-relaxed">
-                        Um ecossistema de ferramentas desenvolvidas para resolver problemas reais.
-                        Foco em automação, segurança e experiências imersivas.
+                        Soluções de alto impacto desenvolvidas com foco em automação, segurança e experiência do usuário.
+                        Transformando ideias complexas em interfaces intuitivas.
                     </p>
                 </div>
 
                 <!-- Search & Filter Bar -->
-                <div class="w-full md:w-auto flex flex-col gap-3 items-end">
-                    <div class="relative w-full md:w-80">
-                        <input type="text" id="searchInput" placeholder="Pesquisar projetos (ex: React, API)..." class="search-input w-full px-4 py-2 rounded-xl text-sm text-white placeholder-slate-500">
-                        <svg class="absolute right-3 top-2.5 w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <div class="w-full md:w-auto flex flex-col gap-4 items-end">
+                    <div class="relative w-full md:w-80 group">
+                        <input type="text" id="searchInput" placeholder="Buscar projetos..." class="search-input w-full pl-10 pr-4 py-3 rounded-xl text-sm text-white placeholder-slate-500">
+                        <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-slate-500 group-focus-within:text-indigo-400 transition-colors"></i>
                     </div>
-                    <div class="flex gap-2 flex-wrap justify-end" id="filterContainer">
-                        <button class="filter-btn active px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="all">Todos</button>
-                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="seguranca">Segurança</button>
-                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="automacao">Automação</button>
-                        <button class="filter-btn px-3 py-1 rounded-lg text-xs font-semibold text-slate-400" data-filter="geek">Geek</button>
+                    <div class="flex gap-2 flex-wrap justify-center md:justify-end w-full" id="filterContainer">
+                        <button class="filter-btn active px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 uppercase tracking-wide" data-filter="all">Todos</button>
+                        <button class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 uppercase tracking-wide" data-filter="seguranca">Segurança</button>
+                        <button class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 uppercase tracking-wide" data-filter="automacao">Automação</button>
+                        <button class="filter-btn px-4 py-1.5 rounded-lg text-xs font-semibold text-slate-400 uppercase tracking-wide" data-filter="geek">Geek</button>
                     </div>
                 </div>
             </div>
 
             <!-- Projects Grid -->
-            <div id="projetos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+            <div id="projetos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px] mb-20">
 
                 <!-- Card: Assistente de Vendas IA -->
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-200 h-96"
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-200 h-96 cursor-pointer"
+                     onclick="window.location.href='projects/assistente-vendas-ia/index.html'"
                      data-category="automacao"
-                     data-tags="ia telegram automacao gemini api">
+                     data-tags="ia telegram automacao gemini api python">
 
                     <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/10 group-hover:border-teal-500/30 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/10 group-hover:border-teal-500/30 transition-colors shadow-[0_0_15px_rgba(20,184,166,0.1)]">
+                            <i class="fa-solid fa-robot text-xl text-teal-400"></i>
                         </div>
                         <div class="flex flex-col items-end gap-2">
                              <span class="px-2 py-1 rounded bg-teal-500/10 text-teal-400 text-[10px] font-bold uppercase tracking-wider border border-teal-500/20">Automação</span>
                              <div class="flex gap-1">
                                 <span class="tech-tag">IA</span>
-                                <span class="tech-tag">Telegram</span>
+                                <span class="tech-tag">Bot</span>
                              </div>
                         </div>
                     </div>
 
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">Assistente de Vendas</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                            Bot com IA (Gemini) para gestão de estoque e vendas no Telegram. Processa comprovantes e automatiza o fluxo de trabalho.
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                            Bot inteligente com IA (Gemini) para gestão de vendas via Telegram. Processamento de linguagem natural e automação de estoque.
                         </p>
                     </div>
 
                     <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                        <div class="flex items-center gap-2 text-xs text-slate-500">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-assistente-vendas-ia">0</span> views
+                        <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                             <i class="fa-regular fa-eye"></i>
+                             <span id="clicks-assistente-vendas-ia">0</span>
                         </div>
-                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-teal-500/20 border border-white/10 hover:border-teal-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
-                                data-project-id="assistente-vendas-ia"
-                                data-href="projects/assistente-vendas-ia/index.html">
-                            Acessar
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-teal-500/20 border border-white/10 hover:border-teal-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2 group-hover:gap-3"
+                                data-project-id="assistente-vendas-ia">
+                            Detalhes <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Card: Validador Firewall -->
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-96"
-                <!-- Card: Validador Firewall -->
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-200 h-full"
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-96 cursor-pointer"
+                     onclick="window.location.href='projects/validador-firewall/index.html'"
                      data-category="seguranca"
-                     data-tags="javascript firewall regex automacao">
+                     data-tags="javascript firewall regex automacao security">
 
                     <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-orange-500/10 group-hover:border-orange-500/30 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-orange-500/10 group-hover:border-orange-500/30 transition-colors shadow-[0_0_15px_rgba(249,115,22,0.1)]">
+                            <i class="fa-solid fa-shield-halved text-xl text-orange-400"></i>
                         </div>
                         <div class="flex flex-col items-end gap-2">
                             <span class="px-2 py-1 rounded bg-orange-500/10 text-orange-400 text-[10px] font-bold uppercase tracking-wider border border-orange-500/20">Segurança</span>
                             <div class="flex gap-1">
-                                <span class="tech-tag">JS</span>
+                                <span class="tech-tag">NetSec</span>
                                 <span class="tech-tag">RegEx</span>
                             </div>
                         </div>
@@ -264,102 +341,95 @@
 
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">Validador de Acesso</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                            Engine para validação e sanitização de dados de rede. Converte listas CSV em scripts de configuração Fortigate instantaneamente.
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                            Engine para validação e sanitização de dados de rede. Garante conformidade de segurança e gera scripts Fortigate automaticamente.
                         </p>
                     </div>
 
                     <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                        <div class="flex items-center gap-2 text-xs text-slate-500">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-validator-firewall">0</span> views
+                        <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                             <i class="fa-regular fa-eye"></i>
+                             <span id="clicks-validator-firewall">0</span>
                         </div>
-                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-orange-500/20 border border-white/10 hover:border-orange-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
-                                data-project-id="validator-firewall"
-                                data-href="projects/validador-firewall/index.html">
-                            Acessar
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-orange-500/20 border border-white/10 hover:border-orange-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2 group-hover:gap-3"
+                                data-project-id="validator-firewall">
+                            Detalhes <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Card: Automação GLPI -->
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-400 h-96"
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-full"
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-400 h-96 cursor-pointer"
+                     onclick="window.location.href='projects/abertura-chamados-glpi/index.html'"
                      data-category="automacao"
-                     data-tags="python api integration backend">
+                     data-tags="python api integration backend glpi">
 
                     <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center border border-indigo-500/10 group-hover:border-indigo-500/30 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center border border-indigo-500/10 group-hover:border-indigo-500/30 transition-colors shadow-[0_0_15px_rgba(99,102,241,0.1)]">
+                             <i class="fa-solid fa-server text-xl text-indigo-400"></i>
                         </div>
                         <div class="flex flex-col items-end gap-2">
                             <span class="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 text-[10px] font-bold uppercase tracking-wider border border-indigo-500/20">Automação</span>
                             <div class="flex gap-1">
                                 <span class="tech-tag">API</span>
-                                <span class="tech-tag">Integr.</span>
+                                <span class="tech-tag">Backend</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">Bot GLPI</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                            Agente autônomo para abertura massiva de tickets. Integração direta com API para upload de evidências e roteamento inteligente.
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                            Orquestrador autônomo para abertura massiva de tickets. Integração robusta via API para upload de evidências e roteamento.
                         </p>
                     </div>
 
                     <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                        <div class="flex items-center gap-2 text-xs text-slate-500">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-abertura-chamados-glpi">0</span> views
+                        <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                             <i class="fa-regular fa-eye"></i>
+                             <span id="clicks-abertura-chamados-glpi">0</span>
                         </div>
-                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
-                                data-project-id="abertura-chamados-glpi"
-                                data-href="projects/abertura-chamados-glpi/index.html">
-                            Acessar
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2 group-hover:gap-3"
+                                data-project-id="abertura-chamados-glpi">
+                            Detalhes <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
                 </div>
 
                 <!-- Card: Epic Games Scanner -->
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-500 h-96"
-                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-300 h-full"
+                <div class="glass-card rounded-3xl p-8 group fade-in-up delay-500 h-96 cursor-pointer"
+                     onclick="window.location.href='projects/scanner-game-free/index.html'"
                      data-category="geek"
-                     data-tags="react api frontend ai">
+                     data-tags="react api frontend ai monitoring">
 
                     <div class="flex justify-between items-start mb-6">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/10 group-hover:border-purple-500/30 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/10 group-hover:border-purple-500/30 transition-colors shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                             <i class="fa-solid fa-gamepad text-xl text-purple-400"></i>
                         </div>
                         <div class="flex flex-col items-end gap-2">
                             <span class="px-2 py-1 rounded bg-purple-500/10 text-purple-400 text-[10px] font-bold uppercase tracking-wider border border-purple-500/20">Geek</span>
                             <div class="flex gap-1">
                                 <span class="tech-tag">React</span>
-                                <span class="tech-tag">UI</span>
+                                <span class="tech-tag">Live</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Scanner IA</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
-                            Monitoramento em tempo real de ofertas digitais. Utiliza análise de padrões para detectar vazamentos e promoções ocultas.
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                            Monitoramento em tempo real de ofertas digitais. Detecta padrões para encontrar jogos gratuitos e promoções ocultas na Epic Store.
                         </p>
                     </div>
 
                     <div class="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                        <div class="flex items-center gap-2 text-xs text-slate-500">
-                             <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-.042.148-.082.296-.12.444m-1.78 4.111A10.023 10.023 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.52-4.111" /></svg>
-                             <span id="clicks-scanner-game-free">0</span> views
+                        <div class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+                             <i class="fa-regular fa-eye"></i>
+                             <span id="clicks-scanner-game-free">0</span>
                         </div>
-                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all"
-                                data-project-id="scanner-game-free"
-                                data-href="projects/scanner-game-free/index.html">
-                            Acessar
+                        <button class="px-5 py-2 rounded-xl bg-white/5 hover:bg-purple-500/20 border border-white/10 hover:border-purple-500/50 text-white text-xs font-bold uppercase tracking-wide transition-all flex items-center gap-2 group-hover:gap-3"
+                                data-project-id="scanner-game-free">
+                            Detalhes <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </button>
                     </div>
                 </div>
@@ -367,48 +437,74 @@
             </div>
 
             <!-- Contact Section -->
-            <section id="contato" class="mt-24 pt-12 border-t border-slate-800 text-center">
-                <h3 class="text-2xl font-bold text-white mb-8">Vamos Conversar?</h3>
+            <section id="contato" class="mt-24 pt-12 border-t border-slate-800/50 text-center fade-in-up delay-200">
+                <h3 class="text-3xl font-bold text-white mb-8">Vamos Conversar?</h3>
                 <div class="flex justify-center gap-6 flex-wrap">
-                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-blue-600/10 border-blue-500/20 flex items-center gap-3 group">
-                        <svg class="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v4.577h2.401v-4.93c0-2.616-1.417-3.85-3.303-3.85-1.55 0-2.26.86-2.63 1.439h.016v-1.2h-2.4v7.225h2.401z"/></svg>
+                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-blue-600/10 border-blue-500/20 flex items-center gap-3 group transition-all">
+                        <i class="fa-brands fa-linkedin text-xl text-blue-400 group-hover:scale-110 transition-transform"></i>
                         <span class="text-sm font-bold text-slate-300 group-hover:text-white">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/MarceloRDPJ" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-slate-700/50 border-white/10 flex items-center gap-3 group">
-                        <svg class="w-5 h-5 text-slate-400 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    <a href="https://github.com/MarceloRDPJ" target="_blank" class="glass-card px-8 py-4 rounded-xl hover:bg-slate-700/50 border-white/10 flex items-center gap-3 group transition-all">
+                        <i class="fa-brands fa-github text-xl text-slate-400 group-hover:scale-110 transition-transform"></i>
                         <span class="text-sm font-bold text-slate-300 group-hover:text-white">GitHub</span>
+                    </a>
+                    <a href="mailto:contato@rdpstudio.com" class="glass-card px-8 py-4 rounded-xl hover:bg-indigo-600/10 border-indigo-500/20 flex items-center gap-3 group transition-all">
+                        <i class="fa-solid fa-envelope text-xl text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm font-bold text-slate-300 group-hover:text-white">Email</span>
                     </a>
                 </div>
             </section>
         </main>
 
         <!-- Footer -->
-        <footer class="mt-20 text-center relative z-50 pt-8 border-t border-slate-800/50">
+        <footer class="mt-20 text-center relative z-50 pt-8 border-t border-slate-800/50 pb-8">
             <div class="watermark-container"></div>
         </footer>
+
+        <!-- Scroll Top Button -->
+        <button id="scrollTopBtn" onclick="scrollToTop()" class="fixed bottom-8 right-8 z-40 p-4 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/30 transition-all hover:-translate-y-1">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
 
     </div>
 
     <!-- About Modal -->
-    <div id="aboutModalOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
-    <div id="aboutModalPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900/90 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-50 hidden translate-x-full transition-transform duration-300">
+    <div id="aboutModalOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="aboutModalPanel" class="fixed top-0 right-0 h-full w-full max-w-md bg-slate-900/95 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-[70] hidden translate-x-full transition-transform duration-300">
         <div class="p-8 h-full flex flex-col overflow-y-auto">
             <div class="flex items-center justify-between mb-8 pb-8 border-b border-white/10">
-                <h3 class="text-xl font-bold text-white">Sobre o Portfólio</h3>
-                <button onclick="toggleAboutModal(false)" class="text-slate-400 hover:text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <h3 class="text-2xl font-bold text-white">Sobre o Portfólio</h3>
+                <button onclick="toggleAboutModal(false)" class="text-slate-400 hover:text-white p-2 hover:bg-white/5 rounded-lg transition-colors">
+                    <i class="fa-solid fa-times text-xl"></i>
                 </button>
             </div>
             <div class="space-y-6 text-sm text-slate-300 leading-relaxed font-light">
-                <p>Este espaço é uma demonstração prática de habilidades em engenharia de software, design de interfaces e automação de processos.</p>
-                <div class="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
-                    <p class="text-indigo-300 text-xs uppercase tracking-wider font-bold mb-2">Filosofia</p>
-                    <p>Cada ferramenta aqui apresentada foi construída para resolver uma dor real, unindo código limpo a uma experiência de usuário (UX) excepcional.</p>
+                <p>Bem-vindo ao <strong>RDP STUDIO</strong>, um hub centralizador de projetos de engenharia de software focados em excelência técnica e design moderno.</p>
+
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20">
+                    <p class="text-indigo-400 text-xs uppercase tracking-wider font-bold mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> Filosofia
+                    </p>
+                    <p class="text-slate-200">
+                        Cada linha de código é escrita com propósito. Priorizamos arquiteturas escaláveis, segurança ofensiva/defensiva e uma UX que encanta.
+                    </p>
                 </div>
-                <p>A documentação rigorosa e a manutenção contínua são pilares deste trabalho. Confira o repositório para detalhes sobre a arquitetura.</p>
+
+                <div>
+                    <h4 class="text-white font-bold mb-3">Stack Principal</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag text-xs">Python</span>
+                        <span class="tech-tag text-xs">React</span>
+                        <span class="tech-tag text-xs">Tailwind</span>
+                        <span class="tech-tag text-xs">Node.js</span>
+                        <span class="tech-tag text-xs">AI/LLM</span>
+                    </div>
+                </div>
+
+                <p>Este portfólio é Open Source e serve como demonstração de capacidades para recrutadores, parceiros e entusiastas.</p>
             </div>
             <div class="mt-auto pt-8 border-t border-white/10">
-                <p class="text-xs text-slate-500 text-center">Atualizado em: Dezembro 2025</p>
+                <p class="text-xs text-slate-500 text-center font-mono">Build Version: 2025.1.0<br>Developed by Marcelo Rodrigues</p>
             </div>
         </div>
     </div>
@@ -417,6 +513,27 @@
         document.addEventListener('DOMContentLoaded', () => {
             const projectButtons = document.querySelectorAll('[data-project-id]');
             const namespace = 'rdpstudio.hub';
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileMenuBtn.querySelector('i');
+
+            window.toggleMobileMenu = function() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            };
+
+            mobileMenuBtn.addEventListener('click', window.toggleMobileMenu);
+
 
             // --- Search & Filter Logic ---
             const searchInput = document.getElementById('searchInput');
@@ -437,9 +554,14 @@
                     const matchesCategory = activeCategory === 'all' || category === activeCategory;
 
                     if (matchesSearch && matchesCategory) {
-                        card.style.display = 'flex';
+                        card.classList.remove('project-card-hidden');
+                        card.classList.add('fade-in-up'); // Re-trigger animation
+                        // Reset animation logic slightly to allow re-flow
+                        card.style.animation = 'none';
+                        card.offsetHeight; /* trigger reflow */
+                        card.style.animation = 'fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                     } else {
-                        card.style.display = 'none';
+                        card.classList.add('project-card-hidden');
                     }
                 });
             }
@@ -466,9 +588,11 @@
                     void overlay.offsetHeight;
                     overlay.classList.remove('opacity-0');
                     panel.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden'; // Prevent bg scroll
                 } else {
                     overlay.classList.add('opacity-0');
                     panel.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
                     setTimeout(() => {
                         overlay.classList.add('hidden');
                         panel.classList.add('hidden');
@@ -476,15 +600,21 @@
                 }
             }
 
-            // Expose globally for header button
+            // Expose globally
             window.toggleAboutModal = toggleModal;
-
-            document.querySelector('[onclick*="toggleAboutModal(true)"]').onclick = (e) => {
-                e.preventDefault();
-                toggleModal(true);
-            };
+            window.scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
             overlay.onclick = () => toggleModal(false);
+
+            // --- Scroll to Top Visibility ---
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
 
             // --- Click Tracking ---
             function loadClickCounts() {
@@ -500,17 +630,37 @@
                 });
             }
 
+            // Note: Click tracking on card click now handles redirection
+            // The logic inside onclick attribute handles navigation, but we want to track it.
+            // We can attach listeners to the card itself if needed, but existing buttons also work.
+            // Let's ensure the separate buttons still track clicks.
+
             projectButtons.forEach(button => {
-                button.addEventListener('click', () => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent bubbling if card has onclick
                     const projectId = button.dataset.projectId;
-                    const href = button.dataset.href;
-                    // Optimistic
+
+                    // Optimistic update
                     const display = document.getElementById('clicks-' + projectId);
                     if(display) display.textContent = parseInt(display.textContent||0) + 1;
 
                     fetch(`https://abacus.jasoncameron.dev/hit/${namespace}/${projectId}`).catch(console.error);
 
-                    if(href) setTimeout(() => window.location.href = href, 150);
+                    // Navigation handled by parent card or self if href exists
+                    const href = button.dataset.href; // if button has href
+                    if(href) {
+                         setTimeout(() => window.location.href = href, 150);
+                    } else {
+                        // If parent has onclick, let it handle? No, stopPropagation stopped it.
+                        // But the button in the new design is "Detalhes ->", which should probably just link.
+                        // We will let the user click the card for the link, or the button.
+                        // Let's redirect if the button is clicked.
+                        const card = button.closest('.glass-card');
+                        if(card) {
+                             const cardHref = card.getAttribute('onclick').match(/window.location.href='(.*?)'/)[1];
+                             setTimeout(() => window.location.href = cardHref, 150);
+                        }
+                    }
                 });
             });
 
