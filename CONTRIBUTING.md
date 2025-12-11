@@ -1,8 +1,8 @@
 # Protocolo de Atualização e Contribuição
 
-> **IMPORTANTE: Placeholder de Marca**
-> Atualmente, este portfólio utiliza placeholders para a identidade visual (anteriormente "RDP STUDIO").
-> **Ação Futura:** Quando a nova marca for definida, busque por comentários `<!-- TODO: REPLACE_BRANDING -->` no código e substitua logotipos e textos correspondentes. Remova este bloco de aviso após a alteração.
+> **IMPORTANTE: Identidade Visual**
+> Este portfólio opera sob a identidade "RDP STUDIO".
+> **Manutenção:** Mantenha a consistência visual seguindo o `BRANDBOOK.md` e verifique os comentários `<!-- TODO: REPLACE_BRANDING -->` apenas se houver uma nova reformulação de marca planejada.
 
 ## 1. Princípios de Excelência
 Este repositório segue um padrão rigoroso de qualidade. Profissionalismo e competência são os pilares.

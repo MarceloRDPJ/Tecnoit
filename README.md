@@ -1,6 +1,6 @@
-# Hub - Portfólio Profissional
+# RDP STUDIO - Hub Portfólio Profissional
 
-Este repositório contém uma coleção de ferramentas e projetos de engenharia de software desenvolvidos por **Marcelo Rodrigues**. O objetivo é demonstrar competência técnica, design de interface e resolução de problemas reais.
+Este repositório contém uma coleção de ferramentas e projetos de engenharia de software desenvolvidos por **Marcelo Rodrigues** sob a marca **RDP STUDIO**. O objetivo é demonstrar competência técnica, design de interface e resolução de problemas reais.
 
 ## Projetos em Destaque
 
@@ -38,4 +38,4 @@ Este projeto segue padrões rigorosos de documentação e design. Antes de reali
 - **[BRANDBOOK.md](BRANDBOOK.md)**: Para diretrizes de estilo visual (cores, tipografia, componentes).
 
 ---
-© 2025 Marcelo Rodrigues.
+© 2025 RDP STUDIO / Marcelo Rodrigues.
