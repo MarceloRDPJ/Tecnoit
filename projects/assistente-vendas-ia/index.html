@@ -5,34 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assistente de Vendas IA | RDP STUDIO</title>
     <meta name="description" content="Agente de IA para automação de vendas e gestão de estoque via Telegram. Powered by Gemini.">
+    <meta name="keywords" content="IA, Vendas, Telegram Bot, Automação, Python, Gemini AI">
+    <meta name="author" content="Marcelo Rodrigues | RDP STUDIO">
 
-    <!-- Icons -->
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Assistente de Vendas IA | RDP STUDIO">
+    <meta property="og:description" content="Revolucionando o atendimento no Telegram com IA Autônoma.">
+    <meta property="og:image" content="../../assets/preview-bot.png"> <!-- Substitua por uma imagem real -->
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../favicon.png">
 
-    <!-- Styles & Fonts -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fontes (Preconnect para performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <!-- Mermaid JS -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'base',
-            themeVariables: {
-                primaryColor: '#1E3A5F',
-                primaryTextColor: '#fff',
-                primaryBorderColor: '#00B4D8',
-                lineColor: '#94a3b8',
-                secondaryColor: '#020617',
-                tertiaryColor: '#1E3A5F'
-            },
-            securityLevel: 'loose',
-            fontFamily: 'JetBrains Mono'
-        });
-    </script>
+    <!-- Icons (Carregamento otimizado) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
 
+    <!-- Tailwind CSS (Dev Mode - Recomenda-se build para produção) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Configurações Tailwind e Mermaid -->
     <script>
         tailwind.config = {
             theme: {
@@ -52,38 +48,46 @@
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
         }
     </script>
 
+    <!-- Mermaid JS (Deferido) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" defer></script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #020617; /* Dark Slate Standard */
-            background-image: radial-gradient(circle at 15% 50%, rgba(30, 58, 95, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.1), transparent 25%);
-            background-attachment: fixed;
-            color: #F8FAFC;
-            overflow-x: hidden;
-            position: relative;
+        /* CSS Otimizado e Organizado */
+        :root {
+            --bg-color: #020617;
+            --text-color: #F8FAFC;
         }
 
-        /* NOISE TEXTURE - Standard RDP Studio */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(30, 58, 95, 0.15), transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.1), transparent 25%);
+            background-attachment: fixed;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Noise Texture - Performance optimized */
         body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            inset: 0;
             z-index: 9999;
             opacity: 0.03;
+            pointer-events: none;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* Glassmorphism Refinado */
+        /* Glassmorphism */
         .glass-card {
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(16px);
@@ -94,10 +98,10 @@
 
         .glass-card:hover {
             border-color: rgba(0, 180, 216, 0.3);
-            box-shadow: 0 0 30px rgba(0, 180, 216, 0.1);
+            box-shadow: 0 10px 40px -10px rgba(0, 180, 216, 0.15);
         }
 
-        /* Text Gradients */
+        /* Typography & Components */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
@@ -105,27 +109,25 @@
             background-image: linear-gradient(to right, #00B4D8, #38bdf8, #10B981);
         }
 
-        /* Tech Pills */
         .tech-pill {
             padding: 6px 14px;
             border-radius: 8px;
             font-size: 0.75rem;
             font-weight: 600;
-            letter-spacing: 0.05em;
-            background: rgba(30, 58, 95, 0.3); /* deepBlue tint */
+            background: rgba(30, 58, 95, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.05);
             color: #94a3b8;
             transition: all 0.3s;
             font-family: 'JetBrains Mono', monospace;
+            cursor: default;
         }
         .tech-pill:hover {
-            background: rgba(0, 180, 216, 0.15); /* vibrantCyan tint */
+            background: rgba(0, 180, 216, 0.15);
             color: #00B4D8;
             border-color: rgba(0, 180, 216, 0.3);
             transform: translateY(-2px);
         }
 
-        /* Buttons */
         .btn-glow {
             background: linear-gradient(to right, #00B4D8, #1E3A5F);
             position: relative;
@@ -136,7 +138,7 @@
         .btn-glow::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            inset: 0;
             background: linear-gradient(to right, #0ea5e9, #00B4D8);
             opacity: 0;
             z-index: -1;
@@ -144,11 +146,11 @@
         }
         .btn-glow:hover::before { opacity: 1; }
         .btn-glow:hover {
-            box-shadow: 0 0 20px rgba(0, 180, 216, 0.5);
+            box-shadow: 0 0 25px rgba(0, 180, 216, 0.6);
             transform: scale(1.02);
         }
 
-        /* Chat UI Customization */
+        /* Chat UI Specifics */
         .chat-bubble {
             max-width: 85%;
             padding: 12px 16px;
@@ -157,7 +159,6 @@
             position: relative;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         .user-bubble {
             background: linear-gradient(135deg, #00B4D8 0%, #0284c7 100%);
             color: white;
@@ -165,9 +166,8 @@
             align-self: flex-end;
             margin-left: auto;
         }
-
         .bot-bubble {
-            background: #1e293b; /* Slate-800 */
+            background: #1e293b;
             border: 1px solid rgba(255,255,255,0.05);
             color: #e2e8f0;
             border-radius: 18px 18px 18px 4px;
@@ -175,80 +175,70 @@
             margin-right: auto;
         }
 
-        /* Animations */
+        /* Keyframe Animations */
         @keyframes float {
-            0% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
         }
-        .animate-float { animation: float 6s ease-in-out infinite; }
         
-        .fade-in-up {
-            opacity: 0;
-            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Typing Indicator */
+        @keyframes typing { 
+            0%, 80%, 100% { transform: scale(0); opacity: 0.5; } 
+            40% { transform: scale(1); opacity: 1; } 
+        }
+
         .typing-dot {
             width: 5px; height: 5px; background: #94a3b8; border-radius: 50%;
             animation: typing 1.4s infinite ease-in-out both;
         }
         .typing-dot:nth-child(1) { animation-delay: -0.32s; }
         .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
 
-        /* Footer Protection */
-        .watermark-container::after {
-            content: "© 2025 RDP STUDIO. Desenvolvido por Marcelo Rodrigues.";
-            font-size: 0.65rem;
-            color: #94a3b8;
-            opacity: 0.3;
-            font-weight: 300;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            cursor: default;
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-select: none;
-            transition: color 0.3s ease;
-        }
+        /* Utility Helpers */
+        .fade-in-up { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        /* Custom Scrollbar for Chat */
+        #chat-viewport::-webkit-scrollbar { width: 4px; }
+        #chat-viewport::-webkit-scrollbar-track { background: transparent; }
+        #chat-viewport::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+        #chat-viewport::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
     </style>
 </head>
 <body class="antialiased selection:bg-vibrantCyan selection:text-white">
 
     <!-- Background Glows -->
-    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-deepBlue/20 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-vibrantCyan/10 rounded-full blur-[120px]"></div>
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" aria-hidden="true">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-deepBlue/20 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-vibrantCyan/10 rounded-full blur-[120px] animate-pulse-slow"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-8 md:py-12">
+    <div class="max-w-7xl mx-auto px-6 py-8 md:py-12 flex flex-col min-h-screen">
 
-        <!-- Nav / Header -->
-        <header class="flex flex-wrap justify-between items-center mb-16 md:mb-24 gap-4 fade-in-up relative z-50">
-            <a href="../../index.html" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
+        <!-- Header / Nav -->
+        <header class="flex justify-between items-center mb-16 md:mb-24 gap-4 fade-in-up relative z-50">
+            <a href="../../index.html" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group" aria-label="Voltar para a página inicial">
                 <div class="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-vibrantCyan/50 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-                    </svg>
+                    <i class="fa-solid fa-arrow-left text-sm"></i>
                 </div>
-                <span class="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
+                <span class="text-sm font-semibold tracking-wide uppercase hidden sm:inline">Voltar ao Hub</span>
             </a>
+
             <div class="flex items-center gap-3">
-                <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-trustGreen/10 border border-trustGreen/20">
+                <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-trustGreen/10 border border-trustGreen/20 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
                     <div class="w-1.5 h-1.5 rounded-full bg-trustGreen animate-pulse"></div>
                     <span class="text-trustGreen text-xs font-bold uppercase tracking-wider">Online v1.2</span>
                 </div>
             </div>
             <!-- Mobile Menu Button -->
+
+            <!-- Mobile Menu Toggle -->
             <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 z-50 relative group ml-auto" aria-label="Abrir Menu">
                 <div class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <i class="fa-solid fa-bars relative z-10 transition-transform duration-300"></i>
@@ -263,42 +253,57 @@
                 <a href="../../index.html#empresa" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">A Empresa</a>
                 <a href="../../sobre.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Sobre Mim</a>
                 <a href="https://wa.me/5562996780498" target="_blank" class="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20 mobile-link">Contato</a>
+        <div id="mobile-menu-overlay" class="fixed inset-0 z-[60] bg-slate-950/98 backdrop-blur-xl translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden" aria-hidden="true">
+            <nav class="flex flex-col items-center gap-6">
+                <a href="../../index.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Home</a>
+                <a href="../../projetos.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Projetos</a>
+                <a href="../../sobre.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Sobre Mim</a>
+                <a href="https://wa.me/5562996780498" target="_blank" class="mt-4 px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20 mobile-link">
+                    Contato <i class="fa-brands fa-whatsapp ml-2"></i>
+                </a>
             </nav>
         </div>
 
-        <!-- Main Content Grid -->
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32 relative">
+        <!-- Main Content -->
+        <main class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32 relative flex-grow">
 
-            <!-- Left: Info & Specs -->
+            <!-- Left: Info -->
             <div class="space-y-10 fade-in-up delay-100 z-10">
-                
                 <div>
-                    <div class="inline-block px-3 py-1 mb-4 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-vibrantCyan tracking-widest uppercase">Case de Sucesso</div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-md bg-vibrantCyan/10 border border-vibrantCyan/20 text-xs font-mono text-vibrantCyan tracking-widest uppercase">
+                        <i class="fa-solid fa-star text-[10px]"></i> Case de Sucesso
+                    </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
                         Assistente de Vendas <br>
-                        <span class="text-gradient">Autônomo & Inteligente</span>
+                        <span class="text-gradient">Autônomo & IA</span>
                     </h1>
                     <p class="text-lg text-slate-400 font-light leading-relaxed max-w-xl">
-                        Revolucionando o atendimento no Telegram. Um agente de IA que gerencia estoques, processa pagamentos via visão computacional e fecha vendas sem intervenção humana.
+                        Um agente inteligente que revoluciona o atendimento no Telegram. Gerencia estoques em tempo real, valida pagamentos via visão computacional e finaliza vendas 24/7 sem intervenção humana.
                     </p>
                 </div>
 
-                <!-- Feature Block -->
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-vibrantCyan">
+                <!-- Feature Block / Architecture -->
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-l-vibrantCyan relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-network-wired text-6xl text-white"></i>
+                    </div>
                     <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-layer-group text-vibrantCyan"></i> Arquitetura do Sistema
                     </h3>
-                    <div class="mermaid mb-4 opacity-90">
+                    
+                    <!-- Mermaid Diagram Container -->
+                    <div class="mermaid mb-4 opacity-90 text-sm overflow-x-auto pb-2">
                         graph LR;
-                            U(User) -->|Msg| T[Telegram];
+                            U(Cliente) -->|Msg| T[Telegram];
                             T -->|Webhook| P{Python Core};
                             P <-->|NLP| G[Gemini Pro];
-                            P <-->|Dados| S[(Supabase)];
+                            P <-->|DB| S[(Supabase)];
                             P -->|Resp| T;
                             style P stroke:#00B4D8,stroke-width:2px
                             style G stroke:#F59E0B,stroke-width:2px
                     </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
+                    
+                    <p class="text-sm text-slate-400 leading-relaxed mt-2">
                         Núcleo Python assíncrono orquestrando LLMs e Banco de Dados Relacional.
                     </p>
                 </div>
@@ -316,38 +321,39 @@
 
                 <!-- CTAs -->
                 <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="https://bot-revenda.onrender.com/" target="_blank" class="btn-glow px-8 py-3 rounded-xl text-white font-bold transition-all shadow-lg flex items-center gap-2">
-                        <i class="fa-solid fa-play text-sm"></i> Live Demo
+                    <a href="https://bot-revenda.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-glow px-8 py-3 rounded-xl text-white font-bold transition-all shadow-lg flex items-center gap-2 group">
+                        <i class="fa-solid fa-play text-sm group-hover:animate-pulse"></i> Live Demo
                     </a>
-                    <a href="https://github.com/MarceloRDPJ" target="_blank" class="px-8 py-3 rounded-xl glass-card hover:bg-white/10 text-white font-semibold transition-all border border-white/10 flex items-center gap-2">
-                        <i class="fa-brands fa-github text-lg"></i> Código
+                    <a href="https://github.com/MarceloRDPJ" target="_blank" rel="noopener noreferrer" class="px-8 py-3 rounded-xl glass-card hover:bg-white/10 text-white font-semibold transition-all border border-white/10 flex items-center gap-2 hover:border-white/30">
+                        <i class="fa-brands fa-github text-lg"></i> Código Fonte
                     </a>
                 </div>
-
             </div>
 
             <!-- Right: Interactive Simulator -->
-            <div class="relative fade-in-up delay-200 flex justify-center">
+            <div class="relative fade-in-up delay-200 flex justify-center lg:justify-end">
                 
-                <!-- Floating Decorative Elements behind phone -->
-                <div class="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br from-vibrantCyan to-transparent opacity-20 rounded-full blur-2xl animate-pulse"></div>
-                <div class="absolute top-1/2 -left-12 w-32 h-32 bg-deepBlue opacity-30 rounded-full blur-3xl"></div>
+                <!-- Floating Decorative Elements -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-vibrantCyan to-transparent opacity-20 rounded-full blur-2xl animate-pulse"></div>
+                <div class="absolute top-1/2 -left-12 w-40 h-40 bg-deepBlue opacity-30 rounded-full blur-3xl"></div>
 
-                <!-- Phone Frame mockup -->
-                <div class="relative border-slate-800 bg-slate-900 border-[12px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl flex flex-col overflow-hidden animate-float z-20 ring-1 ring-white/10">
+                <!-- Phone Frame -->
+                <div class="relative border-slate-800 bg-slate-900 border-[10px] rounded-[3rem] h-[640px] w-[320px] shadow-2xl flex flex-col overflow-hidden animate-float z-20 ring-1 ring-white/10 transform transition-transform hover:scale-[1.01] duration-500">
                     
                     <!-- Hardware Buttons -->
-                    <div class="h-[32px] w-[3px] bg-slate-800 absolute -left-[15px] top-[72px] rounded-l-lg"></div>
-                    <div class="h-[46px] w-[3px] bg-slate-800 absolute -left-[15px] top-[124px] rounded-l-lg"></div>
-                    <div class="h-[64px] w-[3px] bg-slate-800 absolute -right-[15px] top-[142px] rounded-r-lg"></div>
+                    <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[13px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[13px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[13px] top-[142px] rounded-r-lg"></div>
 
-                    <!-- Screen -->
-                    <div class="bg-[#0f172a] h-full w-full flex flex-col relative overflow-hidden bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-                        <div class="absolute inset-0 bg-[#0f172a]/95"></div>
+                    <!-- Screen Content -->
+                    <div class="bg-[#0f172a] h-full w-full flex flex-col relative overflow-hidden">
+                        <!-- Custom Wallpaper Pattern -->
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 20px 20px;"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/90 pointer-events-none"></div>
 
                         <!-- Status Bar -->
-                        <div class="h-10 w-full flex items-center justify-between px-6 text-[10px] text-white font-medium z-10 pt-2">
-                            <span>19:41</span>
+                        <div class="h-10 w-full flex items-center justify-between px-6 text-[10px] text-white font-medium z-10 pt-3 select-none">
+                            <span id="clock-time">19:41</span>
                             <div class="flex gap-1.5">
                                 <i class="fa-solid fa-signal"></i>
                                 <i class="fa-solid fa-wifi"></i>
@@ -357,33 +363,35 @@
 
                         <!-- Chat Header -->
                         <div class="bg-slate-900/80 backdrop-blur-md p-3 flex items-center gap-3 border-b border-white/5 z-10 mx-2 mt-1 rounded-xl shadow-lg">
-                            <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-vibrantCyan to-deepBlue flex items-center justify-center text-xs font-bold text-white shadow-inner">
+                            <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-vibrantCyan to-deepBlue flex items-center justify-center text-xs font-bold text-white shadow-inner ring-2 ring-white/10">
                                 <i class="fa-solid fa-robot"></i>
                             </div>
                             <div class="flex flex-col">
                                 <span class="text-sm font-bold text-white">LumeBeauty Bot</span>
-                                <span class="text-[10px] text-vibrantCyan font-mono">online</span>
+                                <span class="text-[10px] text-vibrantCyan font-mono flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-vibrantCyan"></span> online
+                                </span>
                             </div>
-                            <div class="ml-auto text-slate-500"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                            <div class="ml-auto text-slate-500 cursor-pointer hover:text-white"><i class="fa-solid fa-ellipsis-vertical"></i></div>
                         </div>
 
-                        <!-- Messages Area -->
-                        <div id="chat-viewport" class="flex-grow p-4 overflow-y-auto space-y-3 scroll-smooth pb-20 relative z-0">
-                            <!-- JS Injected Messages -->
+                        <!-- Chat Viewport -->
+                        <div id="chat-viewport" class="flex-grow p-4 overflow-y-auto space-y-3 pb-20 relative z-0 scroll-smooth">
+                            <!-- Messages injected via JS -->
                         </div>
 
                         <!-- Input Area (Mock) -->
                         <div class="absolute bottom-0 w-full bg-slate-900/90 backdrop-blur-md p-3 flex items-center gap-2 border-t border-white/5 z-20">
-                            <div class="w-8 h-8 rounded-full hover:bg-white/5 flex items-center justify-center transition-colors"><i class="fa-solid fa-paperclip text-slate-400 text-sm"></i></div>
-                            <div class="flex-grow h-9 bg-slate-800 rounded-full px-4 flex items-center text-xs text-slate-500 border border-white/5">Escreva uma mensagem...</div>
-                            <div class="w-9 h-9 rounded-full bg-vibrantCyan flex items-center justify-center shadow-lg shadow-vibrantCyan/20"><i class="fa-solid fa-microphone text-white text-sm"></i></div>
+                            <div class="w-8 h-8 rounded-full hover:bg-white/5 flex items-center justify-center transition-colors cursor-pointer"><i class="fa-solid fa-paperclip text-slate-400 text-sm"></i></div>
+                            <div class="flex-grow h-9 bg-slate-800 rounded-full px-4 flex items-center text-xs text-slate-500 border border-white/5 cursor-text select-none">Mensagem...</div>
+                            <div class="w-9 h-9 rounded-full bg-vibrantCyan flex items-center justify-center shadow-lg shadow-vibrantCyan/20 cursor-pointer hover:bg-cyan-400 transition-colors"><i class="fa-solid fa-microphone text-white text-sm"></i></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Floating Status Badge -->
-                <div class="absolute bottom-20 -left-8 md:-left-12 glass-card p-4 rounded-xl flex items-center gap-3 animate-float" style="animation-delay: 1s;">
-                    <div class="w-10 h-10 rounded-full bg-trustGreen/20 flex items-center justify-center text-trustGreen border border-trustGreen/30">
+                <!-- Floating Success Badge -->
+                <div class="absolute bottom-20 -left-8 md:-left-12 glass-card p-4 rounded-xl flex items-center gap-3 animate-float" style="animation-delay: 2s;">
+                    <div class="w-10 h-10 rounded-full bg-trustGreen/20 flex items-center justify-center text-trustGreen border border-trustGreen/30 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                         <i class="fa-solid fa-check"></i>
                     </div>
                     <div>
@@ -392,67 +400,94 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
 
-        <!-- Business Value Section -->
-        <div class="glass-card rounded-3xl p-8 md:p-12 fade-in-up delay-300 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-deepBlue/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <!-- Value Proposition Section -->
+        <section class="glass-card rounded-3xl p-8 md:p-12 fade-in-up delay-300 relative overflow-hidden mb-16">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-deepBlue/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
             
             <h3 class="text-2xl font-bold text-white mb-10 text-center relative z-10">Impacto no Negócio</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center relative z-10">
-                <div class="group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-vibrantCyan/10 text-vibrantCyan text-2xl flex items-center justify-center mx-auto mb-5 border border-vibrantCyan/20 group-hover:bg-vibrantCyan/20 transition-colors">
+                <div class="group hover:-translate-y-1 transition-transform duration-300 p-4 rounded-xl hover:bg-white/5">
+                    <div class="w-14 h-14 rounded-2xl bg-vibrantCyan/10 text-vibrantCyan text-2xl flex items-center justify-center mx-auto mb-5 border border-vibrantCyan/20 group-hover:bg-vibrantCyan/20 transition-colors shadow-lg shadow-vibrantCyan/5">
                         <i class="fa-solid fa-clock"></i>
                     </div>
                     <h4 class="font-bold text-white mb-2 text-lg">24/7 Disponível</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">Atendimento instantâneo a qualquer hora, eliminando filas de espera e aumentando a conversão.</p>
                 </div>
-                <div class="group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-energeticAmber/10 text-energeticAmber text-2xl flex items-center justify-center mx-auto mb-5 border border-energeticAmber/20 group-hover:bg-energeticAmber/20 transition-colors">
+                <div class="group hover:-translate-y-1 transition-transform duration-300 p-4 rounded-xl hover:bg-white/5">
+                    <div class="w-14 h-14 rounded-2xl bg-energeticAmber/10 text-energeticAmber text-2xl flex items-center justify-center mx-auto mb-5 border border-energeticAmber/20 group-hover:bg-energeticAmber/20 transition-colors shadow-lg shadow-energeticAmber/5">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
                     <h4 class="font-bold text-white mb-2 text-lg">Escalabilidade</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">Capacidade de lidar com milhares de clientes simultâneos sem aumento de custo operacional.</p>
                 </div>
-                <div class="group hover:-translate-y-1 transition-transform duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-trustGreen/10 text-trustGreen text-2xl flex items-center justify-center mx-auto mb-5 border border-trustGreen/20 group-hover:bg-trustGreen/20 transition-colors">
+                <div class="group hover:-translate-y-1 transition-transform duration-300 p-4 rounded-xl hover:bg-white/5">
+                    <div class="w-14 h-14 rounded-2xl bg-trustGreen/10 text-trustGreen text-2xl flex items-center justify-center mx-auto mb-5 border border-trustGreen/20 group-hover:bg-trustGreen/20 transition-colors shadow-lg shadow-trustGreen/5">
                         <i class="fa-solid fa-database"></i>
                     </div>
                     <h4 class="font-bold text-white mb-2 text-lg">Dados Precisos</h4>
                     <p class="text-sm text-slate-400 leading-relaxed">Sincronização automática de estoque e relatórios financeiros gerados em tempo real.</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Footer (Mantido original) -->
-        <footer class="mt-20 border-t border-slate-800/50 pt-12 pb-8">
-            <div class="max-w-7xl mx-auto px-6 text-center">
+        <!-- Footer -->
+        <footer class="border-t border-slate-800/50 pt-12 pb-8 mt-auto">
+            <div class="flex flex-col items-center text-center">
                 <div class="flex justify-center gap-8 mb-8">
-                    <a href="https://instagram.com/marcelo_rpj" target="_blank" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                    <a href="https://instagram.com/marcelo_rpj" target="_blank" aria-label="Instagram" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                    <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" aria-label="LinkedIn" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
-                    <a href="mailto:rdpstudio@gmail.com" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl">
+                    <a href="mailto:rdpstudio@gmail.com" aria-label="Email" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200">
                         <i class="fa-regular fa-envelope"></i>
                     </a>
                 </div>
                 <p class="text-sm text-slate-500 mb-2">
                     © 2025 RDP STUDIO. Todos os direitos reservados.
                 </p>
-                <p class="text-xs text-slate-600">
-                    Desenvolvido por Marcelo Rodrigues
+                <p class="text-xs text-slate-600 font-mono">
+                    Desenvolvido com <i class="fa-solid fa-heart text-red-900 animate-pulse"></i> por Marcelo Rodrigues
                 </p>
-                <div class="watermark-container hidden"></div>
             </div>
         </footer>
 
     </div>
 
-    <!-- Scripts -->
+    <!-- Initialization Scripts -->
     <script>
-        // --- MOBILE MENU LOGIC ---
+        // --- Mermaid Init (Safe Load) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.mermaid) {
+                mermaid.initialize({
+                    startOnLoad: true,
+                    theme: 'base',
+                    themeVariables: {
+                        primaryColor: '#1E3A5F',
+                        primaryTextColor: '#cbd5e1',
+                        primaryBorderColor: '#00B4D8',
+                        lineColor: '#64748b',
+                        secondaryColor: '#0f172a',
+                        tertiaryColor: '#1E3A5F'
+                    },
+                    fontFamily: 'JetBrains Mono'
+                });
+            }
+        });
+
+        // --- Clock Update ---
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('clock-time').textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // --- Mobile Menu Logic ---
         const menuBtn = document.getElementById('mobile-menu-btn');
         const menuOverlay = document.getElementById('mobile-menu-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -475,6 +510,18 @@
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
                 document.body.style.overflow = 'auto'; // Libera o scroll
+            
+            if (isMenuOpen) {
+                menuOverlay.classList.remove('translate-x-full');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+                document.body.style.overflow = 'hidden';
+                menuOverlay.setAttribute('aria-hidden', 'false');
+            } else {
+                menuOverlay.classList.add('translate-x-full');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
                 menuOverlay.setAttribute('aria-hidden', 'true');
             }
         }
@@ -484,10 +531,8 @@
             // Fecha o menu ao clicar em qualquer link
             mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
         }
-    </script>
 
-    <!-- Chat Simulator Script -->
-    <script>
+        // --- Improved Chat Simulator ---
         const conversation = [
             { from: 'user', type: 'text', content: 'Olá, tem o Batom Matte Vermelho?' },
             { from: 'bot', type: 'text', content: 'Olá! 👋 Deixa eu verificar no estoque rapidinho...' },
@@ -500,60 +545,95 @@
         ];
 
         const chatContainer = document.getElementById('chat-viewport');
+        let isChatRunning = false;
 
         function createBubble(message) {
             const bubble = document.createElement('div');
-
+            
             if (message.from === 'user') {
-                bubble.className = 'chat-bubble user-bubble';
+                bubble.className = 'chat-bubble user-bubble opacity-0';
                 if (message.type === 'image') {
-                    bubble.innerHTML = `<div class="flex items-center gap-2 text-xs bg-white/20 px-2 py-1 rounded"><i class="fa-solid fa-image"></i> ${message.content}</div>`;
+                    bubble.innerHTML = `<div class="flex items-center gap-2 text-xs bg-white/20 px-3 py-2 rounded border border-white/20"><i class="fa-solid fa-image"></i> ${message.content}</div>`;
                 } else {
                     bubble.textContent = message.content;
                 }
             } else {
-                bubble.className = 'chat-bubble bot-bubble';
+                bubble.className = 'chat-bubble bot-bubble opacity-0';
                 if (message.type === 'processing') {
-                    bubble.innerHTML = `<div class="flex items-center gap-1 h-5"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+                    bubble.innerHTML = `<div class="flex items-center gap-1 h-5 px-1"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
                 } else {
-                    bubble.innerText = message.content;
+                    bubble.innerText = message.content; // Use innerText to respect \n
                 }
             }
-
             return bubble;
         }
 
+        function scrollToBottom() {
+            chatContainer.scrollTo({
+                top: chatContainer.scrollHeight,
+                behavior: 'smooth'
+            });
+        }
+
         async function playConversation() {
+            if (isChatRunning) return;
+            isChatRunning = true;
+
+            // Fade out existing content
+            chatContainer.style.opacity = '0';
+            await new Promise(r => setTimeout(r, 300));
             chatContainer.innerHTML = '';
-            
-            // Add initial timestamp
+            chatContainer.style.opacity = '1';
+
+            // Add Timestamp
             const timeDiv = document.createElement('div');
-            timeDiv.className = 'text-center text-[10px] text-slate-600 my-2 font-mono';
+            timeDiv.className = 'text-center text-[10px] text-slate-600 my-4 font-mono uppercase tracking-widest';
             timeDiv.innerText = 'Hoje';
             chatContainer.appendChild(timeDiv);
 
             for (const msg of conversation) {
-                const typingTime = msg.type === 'processing' ? 2000 : 800 + (msg.content.length * 20);
-
+                // If bot is "thinking" (not processing type, just normal delay before typing)
                 if (msg.from === 'bot' && msg.type !== 'processing') {
                     const typingBubble = createBubble({from: 'bot', type: 'processing', content: ''});
+                    typingBubble.classList.remove('opacity-0');
+                    typingBubble.classList.add('animate-[fadeInUp_0.3s_ease_forwards]');
                     chatContainer.appendChild(typingBubble);
-                    chatContainer.scrollTop = chatContainer.scrollHeight;
-                    await new Promise(r => setTimeout(r, 1000)); 
+                    scrollToBottom();
+                    
+                    // Artificial delay for "typing"
+                    await new Promise(r => setTimeout(r, 800 + Math.random() * 500));
                     typingBubble.remove();
                 }
 
+                // Create actual message
                 const bubble = createBubble(msg);
-                bubble.style.animation = 'fadeInUp 0.3s ease forwards';
+                bubble.style.animation = 'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards';
                 chatContainer.appendChild(bubble);
-                chatContainer.scrollTop = chatContainer.scrollHeight;
+                scrollToBottom();
 
-                await new Promise(r => setTimeout(r, msg.type === 'processing' ? 2000 : 1200));
+                // Wait before next message
+                let delay = 1000;
+                if (msg.type === 'processing') delay = 2500;
+                else if (msg.from === 'user') delay = 1200;
+                else delay = 1500 + (msg.content.length * 15);
+
+                await new Promise(r => setTimeout(r, delay));
             }
+
+            // End of conversation loop
+            const restartDiv = document.createElement('div');
+            restartDiv.className = 'text-center text-[10px] text-vibrantCyan/50 mt-8 mb-4 font-mono animate-pulse';
+            restartDiv.innerText = '⟳ Reiniciando demonstração...';
+            chatContainer.appendChild(restartDiv);
+            scrollToBottom();
+
+            await new Promise(r => setTimeout(r, 3000));
+            isChatRunning = false;
+            playConversation(); // Recursion
         }
 
+        // Start the loop
         playConversation();
-        setInterval(playConversation, 25000); 
 
     </script>
 </body>
