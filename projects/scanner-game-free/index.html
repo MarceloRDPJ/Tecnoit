@@ -33,6 +33,7 @@
                         energeticAmber: '#F59E0B',
                         trustGreen: '#10B981',
                         darkSlate: '#020617',
+                        dangerRed: '#EF4444',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -41,6 +42,13 @@
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scan-line': 'scanLine 2s linear infinite',
+                    },
+                    keyframes: {
+                        scanLine: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' }
+                        }
                     }
                 }
             }
@@ -51,26 +59,14 @@
         /* --- RDP STUDIO BRAND CORE --- */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #020617; /* Dark Slate */
-            background-image: radial-gradient(circle at 15% 50%, rgba(30, 58, 95, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.1), transparent 25%);
+            background-color: #020617;
+            background-image: 
+                linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.9)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231E3A5F' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             background-attachment: fixed;
             color: #F8FAFC;
             overflow-x: hidden;
             position: relative;
-        }
-
-        /* NOISE TEXTURE */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
         /* Glassmorphism Refinado */
@@ -161,11 +157,16 @@
         // ==========================================
 
         const SYSTEM_CONFIG = {
-            ENDPOINTS: ['https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions'],
+            // URL Principal da Epic
+            ENDPOINT: 'https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions',
+            // Lista expandida de Proxies para rotação
             PROXIES: [
-                { name: 'Node-US-East (AllOrigins)', url: (t) => `https://api.allorigins.win/raw?url=${encodeURIComponent(t)}` },
-                { name: 'Node-EU-West (CorsProxy)', url: (t) => `https://corsproxy.io/?${encodeURIComponent(t)}` }
-            ]
+                { name: 'AllOrigins', url: (t) => `https://api.allorigins.win/raw?url=${encodeURIComponent(t)}` },
+                { name: 'CorsProxy', url: (t) => `https://corsproxy.io/?${encodeURIComponent(t)}` },
+                { name: 'HacApp', url: (t) => `https://cors-anywhere.herokuapp.com/${t}` }, // Fallback risky
+            ],
+            CACHE_KEY: 'RDP_SCANNER_CACHE_V2',
+            CACHE_DURATION: 1000 * 60 * 60 // 1 hora de cache válido
         };
 
         // ==========================================
@@ -173,62 +174,126 @@
         // ==========================================
 
         class ScannerEngine {
-            constructor() {
-                this.history = [];
+            constructor(logCallback) {
+                this.log = logCallback || console.log;
             }
 
             async scan() {
                 const results = { current: [], upcoming: [], mystery: [], raw: null, metadata: {} };
-                const endpoint = SYSTEM_CONFIG.ENDPOINTS[0];
+                let data = null;
+                let usedCache = false;
 
+                // 1. Tentar Cache Primeiro (Se a rede falhar, temos algo para mostrar)
+                const cached = this.loadCache();
+                
+                // 2. Tentar Rede
+                try {
+                    data = await this.fetchWithFailover(SYSTEM_CONFIG.ENDPOINT);
+                    this.saveCache(data); // Salvar novo sucesso
+                } catch (networkError) {
+                    this.log(`Rede indisponível: ${networkError.message}`, 'ERR');
+                    
+                    if (cached) {
+                        this.log('Ativando Protocolo de Backup (Cache Local)', 'WARN');
+                        data = cached.data;
+                        usedCache = true;
+                    } else {
+                        throw new Error("FALHA CRÍTICA: Sem conexão e sem cache.");
+                    }
+                }
+
+                // 3. Processar Dados
+                results.raw = data;
+                results.metadata = {
+                    source: usedCache ? 'LOCAL_CACHE' : 'LIVE_NETWORK',
+                    status: usedCache ? 'CACHED' : 'ONLINE',
+                    timestamp: new Date().toLocaleTimeString()
+                };
+
+                this.parseData(data, results);
+                return results;
+            }
+
+            async fetchWithFailover(url) {
                 for (const proxy of SYSTEM_CONFIG.PROXIES) {
                     try {
                         const start = performance.now();
-                        const targetUrl = proxy.url(endpoint);
-                        const response = await fetch(targetUrl);
+                        this.log(`Tentando uplink via ${proxy.name}...`, 'NET');
+                        
+                        const controller = new AbortController();
+                        const timeoutId = setTimeout(() => controller.abort(), 8000); // 8s timeout
+
+                        const targetUrl = proxy.url(url);
+                        const response = await fetch(targetUrl, { signal: controller.signal });
+                        clearTimeout(timeoutId);
 
                         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
                         const data = await response.json();
                         const latency = Math.round(performance.now() - start);
-
-                        results.metadata = {
-                            proxy: proxy.name,
-                            latency: `${latency}ms`,
-                            size: `${JSON.stringify(data).length} bytes`,
-                            status: response.status,
-                            server: response.headers.get('server') || 'EPIC-EDGE-V4'
-                        };
-
-                        results.raw = data;
-                        this.parseData(data, results);
-                        return results;
-
+                        this.log(`Conexão estabelecida: ${latency}ms`, 'SUC');
+                        
+                        return data;
                     } catch (e) {
-                        console.warn(`Proxy ${proxy.name} dropped packet.`);
-                        continue;
+                        this.log(`Falha em ${proxy.name}: ${e.message}`, 'WARN');
+                        continue; // Tenta o próximo proxy
                     }
                 }
-                throw new Error("ALL_NODES_OFFLINE");
+                throw new Error("Todos os nós de proxy falharam.");
+            }
+
+            saveCache(data) {
+                try {
+                    const cachePayload = {
+                        timestamp: Date.now(),
+                        data: data
+                    };
+                    localStorage.setItem(SYSTEM_CONFIG.CACHE_KEY, JSON.stringify(cachePayload));
+                } catch (e) {
+                    console.error("Cache Write Error", e);
+                }
+            }
+
+            loadCache() {
+                try {
+                    const raw = localStorage.getItem(SYSTEM_CONFIG.CACHE_KEY);
+                    if (!raw) return null;
+                    const parsed = JSON.parse(raw);
+                    // Retorna cache mesmo se expirado se não houver opção, mas idealmente verifica idade
+                    return parsed;
+                } catch (e) {
+                    return null;
+                }
             }
 
             parseData(data, results) {
                 const elements = data?.data?.Catalog?.searchStore?.elements || [];
+                
                 elements.forEach(game => {
-                    const title = game.title;
+                    // Filtragem Robusta
+                    if (!game.title) return;
+
                     const promotions = game.promotions;
+                    
+                    // Lógica para Jogos Grátis ATUAIS
                     const currentOffers = promotions?.promotionalOffers?.[0]?.promotionalOffers || [];
-                    currentOffers.forEach(offer => {
-                        if (offer.discountSetting?.discountPercentage === 0) {
-                            results.current.push({ ...game, offerDetails: offer });
-                        }
-                    });
+                    const isFreeNow = currentOffers.some(offer => offer.discountSetting?.discountPercentage === 0);
+
+                    // Lógica para Jogos Grátis FUTUROS
                     const upcomingOffers = promotions?.upcomingPromotionalOffers?.[0]?.promotionalOffers || [];
-                    upcomingOffers.forEach(offer => {
-                        const gameObj = { ...game, offerDetails: offer };
-                        if (this.isMystery(title)) results.mystery.push(gameObj);
+                    const isFreeSoon = upcomingOffers.length > 0;
+
+                    if (isFreeNow) {
+                        // Evitar duplicatas ou DLCs irrelevantes se possível (filtro básico)
+                        results.current.push({ 
+                            ...game, 
+                            offerDetails: currentOffers[0] 
+                        });
+                    } else if (isFreeSoon) {
+                        const gameObj = { ...game, offerDetails: upcomingOffers[0] };
+                        if (this.isMystery(game.title)) results.mystery.push(gameObj);
                         else results.upcoming.push(gameObj);
-                    });
+                    }
                 });
             }
 
@@ -255,10 +320,10 @@
                     <span className="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
                 </a>
                 <div className="flex items-center gap-3">
-                     <span className="px-3 py-1 rounded-full bg-vibrantCyan/10 border border-vibrantCyan/20 text-vibrantCyan text-xs font-bold uppercase tracking-wider">
-                        S.C.A.N.N.E.R. v4.2
+                     <span className="px-3 py-1 rounded-full bg-vibrantCyan/10 border border-vibrantCyan/20 text-vibrantCyan text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-vibrantCyan animate-pulse"></div>
+                        S.C.A.N.N.E.R. v5.0 (Resilient)
                     </span>
-                    <img src="../../assets/images/branding/logo.png" alt="Logo" className="h-8 w-8 opacity-80" onError={(e) => e.target.style.display='none'} />
                 </div>
                 <button id="mobile-menu-btn" className="md:hidden text-white text-2xl p-2 z-50 relative group ml-auto">
                     <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -272,19 +337,20 @@
             React.useEffect(() => endRef.current?.scrollIntoView({ behavior: 'smooth' }), [logs]);
 
             return (
-                <div className="glass-card h-64 p-4 font-mono text-xs overflow-hidden flex flex-col rounded-2xl border-l-4 border-l-deepBlue">
+                <div className="glass-card h-64 p-4 font-mono text-xs overflow-hidden flex flex-col rounded-2xl border-l-4 border-l-deepBlue shadow-inner bg-black/20">
                     <div className="flex justify-between text-slate-500 mb-2 border-b border-white/5 pb-2">
-                        <span className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-vibrantCyan animate-pulse"></div> SYSTEM_LOGS</span>
-                        <span className="text-vibrantCyan opacity-70">NET_V1.0.4</span>
+                        <span className="flex items-center gap-2"><Icon name="terminal" className="text-vibrantCyan" /> SYSTEM_LOGS</span>
+                        <span className="text-vibrantCyan opacity-70">LIVE_FEED</span>
                     </div>
                     <div className="flex-1 overflow-y-auto space-y-1 custom-scrollbar">
                         {logs.map(log => (
-                            <div key={log.id} className="opacity-90 leading-relaxed">
+                            <div key={log.id} className="opacity-90 leading-relaxed border-l-2 border-transparent hover:border-white/10 pl-1 transition-colors">
                                 <span className="text-slate-600 mr-2">[{log.time}]</span>
                                 <span className={`font-bold mr-2 ${
-                                    log.type === 'ERR' ? 'text-red-400' :
+                                    log.type === 'ERR' ? 'text-dangerRed' :
                                     log.type === 'SUC' ? 'text-trustGreen' :
-                                    log.type === 'WARN' ? 'text-energeticAmber' : 'text-vibrantCyan'
+                                    log.type === 'WARN' ? 'text-energeticAmber' :
+                                    log.type === 'NET' ? 'text-blue-400' : 'text-vibrantCyan'
                                 }`}>{log.type}</span>
                                 <span className="text-slate-300">{log.msg}</span>
                             </div>
@@ -295,116 +361,96 @@
             );
         };
 
-        const NetworkMap = ({ active }) => {
-            const canvasRef = React.useRef(null);
+        const Countdown = () => {
+            const [timeLeft, setTimeLeft] = React.useState('');
+
             React.useEffect(() => {
-                const cvs = canvasRef.current;
-                const ctx = cvs.getContext('2d');
-                let frame = 0;
-                let animId;
-
-                const draw = () => {
-                    ctx.clearRect(0, 0, cvs.width, cvs.height);
-
-                    // Grid Pattern
-                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
-                    ctx.lineWidth = 1;
-                    const gridSize = 25;
-                    for(let i=0; i<cvs.width; i+=gridSize) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,cvs.height); ctx.stroke(); }
-                    for(let i=0; i<cvs.height; i+=gridSize) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(cvs.width,i); ctx.stroke(); }
-
-                    // Center Node (RDP HQ)
-                    const cx = cvs.width/2, cy = cvs.height/2;
+                const calculateTime = () => {
+                    const now = new Date();
+                    const nextThursday = new Date();
+                    nextThursday.setDate(now.getDate() + (4 + 7 - now.getDay()) % 7);
+                    nextThursday.setHours(12, 0, 0, 0); // 12:00 PM Horario Base (ajustar conforme necessidade)
                     
-                    // Pulse Effect
-                    if(active) {
-                        ctx.beginPath();
-                        ctx.arc(cx, cy, 10 + Math.sin(frame*0.1)*5, 0, Math.PI*2);
-                        ctx.fillStyle = 'rgba(0, 180, 216, 0.2)'; // vibrantCyan alpha
-                        ctx.fill();
-                    }
+                    if (nextThursday < now) nextThursday.setDate(nextThursday.getDate() + 7);
 
-                    ctx.fillStyle = '#00B4D8'; // vibrantCyan
-                    ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI*2); ctx.fill();
+                    const diff = nextThursday - now;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-                    // Target Node (Epic Servers)
-                    const tx = cx + Math.sin(frame*0.02)*60, ty = cy + Math.cos(frame*0.03)*40;
-                    ctx.fillStyle = active ? '#10B981' : '#F59E0B'; // TrustGreen : Amber
-                    ctx.beginPath(); ctx.arc(tx, ty, 6, 0, Math.PI*2); ctx.fill();
-
-                    // Connection Line
-                    if(active) {
-                        const grad = ctx.createLinearGradient(cx, cy, tx, ty);
-                        grad.addColorStop(0, '#00B4D8');
-                        grad.addColorStop(1, '#10B981');
-                        ctx.strokeStyle = grad;
-                        ctx.lineWidth = 2;
-                        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(tx, ty); ctx.stroke();
-
-                        // Packets
-                        const packetPos = (frame % 50) / 50;
-                        const px = cx + (tx - cx) * packetPos;
-                        const py = cy + (ty - cy) * packetPos;
-                        ctx.fillStyle = '#fff';
-                        ctx.beginPath(); ctx.arc(px, py, 2, 0, Math.PI*2); ctx.fill();
-                    }
-
-                    frame++;
-                    animId = requestAnimationFrame(draw);
+                    setTimeLeft(`${days}d ${hours}h ${minutes}m`);
                 };
-                draw();
-                return () => cancelAnimationFrame(animId);
-            }, [active]);
+                calculateTime();
+                const timer = setInterval(calculateTime, 60000);
+                return () => clearInterval(timer);
+            }, []);
 
             return (
-                <div className="glass-card h-64 relative rounded-2xl overflow-hidden border border-white/5">
-                    <canvas ref={canvasRef} width={300} height={254} className="w-full h-full" />
-                    <div className="absolute top-3 left-3 flex items-center gap-2 bg-darkSlate/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-white/10">
-                        <div className={`w-2 h-2 rounded-full ${active ? 'bg-trustGreen animate-pulse' : 'bg-slate-500'}`}></div>
-                        <span className="text-[10px] text-slate-300 font-mono tracking-wider">
-                            {active ? 'UPLINK_ESTABLISHED' : 'STANDBY_MODE'}
-                        </span>
-                    </div>
+                <div className="flex flex-col items-center justify-center p-4 bg-white/5 rounded-xl border border-white/10 mt-4">
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest mb-1">Próxima Rotação</span>
+                    <div className="text-xl font-mono font-bold text-white">{timeLeft}</div>
                 </div>
             );
-        };
+        }
 
         const IntelCard = ({ game, type }) => {
-            const img = game.keyImages?.find(i => i.type === 'Thumbnail')?.url || '';
+            // Imagem Fallback melhorada
+            const [imgSrc, setImgSrc] = React.useState(null);
+            
+            React.useEffect(() => {
+                const thumb = game.keyImages?.find(i => i.type === 'Thumbnail' || i.type === 'DieselStoreFrontWide')?.url;
+                setImgSrc(thumb || 'https://via.placeholder.com/400x225/1e293b/0f172a?text=NO+IMAGE');
+            }, [game]);
+
+            const handleError = () => {
+                setImgSrc('https://via.placeholder.com/400x225/1e293b/0f172a?text=IMG+ERROR');
+            }
 
             return (
-                <div className="glass-card p-4 rounded-xl group hover:bg-slate-800/50 transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex justify-between items-center mb-3">
-                        <div className={`text-[10px] font-mono font-bold px-2 py-1 rounded border tracking-wide uppercase ${
+                <div className="glass-card p-4 rounded-xl group hover:bg-slate-800/50 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                    {/* Background Scan Line Effect on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-vibrantCyan/5 to-transparent opacity-0 group-hover:opacity-100 animate-scan-line pointer-events-none"></div>
+
+                    <div className="flex justify-between items-center mb-3 relative z-10">
+                        <div className={`text-[10px] font-mono font-bold px-2 py-1 rounded border tracking-wide uppercase flex items-center gap-2 ${
                             type === 'current' 
                             ? 'text-trustGreen bg-trustGreen/10 border-trustGreen/20' 
                             : 'text-vibrantCyan bg-vibrantCyan/10 border-vibrantCyan/20'
                         }`}>
-                            {type === 'current' ? 'Disponível Agora' : 'Em Breve'}
+                            <Icon name={type === 'current' ? 'unlock' : 'lock'} />
+                            {type === 'current' ? 'Disponível' : 'Em Breve'}
                         </div>
                         {type === 'mystery' && <Icon name="user-secret" className="text-energeticAmber animate-pulse" />}
                     </div>
 
-                    <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-white/5 group-hover:border-vibrantCyan/30 transition-colors">
-                        {img && <img src={img} className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all transform group-hover:scale-105 duration-700" />}
+                    <div className="relative aspect-video mb-4 overflow-hidden rounded-lg border border-white/5 group-hover:border-vibrantCyan/30 transition-colors bg-slate-900">
+                        <img 
+                            src={imgSrc} 
+                            alt={game.title}
+                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-all transform group-hover:scale-105 duration-700"
+                            onError={handleError}
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-darkSlate via-transparent to-transparent opacity-80"></div>
                         
                         <div className="absolute bottom-2 left-2 right-2">
-                             <h3 className="font-bold text-lg leading-tight text-white group-hover:text-vibrantCyan transition-colors drop-shadow-md">
+                             <h3 className="font-bold text-lg leading-tight text-white group-hover:text-vibrantCyan transition-colors drop-shadow-md truncate">
                                 {game.title}
                             </h3>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400 border-t border-white/5 pt-2">
+                    <div className="grid grid-cols-2 gap-2 text-[10px] font-mono text-slate-400 border-t border-white/5 pt-2 relative z-10">
                         <div>
-                            <span className="block text-slate-500 mb-0.5">IDENTIFICADOR</span>
-                            <span className="text-slate-300">{game.id.substr(0, 8)}...</span>
+                            <span className="block text-slate-500 mb-0.5">PERÍODO</span>
+                            <span className="text-slate-300">
+                                {new Date(game.offerDetails?.startDate).toLocaleDateString(undefined, {day:'2-digit', month:'2-digit'})} - 
+                                {new Date(game.offerDetails?.endDate).toLocaleDateString(undefined, {day:'2-digit', month:'2-digit'})}
+                            </span>
                         </div>
                         <div className="text-right">
-                            <span className="block text-slate-500 mb-0.5">DATA INÍCIO</span>
-                            <span className="text-white bg-white/5 px-1 rounded">
-                                {new Date(game.offerDetails?.startDate).toLocaleDateString()}
+                            <span className="block text-slate-500 mb-0.5">STATUS</span>
+                            <span className={`px-1 rounded ${type === 'current' ? 'text-trustGreen' : 'text-energeticAmber'}`}>
+                                {type === 'current' ? 'ATIVO' : 'AGUARDANDO'}
                             </span>
                         </div>
                     </div>
@@ -445,44 +491,56 @@
             const [showInspector, setShowInspector] = React.useState(false);
             const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-            const scanner = React.useRef(new ScannerEngine());
+            // Ref para manter a instância do engine
+            const scannerRef = React.useRef(null);
+
+            // Setup Log System
+            const addLog = React.useCallback((msg, type='INFO') => {
+                const time = new Date().toLocaleTimeString('pt-BR', {hour12:false});
+                setLogs(prev => [...prev.slice(-29), { id: Math.random(), time, msg, type }]);
+            }, []);
+
+            // Init Engine
+            React.useEffect(() => {
+                scannerRef.current = new ScannerEngine(addLog);
+                runScan(); // Auto-start
+            }, [addLog]);
 
             React.useEffect(() => {
                 const btn = document.getElementById('mobile-menu-btn');
-                if (btn) {
-                    btn.onclick = () => setIsMenuOpen(true);
-                }
+                if (btn) btn.onclick = () => setIsMenuOpen(true);
             }, []);
-
-            const addLog = (msg, type='INFO') => {
-                const time = new Date().toLocaleTimeString('pt-BR', {hour12:false});
-                setLogs(prev => [...prev.slice(-19), { id: Math.random(), time, msg, type }]);
-            };
 
             const runScan = async () => {
                 if (status === 'SCANNING') return;
                 setStatus('SCANNING');
-                addLog('Iniciando sequência de varredura...', 'CMD');
+                setLogs([]); // Limpar logs antigos para nova scan
+                addLog('Iniciando sequência de varredura v5.0...', 'CMD');
 
-                const phases = ['Resolvendo nós de proxy...', 'Contornando firewalls...', 'Interceptando handshake TLS...'];
+                // Fake Loading Phases for UX
+                const phases = ['Verificando Cache Local...', 'Sincronizando Nodes...', 'Buscando Payload...'];
                 for(let p of phases) {
                     addLog(p, 'SYS');
-                    await new Promise(r => setTimeout(r, 400));
+                    await new Promise(r => setTimeout(r, 200));
                 }
 
                 try {
-                    const data = await scanner.current.scan();
+                    const data = await scannerRef.current.scan();
                     setResults(data);
-                    addLog(`Payload Adquirido: ${data.current.length + data.upcoming.length} Objetos`, 'SUC');
-                    addLog(`Latência: ${data.metadata.latency} | Nó: ${data.metadata.proxy}`, 'NET');
+                    
+                    if (data.metadata.status === 'CACHED') {
+                        addLog('ALERTA: Rede instável. Mostrando dados em cache.', 'WARN');
+                    } else {
+                        addLog('Conexão Segura. Dados atualizados.', 'SUC');
+                    }
+                    
+                    addLog(`Objetos recuperados: ${data.current.length + data.upcoming.length}`, 'INFO');
                 } catch (e) {
-                    addLog(`Falha na conexão: ${e.message}`, 'ERR');
+                    addLog(`ERRO CRÍTICO: ${e.message}`, 'ERR');
                 } finally {
                     setStatus('IDLE');
                 }
             };
-
-            React.useEffect(() => { runScan(); }, []);
 
             return (
                 <div className="max-w-7xl mx-auto px-6 py-8 md:py-12">
@@ -494,16 +552,16 @@
 
                     <Header />
 
-                    <div className="text-center mb-12 fade-in-up delay-100">
+                    <div className="text-center mb-12 fade-in-up delay-100 relative">
                         <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-vibrantCyan tracking-widest uppercase">
                             Intelligence Unit
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
                             Epic Games <br />
                             <span className="text-gradient">S.C.A.N.N.E.R.</span>
                         </h1>
                         <p className="text-slate-400 font-light max-w-xl mx-auto leading-relaxed">
-                            Ferramenta de inteligência automatizada para monitoramento de ofertas promocionais e jogos gratuitos na infraestrutura da Epic Games Store.
+                            Monitoramento de ativos promocionais em tempo real com redundância de cache e failover automático.
                         </p>
                     </div>
 
@@ -513,57 +571,75 @@
                             <div className="glass-card p-6 rounded-2xl border-t-4 border-t-vibrantCyan">
                                 <div className="flex justify-between items-center mb-6">
                                     <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                                        <Icon name="sliders" /> Controle
+                                        <Icon name="satellite-dish" /> Status do Sistema
                                     </span>
-                                    <span className={`w-2.5 h-2.5 rounded-full ${status === 'SCANNING' ? 'bg-energeticAmber animate-ping' : 'bg-slate-700'}`}></span>
+                                    <span className={`w-2.5 h-2.5 rounded-full ${status === 'SCANNING' ? 'bg-energeticAmber animate-ping' : 'bg-trustGreen'}`}></span>
                                 </div>
                                 <button
                                     onClick={runScan}
                                     disabled={status === 'SCANNING'}
-                                    className="w-full btn-glow py-4 text-white font-bold tracking-widest rounded-xl shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm flex items-center justify-center gap-3 uppercase"
+                                    className="w-full btn-glow py-4 text-white font-bold tracking-widest rounded-xl shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm flex items-center justify-center gap-3 uppercase mb-4"
                                 >
                                     {status === 'SCANNING' ? (
-                                        <><Icon name="circle-notch" className="animate-spin" /> Varrendo Rede...</>
+                                        <><Icon name="circle-notch" className="animate-spin" /> Processando...</>
                                     ) : (
-                                        <><Icon name="radar" /> Iniciar Varredura</>
+                                        <><Icon name="rotate" /> Forçar Varredura</>
                                     )}
                                 </button>
+                                
+                                <div className="border-t border-white/5 pt-4">
+                                    <div className="flex justify-between text-xs text-slate-400 font-mono mb-1">
+                                        <span>FONTE DE DADOS</span>
+                                        <span className={results?.metadata?.status === 'CACHED' ? 'text-energeticAmber' : 'text-trustGreen'}>
+                                            {results?.metadata?.source || '---'}
+                                        </span>
+                                    </div>
+                                    <Countdown />
+                                </div>
                             </div>
 
-                            <NetworkMap active={status === 'SCANNING'} />
                             <Terminal logs={logs} />
                         </div>
 
                         {/* Results Panel */}
                         <div className="lg:col-span-2 space-y-8">
+                            
                             {/* Dashboard Stats */}
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-trustGreen transition-all">
-                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Latência</div>
-                                    <div className="text-2xl font-bold text-trustGreen font-mono">{results?.metadata?.latency || '--'}</div>
+                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Disponíveis</div>
+                                    <div className="text-2xl font-bold text-trustGreen font-mono">{results?.current?.length || 0}</div>
                                 </div>
                                 <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-vibrantCyan transition-all cursor-pointer group" onClick={() => setShowInspector(true)}>
                                     <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2 flex items-center justify-center gap-1 group-hover:text-vibrantCyan transition-colors">
                                         Payload <Icon name="up-right-from-square" className="text-[8px]" />
                                     </div>
-                                    <div className="text-2xl font-bold text-vibrantCyan font-mono">{results?.metadata?.size || '--'}</div>
+                                    <div className="text-2xl font-bold text-vibrantCyan font-mono">{results?.raw ? 'OK' : '--'}</div>
                                 </div>
                                 <div className="glass-card p-5 rounded-2xl text-center border-b-2 border-b-transparent hover:border-b-white transition-all">
-                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Objetos</div>
-                                    <div className="text-2xl font-bold text-white font-mono">{results ? results.current.length + results.upcoming.length : 0}</div>
+                                    <div className="text-[10px] text-slate-500 uppercase tracking-widest font-bold mb-2">Futuros</div>
+                                    <div className="text-2xl font-bold text-white font-mono">{results?.upcoming?.length || 0}</div>
                                 </div>
                             </div>
 
                             {/* Game Cards */}
                             {results && (
                                 <div className="space-y-10 animate-[fadeIn_0.5s_ease-out]">
+                                    {/* Cached Warning Banner */}
+                                    {results.metadata.status === 'CACHED' && (
+                                        <div className="bg-energeticAmber/10 border border-energeticAmber/20 rounded-lg p-3 flex items-center gap-3 text-energeticAmber text-xs font-mono">
+                                            <Icon name="triangle-exclamation" />
+                                            <span>MODO OFFLINE: Exibindo dados salvos em {new Date(results.metadata.timestamp || Date.now()).toLocaleTimeString()}.</span>
+                                        </div>
+                                    )}
+
                                     {results.current.length > 0 && (
                                         <div>
                                             <h2 className="text-white font-bold text-lg mb-6 flex items-center gap-3">
                                                 <div className="w-8 h-8 rounded-lg bg-trustGreen/10 flex items-center justify-center text-trustGreen">
                                                     <Icon name="unlock" />
                                                 </div>
-                                                Ofertas Ativas
+                                                <span className="text-gradient">Resgate Imediato</span>
                                             </h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 {results.current.map((g, i) => <IntelCard key={i} game={g} type="current" />)}
@@ -577,7 +653,7 @@
                                                 <div className="w-8 h-8 rounded-lg bg-vibrantCyan/10 flex items-center justify-center text-vibrantCyan">
                                                     <Icon name="clock" />
                                                 </div>
-                                                Próximas Semanas
+                                                Próxima Semana
                                             </h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 {results.upcoming.map((g, i) => <IntelCard key={i} game={g} type="upcoming" />)}
@@ -590,9 +666,9 @@
                             {!results && status === 'IDLE' && (
                                 <div className="h-80 glass-card rounded-2xl flex flex-col items-center justify-center text-slate-600 border border-dashed border-slate-700/50">
                                     <div className="w-20 h-20 rounded-full bg-slate-800/50 flex items-center justify-center mb-6 animate-pulse-slow">
-                                        <Icon name="satellite-dish" className="text-4xl text-slate-700" />
+                                        <Icon name="triangle-exclamation" className="text-4xl text-dangerRed" />
                                     </div>
-                                    <span className="font-mono text-xs tracking-widest uppercase">Aguardando Comando do Usuário...</span>
+                                    <span className="font-mono text-xs tracking-widest uppercase text-dangerRed">Falha de Conexão - Verifique Logs</span>
                                 </div>
                             )}
                         </div>
