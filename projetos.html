@@ -90,21 +90,19 @@
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 z-50 relative group" aria-label="Abrir Menu">
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 z-50 relative group">
                 <div class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <i class="fa-solid fa-bars relative z-10 transition-transform duration-300"></i>
+                <i class="fa-solid fa-bars relative z-10"></i>
             </button>
         </header>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-slate-950/98 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden" aria-hidden="true">
-            <nav class="flex flex-col items-center gap-6">
-                <a href="index.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Home</a>
-                <a href="projetos.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Projetos</a>
-                <a href="index.html#empresa" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">A Empresa</a>
-                <a href="sobre.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Sobre Mim</a>
-                <a href="https://wa.me/5562996780498" target="_blank" class="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20 mobile-link">Contato</a>
-            </nav>
+        <div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden">
+            <a href="index.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Home</a>
+            <a href="projetos.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Projetos</a>
+            <a href="index.html#empresa" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">A Empresa</a>
+            <a href="sobre.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Sobre Mim</a>
+            <a href="https://wa.me/5562996780498" target="_blank" class="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20 mobile-link">Contato</a>
         </div>
 
         <!-- Main Content -->
@@ -254,31 +252,33 @@
         const mobileLinks = document.querySelectorAll('.mobile-link');
         let isMenuOpen = false;
 
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            const icon = menuBtn.querySelector('i');
+        if (menuBtn && menuOverlay) {
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                const icon = menuBtn.querySelector('i');
+                if (isMenuOpen) {
+                    menuOverlay.classList.remove('translate-x-full');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    menuOverlay.classList.add('translate-x-full');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                }
+            });
 
-            if (isMenuOpen) {
-                // Abrir Menu
-                menuOverlay.classList.remove('translate-x-full');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-                document.body.style.overflow = 'hidden'; // Trava o scroll do site
-                menuOverlay.setAttribute('aria-hidden', 'false');
-            } else {
-                // Fechar Menu
-                menuOverlay.classList.add('translate-x-full');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-                document.body.style.overflow = 'auto'; // Libera o scroll
-                menuOverlay.setAttribute('aria-hidden', 'true');
-            }
-        }
-
-        if (menuBtn) {
-            menuBtn.addEventListener('click', toggleMenu);
-            // Fecha o menu ao clicar em qualquer link
-            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    menuOverlay.classList.add('translate-x-full');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                });
+            });
         }
 
         // --- SCROLL TO TOP LOGIC ---

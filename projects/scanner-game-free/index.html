@@ -244,7 +244,7 @@
 
         const Icon = ({ name, className }) => <i className={`fa-solid fa-${name} ${className}`}></i>;
 
-        const Header = ({ onMenuClick, isMenuOpen }) => (
+        const Header = () => (
             <header className="flex flex-wrap justify-between items-center mb-16 gap-4 fade-in-up relative z-50">
                 <a href="../../index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
                     <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-vibrantCyan/50 transition-colors">
@@ -260,13 +260,9 @@
                     </span>
                     <img src="../../assets/images/branding/logo.png" alt="Logo" className="h-8 w-8 opacity-80" onError={(e) => e.target.style.display='none'} />
                 </div>
-                <button
-                    onClick={onMenuClick}
-                    className="md:hidden text-white text-2xl p-2 z-50 relative group ml-auto"
-                    aria-label="Abrir Menu"
-                >
+                <button id="mobile-menu-btn" className="md:hidden text-white text-2xl p-2 z-50 relative group ml-auto">
                     <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <i className={`fa-solid ${isMenuOpen ? 'fa-xmark' : 'fa-bars'} relative z-10 transition-transform duration-300`}></i>
+                    <i className="fa-solid fa-bars relative z-10"></i>
                 </button>
             </header>
         );
@@ -452,12 +448,11 @@
             const scanner = React.useRef(new ScannerEngine());
 
             React.useEffect(() => {
-                if (isMenuOpen) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = 'auto';
+                const btn = document.getElementById('mobile-menu-btn');
+                if (btn) {
+                    btn.onclick = () => setIsMenuOpen(true);
                 }
-            }, [isMenuOpen]);
+            }, []);
 
             const addLog = (msg, type='INFO') => {
                 const time = new Date().toLocaleTimeString('pt-BR', {hour12:false});
@@ -497,7 +492,7 @@
                         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-vibrantCyan/10 rounded-full blur-[120px]"></div>
                     </div>
 
-                    <Header onMenuClick={() => setIsMenuOpen(!isMenuOpen)} isMenuOpen={isMenuOpen} />
+                    <Header />
 
                     <div className="text-center mb-12 fade-in-up delay-100">
                         <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-vibrantCyan tracking-widest uppercase">
@@ -606,17 +601,15 @@
                     {showInspector && <RawInspector data={results?.raw} active={showInspector} onClose={() => setShowInspector(false)} />}
 
                     {/* Mobile Menu Overlay */}
-                    <div
-                        className={`fixed inset-0 z-[60] bg-slate-950/98 backdrop-blur-xl transform transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-                        aria-hidden={!isMenuOpen}
-                    >
-                        <nav className="flex flex-col items-center gap-6">
-                            <a href="../../index.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors" onClick={() => setIsMenuOpen(false)}>Home</a>
-                            <a href="../../projetos.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors" onClick={() => setIsMenuOpen(false)}>Projetos</a>
-                            <a href="../../index.html#empresa" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors" onClick={() => setIsMenuOpen(false)}>A Empresa</a>
-                            <a href="../../sobre.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors" onClick={() => setIsMenuOpen(false)}>Sobre Mim</a>
-                            <a href="https://wa.me/5562996780498" target="_blank" className="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20" onClick={() => setIsMenuOpen(false)}>Contato</a>
-                        </nav>
+                    <div className={`fixed inset-0 z-[60] bg-slate-900/95 backdrop-blur-xl transform transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                         <button onClick={() => setIsMenuOpen(false)} className="absolute top-8 right-8 text-white text-3xl">
+                            <i className="fa-solid fa-xmark"></i>
+                        </button>
+                        <a href="../../index.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors">Home</a>
+                        <a href="../../projetos.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors">Projetos</a>
+                        <a href="../../index.html#empresa" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors">A Empresa</a>
+                        <a href="../../sobre.html" className="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors">Sobre Mim</a>
+                        <a href="https://wa.me/5562996780498" target="_blank" className="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20">Contato</a>
                     </div>
 
                     <footer className="mt-20 border-t border-slate-800/50 pt-12 pb-8">
