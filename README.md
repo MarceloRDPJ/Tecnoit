@@ -39,14 +39,14 @@ graph TD;
     Hub[RDP Studio Hub] -->|Navegação| P1[Assistente IA];
     Hub -->|Navegação| P2[Validador Firewall];
     Hub -->|Navegação| P3[Automação GLPI];
-    Hub -->|Navegação| P4[Scanner Games];
+    Hub -->|Navegação| P4[RDP Insider];
 
     P1 -->|API| T[Telegram];
     P1 -->|LLM| G[Gemini 1.5 Pro];
     P2 -->|Engine| JS[Regex Parser];
     P2 -->|Output| F[Fortigate Scripts];
     P3 -->|Integration| GLPI[GLPI API];
-    P4 -->|Fetch| E[Epic Games Store];
+    P4 -->|Crawler| E[Web Sources];
 
     style Hub fill:#1E3A5F,stroke:#00B4D8,stroke-width:3px,color:white
     style P1 fill:#2D3748,stroke:#fff,stroke-width:2px,color:white
@@ -70,6 +70,10 @@ Ferramenta de conformidade que sanitiza listas de MAC Address e gera scripts pro
 ### ⚙️ [Automação GLPI](./projects/abertura-chamados-glpi/)
 > **Stack:** Python, REST API.
 Bot de abertura massiva de chamados que varre diretórios locais, identifica evidências e abre tickets com anexos automaticamente.
+
+### 🕵️ [RDP Insider (Geek Blog)](./projects/scanner-game-free/)
+> **Stack:** Python Crawler, React, Tailwind.
+Plataforma de inteligência e vazamentos de jogos. Cruza dados da web para validar rumores (Hardware/Games) e monitorar ofertas.
 
 ---
 

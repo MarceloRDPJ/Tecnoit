@@ -1,0 +1,77 @@
+{
+  "last_updated": "18/12/2025 16:43",
+  "status": "Active",
+  "items": [
+    {
+      "id": "mock_001",
+      "title": "GTA VI: Map Size Comparison Leaked via Artist Profile",
+      "image": "https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=1978&auto=format&fit=crop",
+      "source_count": 12,
+      "reliability": "High",
+      "category": "Rumor",
+      "date": "2025-12-18",
+      "summary": "Multiple sources confirm the map size is approximately 2.5x larger than Los Santos, including new island areas.",
+      "sources": [
+        "r/GamingLeaksAndRumours",
+        "InsiderGaming",
+        "Twitter @Leaker123"
+      ]
+    },
+    {
+      "id": "mock_002",
+      "title": "Epic Games Mystery Game 5: The Outer Worlds (Spacer's Choice Edition)",
+      "image": "https://images.unsplash.com/photo-1627856014759-08529612289d?q=80&w=2070&auto=format&fit=crop",
+      "source_count": 45,
+      "reliability": "Confirmed",
+      "category": "Free Games",
+      "date": "2025-12-18",
+      "summary": "Data mining of the Epic Store launcher confirms the next wrapper matches The Outer Worlds color scheme.",
+      "sources": [
+        "r/EpicGamesPC",
+        "Billbil-kun"
+      ]
+    },
+    {
+      "id": "mock_003",
+      "title": "Nintendo Switch 2: 8-inch LCD Screen Confirmed by Supply Chain",
+      "image": "https://images.unsplash.com/photo-1578303512597-8198dd382374?q=80&w=2069&auto=format&fit=crop",
+      "source_count": 8,
+      "reliability": "Medium",
+      "category": "Hardware",
+      "date": "2025-12-17",
+      "summary": "Reports from Sharp indicate mass production of 8-inch LCD panels destined for a 'major Japanese console'.",
+      "sources": [
+        "Bloomberg",
+        "r/NintendoSwitch"
+      ]
+    },
+    {
+      "id": "mock_004",
+      "title": "Bloodborne PC Port: Project 'Velvet Veil' spotted in database",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+      "source_count": 3,
+      "reliability": "Low",
+      "category": "Rumor",
+      "date": "2025-12-16",
+      "summary": "A reliable dataminer found references to a Sony project that aligns with Bloodborne asset naming conventions.",
+      "sources": [
+        "4chan",
+        "r/GamingLeaksAndRumours"
+      ]
+    },
+    {
+      "id": "mock_005",
+      "title": "RTX 5090 Specs: 32GB GDDR7 Memory and 70% Performance Uplift",
+      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=2070&auto=format&fit=crop",
+      "source_count": 15,
+      "reliability": "Medium",
+      "category": "Hardware",
+      "date": "2025-12-15",
+      "summary": "Kopite7kimi leaks suggest the Blackwell architecture will feature a massive bandwidth increase.",
+      "sources": [
+        "r/Nvidia",
+        "Videocardz"
+      ]
+    }
+  ]
+}

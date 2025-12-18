@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDP Intelligence | Deep Scan Network</title>
+    <title>RDP Insider | Leaks & Hardware Intelligence</title>
     <link rel="icon" type="image/png" href="../../favicon.png">
 
     <!-- React & ReactDOM -->
@@ -27,6 +27,7 @@
                         trustGreen: '#10b981',
                         darkSlate: '#020617',
                         dangerRed: '#ef4444',
+                        glass: 'rgba(15, 23, 42, 0.7)',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -34,22 +35,12 @@
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'scan-line': 'scanLine 3s linear infinite',
                         'fade-in': 'fadeIn 0.6s ease-out forwards',
-                        'blink': 'blink 1s step-end infinite',
                     },
                     keyframes: {
-                        scanLine: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(100%)' }
-                        },
                         fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        blink: {
-                            '0%, 100%': { opacity: '1' },
-                            '50%': { opacity: '0' }
                         }
                     }
                 }
@@ -61,459 +52,173 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #020617;
-            background-image: url("https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=2069&auto=format&fit=crop");
+            /* Fundo com gradiente sutil e padrão de grade */
+            background-image:
+                linear-gradient(to bottom, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.98)),
+                url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop");
             background-size: cover;
-            background-position: center;
             background-attachment: fixed;
             color: #F8FAFC;
         }
-        
-        .backdrop-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(2, 6, 23, 0.92);
-            backdrop-filter: blur(8px);
-            z-index: -1;
-        }
-
-        /* Card Visual */
-        .visual-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            backdrop-filter: blur(12px);
-        }
-        .visual-card:hover {
-            transform: translateY(-5px);
-            border-color: #06b6d4;
-            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.3);
-        }
-
-        .clue-card {
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.2),
-                rgba(0, 0, 0, 0.2) 10px,
-                rgba(0, 0, 0, 0.3) 10px,
-                rgba(0, 0, 0, 0.3) 20px
-            );
-        }
 
         /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 10px 40px -10px rgba(6, 182, 212, 0.15);
+        }
     </style>
 </head>
-<body class="antialiased overflow-x-hidden flex flex-col min-h-screen">
-    <div class="backdrop-overlay"></div>
+<body class="antialiased min-h-screen flex flex-col">
     <div id="root" class="flex-grow flex flex-col"></div>
 
     <script type="text/babel">
         // ==========================================
-        // INTELLIGENCE ENGINE (REAL TIME)
+        // UI COMPONENTS
         // ==========================================
-        const SYSTEM_CONFIG = {
-            EPIC_ENDPOINT: 'https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions',
-            GAMERPOWER_ENDPOINT: 'https://www.gamerpower.com/api/giveaways?type=game&sort-by=popularity',
-            // Fontes Específicas de LISTAS (Focando em Megathreads)
-            REDDIT_SOURCES: [
-                'https://www.reddit.com/r/EpicGamesPC/search.json?q=megathread&restrict_sr=1&sort=new&limit=5',
-                'https://www.reddit.com/r/GamingLeaksAndRumours/search.json?q=epic%20games%20list&restrict_sr=1&sort=new&limit=10',
-                'https://www.reddit.com/r/FreeGameFindings/search.json?q=epic%20leak&restrict_sr=1&sort=new&limit=10'
-            ],
-            PROXIES: [
-                { url: (t) => `https://corsproxy.io/?${encodeURIComponent(t)}` },
-                { url: (t) => `https://api.allorigins.win/raw?url=${encodeURIComponent(t)}` },
-            ]
-        };
-
-        class NetworkScanner {
-            constructor(logCallback) { this.log = logCallback; }
-
-            async fetchWithFailover(url) {
-                for (const proxy of SYSTEM_CONFIG.PROXIES) {
-                    try {
-                        const res = await fetch(proxy.url(url), { signal: AbortSignal.timeout(8000) });
-                        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                        return await res.json();
-                    } catch (e) { continue; }
-                }
-                return null;
-            }
-
-            extractRedditImage(post) {
-                if (post.preview && post.preview.images && post.preview.images[0]) {
-                    return post.preview.images[0].source.url.replace('&amp;', '&');
-                }
-                if (post.thumbnail && post.thumbnail.startsWith('http')) {
-                    return post.thumbnail;
-                }
-                return null; 
-            }
-
-            // EXTRAÇÃO DE LISTA: Procura padrões de blogs (19 Dez - Jogo)
-            extractLeakListContent(post) {
-                if (!post.selftext) return null;
-                const lines = post.selftext.split('\n');
-                
-                // Regex melhorada para pegar formatos de lista de blog
-                // Ex: "19 Dec - Game Name", "19/12: Game Name", "Day 1: Game"
-                const leakPattern = /(\d{1,2}\s?(?:Dec|Dez|Jan)|^\d{1,2}\/\d{1,2}|Day\s?\d+)/i;
-                
-                const listItems = lines.filter(line => {
-                    const cleanLine = line.trim();
-                    if (cleanLine.length < 5 || cleanLine.length > 100 || cleanLine.startsWith('http')) return false;
-                    return leakPattern.test(cleanLine);
-                }).slice(0, 15); 
-                
-                return listItems.length >= 3 ? listItems : null;
-            }
-
-            analyzeSuspects(threads, currentOfficialGame) {
-                const gameMentions = {};
-                // Stopwords expandidas
-                let stopWords = [
-                    'epic', 'games', 'free', 'mystery', 'leak', 'rumor', 'clue', 'game', 'daily', 
-                    'december', 'prediction', 'megathread', 'wrap', 'list', 'leak', 'confirmed', 
-                    'store', 'mystery', 'game', 'listing', 'suggests', 'likely', 'possibly', 
-                    'probably', 'unconfirmed', 'release', 'date', 'time', 'countdown', 'vault',
-                    'discord', 'server', 'christmas', 'holiday', 'sale', 'year', 'week', 'day',
-                    'discussion', 'thread', 'speculation', 'unknown', 'games', 'freebie', 'launcher',
-                    'mystery', 'hint', 'clues', 'dec', 'jan', 'today', 'tomorrow'
-                ];
-                
-                if (currentOfficialGame) {
-                    const currentWords = currentOfficialGame.toLowerCase().split(' ');
-                    stopWords = [...stopWords, ...currentWords];
-                }
-
-                threads.forEach(thread => {
-                    const cleanTitle = thread.title.replace(/[^a-zA-Z0-9 ]/g, ' ').toLowerCase();
-                    const words = cleanTitle.split(/\s+/);
-                    
-                    for (let i = 0; i < words.length; i++) {
-                        if (!stopWords.includes(words[i]) && words[i].length > 2 && isNaN(words[i])) {
-                            let key = words[i];
-                            let weight = 1;
-                            
-                            // Bigramas (Nome Composto) - Essencial para jogos como "Outer Worlds"
-                            if (words[i+1] && !stopWords.includes(words[i+1]) && words[i+1].length > 2) {
-                                let bigram = words[i] + ' ' + words[i+1];
-                                gameMentions[bigram] = (gameMentions[bigram] || 0) + 10; // Peso alto para nomes compostos
-                                i++; 
-                            } else {
-                                gameMentions[key] = (gameMentions[key] || 0) + weight;
-                            }
-                        }
-                    }
-                });
-
-                const sorted = Object.entries(gameMentions)
-                    .sort((a,b) => b[1] - a[1]);
-
-                // Retorna o Top 1, mesmo que a contagem seja baixa, para evitar "Aguardando"
-                if (sorted.length > 0) {
-                    return { name: sorted[0][0], count: sorted[0][1] };
-                }
-                return null;
-            }
-
-            async scanNetworkBuzz(currentOfficialGame) {
-                this.log(`Escaneando rede... (Filtrando: ${currentOfficialGame || 'Nenhum'})`);
-                let threads = [];
-                let detectedList = null;
-
-                for (const source of SYSTEM_CONFIG.REDDIT_SOURCES) {
-                    try {
-                        const data = await this.fetchWithFailover(source);
-                        if (data?.data?.children) {
-                            threads.push(...data.data.children.map(child => {
-                                const content = this.extractLeakListContent(child.data);
-                                // Se achar uma lista, salva. Prioriza listas mais longas (mais completas)
-                                if (content && (!detectedList || content.length > detectedList.items.length)) {
-                                    detectedList = {
-                                        source: `r/${child.data.subreddit}`,
-                                        title: child.data.title,
-                                        items: content,
-                                        url: `https://reddit.com${child.data.permalink}`
-                                    };
-                                }
-                                return {
-                                    id: child.data.id,
-                                    title: child.data.title,
-                                    score: child.data.score,
-                                    comments: child.data.num_comments,
-                                    url: `https://reddit.com${child.data.permalink}`,
-                                    date: new Date(child.data.created_utc * 1000),
-                                    source: `r/${child.data.subreddit}`,
-                                    image: this.extractRedditImage(child.data),
-                                    isClue: child.data.title.toLowerCase().includes('clue')
-                                };
-                            }));
-                        }
-                    } catch (e) {}
-                }
-
-                const uniqueThreads = threads.filter((v,i,a)=>a.findIndex(v2=>(v2.id===v.id))===i);
-                const suspect = this.analyzeSuspects(uniqueThreads, currentOfficialGame);
-                
-                return { 
-                    threads: uniqueThreads.sort((a, b) => b.score - a.score).slice(0, 6),
-                    topSuspect: suspect,
-                    leakList: detectedList
-                };
-            }
-
-            async getGlobalFreebies() {
-                try {
-                    const data = await this.fetchWithFailover(SYSTEM_CONFIG.GAMERPOWER_ENDPOINT);
-                    if (!data) return [];
-                    return data.filter(g => g.status === 'Active' && g.type === 'Game').slice(0, 8);
-                } catch (e) {
-                    return [];
-                }
-            }
-
-            async getOfficialData() {
-                this.log("Pingando servidor Epic Games (Peso Máximo)...");
-                const data = await this.fetchWithFailover(SYSTEM_CONFIG.EPIC_ENDPOINT);
-                if (!data) return null;
-
-                const elements = data?.data?.Catalog?.searchStore?.elements || [];
-                
-                const processGame = (g, offer) => {
-                    let img = g.keyImages.find(i => i.type === 'OfferImageWide')?.url 
-                           || g.keyImages.find(i => i.type === 'DieselStoreFrontWide')?.url
-                           || g.keyImages[0]?.url;
-                    
-                    return {
-                        id: g.id,
-                        title: g.title,
-                        description: g.description,
-                        startDate: offer.startDate,
-                        endDate: offer.endDate,
-                        image: img,
-                        isMystery: g.title.includes("Mystery") || g.title.includes("??")
-                    };
-                };
-
-                const active = elements.filter(g => g.promotions?.promotionalOffers?.[0]?.promotionalOffers?.[0]?.discountSetting?.discountPercentage === 0)
-                    .map(g => processGame(g, g.promotions.promotionalOffers[0].promotionalOffers[0]))[0];
-
-                const upcoming = elements.filter(g => g.promotions?.upcomingPromotionalOffers?.[0]?.promotionalOffers?.length > 0)
-                    .flatMap(g => g.promotions.upcomingPromotionalOffers[0].promotionalOffers.map(offer => processGame(g, offer)));
-
-                return { active, upcoming };
-            }
-        }
-
-        // ==========================================
-        // COMPONENTES VISUAIS
-        // ==========================================
-
         const Icon = ({ name, className }) => <i className={`fa-solid fa-${name} ${className}`}></i>;
 
-        const PrecisionTimer = ({ targetDate }) => {
-            const [timeLeft, setTimeLeft] = React.useState({ h: '00', m: '00', s: '00', ms: '00' });
+        const Badge = ({ type }) => {
+            const styles = {
+                'Rumor': 'bg-purple-500/20 text-purple-400 border-purple-500/30',
+                'Confirmed': 'bg-trustGreen/20 text-trustGreen border-trustGreen/30',
+                'Free Games': 'bg-vibrantCyan/20 text-vibrantCyan border-vibrantCyan/30',
+                'Hardware': 'bg-energeticAmber/20 text-energeticAmber border-energeticAmber/30',
+                'Release Date': 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+                'High': 'text-trustGreen',
+                'Medium': 'text-energeticAmber',
+                'Low': 'text-dangerRed'
+            };
+            return (
+                <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider border ${styles[type] || 'bg-slate-700 text-slate-300'}`}>
+                    {type}
+                </span>
+            );
+        };
 
-            React.useEffect(() => {
-                if(!targetDate) return;
-                const interval = setInterval(() => {
-                    const diff = new Date(targetDate) - new Date();
-                    if (diff <= 0) return;
-                    
-                    const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                    const m = Math.floor((diff / 1000 / 60) % 60);
-                    const s = Math.floor((diff / 1000) % 60);
-                    const ms = Math.floor((diff % 1000) / 10);
-
-                    setTimeLeft({
-                        h: h.toString().padStart(2, '0'),
-                        m: m.toString().padStart(2, '0'),
-                        s: s.toString().padStart(2, '0'),
-                        ms: ms.toString().padStart(2, '0')
-                    });
-                }, 80);
-                return () => clearInterval(interval);
-            }, [targetDate]);
+        const ReliabilityBar = ({ level }) => {
+            let width = '33%';
+            let color = 'bg-dangerRed';
+            if (level === 'Medium') { width = '66%'; color = 'bg-energeticAmber'; }
+            if (level === 'High' || level === 'Confirmed') { width = '100%'; color = 'bg-trustGreen'; }
 
             return (
-                <div className="flex items-end gap-2 font-mono leading-none">
-                    <div className="text-center">
-                        <span className="text-3xl md:text-5xl font-bold text-white">{timeLeft.h}</span>
-                        <span className="block text-[10px] text-slate-400 uppercase tracking-widest mt-1">Horas</span>
-                    </div>
-                    <span className="text-2xl md:text-4xl text-slate-600 mb-4">:</span>
-                    <div className="text-center">
-                        <span className="text-3xl md:text-5xl font-bold text-white">{timeLeft.m}</span>
-                        <span className="block text-[10px] text-slate-400 uppercase tracking-widest mt-1">Min</span>
-                    </div>
-                    <span className="text-2xl md:text-4xl text-slate-600 mb-4">:</span>
-                    <div className="text-center">
-                        <span className="text-3xl md:text-5xl font-bold text-vibrantCyan">{timeLeft.s}</span>
-                        <span className="block text-[10px] text-slate-400 uppercase tracking-widest mt-1">Seg</span>
-                    </div>
-                    <div className="text-center pb-2 pl-2">
-                        <span className="text-sm md:text-lg font-bold text-slate-500">{timeLeft.ms}</span>
-                    </div>
+                <div className="w-full bg-slate-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div className={`h-full ${color} transition-all duration-500`} style={{width}}></div>
                 </div>
             );
         };
 
-        const Header = ({ loading, runScan, lastUpdate }) => (
-            <header className="h-20 bg-darkSlate/90 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+        const NavBar = ({ lastUpdate }) => (
+            <nav className="sticky top-0 z-50 glass-panel border-b border-white/5">
+                <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
                     <div className="flex items-center gap-6">
                         <a href="../../index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
                             <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-vibrantCyan/50 transition-colors">
                                 <Icon name="arrow-left" />
                             </div>
-                            <span className="text-sm font-semibold tracking-wide uppercase">Voltar ao Hub</span>
+                            <span className="text-sm font-semibold tracking-wide uppercase hidden md:block">Voltar ao Hub</span>
                         </a>
-                        <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-                        <div className="flex flex-col">
-                            <h1 className="text-xl font-bold text-white tracking-widest flex items-center gap-2">
-                                RDP SENTINEL <span className="text-vibrantCyan">V16</span>
-                            </h1>
-                            <span className="text-[10px] text-slate-500 font-mono">ÚLTIMO PING: {lastUpdate}</span>
+                        <div className="h-6 w-px bg-white/10 hidden md:block"></div>
+                        <div className="flex items-center gap-2">
+                            <Icon name="radar" className="text-vibrantCyan animate-pulse-slow" />
+                            <span className="text-lg font-bold tracking-tight text-white">RDP <span className="text-vibrantCyan">INSIDER</span></span>
                         </div>
                     </div>
-                    <button 
-                        onClick={runScan} 
-                        disabled={loading}
-                        className={`px-6 py-3 rounded-full font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-3 shadow-lg ${
-                            loading ? 'bg-vibrantCyan/20 text-vibrantCyan cursor-wait' : 'bg-vibrantCyan hover:bg-cyan-400 text-darkSlate hover:shadow-cyan-500/30'
-                        }`}
-                    >
-                        <Icon name="rotate" className={loading ? 'animate-spin' : ''} />
-                        {loading ? 'Pingando API...' : 'Forçar Scan'}
-                    </button>
+                    
+                    <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+                        <span className="hidden md:inline"><span className="text-slate-600">LAST SCAN:</span> {lastUpdate}</span>
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-trustGreen/10 border border-trustGreen/20 text-trustGreen">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-trustGreen opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-trustGreen"></span>
+                            </span>
+                            ONLINE
+                        </div>
+                    </div>
                 </div>
-            </header>
+            </nav>
         );
 
-        const MiniTerminal = ({ logs }) => (
-            <div className="flex items-center gap-4 bg-black/50 backdrop-blur rounded-full px-4 py-2 border border-white/10 mb-8 max-w-2xl mx-auto shadow-inner">
-                <div className="w-2 h-2 rounded-full bg-trustGreen animate-blink"></div>
-                <div className="flex-1 overflow-hidden h-5 relative">
-                    <div className="absolute inset-0 flex flex-col justify-center">
-                        <span className="font-mono text-xs text-vibrantCyan truncate">
-                            {logs[logs.length - 1] || "Protocolo Sentinela Ativo. Monitorando rede (10s)..."}
-                        </span>
-                    </div>
-                </div>
-            </div>
-        );
-
-        const LeakMatrix = ({ leakList }) => {
-            if (!leakList) return (
-                <div className="visual-card p-6 h-full flex flex-col bg-slate-900/80 border-dashed border-white/20">
-                    <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-4 opacity-50">
-                        <Icon name="list-ol" className="text-xl" />
-                        <h3 className="text-lg font-bold text-white uppercase tracking-wider">Lista Vazada (Buscando...)</h3>
-                    </div>
-                    <div className="flex-1 flex flex-col items-center justify-center text-center text-slate-500 space-y-2">
-                        <Icon name="radar" className="text-4xl opacity-30 animate-spin" />
-                        <p className="text-xs font-mono">Escaneando Megathreads no Reddit...</p>
-                        <p className="text-[10px] text-slate-600">Procurando listas formatadas como blogs (Data - Jogo).</p>
-                    </div>
-                </div>
-            );
-
+        const HeroCard = ({ item }) => {
+            if (!item) return null;
             return (
-                <div className="visual-card p-6 h-full flex flex-col bg-slate-900/90 border border-energeticAmber/30 shadow-[0_0_20px_rgba(245,158,11,0.1)] relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-energeticAmber text-darkSlate text-[10px] font-bold px-2 py-1 uppercase tracking-widest">
-                        Lista Detectada
-                    </div>
+                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group mb-12">
+                    <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-darkSlate via-darkSlate/60 to-transparent"></div>
                     
-                    <div className="flex items-center gap-3 mb-4 border-b border-white/10 pb-4">
-                        <Icon name="file-contract" className="text-xl text-energeticAmber animate-pulse" />
-                        <div className="overflow-hidden">
-                            <h3 className="text-lg font-bold text-white uppercase tracking-wider">Matriz de Vazamento</h3>
-                            <a href={leakList.url} target="_blank" className="text-[10px] text-slate-400 hover:text-vibrantCyan truncate block">
-                                Fonte: {leakList.source} - {leakList.title.substring(0, 30)}...
-                            </a>
+                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-10">
+                        <div className="flex items-center gap-3 mb-4">
+                            <Badge type={item.category} />
+                            <span className="bg-white/10 backdrop-blur px-2 py-1 rounded text-[10px] font-bold text-white border border-white/10 flex items-center gap-2">
+                                <Icon name="fire" className="text-energeticAmber" /> TOP STORY
+                            </span>
                         </div>
-                    </div>
-                    
-                    <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar font-mono text-xs space-y-2 text-slate-300">
-                        {leakList.items.map((item, i) => (
-                            <div key={i} className={`p-2 border-b border-white/5 hover:bg-white/5 transition-colors ${item.includes('Dec 19') || item.includes('19/12') ? 'text-vibrantCyan font-bold' : ''}`}>
-                                {item}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            );
-        };
-
-        const HeroVisual = ({ data }) => {
-            if (!data) return null;
-
-            return (
-                <div className="relative w-full h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-white/10 mb-8 group">
-                    <img src={data.image} alt={data.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-darkSlate via-darkSlate/80 to-transparent"></div>
-                    
-                    <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 z-10 flex flex-col md:flex-row items-end justify-between gap-8">
-                        <div className="max-w-2xl">
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="bg-trustGreen text-darkSlate text-xs font-bold px-3 py-1 rounded uppercase tracking-wider animate-pulse">
-                                    Ao Vivo Agora (Confirmado Epic)
-                                </span>
-                            </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white leading-none mb-4 drop-shadow-xl">
-                                {data.title}
-                            </h1>
-                            <p className="text-slate-300 text-sm line-clamp-2 mb-6 max-w-xl border-l-2 border-vibrantCyan pl-4">
-                                {data.description}
-                            </p>
-                            <a href="https://store.epicgames.com/free-games" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-vibrantCyan text-darkSlate font-bold uppercase tracking-widest text-sm rounded hover:bg-white transition-colors shadow-[0_0_20px_rgba(6,182,212,0.3)]">
-                                <Icon name="download" /> Resgatar Jogo
-                            </a>
-                        </div>
+                        <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-4 drop-shadow-lg max-w-4xl">
+                            {item.title}
+                        </h1>
+                        <p className="text-slate-300 text-sm md:text-base line-clamp-2 mb-6 max-w-2xl border-l-2 border-vibrantCyan pl-4">
+                            {item.summary}
+                        </p>
                         
-                        <div className="bg-black/60 backdrop-blur-xl border border-white/10 p-6 rounded-2xl min-w-[280px]">
-                            <div className="text-xs text-slate-400 font-mono uppercase mb-2 text-center tracking-widest">Tempo Restante</div>
-                            <PrecisionTimer targetDate={data.endDate} />
+                        <div className="flex items-center gap-6 text-xs text-slate-400 font-mono">
+                            <div className="flex items-center gap-2">
+                                <Icon name="check-double" className="text-trustGreen" />
+                                <span>{item.source_count} Sources</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Icon name="shield-halved" />
+                                <span>Reliability: <span className={item.reliability === 'High' ? 'text-trustGreen' : 'text-energeticAmber'}>{item.reliability}</span></span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Icon name="calendar" />
+                                <span>{item.date}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             );
         };
 
-        const GlobalGrid = ({ games }) => (
-            <div>
-                <div className="flex items-center gap-4 mb-6 pt-8 border-t border-white/10">
-                    <Icon name="earth-americas" className="text-2xl text-white" />
-                    <h2 className="text-2xl font-bold text-white uppercase tracking-wider">
-                        Radar Global (Steam, GOG, Prime)
-                    </h2>
+        const NewsCard = ({ item }) => (
+            <div className="glass-panel rounded-xl overflow-hidden hover-card transition-all duration-300 flex flex-col h-full group">
+                <div className="h-48 overflow-hidden relative">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+                    <div className="absolute top-3 right-3">
+                        <Badge type={item.category} />
+                    </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {games.map((game, i) => (
-                        <a key={i} href={game.open_giveaway_url} target="_blank" className="visual-card h-64 flex flex-col group relative no-underline">
-                            <div className="h-32 overflow-hidden relative bg-slate-800">
-                                <img src={game.thumbnail} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                <div className="absolute top-2 right-2 bg-black/80 px-2 py-1 rounded text-[10px] font-bold text-white border border-white/10">
-                                    {game.platforms.split(',')[0]}
-                                </div>
-                            </div>
-                            <div className="p-4 flex-1 flex flex-col bg-slate-900">
-                                <h3 className="text-sm font-bold text-white leading-snug mb-2 line-clamp-2 group-hover:text-vibrantCyan transition-colors">
-                                    {game.title}
-                                </h3>
-                                <div className="mt-auto flex justify-between items-center">
-                                    <span className="text-xs text-slate-500 line-through">{game.worth}</span>
-                                    <span className="text-xs font-bold text-trustGreen bg-trustGreen/10 px-2 py-1 rounded">100% OFF</span>
-                                </div>
-                            </div>
-                        </a>
-                    ))}
+
+                <div className="p-5 flex-1 flex flex-col">
+                    <h3 className="text-lg font-bold text-white leading-snug mb-3 line-clamp-2 group-hover:text-vibrantCyan transition-colors">
+                        {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-400 line-clamp-3 mb-6 flex-1">
+                        {item.summary}
+                    </p>
+
+                    <div className="mt-auto pt-4 border-t border-white/5">
+                        <div className="flex justify-between items-end mb-2 text-xs font-mono text-slate-500">
+                            <span>{item.source_count} Fontes</span>
+                            <span className="flex items-center gap-1">
+                                {item.reliability}
+                                <Icon name={item.reliability === 'High' ? 'circle-check' : 'triangle-exclamation'}
+                                      className={item.reliability === 'High' ? 'text-trustGreen' : 'text-energeticAmber'} />
+                            </span>
+                        </div>
+                        <ReliabilityBar level={item.reliability} />
+                    </div>
                 </div>
             </div>
         );
@@ -532,129 +237,95 @@
             </footer>
         );
 
+        // ==========================================
+        // MAIN APPLICATION
+        // ==========================================
         function App() {
-            const [logs, setLogs] = React.useState([]);
-            const [official, setOfficial] = React.useState(null);
-            const [global, setGlobal] = React.useState([]);
-            const [buzz, setBuzz] = React.useState({ threads: [], topSuspect: null, leakList: null });
-            const [loading, setLoading] = React.useState(false);
-            const [lastUpdate, setLastUpdate] = React.useState('...');
-            
-            const scanner = React.useRef(new NetworkScanner((msg) => setLogs(prev => [...prev.slice(-1), msg])));
+            const [data, setData] = React.useState(null);
+            const [filter, setFilter] = React.useState('All');
+            const [loading, setLoading] = React.useState(true);
 
-            const runScan = async () => {
-                if (loading) return;
-                setLoading(true);
-                setLogs(["Iniciando Protocolo Sentinela..."]);
-                
-                // 1. Obtém dados oficiais
-                const officialData = await scanner.current.getOfficialData();
-                setOfficial(officialData);
-
-                // 2. Escaneia Rede
-                const currentGameTitle = officialData?.active?.title;
-                const buzzData = await scanner.current.scanNetworkBuzz(currentGameTitle);
-                setBuzz(buzzData);
-
-                // 3. Radar Global
-                const globalData = await scanner.current.getGlobalFreebies();
-                setGlobal(globalData);
-                
-                setLogs(["Rede Sincronizada. Monitorando..."]);
-                setLastUpdate(new Date().toLocaleTimeString());
-                setLoading(false);
-            };
-
-            React.useEffect(() => { 
-                runScan(); 
-                const interval = setInterval(() => {
-                    console.log("Auto-Ping 10s Triggered");
-                    runScan();
-                }, 10000);
-                return () => clearInterval(interval);
+            React.useEffect(() => {
+                fetch('data/db.json')
+                    .then(res => res.json())
+                    .then(jsonData => {
+                        setData(jsonData);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        console.error("Failed to load DB", err);
+                        setLoading(false);
+                    });
             }, []);
+
+            if (loading) return (
+                <div className="min-h-screen flex items-center justify-center text-vibrantCyan">
+                    <Icon name="circle-notch" className="text-4xl animate-spin" />
+                </div>
+            );
+
+            if (!data) return (
+                <div className="min-h-screen flex flex-col items-center justify-center text-slate-400">
+                    <Icon name="triangle-exclamation" className="text-4xl mb-4 text-energeticAmber" />
+                    <p>Falha ao carregar a Base de Dados de Inteligência.</p>
+                    <p className="text-xs mt-2">Verifique se o crawler.py foi executado.</p>
+                </div>
+            );
+
+            // Filter Logic
+            const filteredItems = filter === 'All'
+                ? data.items
+                : data.items.filter(item => item.category === filter);
+
+            const categories = ['All', 'Rumor', 'Hardware', 'Free Games', 'Release Date'];
 
             return (
                 <div className="flex-grow flex flex-col font-sans">
-                    <Header loading={loading} runScan={runScan} lastUpdate={lastUpdate} />
+                    <NavBar lastUpdate={data.last_updated} />
 
-                    <main className="flex-grow p-6 max-w-7xl mx-auto w-full">
-                        <MiniTerminal logs={logs} />
+                    <main className="flex-grow p-4 md:p-8 max-w-7xl mx-auto w-full">
 
-                        <HeroVisual data={official?.active} />
+                        {/* HERO SECTION (First item of filtered list, or top item overall) */}
+                        {filteredItems.length > 0 && (
+                            <HeroCard item={filteredItems[0]} />
+                        )}
 
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
-                            {/* COLUNA ESQUERDA: ANÁLISE DE VAZAMENTOS */}
-                            <div className="lg:col-span-8 flex flex-col gap-8">
-                                <div>
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <Icon name="magnifying-glass-chart" className="text-2xl text-energeticAmber" />
-                                        <h2 className="text-2xl font-bold text-white uppercase tracking-wider">
-                                            Próximo Alvo (Predição de Rede)
-                                        </h2>
-                                    </div>
-                                    
-                                    {/* Clue Card */}
-                                    <div className="visual-card bg-slate-900 p-0 flex flex-col md:flex-row h-80 relative group">
-                                        <div className="absolute inset-0 z-0">
-                                            {buzz.topSuspect ? (
-                                                <div className="w-full h-full bg-slate-900 opacity-80"></div>
-                                            ) : (
-                                                <div className="w-full h-full bg-slate-900 opacity-80"></div>
-                                            )}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-deepBlue via-deepBlue/90 to-transparent"></div>
-                                        </div>
-
-                                        <div className="relative z-10 flex-1 p-8 flex flex-col justify-center">
-                                            <div className="flex items-center gap-2 mb-3">
-                                                <span className="w-2 h-2 bg-energeticAmber rounded-full animate-pulse"></span>
-                                                <span className="text-xs font-bold text-energeticAmber uppercase tracking-widest">
-                                                    Maior Buzz Detectado
-                                                </span>
-                                            </div>
-                                            
-                                            {/* NOME DO JOGO GIGANTE */}
-                                            <h2 className="text-6xl font-black text-white mb-4 leading-none drop-shadow-2xl uppercase break-words">
-                                                {buzz.topSuspect ? buzz.topSuspect.name : "AGUARDANDO..."}
-                                            </h2>
-                                            
-                                            <div className="mb-6">
-                                                <div className="flex justify-between text-xs text-slate-300 mb-1 font-mono">
-                                                    <span>RELEVÂNCIA</span>
-                                                    <span className="text-vibrantCyan">{buzz.topSuspect ? buzz.topSuspect.count * 10 : 0}%</span>
-                                                </div>
-                                                <div className="w-full h-2 bg-slate-800/50 rounded-full overflow-hidden backdrop-blur">
-                                                    <div className="h-full bg-gradient-to-r from-energeticAmber to-trustGreen transition-all duration-1000 shadow-[0_0_10px_#10b981]" style={{width: `${Math.min(100, (buzz.topSuspect?.count || 0) * 10)}%`}}></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="relative z-10 w-full md:w-1/3 bg-black/40 backdrop-blur border-l border-white/10 p-4 flex flex-col">
-                                            <h4 className="text-xs font-bold text-white mb-3 uppercase tracking-wider border-b border-white/10 pb-2">Fontes de Discussão</h4>
-                                            <div className="flex-1 overflow-y-auto custom-scrollbar space-y-2 pr-1">
-                                                {buzz.threads.map((t, i) => (
-                                                    <a key={i} href={t.url} target="_blank" className="block p-2 rounded bg-white/5 hover:bg-white/10 text-[10px] text-slate-300 transition-colors border border-white/5">
-                                                        <div className="flex justify-between mb-1 text-vibrantCyan opacity-70">
-                                                            <span>{t.source}</span>
-                                                            <span><Icon name="arrow-up" /> {t.score}</span>
-                                                        </div>
-                                                        <div className="line-clamp-2">{t.title}</div>
-                                                    </a>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* COLUNA DIREITA: MATRIZ DE LISTA VAZADA */}
-                            <div className="lg:col-span-4">
-                                <LeakMatrix leakList={buzz.leakList} />
+                        {/* CONTROLS */}
+                        <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4 border-b border-white/5 pb-6">
+                            <h2 className="text-2xl font-bold text-white flex items-center gap-3">
+                                <Icon name="layer-group" className="text-vibrantCyan" />
+                                Feed de Inteligência
+                            </h2>
+                            <div className="flex flex-wrap justify-center gap-2">
+                                {categories.map(cat => (
+                                    <button
+                                        key={cat}
+                                        onClick={() => setFilter(cat)}
+                                        className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border ${
+                                            filter === cat
+                                                ? 'bg-vibrantCyan text-darkSlate border-vibrantCyan'
+                                                : 'bg-white/5 text-slate-400 border-white/10 hover:border-white/30 hover:text-white'
+                                        }`}
+                                    >
+                                        {cat}
+                                    </button>
+                                ))}
                             </div>
                         </div>
 
-                        {/* RADAR GLOBAL */}
-                        <GlobalGrid games={global} />
+                        {/* GRID */}
+                        {filteredItems.length === 0 ? (
+                            <div className="text-center py-20 text-slate-500">
+                                <Icon name="wind" className="text-4xl mb-4 opacity-50" />
+                                <p>Nenhum dado encontrado para esta categoria.</p>
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                                {filteredItems.slice(1).map((item, index) => (
+                                    <NewsCard key={item.id || index} item={item} />
+                                ))}
+                            </div>
+                        )}
 
                     </main>
 
