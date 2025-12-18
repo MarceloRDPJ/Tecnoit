@@ -1,11 +1,11 @@
 {
-  "last_updated": "18/12/2025 16:43",
+  "last_updated": "18/12/2025 17:28",
   "status": "Active",
   "items": [
     {
       "id": "mock_001",
       "title": "GTA VI: Map Size Comparison Leaked via Artist Profile",
-      "image": "https://images.unsplash.com/photo-1605901309584-818e25960b8f?q=80&w=1978&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80",
       "source_count": 12,
       "reliability": "High",
       "category": "Rumor",
@@ -19,13 +19,13 @@
     },
     {
       "id": "mock_002",
-      "title": "Epic Games Mystery Game 5: The Outer Worlds (Spacer's Choice Edition)",
-      "image": "https://images.unsplash.com/photo-1627856014759-08529612289d?q=80&w=2070&auto=format&fit=crop",
+      "title": "Epic Games Mystery Game: Possible AAA Title Next Week",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80",
       "source_count": 45,
       "reliability": "Confirmed",
-      "category": "Free Games",
+      "category": "Epic Mystery",
       "date": "2025-12-18",
-      "summary": "Data mining of the Epic Store launcher confirms the next wrapper matches The Outer Worlds color scheme.",
+      "summary": "Data mining of the Epic Store launcher confirms the next wrapper matches The Outer Worlds color scheme. This is part of the Mega Sale Vault.",
       "sources": [
         "r/EpicGamesPC",
         "Billbil-kun"
@@ -34,7 +34,7 @@
     {
       "id": "mock_003",
       "title": "Nintendo Switch 2: 8-inch LCD Screen Confirmed by Supply Chain",
-      "image": "https://images.unsplash.com/photo-1578303512597-8198dd382374?q=80&w=2069&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?auto=format&fit=crop&q=80",
       "source_count": 8,
       "reliability": "Medium",
       "category": "Hardware",
