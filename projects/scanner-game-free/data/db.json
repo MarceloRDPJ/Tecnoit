@@ -1,77 +1,59 @@
 {
-  "last_updated": "18/12/2025 17:28",
+  "last_updated": "19/12/2025 10:53",
   "status": "Active",
-  "items": [
-    {
-      "id": "mock_001",
-      "title": "GTA VI: Map Size Comparison Leaked via Artist Profile",
-      "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80",
-      "source_count": 12,
-      "reliability": "High",
-      "category": "Rumor",
-      "date": "2025-12-18",
-      "summary": "Multiple sources confirm the map size is approximately 2.5x larger than Los Santos, including new island areas.",
-      "sources": [
-        "r/GamingLeaksAndRumours",
-        "InsiderGaming",
-        "Twitter @Leaker123"
-      ]
-    },
-    {
-      "id": "mock_002",
-      "title": "Epic Games Mystery Game: Possible AAA Title Next Week",
-      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80",
-      "source_count": 45,
-      "reliability": "Confirmed",
-      "category": "Epic Mystery",
-      "date": "2025-12-18",
-      "summary": "Data mining of the Epic Store launcher confirms the next wrapper matches The Outer Worlds color scheme. This is part of the Mega Sale Vault.",
-      "sources": [
-        "r/EpicGamesPC",
-        "Billbil-kun"
-      ]
-    },
-    {
-      "id": "mock_003",
-      "title": "Nintendo Switch 2: 8-inch LCD Screen Confirmed by Supply Chain",
-      "image": "https://images.unsplash.com/photo-1629814249584-bd4d53cf0e7d?auto=format&fit=crop&q=80",
-      "source_count": 8,
-      "reliability": "Medium",
-      "category": "Hardware",
-      "date": "2025-12-17",
-      "summary": "Reports from Sharp indicate mass production of 8-inch LCD panels destined for a 'major Japanese console'.",
-      "sources": [
-        "Bloomberg",
-        "r/NintendoSwitch"
-      ]
-    },
-    {
-      "id": "mock_004",
-      "title": "Bloodborne PC Port: Project 'Velvet Veil' spotted in database",
-      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
-      "source_count": 3,
-      "reliability": "Low",
-      "category": "Rumor",
-      "date": "2025-12-16",
-      "summary": "A reliable dataminer found references to a Sony project that aligns with Bloodborne asset naming conventions.",
-      "sources": [
-        "4chan",
-        "r/GamingLeaksAndRumours"
-      ]
-    },
-    {
-      "id": "mock_005",
-      "title": "RTX 5090 Specs: 32GB GDDR7 Memory and 70% Performance Uplift",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=2070&auto=format&fit=crop",
-      "source_count": 15,
-      "reliability": "Medium",
-      "category": "Hardware",
-      "date": "2025-12-15",
-      "summary": "Kopite7kimi leaks suggest the Blackwell architecture will feature a massive bandwidth increase.",
-      "sources": [
-        "r/Nvidia",
-        "Videocardz"
-      ]
-    }
-  ]
+  "epic_data": {
+    "status": "Online",
+    "latency": "420ms",
+    "current_games": [
+      {
+        "title": "Ghostrunner 2",
+        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
+        "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
+        "url": "https://store.epicgames.com/p/ghostrunner-2",
+        "price": "$39.99",
+        "start_date": "2025-12-11T16:00:00.000Z",
+        "end_date": "2026-01-08T16:00:00.000Z"
+      },
+      {
+        "title": "LISA: The Definitive Edition",
+        "description": "Explore Olathe e desmascare seus segredos distorcidos com LISA: The Definitive Edition, incluindo o RPG narrativo original LISA: The Painful e sua sequência LISA: The Joyful.",
+        "image": "https://cdn1.epicgames.com/offer/ca3a9d16d131478c97fd56c138a6511a/EGS_LISATheDefinitiveEdition_DingalingProductions_Bundles_S1_2560x1440-55b66eb2046507e58eac435c21331bd5",
+        "url": "https://store.epicgames.com/p/lisa-the-definitive-edition",
+        "price": "$24.99",
+        "start_date": "2025-12-11T16:00:00.000Z",
+        "end_date": "2026-01-08T16:00:00.000Z"
+      },
+      {
+        "title": "Monument Valley",
+        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
+        "url": "https://store.epicgames.com/p/monument-valley-02",
+        "price": "$7.99",
+        "start_date": "2025-12-11T16:00:00.000Z",
+        "end_date": "2026-01-08T16:00:00.000Z"
+      },
+      {
+        "title": "Jotunnslayer: Hordes of Hel",
+        "description": "Hordes of Hel é um emocionante jogo roguelike de sobreviventes de hordas ambientado nos reinos sombrios da mitologia nórdica. Lute contra ondas de inimigos para ganhar as bênçãos divinas dos antigos deuses nórdicos, explore mundos hostis e enfrente chefes poderosos. Torne-se um guerreiro divino neste confronto final.",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec18_giveaway_2560x1440_2560x1440-ecb5cd80407b4ddb9aa05407b8da1662",
+        "url": "https://store.epicgames.com/p/mysterygame2025-2",
+        "price": "0",
+        "start_date": "2025-12-18T16:00:00.000Z",
+        "end_date": "2025-12-19T16:00:00.000Z"
+      }
+    ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 3",
+        "description": "Jogo Misterioso 3",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-3",
+        "price": "0",
+        "start_date": "2025-12-19T16:00:00.000Z",
+        "end_date": "2025-12-20T16:00:00.000Z"
+      }
+    ],
+    "mystery_detected": true
+  },
+  "items": []
 }
