@@ -1,9 +1,9 @@
 {
-  "last_updated": "19/12/2025 12:41",
+  "last_updated": "20/12/2025 12:38",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "329ms",
+    "latency": "656ms",
     "current_games": [
       {
         "title": "Ghostrunner 2",
@@ -33,24 +33,24 @@
         "end_date": "2026-01-08T16:00:00.000Z"
       },
       {
-        "title": "Jotunnslayer: Hordes of Hel",
-        "description": "Hordes of Hel é um emocionante jogo roguelike de sobreviventes de hordas ambientado nos reinos sombrios da mitologia nórdica. Lute contra ondas de inimigos para ganhar as bênçãos divinas dos antigos deuses nórdicos, explore mundos hostis e enfrente chefes poderosos. Torne-se um guerreiro divino neste confronto final.",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec18_giveaway_2560x1440_2560x1440-ecb5cd80407b4ddb9aa05407b8da1662",
-        "url": "https://store.epicgames.com/p/mysterygame2025-2",
-        "price": "0",
-        "start_date": "2025-12-18T16:00:00.000Z",
-        "end_date": "2025-12-19T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 3",
-        "description": "Jogo Misterioso 3",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "Eternights",
+        "description": "Eternights é um jogo de ação e namoro onde você tenta aproveitar ao máximo a vida durante o apocalipse. Segunda-feira: Vá a um encontro. Terça-feira: Limpe a masmorra. Sexta-feira: Surpreenda! O relógio está correndo!!",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec19_giveaway_2560x1440_2560x1440-56414d7af2cc442a8fffeba791625bcd",
         "url": "https://store.epicgames.com/p/mysterygame2025-3",
         "price": "0",
         "start_date": "2025-12-19T16:00:00.000Z",
         "end_date": "2025-12-20T16:00:00.000Z"
+      }
+    ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 4",
+        "description": "Jogo Misterioso 4",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-4",
+        "price": "0",
+        "start_date": "2025-12-20T16:00:00.000Z",
+        "end_date": "2025-12-21T16:00:00.000Z"
       }
     ],
     "mystery_detected": true
@@ -64,7 +64,7 @@
       "source_count": 452,
       "reliability": "Medium",
       "category": "Epic Mystery",
-      "date": "2025-12-19",
+      "date": "2025-12-20",
       "summary": "Dataminers encontraram referências a 'Project U' nos arquivos da loja. A comunidade especula que pode ser Assassin's Creed ou Watch Dogs. Fique atento às próximas 24h.",
       "sources": [
         "r/GamingLeaksAndRumours"
@@ -80,7 +80,7 @@
       "source_count": 1240,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2025-12-19",
+      "date": "2025-12-20",
       "summary": "Fontes ligadas à indústria indicam que a nova geração de GPUs da NVIDIA será anunciada no próximo trimestre com performance 40% superior.",
       "sources": [
         "TechInsider"
@@ -96,7 +96,7 @@
       "source_count": 890,
       "reliability": "Low",
       "category": "Epic News",
-      "date": "2025-12-19",
+      "date": "2025-12-20",
       "summary": "Uma suposta lista de jogos gratuitos está circulando no Discord. Inclui títulos como 'Outer Wilds' e 'Hades'. Trate como rumor por enquanto.",
       "sources": [
         "Discord Leaks"
