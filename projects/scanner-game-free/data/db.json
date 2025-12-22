@@ -1,9 +1,9 @@
 {
-  "last_updated": "21/12/2025 12:38",
+  "last_updated": "22/12/2025 12:42",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "111ms",
+    "latency": "507ms",
     "current_games": [
       {
         "title": "Ghostrunner 2",
@@ -33,24 +33,24 @@
         "end_date": "2026-01-08T16:00:00.000Z"
       },
       {
-        "title": "Blood West",
-        "description": "Lendas estranhas do oeste encontram o terror sobrenatural em BLOOD WEST, um FPS furtivo envolvente. Torne-se o Pistoleiro Morto-Vivo, condenado a vagar pelas terras áridas até conseguir expurgar a maldição, libertando sua alma. 3 cenários variados, progressão baseada em vantagens e mais de 20 horas de jogo esperam por você!",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec20_giveaway_2560x1440_2560x1440-a1a37a557bb5425a8e724c57c470ec60",
-        "url": "https://store.epicgames.com/p/mysterygame2025-4",
-        "price": "0",
-        "start_date": "2025-12-20T16:00:00.000Z",
-        "end_date": "2025-12-21T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 5",
-        "description": "Jogo Misterioso 5",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "Sorry We're Closed",
+        "description": "Sorry We're Closed é um nostálgico jogo de terror de sobrevivência para um jogador com uma rica história, personagens profundos e vários finais. Explore locais perturbadores com ângulos de câmera fixos. Abra seu terceiro olho para ver entre mundos, descobrir segredos e resolver quebra-cabeças.",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec21_giveaway_2560x14401_2560x1440-1a8c8998966447698da1634d33a23f98",
         "url": "https://store.epicgames.com/p/mysterygame2025-5",
         "price": "0",
         "start_date": "2025-12-21T16:00:00.000Z",
         "end_date": "2025-12-22T16:00:00.000Z"
+      }
+    ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 6",
+        "description": "Jogo Misterioso 6",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-6",
+        "price": "0",
+        "start_date": "2025-12-22T16:00:00.000Z",
+        "end_date": "2025-12-23T16:00:00.000Z"
       }
     ],
     "mystery_detected": true
@@ -64,7 +64,7 @@
       "source_count": 452,
       "reliability": "Medium",
       "category": "Epic Mystery",
-      "date": "2025-12-21",
+      "date": "2025-12-22",
       "summary": "Dataminers encontraram referências a 'Project U' nos arquivos da loja. A comunidade especula que pode ser Assassin's Creed ou Watch Dogs. Fique atento às próximas 24h.",
       "sources": [
         "r/GamingLeaksAndRumours"
@@ -80,7 +80,7 @@
       "source_count": 1240,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2025-12-21",
+      "date": "2025-12-22",
       "summary": "Fontes ligadas à indústria indicam que a nova geração de GPUs da NVIDIA será anunciada no próximo trimestre com performance 40% superior.",
       "sources": [
         "TechInsider"
@@ -96,7 +96,7 @@
       "source_count": 890,
       "reliability": "Low",
       "category": "Epic News",
-      "date": "2025-12-21",
+      "date": "2025-12-22",
       "summary": "Uma suposta lista de jogos gratuitos está circulando no Discord. Inclui títulos como 'Outer Wilds' e 'Hades'. Trate como rumor por enquanto.",
       "sources": [
         "Discord Leaks"
