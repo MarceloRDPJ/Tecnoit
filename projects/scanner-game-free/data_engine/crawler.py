@@ -287,6 +287,51 @@ def main():
     # 1. Fetch Epic API Data
     epic_data = fetch_epic_free_games()
 
+    # Convert Epic Data to Items for the main feed
+    epic_items = []
+
+    # Free Games
+    for game in epic_data.get('current_games', []):
+        epic_items.append({
+            "id": game['url'],
+            "title": f"GRÁTIS: {game['title']}",
+            "original_title": game['title'],
+            "image": game['image'],
+            "source_count": 1,
+            "reliability": "High",
+            "category": "Free Games",
+            "date": datetime.datetime.now().strftime("%Y-%m-%d"),
+            "summary": game['description'],
+            "sources": ["Epic Games Store"],
+            "url": game['url']
+        })
+
+    # Release Dates (Upcoming)
+    for game in epic_data.get('upcoming_games', []):
+        start_date_display = ""
+        try:
+             # Basic ISO parsing
+             dt = datetime.datetime.fromisoformat(game['start_date'].replace('Z', '+00:00'))
+             start_date_display = dt.strftime('%d/%m')
+        except:
+             start_date_display = "Em breve"
+
+        epic_items.append({
+            "id": game['url'],
+            "title": f"EM BREVE: {game['title']}",
+            "original_title": game['title'],
+            "image": game['image'],
+            "source_count": 1,
+            "reliability": "High",
+            "category": "Release Date",
+            "date": datetime.datetime.now().strftime("%Y-%m-%d"),
+            "summary": f"Disponível gratuitamente a partir de {start_date_display}. {game['description']}",
+            "sources": ["Epic Games Store"],
+            "url": game['url']
+        })
+
+    all_items.extend(epic_items)
+
     # 2. Fetch Sources
     failed_sources = 0
     for source in SOURCES:

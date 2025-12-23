@@ -64,7 +64,11 @@ function App() {
 
     // For Epic Dashboard news feed
     const epicNewsItems = data.items.filter(item =>
-        item.category === 'Epic Mystery' || item.category === 'Epic News' || item.title.toLowerCase().includes('epic')
+        item.category === 'Epic Mystery' ||
+        item.category === 'Epic News' ||
+        item.category === 'Rumor' ||
+        item.title.toLowerCase().includes('epic') ||
+        (item.category === 'Hardware' && item.reliability === 'High')
     );
 
     return (

@@ -1,10 +1,10 @@
 {
-  "last_updated": "2025-12-23T11:31:44",
-  "display_date": "23/12/2025 11:31",
+  "last_updated": "2025-12-23T11:55:57",
+  "display_date": "23/12/2025 11:55",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "162ms",
+    "latency": "364ms",
     "current_games": [
       {
         "title": "Paradise Killer",
@@ -30,6 +30,36 @@
     "mystery_detected": true
   },
   "items": [
+    {
+      "id": "https://store.epicgames.com/p/mysterygame2025-6",
+      "title": "GRÁTIS: Paradise Killer",
+      "original_title": "Paradise Killer",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec22_giveaway_2560x1440_2560x1440-0165246ad3c9454e887f576036328add",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Free Games",
+      "date": "2025-12-23",
+      "summary": "Ilha Paraíso, um mundo fora da realidade. Houve um assassinato que apenas a “maníaca por investigação” Lady Love Dies pode resolver. Reúna evidências e interrogue suspeitos nesta aventura em mundo aberto. Você pode acusar qualquer pessoa, mas terá que provar seu caso em julgamento para condenar.",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/mysterygame2025-6"
+    },
+    {
+      "id": "https://store.epicgames.com/p/mysterygame2025-7",
+      "title": "EM BREVE: Mystery Game 7",
+      "original_title": "Mystery Game 7",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2025-12-23",
+      "summary": "Disponível gratuitamente a partir de 23/12. Jogo Misterioso 7",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/mysterygame2025-7"
+    },
     {
       "id": "https://www.eurogamer.net/uniqlo-new-range-of-pokemon-t-shirts-for-30th-anniversary",
       "title": "A Uniqlo está lançando uma nova linha de camisetas Pokémon em tons pastéis para o 30º aniversário do próximo ano",
