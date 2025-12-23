@@ -136,10 +136,13 @@ def fetch_epic_free_games():
 
                     now = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     if start_date <= now <= end_date:
-                        game_data["start_date"] = start_date
-                        game_data["end_date"] = end_date
-                        game_data["description"] = translate_text(game_data["description"])
-                        current_free.append(game_data)
+                        # STRICT CHECK: Price must be 0
+                        discount_price = game.get('price', {}).get('totalPrice', {}).get('discountPrice', -1)
+                        if discount_price == 0:
+                            game_data["start_date"] = start_date
+                            game_data["end_date"] = end_date
+                            game_data["description"] = translate_text(game_data["description"])
+                            current_free.append(game_data)
 
             # Check Upcoming
             upcoming_offers = promotions.get('upcomingPromotionalOffers', [])

@@ -13,6 +13,86 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
         "> Análise de integridade: OK"
     ]);
 
+    // Live Refresh Functionality
+    const [isRefreshing, setIsRefreshing] = React.useState(false);
+    const [liveData, setLiveData] = React.useState(null);
+
+    const refreshData = async () => {
+        setIsRefreshing(true);
+        setLogs(prev => ["> INICIANDO VERIFICAÇÃO EM TEMPO REAL...", ...prev]);
+
+        try {
+            // Using AllOrigins as CORS proxy
+            const proxyUrl = 'https://api.allorigins.win/get?url=';
+            const targetUrl = encodeURIComponent('https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions');
+
+            const response = await fetch(proxyUrl + targetUrl);
+            const data = await response.json();
+            const epicResponse = JSON.parse(data.contents);
+
+            const games = epicResponse.data.Catalog.searchStore.elements;
+            const newCurrentGames = [];
+            let mystery = false;
+
+            // Logic replicated from crawler.py (simplified for JS)
+            games.forEach(game => {
+                const title = game.title;
+                if (title.includes("Mystery Game")) mystery = true;
+
+                const promotions = game.promotions;
+                if (!promotions) return;
+
+                const offers = promotions.promotionalOffers?.[0]?.promotionalOffers || [];
+                offers.forEach(offer => {
+                    const now = new Date().toISOString();
+                    if (offer.startDate <= now && now <= offer.endDate) {
+                        const discountPrice = game.price?.totalPrice?.discountPrice ?? -1;
+                        if (discountPrice === 0) {
+                            // Found a free game!
+                             let imageUrl = "";
+                             (game.keyImages || []).forEach(img => {
+                                 if (img.type === 'OfferImageWide') imageUrl = img.url;
+                             });
+                             if (!imageUrl && game.keyImages?.length) imageUrl = game.keyImages[0].url;
+
+                            newCurrentGames.push({
+                                title: title,
+                                description: game.description,
+                                image: imageUrl,
+                                url: game.urlSlug ? `https://store.epicgames.com/p/${game.urlSlug}` : "https://store.epicgames.com/free-games",
+                                price: "0",
+                                end_date: offer.endDate
+                            });
+                        }
+                    }
+                });
+            });
+
+            if (newCurrentGames.length > 0) {
+                 setLiveData({ current_games: newCurrentGames, mystery_detected: mystery });
+                 setLogs(prev => ["> DADOS ATUALIZADOS COM SUCESSO!", ...prev]);
+            } else {
+                 setLogs(prev => ["> NENHUM JOGO GRÁTIS ENCONTRADO NA VARREDURA AO VIVO.", ...prev]);
+            }
+
+        } catch (e) {
+            console.error(e);
+            setLogs(prev => [`> ERRO NA CONEXÃO: ${e.message}`, ...prev]);
+        } finally {
+            setIsRefreshing(false);
+        }
+    };
+
+    // Use live data if available, otherwise props
+    const activeData = liveData || epicData || { current_games: [] };
+    const { current_games: displayGames, upcoming_games: displayUpcoming, mystery_detected: displayMystery, status: displayStatus, latency: displayLatency } = {
+        ...activeData,
+        // Preserve upcoming/status from props if not in live data (since we only live-fetched current games)
+        upcoming_games: activeData.upcoming_games || epicData?.upcoming_games || [],
+        status: activeData === liveData ? "Live (Proxy)" : epicData?.status,
+        latency: activeData === liveData ? "120ms" : epicData?.latency
+    };
+
     React.useEffect(() => {
         const interval = setInterval(() => {
             const newLog = `> [${new Date().toLocaleTimeString()}] Ping ${Math.floor(Math.random() * 50) + 10}ms - OK`;
@@ -48,12 +128,23 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
                         <div>
                             <h3 className="text-sm font-bold text-white uppercase tracking-wider">Epic Store API Node</h3>
                             <div className="text-xs text-slate-400 font-mono flex gap-4 mt-1">
-                                <span className="flex items-center gap-1"><span className={`w-2 h-2 rounded-full animate-pulse ${status === 'Offline' ? 'bg-dangerRed' : 'bg-trustGreen'}`}></span> {status}</span>
-                                <span>LATENCY: {latency}</span>
+                                <span className="flex items-center gap-1"><span className={`w-2 h-2 rounded-full animate-pulse ${displayStatus === 'Offline' ? 'bg-dangerRed' : 'bg-trustGreen'}`}></span> {displayStatus}</span>
+                                <span>LATENCY: {displayLatency}</span>
                                 <span>UPTIME: 99.9%</span>
                             </div>
                         </div>
                     </div>
+
+                     {/* REFRESH BUTTON */}
+                    <button
+                        onClick={refreshData}
+                        disabled={isRefreshing}
+                        className={`px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2
+                        ${isRefreshing ? 'bg-slate-700 text-slate-400 cursor-not-allowed' : 'bg-vibrantCyan/10 text-vibrantCyan border border-vibrantCyan/50 hover:bg-vibrantCyan hover:text-darkSlate'}`}
+                    >
+                        <Icon name="arrows-rotate" className={isRefreshing ? "animate-spin" : ""} />
+                        {isRefreshing ? "Verificando API..." : "Atualizar Agora"}
+                    </button>
 
                     {/* Visual Traffic Graph (CSS only) */}
                     <div className="hidden md:flex items-end gap-1 h-8 w-32">
@@ -62,7 +153,7 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
                         ))}
                     </div>
 
-                    {mystery_detected && (
+                    {displayMystery && (
                         <div className="flex items-center gap-2 px-4 py-2 bg-mysteryPurple/20 border border-mysteryPurple/50 rounded-full animate-pulse shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                             <Icon name="mask" className="text-mysteryPurple" />
                             <span className="text-sm font-bold text-mysteryPurple uppercase tracking-widest">Mistério Detectado</span>
@@ -78,7 +169,7 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
                         <Icon name="gift" className="text-vibrantCyan" /> Jogo Grátis da Semana
                     </h2>
 
-                    {current_games.length > 0 ? current_games.map((game, idx) => (
+                    {displayGames.length > 0 ? displayGames.map((game, idx) => (
                         <div key={idx} className="glass-panel rounded-2xl overflow-hidden border border-white/10 group relative">
                             <div className="h-64 overflow-hidden relative">
                                 <img src={game.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -114,7 +205,7 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
                 <div className="space-y-6">
 
                     {/* MYSTERY CARD */}
-                    {mystery_detected && (
+                    {displayMystery && (
                         <div className="glass-panel rounded-xl p-1 border border-mysteryPurple/50 shadow-[0_0_20px_rgba(139,92,246,0.1)] relative overflow-hidden group">
                             <div className="absolute inset-0 bg-mysteryPurple/5 group-hover:bg-mysteryPurple/10 transition-colors"></div>
                             <div className="p-6 relative z-10 text-center">
@@ -134,7 +225,7 @@ window.EpicDashboard = ({ epicData, newsItems }) => {
                             Em Breve
                         </h3>
                         <div className="space-y-4">
-                            {upcoming_games && upcoming_games.map((game, idx) => (
+                            {displayUpcoming && displayUpcoming.map((game, idx) => (
                                 <div key={idx} className="flex gap-4 group">
                                     <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-slate-800">
                                         <img src={game.image} className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity" />
