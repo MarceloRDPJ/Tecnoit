@@ -1,10 +1,10 @@
 {
-  "last_updated": "2025-12-23T11:55:57",
-  "display_date": "23/12/2025 11:55",
+  "last_updated": "2025-12-23T12:44:20",
+  "display_date": "23/12/2025 12:44",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "364ms",
+    "latency": "2457ms",
     "current_games": [
       {
         "title": "Paradise Killer",
@@ -59,6 +59,36 @@
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/mysterygame2025-7"
+    },
+    {
+      "id": "https://www.eurogamer.net/battlefield-6-ai-sticker-backlash",
+      "title": "Os jogadores do Battlefield 6 suspeitam que cosméticos de IA foram introduzidos no jogo, apesar da EA dizer que isso não aconteceria",
+      "original_title": "Battlefield 6 players suspect AI cosmetics have been snuck into the game, despite EA saying that wouldn't happen",
+      "image": "https://assetsio.gnwcdn.com/battlefield-6-phantom-skins.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-23",
+      "summary": "Os fãs de Battlefield 6 estão começando a suspeitar que cosméticos generativos de IA foram adicionados ao Battlefield 6, apesar de declarações anteriores de funcionários seniores da EA afirmando que isso não aconteceria. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/battlefield-6-ai-sticker-backlash"
+    },
+    {
+      "id": "https://www.eurogamer.net/games-of-2025-clair-obscur-expedition-33",
+      "title": "Em 2025, Clair Obscur provou que jogos menores de desenvolvedores apaixonados são o futuro que os jogadores desejam",
+      "original_title": "In 2025, Clair Obscur proved smaller-sized games from passionate developers are the future players want",
+      "image": "https://assetsio.gnwcdn.com/clair-obscur_E40remb.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-23",
+      "summary": "“Não há problema em fazer um jogo pequeno”, disse o diretor do Astro Bot, Nicolas Doucet, na GDC deste ano. Para muitos, Astro Bot foi o Jogo do Ano de 2024, um jogo que pode ter sido feito por um estúdio de propriedade do PlayStation, mas de acordo com Doucet foi baseado em AA-s inteligentes...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/games-of-2025-clair-obscur-expedition-33"
     },
     {
       "id": "https://www.eurogamer.net/uniqlo-new-range-of-pokemon-t-shirts-for-30th-anniversary",
@@ -279,7 +309,7 @@
       "reliability": "High",
       "category": "News",
       "date": "2025-12-22",
-      "summary": "Antes de dizermos o que pensamos e antes de revelarmos o que vocês pensam, pensamos em fazer algo um pouco diferente como parte de nossas habituais celebrações dos jogos do ano. O que, nos perguntamos, fazem as pessoas que realmente fazem os jogos...",
+      "summary": "Antes de dizermos o que pensamos e antes de revelarmos o que vocês pensam, pensamos em fazer algo um pouco diferente como parte de nossas habituais comemorações de jogos do ano de fim de ano. O que, nos perguntamos, fazem as pessoas que realmente fazem os jogos...",
       "sources": [
         "Eurogamer"
       ],
@@ -329,36 +359,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/passionate-response-to-tomb-raider-2013s-switch-port-could-mean-rise-and-shadow-also-come-to-nintendos-consoles"
-    },
-    {
-      "id": "https://www.eurogamer.net/octopath-traveler-series-surpasses-6-million-sales",
-      "title": "A série Beloved Octopath Traveler ultrapassa 6 milhões de vendas vitalícias, logo após o lançamento do Octopath Traveler 0",
-      "original_title": "The Beloved Octopath Traveler series surpasses 6m lifetime sales, shortly after Octopath Traveler 0's launch",
-      "image": "https://assetsio.gnwcdn.com/octopath_traveller_e3_deal.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-22",
-      "summary": "A Square Enix anunciou que a série Octopath Traveler ultrapassou 6 milhões de vendas vitalícias, logo após o lançamento de Octopath Traveler 0. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/octopath-traveler-series-surpasses-6-million-sales"
-    },
-    {
-      "id": "https://www.eurogamer.net/heres-hideo-kojima-interviewing-himself-and-interviewing-stranger-things-creators-the-duffer-brothers",
-      "title": "Aqui está Hideo Kojima se entrevistando e entrevistando os criadores de Stranger Things, os Duffer Brothers (mas não ao mesmo tempo)",
-      "original_title": "Here's Hideo Kojima interviewing himself, and interviewing Stranger Things' creators, the Duffer Brothers (but not at the same time)",
-      "image": "https://assetsio.gnwcdn.com/Screenshot-2025-12-21-at-16.27.56.png?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-21",
-      "summary": "Hideo Kojima apareceu na (fantástica) série de suporte técnico da Wired (você sabia que estamos mais próximos de Cleópatra no tempo do que Cleópatra está do início do antigo Egito?) respondendo a perguntas sobre - bem, ele mesmo, principalmente. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/heres-hideo-kojima-interviewing-himself-and-interviewing-stranger-things-creators-the-duffer-brothers"
     }
   ]
 }
