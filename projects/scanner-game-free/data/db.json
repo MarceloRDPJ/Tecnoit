@@ -1,38 +1,11 @@
 {
-  "last_updated": "2025-12-23T11:18:22",
-  "display_date": "23/12/2025 11:18",
+  "last_updated": "2025-12-23T11:31:44",
+  "display_date": "23/12/2025 11:31",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "116ms",
+    "latency": "162ms",
     "current_games": [
-      {
-        "title": "Ghostrunner 2",
-        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
-        "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
-        "url": "https://store.epicgames.com/p/ghostrunner-2",
-        "price": "$39.99",
-        "start_date": "2025-12-11T16:00:00.000Z",
-        "end_date": "2026-01-08T16:00:00.000Z"
-      },
-      {
-        "title": "LISA: The Definitive Edition",
-        "description": "Explore Olathe e desmascare seus segredos distorcidos com LISA: The Definitive Edition, incluindo o RPG narrativo original LISA: The Painful e sua sequência LISA: The Joyful.",
-        "image": "https://cdn1.epicgames.com/offer/ca3a9d16d131478c97fd56c138a6511a/EGS_LISATheDefinitiveEdition_DingalingProductions_Bundles_S1_2560x1440-55b66eb2046507e58eac435c21331bd5",
-        "url": "https://store.epicgames.com/p/lisa-the-definitive-edition",
-        "price": "$24.99",
-        "start_date": "2025-12-11T16:00:00.000Z",
-        "end_date": "2026-01-08T16:00:00.000Z"
-      },
-      {
-        "title": "Monument Valley",
-        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
-        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
-        "url": "https://store.epicgames.com/p/monument-valley-02",
-        "price": "$7.99",
-        "start_date": "2025-12-11T16:00:00.000Z",
-        "end_date": "2026-01-08T16:00:00.000Z"
-      },
       {
         "title": "Paradise Killer",
         "description": "Ilha Paraíso, um mundo fora da realidade. Houve um assassinato que apenas a “maníaca por investigação” Lady Love Dies pode resolver. Reúna evidências e interrogue suspeitos nesta aventura em mundo aberto. Você pode acusar qualquer pessoa, mas terá que provar seu caso em julgamento para condenar.",
@@ -101,6 +74,21 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/vince-zampella-co-creator-of-call-of-duty-and-respawn-entertainment-has-died"
+    },
+    {
+      "id": "https://www.techpowerup.com/344358/thermaltake-launches-magcurve-360-ultra-argb-sync-aio-liquid-cooler",
+      "title": "(PR) Thermaltake lança refrigerador líquido MAGCurve 360 ​​Ultra ARGB Sync AIO",
+      "original_title": "(PR) Thermaltake Launches MAGCurve 360 Ultra ARGB Sync AIO Liquid Cooler",
+      "image": "https://tpucdn.com/img/HRb4QgHtXb9h8y8V_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "Thermaltake, marca líder de PC DIY para soluções de hardware premium, apresenta com orgulho o MAGCurve 360 ​​Ultra ARGB Sync AIO Liquid Cooler, uma solução de resfriamento com foco visual que combina personalização criativa de exibição com design térmico de alto desempenho...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344358/thermaltake-launches-magcurve-360-ultra-argb-sync-aio-liquid-cooler"
     },
     {
       "id": "https://www.techpowerup.com/344360/beelink-reveals-specs-and-pricing-for-the-me-pro-2-bay-nas",
@@ -236,21 +224,6 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/344347/gigabyte-removes-controversial-leaking-thermal-gel-from-newer-gpus"
-    },
-    {
-      "id": "https://www.techpowerup.com/344337/ubisofts-switch-2-vrr-tricks-may-come-to-more-games-soon",
-      "title": "Os truques VRR do Switch 2 da Ubisoft podem chegar a mais jogos em breve",
-      "original_title": "Ubisoft's Switch 2 VRR Tricks May Come to More Games Soon",
-      "image": "https://tpucdn.com/img/2QGqS6nucAhYfZY5_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-23",
-      "summary": "A Ubisoft falou recentemente sobre um trabalho interessante que teve que fazer para fazer Assassin's rodar a 30 FPS no Nintendo Switch 2 com VRR habilitado antes do lançamento do jogo no início de dezembro, mas agora os desenvolvedores que trabalharam na portabilidade de Assassin's Creed ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344337/ubisofts-switch-2-vrr-tricks-may-come-to-more-games-soon"
     },
     {
       "id": "https://www.eurogamer.net/cronos-the-new-dawn-easy-mode",
