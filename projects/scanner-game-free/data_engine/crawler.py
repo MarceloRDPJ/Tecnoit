@@ -6,98 +6,79 @@ import re
 import os
 import time
 import requests
+import feedparser
 from deep_translator import GoogleTranslator
+from bs4 import BeautifulSoup
 
 # Configuration
 DATA_FILE = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'db.json')
 EPIC_API_URL = "https://store-site-backend-static.ak.epicgames.com/freeGamesPromotions"
 
+# User-Agent to avoid blocks
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'en-US,en;q=0.5'
+}
+
 SOURCES = [
     {
+        "name": "Eurogamer",
+        "url": "https://www.eurogamer.net/feed",
+        "type": "rss_news",
+        "tags": ["leaks", "rumor", "hardware", "epic", "fortnite", "game", "playstation", "xbox", "pc", "steam", "deal", "free"]
+    },
+    {
         "name": "r/GamingLeaksAndRumours",
-        "url": "https://www.reddit.com/r/GamingLeaksAndRumours/hot.json?limit=15",
-        "type": "rumor"
+        "url": "https://www.reddit.com/r/GamingLeaksAndRumours/hot.rss",
+        "type": "rss_reddit",
+        "tags": []
     },
     {
         "name": "r/EpicGamesPC",
-        "url": "https://www.reddit.com/r/EpicGamesPC/hot.json?limit=15",
-        "type": "epic_news"
+        "url": "https://www.reddit.com/r/EpicGamesPC/hot.rss",
+        "type": "rss_reddit",
+        "tags": []
     },
     {
         "name": "r/FreeGameFindings",
-        "url": "https://www.reddit.com/r/FreeGameFindings/hot.json?limit=10",
-        "type": "freebie"
+        "url": "https://www.reddit.com/r/FreeGameFindings/hot.rss",
+        "type": "rss_reddit",
+        "tags": []
     },
     {
-        "name": "r/Hardware",
-        "url": "https://www.reddit.com/r/hardware/search.json?q=rumor&restrict_sr=1&sort=new&limit=8",
-        "type": "hardware"
+        "name": "TechPowerUp",
+        "url": "https://www.techpowerup.com/rss/news",
+        "type": "rss_hardware",
+        "tags": []
     }
 ]
 
 # Translator Instance
 translator = GoogleTranslator(source='auto', target='pt')
 
-def generate_mock_leaks():
-    """Generates simulated leak data when live sources are unavailable."""
-    return [
-        {
-            "id": "mock-leak-1",
-            "title": "Vazamento: Próximo Jogo Misterioso pode ser um AAA da Ubisoft",
-            "original_title": "Leak: Next Mystery Game might be a Ubisoft AAA",
-            "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80",
-            "source_count": 452,
-            "reliability": "Medium",
-            "category": "Epic Mystery",
-            "date": datetime.datetime.now().strftime("%Y-%m-%d"),
-            "summary": "Dataminers encontraram referências a 'Project U' nos arquivos da loja. A comunidade especula que pode ser Assassin's Creed ou Watch Dogs. Fique atento às próximas 24h.",
-            "sources": ["r/GamingLeaksAndRumours"],
-            "url": "https://store.epicgames.com/free-games",
-            "price_info": None
-        },
-        {
-            "id": "mock-leak-2",
-            "title": "Insiders confirmam: RTX 5090 chegando em breve",
-            "original_title": "Insiders confirm: RTX 5090 coming soon",
-            "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80",
-            "source_count": 1240,
-            "reliability": "High",
-            "category": "Hardware",
-            "date": datetime.datetime.now().strftime("%Y-%m-%d"),
-            "summary": "Fontes ligadas à indústria indicam que a nova geração de GPUs da NVIDIA será anunciada no próximo trimestre com performance 40% superior.",
-            "sources": ["TechInsider"],
-            "url": "#",
-            "price_info": None
-        },
-        {
-            "id": "mock-leak-3",
-            "title": "RUMOR: Lista vazada da Epic Games Store para Dezembro",
-            "original_title": "RUMOR: Leaked EGS List for December",
-            "image": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?auto=format&fit=crop&q=80",
-            "source_count": 890,
-            "reliability": "Low",
-            "category": "Epic News",
-            "date": datetime.datetime.now().strftime("%Y-%m-%d"),
-            "summary": "Uma suposta lista de jogos gratuitos está circulando no Discord. Inclui títulos como 'Outer Wilds' e 'Hades'. Trate como rumor por enquanto.",
-            "sources": ["Discord Leaks"],
-            "url": "#",
-            "price_info": None
-        }
-    ]
-
 def translate_text(text):
     """Translates text to Portuguese using deep_translator with fallback."""
     if not text:
         return ""
     try:
-        # Simple caching or limit check could be here, but for this script we just try
-        # Truncate very long text to avoid issues
+        # Simple caching or limit check could be here
         if len(text) > 4500:
             text = text[:4500]
         return translator.translate(text)
     except Exception as e:
         print(f"Translation Warning: {e}")
         return text
+
+def fetch_content(url):
+    """Fetches content with requests and proper headers."""
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=15)
+        response.raise_for_status()
+        return response.content
+    except Exception as e:
+        print(f"Error fetching {url}: {e}")
+        return None
 
 def fetch_epic_free_games():
     """Fetches official free games data from Epic Games Store API."""
@@ -116,7 +97,6 @@ def fetch_epic_free_games():
         mystery_detected = False
 
         for game in games:
-            # Skip if no promotions
             promotions = game.get('promotions')
             if not promotions:
                 continue
@@ -124,7 +104,7 @@ def fetch_epic_free_games():
             title = game.get('title')
             description = game.get('description')
 
-            # Find Image (OfferImageWide is usually best)
+            # Find Image
             image_url = ""
             for img in game.get('keyImages', []):
                 if img.get('type') == 'OfferImageWide':
@@ -133,13 +113,12 @@ def fetch_epic_free_games():
             if not image_url and game.get('keyImages'):
                 image_url = game.get('keyImages')[0].get('url')
 
-            # Detect Mystery Game (often titled 'Mystery Game' or has specific placeholder image)
             if "Mystery Game" in title or "Voltando em breve" in title:
                 mystery_detected = True
 
             game_data = {
                 "title": title,
-                "description": description, # Will translate later if needed, but Epic often provides localized content if requested. We requested default (en) probably.
+                "description": description,
                 "image": image_url,
                 "url": f"https://store.epicgames.com/p/{game.get('urlSlug', '')}" if game.get('urlSlug') else "https://store.epicgames.com/free-games",
                 "price": game.get('price', {}).get('totalPrice', {}).get('fmtPrice', {}).get('originalPrice', '0'),
@@ -155,20 +134,10 @@ def fetch_epic_free_games():
                     start_date = offer.get('startDate')
                     end_date = offer.get('endDate')
 
-                    # Verify it is currently active
-                    now = datetime.datetime.utcnow().isoformat()
+                    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
                     if start_date <= now <= end_date:
-                        # Ensure price is 0 (sometimes discounts are not free)
-                        # Actually for this endpoint, usually they are free, but check discountPercentage if available
-                        if offer.get('discountSetting', {}).get('discountPercentage') == 0:
-                             # Wait, discountPercentage 0 means NO discount. We want 100% discount or price 0.
-                             # But this endpoint is usually specifically for free games.
-                             pass
-
                         game_data["start_date"] = start_date
                         game_data["end_date"] = end_date
-
-                        # Translate description
                         game_data["description"] = translate_text(game_data["description"])
                         current_free.append(game_data)
 
@@ -180,8 +149,6 @@ def fetch_epic_free_games():
                     game_data_up = game_data.copy()
                     game_data_up["start_date"] = offer.get('startDate')
                     game_data_up["end_date"] = offer.get('endDate')
-
-                    # Translate description
                     game_data_up["description"] = translate_text(game_data_up["description"])
                     upcoming_free.append(game_data_up)
 
@@ -204,128 +171,149 @@ def fetch_epic_free_games():
             "error": str(e)
         }
 
-def fetch_json(url):
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
-    try:
-        req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=10) as response:
-            return json.loads(response.read().decode('utf-8'))
-    except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return None
+def process_rss_feed(source):
+    print(f"Scanning RSS: {source['name']}...")
+    items = []
 
-def process_reddit_data(raw_data, category_type):
-    if not raw_data or 'data' not in raw_data or 'children' not in raw_data['data']:
+    content = fetch_content(source['url'])
+    if not content:
         return []
 
-    items = []
-    for child in raw_data['data']['children']:
-        data = child['data']
+    try:
+        feed = feedparser.parse(content)
+        if feed.bozo:
+             print(f"RSS Parsing Warning {source['name']}: {feed.bozo_exception}")
 
-        if data.get('stickied') and data.get('num_comments') < 50:
-            continue
+        for entry in feed.entries[:10]:
+            title = entry.title
+            link = entry.link
 
-        score = data.get('score', 0)
-        comments = data.get('num_comments', 0)
+            # Filter by tags if specified
+            if source.get('tags') and len(source['tags']) > 0:
+                relevant = False
+                content_to_check = (title + " " + entry.get('summary', '')).lower()
+                for tag in source['tags']:
+                    if tag.lower() in content_to_check:
+                        relevant = True
+                        break
+                if not relevant:
+                    continue
 
-        reliability = "Low"
-        if score > 500 or comments > 100: reliability = "Medium"
-        if score > 2000 or comments > 500: reliability = "High"
+            # Check if image exists in Reddit content (content usually contains HTML)
+            image = "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80"
 
-        image = None
-        if 'preview' in data and 'images' in data['preview']:
+            # Helper to find image in HTML content
+            def find_image_in_html(html_content):
+                if not html_content: return None
+                soup = BeautifulSoup(html_content, 'html.parser')
+                img = soup.find('img')
+                if img and img.get('src'):
+                    return img['src']
+                return None
+
+            if 'content' in entry:
+                 img_candidate = find_image_in_html(entry.content[0].value)
+                 if img_candidate: image = img_candidate
+
+            if image == "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80" and 'summary' in entry:
+                 img_candidate = find_image_in_html(entry.summary)
+                 if img_candidate: image = img_candidate
+
+            # Reddit specific image handling (sometimes in media_thumbnail)
+            if 'media_thumbnail' in entry:
+                image = entry.media_thumbnail[0]['url']
+
+            # Determine reliability/category
+            category = "News"
+            if "rumour" in title.lower() or "leak" in title.lower():
+                category = "Rumor"
+            elif source['type'] == 'rss_hardware':
+                category = "Hardware"
+            elif "epic" in title.lower():
+                category = "Epic News"
+
+            if source['name'] == 'r/FreeGameFindings':
+                category = "Free Games"
+
+            # Date
+            published = entry.get('published_parsed') or entry.get('updated_parsed')
+            date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+
             try:
-                image = data['preview']['images'][0]['source']['url'].replace('&amp;', '&')
+                if published:
+                    entry_date = datetime.datetime(*published[:6])
+                    date_str = entry_date.strftime("%Y-%m-%d")
+                    # Age Check (Skip > 48h)
+                    if (datetime.datetime.now() - entry_date).days > 2:
+                        continue
             except:
-                image = None
-        elif 'thumbnail' in data and data['thumbnail'].startswith('http'):
-            image = data['thumbnail']
+                pass
 
-        if not image or image == 'self' or image == 'default' or image == 'nsfw':
-            if category_type == 'hardware':
-                image = "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80"
-            elif category_type == 'freebie':
-                image = "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80"
-            elif category_type == 'epic_news':
-                image = "https://images.unsplash.com/photo-1612287230217-969b698c0a12?auto=format&fit=crop&q=80"
-            else:
-                image = "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80"
+            # Summary cleanup
+            summary_text = ""
+            if 'summary' in entry:
+                soup = BeautifulSoup(entry.summary, "html.parser")
+                summary_text = soup.get_text()[:250] + "..."
+            elif 'content' in entry:
+                 soup = BeautifulSoup(entry.content[0].value, "html.parser")
+                 summary_text = soup.get_text()[:250] + "..."
 
-        category = map_category(category_type, data['title'])
+            items.append({
+                "id": link,
+                "title": translate_text(title),
+                "original_title": title,
+                "image": image,
+                "source_count": 1,
+                "reliability": "High" if source['name'] in ["Eurogamer", "TechPowerUp"] else "Medium",
+                "category": category,
+                "date": date_str,
+                "summary": translate_text(summary_text),
+                "sources": [source['name']],
+                "url": link
+            })
 
-        # Translation Step
-        title_pt = translate_text(data['title'])
-        summary_raw = data.get('selftext', '')[:200]
-        summary_pt = translate_text(summary_raw) if summary_raw else "Clique para ler a discussão completa..."
+    except Exception as e:
+        print(f"Error processing RSS {source['name']}: {e}")
 
-        items.append({
-            "id": data['id'],
-            "title": title_pt, # Translated
-            "original_title": data['title'],
-            "image": image,
-            "source_count": comments,
-            "reliability": reliability,
-            "category": category,
-            "date": datetime.datetime.fromtimestamp(data['created_utc']).strftime("%Y-%m-%d"),
-            "summary": summary_pt, # Translated
-            "sources": [f"r/{data['subreddit']}"],
-            "url": f"https://reddit.com{data['permalink']}"
-        })
     return items
 
-def map_category(source_type, title):
-    title_lower = title.lower()
-
-    if "epic" in title_lower and ("mystery" in title_lower or "vault" in title_lower or "secret" in title_lower or "mistério" in title_lower):
-        return "Epic Mystery"
-
-    if "nvidia" in title_lower or "amd" in title_lower or "intel" in title_lower or "rtx" in title_lower or "gpu" in title_lower:
-        return "Hardware"
-    if "free" in title_lower or "giveaway" in title_lower or source_type == 'freebie':
-        return "Free Games"
-    if "release" in title_lower or "date" in title_lower or "data" in title_lower:
-        return "Release Date"
-
-    if source_type == 'epic_news':
-        return "Epic News"
-
-    return "Rumor"
-
 def main():
-    print("Starting RDP Intelligence Crawler v2.5...")
+    print("Starting RDP Intelligence Crawler v3.1...")
     all_items = []
 
     # 1. Fetch Epic API Data
     epic_data = fetch_epic_free_games()
 
-    # 2. Fetch Reddit Data
-    reddit_items = []
+    # 2. Fetch Sources
+    failed_sources = 0
     for source in SOURCES:
-        print(f"Scanning {source['name']}...")
-        data = fetch_json(source['url'])
-        if data:
-            processed = process_reddit_data(data, source['type'])
-            reddit_items.extend(processed)
-        else:
-            print(f"Failed to scan {source['name']}.")
+        try:
+            processed = process_rss_feed(source)
+            if not processed and source['type'] == 'rss_news':
+                 # If news feed returns 0 items, it might be due to tag filtering.
+                 print(f"Warning: {source['name']} returned 0 items (strict filtering?).")
+            all_items.extend(processed)
+        except Exception as e:
+             print(f"CRITICAL ERROR scanning {source['name']}: {e}")
+             failed_sources += 1
 
-    # Use Mock Data if Reddit fails or returns very few items (e.g., < 3)
-    if len(reddit_items) < 3:
-        print("Insufficient live intelligence. Activating MOCK SIMULATION PROTOCOL.")
-        mock_data = generate_mock_leaks()
-        all_items.extend(mock_data)
-        # Also include whatever live items we got
-        all_items.extend(reddit_items)
-    else:
-        all_items.extend(reddit_items)
+    # Status Determination
+    status = "Active"
+    if epic_data.get('status') == "Offline":
+        status = "Partial Outage"
+    if failed_sources == len(SOURCES):
+        status = "Offline"
+    if len(all_items) == 0 and status != "Offline":
+        status = "No Fresh Data"
 
     # Sort items
     all_items.sort(key=lambda x: x['date'], reverse=True)
 
     # Output Structure
     output = {
-        "last_updated": datetime.datetime.now().strftime("%d/%m/%Y %H:%M"),
-        "status": "Active",
+        "last_updated": datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        "display_date": datetime.datetime.now().strftime("%d/%m/%Y %H:%M"),
+        "status": status,
         "epic_data": epic_data,
         "items": all_items
     }

@@ -1,9 +1,10 @@
 {
-  "last_updated": "22/12/2025 12:42",
+  "last_updated": "2025-12-23T11:18:22",
+  "display_date": "23/12/2025 11:18",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "507ms",
+    "latency": "116ms",
     "current_games": [
       {
         "title": "Ghostrunner 2",
@@ -33,76 +34,328 @@
         "end_date": "2026-01-08T16:00:00.000Z"
       },
       {
-        "title": "Sorry We're Closed",
-        "description": "Sorry We're Closed é um nostálgico jogo de terror de sobrevivência para um jogador com uma rica história, personagens profundos e vários finais. Explore locais perturbadores com ângulos de câmera fixos. Abra seu terceiro olho para ver entre mundos, descobrir segredos e resolver quebra-cabeças.",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec21_giveaway_2560x14401_2560x1440-1a8c8998966447698da1634d33a23f98",
-        "url": "https://store.epicgames.com/p/mysterygame2025-5",
-        "price": "0",
-        "start_date": "2025-12-21T16:00:00.000Z",
-        "end_date": "2025-12-22T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 6",
-        "description": "Jogo Misterioso 6",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "Paradise Killer",
+        "description": "Ilha Paraíso, um mundo fora da realidade. Houve um assassinato que apenas a “maníaca por investigação” Lady Love Dies pode resolver. Reúna evidências e interrogue suspeitos nesta aventura em mundo aberto. Você pode acusar qualquer pessoa, mas terá que provar seu caso em julgamento para condenar.",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec22_giveaway_2560x1440_2560x1440-0165246ad3c9454e887f576036328add",
         "url": "https://store.epicgames.com/p/mysterygame2025-6",
         "price": "0",
         "start_date": "2025-12-22T16:00:00.000Z",
         "end_date": "2025-12-23T16:00:00.000Z"
       }
     ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 7",
+        "description": "Jogo Misterioso 7",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-7",
+        "price": "0",
+        "start_date": "2025-12-23T16:00:00.000Z",
+        "end_date": "2025-12-24T16:00:00.000Z"
+      }
+    ],
     "mystery_detected": true
   },
   "items": [
     {
-      "id": "mock-leak-1",
-      "title": "Vazamento: Próximo Jogo Misterioso pode ser um AAA da Ubisoft",
-      "original_title": "Leak: Next Mystery Game might be a Ubisoft AAA",
-      "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80",
-      "source_count": 452,
-      "reliability": "Medium",
-      "category": "Epic Mystery",
-      "date": "2025-12-22",
-      "summary": "Dataminers encontraram referências a 'Project U' nos arquivos da loja. A comunidade especula que pode ser Assassin's Creed ou Watch Dogs. Fique atento às próximas 24h.",
+      "id": "https://www.eurogamer.net/uniqlo-new-range-of-pokemon-t-shirts-for-30th-anniversary",
+      "title": "A Uniqlo está lançando uma nova linha de camisetas Pokémon em tons pastéis para o 30º aniversário do próximo ano",
+      "original_title": "Uniqlo's doing a new range of pastelly Pokémon T-shirts for next year's 30th anniversary",
+      "image": "https://assetsio.gnwcdn.com/uniqlo-pokemon.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-23",
+      "summary": "Você precisa de uma nova camiseta Pokémon? Não responda isso. Você poderia ser convencido a comprar uma nova camiseta Pokémon se uma boa aparecesse? Bem, preparem-se, porque a moderna empresa japonesa de roupas de rua Uniqlo anunciou uma nova coleção Pokémon...",
       "sources": [
-        "r/GamingLeaksAndRumours"
+        "Eurogamer"
       ],
-      "url": "https://store.epicgames.com/free-games",
-      "price_info": null
+      "url": "https://www.eurogamer.net/uniqlo-new-range-of-pokemon-t-shirts-for-30th-anniversary"
     },
     {
-      "id": "mock-leak-2",
-      "title": "Insiders confirmam: RTX 5090 chegando em breve",
-      "original_title": "Insiders confirm: RTX 5090 coming soon",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80",
-      "source_count": 1240,
+      "id": "https://www.eurogamer.net/drop-everything-and-play-sektori",
+      "title": "Largue tudo e jogue Sektori",
+      "original_title": "Drop everything and play Sektori",
+      "image": "https://assetsio.gnwcdn.com/sektori-4.jpeg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-23",
+      "summary": "Às vezes você simplesmente sabe. Alguns segundos depois de Sektori, através de um tutorial sedutoramente vago e saindo do outro lado para sua cabine com ponta de flecha, você caiu na pequena zona de jogo inicial de êxtase reprimido, uma forma de diamante de refinamento e refração de kine...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/drop-everything-and-play-sektori"
+    },
+    {
+      "id": "https://www.eurogamer.net/vince-zampella-co-creator-of-call-of-duty-and-respawn-entertainment-has-died",
+      "title": "Vince Zampella, co-criador de Call of Duty e Respawn Entertainment, morreu",
+      "original_title": "Vince Zampella, co-creator of Call of Duty and Respawn Entertainment, has died",
+      "image": "https://assetsio.gnwcdn.com/vince-zampella-headshot.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-23",
+      "summary": "Vince Zampella, co-criador de Call of Duty e lendário chefe de estúdio, faleceu. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/vince-zampella-co-creator-of-call-of-duty-and-respawn-entertainment-has-died"
+    },
+    {
+      "id": "https://www.techpowerup.com/344360/beelink-reveals-specs-and-pricing-for-the-me-pro-2-bay-nas",
+      "title": "Beelink revela especificações e preços do NAS ME Pro 2-Bay",
+      "original_title": "Beelink Reveals Specs and Pricing for the ME Pro 2-Bay NAS",
+      "image": "https://tpucdn.com/img/AhqU4e34S2s8yy7e_thm.jpg",
+      "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2025-12-22",
-      "summary": "Fontes ligadas à indústria indicam que a nova geração de GPUs da NVIDIA será anunciada no próximo trimestre com performance 40% superior.",
+      "date": "2025-12-23",
+      "summary": "Na semana passada, a Beelink revelou um teaser para seus dispositivos ME Pro NAS e agora a empresa revelou o preço de seus dois primeiros modelos de 2 compartimentos, que vêm em um total de cinco SKUs diferentes. Todos os cinco SKUs são baseados em SoCs Intel Twin Lake, com os três...",
       "sources": [
-        "TechInsider"
+        "TechPowerUp"
       ],
-      "url": "#",
-      "price_info": null
+      "url": "https://www.techpowerup.com/344360/beelink-reveals-specs-and-pricing-for-the-me-pro-2-bay-nas"
     },
     {
-      "id": "mock-leak-3",
-      "title": "RUMOR: Lista vazada da Epic Games Store para Dezembro",
-      "original_title": "RUMOR: Leaked EGS List for December",
-      "image": "https://images.unsplash.com/photo-1614624532983-4ce03382d63d?auto=format&fit=crop&q=80",
-      "source_count": 890,
-      "reliability": "Low",
-      "category": "Epic News",
-      "date": "2025-12-22",
-      "summary": "Uma suposta lista de jogos gratuitos está circulando no Discord. Inclui títulos como 'Outer Wilds' e 'Hades'. Trate como rumor por enquanto.",
+      "id": "https://www.techpowerup.com/344241/lifetime-access-to-microsoft-office-2021-and-windows-11-pro-for-usd-40",
+      "title": "Acesso vitalício ao Microsoft Office 2021 e Windows 11 Pro por US$ 40",
+      "original_title": "Lifetime Access to Microsoft Office 2021 and Windows 11 Pro for $40",
+      "image": "https://tpucdn.com/img/el2rxkQr7XEdqPrq_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "Um novo pacote de software que oferece licenças vitalícias do Microsoft Office Professional 2021 para Windows e Windows 11 Pro está agora disponível por um pagamento único de US$ 39,97. Para usuários que dependem fortemente dos ecossistemas da Microsoft para trabalho, estudo ou atividades pessoais...",
       "sources": [
-        "Discord Leaks"
+        "TechPowerUp"
       ],
-      "url": "#",
-      "price_info": null
+      "url": "https://www.techpowerup.com/344241/lifetime-access-to-microsoft-office-2021-and-windows-11-pro-for-usd-40"
+    },
+    {
+      "id": "https://www.techpowerup.com/344359/nvidia-puts-100-hour-monthly-limit-on-all-geforce-now-subscriptions",
+      "title": "NVIDIA impõe limite mensal de 100 horas em todas as assinaturas do GeForce NOW",
+      "original_title": "NVIDIA Puts 100-Hour Monthly Limit on All GeForce NOW Subscriptions",
+      "image": "https://tpucdn.com/img/ZPojNYSnepjYNrND_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "A NVIDIA anunciou que a partir de 1º de janeiro de 2026, cada assinatura de jogos em nuvem GeForce NOW será limitada a 100 horas de jogo por mês. A empresa está implementando sua promessa de longa duração revelada em 2024, com a opção de os usuários...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344359/nvidia-puts-100-hour-monthly-limit-on-all-geforce-now-subscriptions"
+    },
+    {
+      "id": "https://www.techpowerup.com/344356/the-intellivision-sprint-retro-console-launches-today-in-europe",
+      "title": "(PR) A consola Intellivision Sprint Retro é lançada hoje na Europa",
+      "original_title": "(PR) The Intellivision Sprint Retro Console Launches Today in Europe",
+      "image": "https://tpucdn.com/img/3MelHXu0z7z5E9K3_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "Hoje, a PLAION REPLAI lança oficialmente o Intellivision Sprint em toda a Europa. Este renascimento premium e fielmente elaborado de um dos consoles domésticos mais intelectualmente ambiciosos dos jogos chega bem a tempo para o Natal. Criado em colaboração com...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344356/the-intellivision-sprint-retro-console-launches-today-in-europe"
+    },
+    {
+      "id": "https://www.techpowerup.com/344354/lg-display-unveils-worlds-first-240hz-rgb-stripe-oled-panel",
+      "title": "(PR) LG Display lança o primeiro painel OLED com listras RGB de 240 Hz do mundo",
+      "original_title": "(PR) LG Display Unveils World's First 240Hz RGB Stripe OLED Panel",
+      "image": "https://tpucdn.com/img/1ekeGHi0MUpWoGiT_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "A LG Display, líder mundial em inovação em tecnologias de exibição, anunciou hoje que lançará o primeiro painel OLED 4K de 27 polegadas do mundo para monitores com estrutura de faixa RGB e taxa de atualização de 240 Hz na CES 2026, o maior evento de TI do mundo...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344354/lg-display-unveils-worlds-first-240hz-rgb-stripe-oled-panel"
+    },
+    {
+      "id": "https://www.techpowerup.com/344353/flagship-intel-xeon-698x-granite-rapids-ws-sku-listed-at-usd-8-300",
+      "title": "SKU carro-chefe do Intel Xeon 698X “Granite Rapids-WS” listado por US$ 8.300",
+      "original_title": "Flagship Intel Xeon 698X \"Granite Rapids-WS\" SKU Listed at $8,300",
+      "image": "https://tpucdn.com/img/oYky1EKAEyucsleZ_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "A Intel está aparentemente se aproximando do lançamento dos processadores para estações de trabalho \"Granite Rapids-WS\", conforme as listagens mais recentes apareceram, encontradas por @momomo_us no X. As listagens mostram que a linha começa com uma CPU Xeon 634 básica com cache de 48M e rodando 2,7 GH...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344353/flagship-intel-xeon-698x-granite-rapids-ws-sku-listed-at-usd-8-300"
+    },
+    {
+      "id": "https://www.techpowerup.com/344352/system-integrators-start-offering-no-ram-pcs-amid-rising-memory-costs",
+      "title": "Integradores de sistemas começam a oferecer PCs sem RAM em meio ao aumento dos custos de memória",
+      "original_title": "System Integrators Start Offering No-RAM PCs Amid Rising Memory Costs",
+      "image": "https://tpucdn.com/img/ayKFATEeCpSzO4f9_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "A Paradox Customs, uma boutique construtora de sistemas com sede no Arizona, agora oferece aos clientes a opção de comprar PCs para jogos pré-construídos sem memória instalada. A empresa atualizou seu configurador online e anunciou essa mudança em sua conta oficial X. Isso...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344352/system-integrators-start-offering-no-ram-pcs-amid-rising-memory-costs"
+    },
+    {
+      "id": "https://www.techpowerup.com/344348/windows-11-25h2-includes-a-faster-nvme-driver-needing-manual-installation",
+      "title": "Windows 11 25H2 inclui um driver NVMe mais rápido que precisa de instalação manual",
+      "original_title": "Windows 11 25H2 Includes a Faster NVMe Driver Needing Manual Installation",
+      "image": "https://tpucdn.com/img/Zd4F09vHcXr2Sw90_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "Embora o Windows conheça o protocolo de mídia de armazenamento NVMe desde o Windows 8.1, descobriu-se que o driver padrão da Microsoft para dispositivos NVMe, disk.sys, oferece desempenho abaixo do ideal. Este driver remonta a 2006 e faz parte do Microsoft'...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344348/windows-11-25h2-includes-a-faster-nvme-driver-needing-manual-installation"
+    },
+    {
+      "id": "https://www.techpowerup.com/344347/gigabyte-removes-controversial-leaking-thermal-gel-from-newer-gpus",
+      "title": "GIGABYTE remove controverso vazamento de gel térmico de GPUs mais recentes",
+      "original_title": "GIGABYTE Removes Controversial Leaking Thermal Gel from Newer GPUs",
+      "image": "https://tpucdn.com/img/Fe5g9ClIDuaClKIr_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Rumor",
+      "date": "2025-12-23",
+      "summary": "A GIGABYTE atualizou seu site para a placa gráfica GeForce RTX 5070 Ti WINDFORCE OC V2 para refletir uma mudança no uso de seu polêmico gel térmico com vazamento. O site mais antigo, cortesia da UNIKO's Hardware, trazia informações sobre \"nível de servidor...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344347/gigabyte-removes-controversial-leaking-thermal-gel-from-newer-gpus"
+    },
+    {
+      "id": "https://www.techpowerup.com/344337/ubisofts-switch-2-vrr-tricks-may-come-to-more-games-soon",
+      "title": "Os truques VRR do Switch 2 da Ubisoft podem chegar a mais jogos em breve",
+      "original_title": "Ubisoft's Switch 2 VRR Tricks May Come to More Games Soon",
+      "image": "https://tpucdn.com/img/2QGqS6nucAhYfZY5_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-23",
+      "summary": "A Ubisoft falou recentemente sobre um trabalho interessante que teve que fazer para fazer Assassin's rodar a 30 FPS no Nintendo Switch 2 com VRR habilitado antes do lançamento do jogo no início de dezembro, mas agora os desenvolvedores que trabalharam na portabilidade de Assassin's Creed ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344337/ubisofts-switch-2-vrr-tricks-may-come-to-more-games-soon"
+    },
+    {
+      "id": "https://www.eurogamer.net/cronos-the-new-dawn-easy-mode",
+      "title": "Cronos: The New Dawn é muito difícil para você? Um modo fácil está finalmente a caminho",
+      "original_title": "Cronos: The New Dawn too hard for you? An easy mode is finally on the way",
+      "image": "https://assetsio.gnwcdn.com/Cronos_-The-New-Dawn-_-Official-Gameplay-Trailer-_-DON'T-LET-THEM-MERGE-0-14-screenshot-(1).png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "O jogo de terror psicológico que viaja no tempo, Cronos: The New Dawn, está finalmente recebendo um modo de dificuldade adicional e mais fácil para pessoas que desejam menos desafios de jogo. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/cronos-the-new-dawn-easy-mode"
+    },
+    {
+      "id": "https://www.eurogamer.net/is-it-okay-for-video-games-to-be-this-good-developers-tell-us-their-favourite-games-of-the-year",
+      "title": "“É normal que os videogames sejam tão bons?” - os desenvolvedores nos contam seus jogos favoritos do ano",
+      "original_title": "\"Is it okay for video games to be this good?\" - developers tell us their favourite games of the year",
+      "image": "https://assetsio.gnwcdn.com/dev-pics-header-logo.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "Antes de dizermos o que pensamos e antes de revelarmos o que vocês pensam, pensamos em fazer algo um pouco diferente como parte de nossas habituais celebrações dos jogos do ano. O que, nos perguntamos, fazem as pessoas que realmente fazem os jogos...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/is-it-okay-for-video-games-to-be-this-good-developers-tell-us-their-favourite-games-of-the-year"
+    },
+    {
+      "id": "https://www.eurogamer.net/clair-obscurs-gustave-motion-performer-argues-game-awards-should-have-a-best-character-category-rather-than-isolating-a-single-performer-and-potentially-leaving-others-invisible",
+      "title": "O artista de movimento Gustave de Clair Obscur argumenta que os prêmios de jogos deveriam ter uma categoria de Melhor Personagem, em vez de \"isolar um único artista e potencialmente deixar outros invisíveis\"",
+      "original_title": "Clair Obscur's Gustave motion performer argues game awards should have a Best Character category, rather than \"isolating a single performer and potentially leaving others invisible\"",
+      "image": "https://assetsio.gnwcdn.com/Actor-Macence-Cazorla-overlaid-on-an-image-of-Gustave-in-Clair-Obscur_kfhPUdE.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "Desde o lançamento de Clair Obscur: Expedition 33, tem havido muita discussão sobre o desempenho do jogo. Embora todos sejam exemplares e tenham visto nomes como Jennifer English e Ben Starr receberem indicações para Melhor Artista no The Game Awa deste ano...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/clair-obscurs-gustave-motion-performer-argues-game-awards-should-have-a-best-character-category-rather-than-isolating-a-single-performer-and-potentially-leaving-others-invisible"
+    },
+    {
+      "id": "https://www.eurogamer.net/kotor-2-switch-lawsuit-expert-argued-fan-made-mod-entire-dlc-was-based-on-had-no-economic-value",
+      "title": "O especialista no processo do KOTOR 2 Switch argumentou que o mod feito por um fã no qual todo o DLC foi baseado não tinha “nenhum valor econômico”",
+      "original_title": "Expert in KOTOR 2 Switch lawsuit argued that the fan-made mod entire DLC was based on had \"no economic value\"",
+      "image": "https://assetsio.gnwcdn.com/kotor2.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "Novos detalhes foram revelados sobre o processo de propaganda falsa de Knights of the Old Republic 2 para consoles Switch. Isso inclui um argumento apresentado por um especialista trazido pela Aspyr, que afirmou que o mod Restored Content feito por um fã é o desaparecido...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/kotor-2-switch-lawsuit-expert-argued-fan-made-mod-entire-dlc-was-based-on-had-no-economic-value"
+    },
+    {
+      "id": "https://www.eurogamer.net/passionate-response-to-tomb-raider-2013s-switch-port-could-mean-rise-and-shadow-also-come-to-nintendos-consoles",
+      "title": "“Resposta apaixonada” à porta Switch de Tomb Raider 2013 pode significar que Rise and Shadow também chegará aos consoles da Nintendo",
+      "original_title": "\"Passionate response\" to Tomb Raider 2013's Switch port could mean Rise and Shadow also come to Nintendo's consoles",
+      "image": "https://assetsio.gnwcdn.com/Lara-and-Jonah-in-Shadow-of-the-Tomb-Raider.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "O Tomb Raider 2013 reiniciado fez sua estreia no Switch há apenas algumas semanas e, graças à “resposta apaixonada” da comunidade, o desenvolvedor de porte Aspyr pode agora considerar trazer as duas entradas finais da trilogia também para a plataforma da Nintendo…",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/passionate-response-to-tomb-raider-2013s-switch-port-could-mean-rise-and-shadow-also-come-to-nintendos-consoles"
+    },
+    {
+      "id": "https://www.eurogamer.net/octopath-traveler-series-surpasses-6-million-sales",
+      "title": "A série Beloved Octopath Traveler ultrapassa 6 milhões de vendas vitalícias, logo após o lançamento do Octopath Traveler 0",
+      "original_title": "The Beloved Octopath Traveler series surpasses 6m lifetime sales, shortly after Octopath Traveler 0's launch",
+      "image": "https://assetsio.gnwcdn.com/octopath_traveller_e3_deal.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-22",
+      "summary": "A Square Enix anunciou que a série Octopath Traveler ultrapassou 6 milhões de vendas vitalícias, logo após o lançamento de Octopath Traveler 0. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/octopath-traveler-series-surpasses-6-million-sales"
+    },
+    {
+      "id": "https://www.eurogamer.net/heres-hideo-kojima-interviewing-himself-and-interviewing-stranger-things-creators-the-duffer-brothers",
+      "title": "Aqui está Hideo Kojima se entrevistando e entrevistando os criadores de Stranger Things, os Duffer Brothers (mas não ao mesmo tempo)",
+      "original_title": "Here's Hideo Kojima interviewing himself, and interviewing Stranger Things' creators, the Duffer Brothers (but not at the same time)",
+      "image": "https://assetsio.gnwcdn.com/Screenshot-2025-12-21-at-16.27.56.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-21",
+      "summary": "Hideo Kojima apareceu na (fantástica) série de suporte técnico da Wired (você sabia que estamos mais próximos de Cleópatra no tempo do que Cleópatra está do início do antigo Egito?) respondendo a perguntas sobre - bem, ele mesmo, principalmente. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/heres-hideo-kojima-interviewing-himself-and-interviewing-stranger-things-creators-the-duffer-brothers"
     }
   ]
 }
