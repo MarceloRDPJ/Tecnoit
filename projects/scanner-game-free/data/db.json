@@ -1,64 +1,124 @@
 {
-  "last_updated": "2025-12-24T12:42:59",
-  "display_date": "24/12/2025 12:42",
+  "last_updated": "2025-12-25T12:41:52",
+  "display_date": "25/12/2025 12:41",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "611ms",
+    "latency": "538ms",
     "current_games": [
       {
-        "title": "Bloodstained: Ritual of the Night",
-        "description": "Igavânia retorna!\n\nJogue como Miriam, uma órfã marcada pela maldição de um alquimista que lentamente cristaliza seu corpo. Para salvar a humanidade e a si mesma no processo, ela deve lutar pelo castelo e derrotar o invocador, Gebel.",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec23_giveaway_2560x14401_2560x1440-a65228ad80054bb1a716e87eaa2a10f9",
-        "url": "https://store.epicgames.com/p/mysterygame2025-7",
-        "price": "0",
-        "start_date": "2025-12-23T16:00:00.000Z",
-        "end_date": "2025-12-24T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 8",
-        "description": "Jogo Misterioso 8",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "The Callisto Protocol",
+        "description": "Sobreviva para escapar dos horrores de Calisto. Usando uma mistura única de tiro e combate corpo a corpo, os jogadores precisarão combater criaturas em rápida evolução enquanto procuram para desbloquear novas armas e equipamentos para escapar da crescente ameaça da Lua Morta de Júpiter.",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec24_giveaway_2560x1440_2560x1440-c86b6fef71f542ec96a6b712a2a85c1c",
         "url": "https://store.epicgames.com/p/mysterygame2025-8",
         "price": "0",
         "start_date": "2025-12-24T16:00:00.000Z",
         "end_date": "2025-12-25T16:00:00.000Z"
       }
     ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 9",
+        "description": "Jogo Misterioso 9",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-9",
+        "price": "0",
+        "start_date": "2025-12-25T16:00:00.000Z",
+        "end_date": "2025-12-26T16:00:00.000Z"
+      }
+    ],
     "mystery_detected": true
   },
   "items": [
     {
-      "id": "https://store.epicgames.com/p/mysterygame2025-7",
-      "title": "GRÁTIS: Bloodstained: Ritual of the Night",
-      "original_title": "Bloodstained: Ritual of the Night",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec23_giveaway_2560x14401_2560x1440-a65228ad80054bb1a716e87eaa2a10f9",
+      "id": "https://store.epicgames.com/p/mysterygame2025-8",
+      "title": "GRÁTIS: The Callisto Protocol",
+      "original_title": "The Callisto Protocol",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec24_giveaway_2560x1440_2560x1440-c86b6fef71f542ec96a6b712a2a85c1c",
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2025-12-24",
-      "summary": "Igavânia retorna!\n\nJogue como Miriam, uma órfã marcada pela maldição de um alquimista que lentamente cristaliza seu corpo. Para salvar a humanidade e a si mesma no processo, ela deve lutar pelo castelo e derrotar o invocador, Gebel.",
-      "sources": [
-        "Epic Games Store"
-      ],
-      "url": "https://store.epicgames.com/p/mysterygame2025-7"
-    },
-    {
-      "id": "https://store.epicgames.com/p/mysterygame2025-8",
-      "title": "EM BREVE: Mystery Game 8",
-      "original_title": "Mystery Game 8",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Release Date",
-      "date": "2025-12-24",
-      "summary": "Disponível gratuitamente a partir de 24/12. Jogo Misterioso 8",
+      "date": "2025-12-25",
+      "summary": "Sobreviva para escapar dos horrores de Calisto. Usando uma mistura única de tiro e combate corpo a corpo, os jogadores precisarão combater criaturas em rápida evolução enquanto procuram para desbloquear novas armas e equipamentos para escapar da crescente ameaça da Lua Morta de Júpiter.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/mysterygame2025-8"
+    },
+    {
+      "id": "https://store.epicgames.com/p/mysterygame2025-9",
+      "title": "EM BREVE: Mystery Game 9",
+      "original_title": "Mystery Game 9",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2025-12-25",
+      "summary": "Disponível gratuitamente a partir de 25/12. Jogo Misterioso 9",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/mysterygame2025-9"
+    },
+    {
+      "id": "https://www.eurogamer.net/banjo-kazooie-freezeezy-peak-greatest-christmas-level-rare",
+      "title": "Uma carta de amor ao Freezeezy Peak do Banjo Kazooie, (provavelmente) o maior nível de Natal de todos os tempos",
+      "original_title": "A love letter to Banjo Kazooie's Freezeezy Peak, (probably) the greatest Christmas level of all time",
+      "image": "https://assetsio.gnwcdn.com/bj-freezeezy.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-25",
+      "summary": "Amamos um bioma em videogames. Até a palavra é uma que associo inerentemente aos videogames, apesar de suas origens como uma terminologia geográfica adequada para adultos. Dentro desse panteão temático gloriosamente exagerado… existe alguma coisa...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/banjo-kazooie-freezeezy-peak-greatest-christmas-level-rare"
+    },
+    {
+      "id": "https://www.eurogamer.net/what-weve-been-playing-christmas-day-edition-hope-i-dont-disgrace-myself",
+      "title": "O que temos tocado, edição do dia de Natal - \"espero não me desonrar\"",
+      "original_title": "What we've been playing, Christmas Day edition - \"hope I don't disgrace myself\"",
+      "image": "https://assetsio.gnwcdn.com/wwbp-christmas.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-25",
+      "summary": "Olá e bem-vindo de volta ao nosso artigo regular, onde escrevemos um pouco sobre alguns dos jogos que temos jogado. Esta semana não se trata do que tocamos, mas do que esperamos tocar no dia de Natal (você está lendo isso agora, mas nós ...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/what-weve-been-playing-christmas-day-edition-hope-i-dont-disgrace-myself"
+    },
+    {
+      "id": "https://www.eurogamer.net/eurogamers-alternate-game-awards-2025",
+      "title": "Prêmio de jogo alternativo da Eurogamer 2025",
+      "original_title": "Eurogamer's Alternate Game Awards 2025",
+      "image": "https://assetsio.gnwcdn.com/Alt-awards-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-24",
+      "summary": "O ano acabou! Ou perto o suficiente. Faça soar o refrão que se tornou familiar nos últimos anos: Que ano para videogames/pesadelo/sucesso/desastre. Esta pode ser a única vez no Eurogamer em que consigo usar o velho clichê '...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/eurogamers-alternate-game-awards-2025"
+    },
+    {
+      "id": "https://www.eurogamer.net/games-of-2025-umamusume-pretty-derby",
+      "title": "Como aprendi a parar de me preocupar e a amar o jogo de corrida de cavalos de anime",
+      "original_title": "How I learned to stop worrying and love the anime horse racing game",
+      "image": "https://assetsio.gnwcdn.com/umamasume-(1).jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-24",
+      "summary": "De todos os jogos lançados este ano, todos os sucessos de bilheteria AAA e sucessos que definiram o gênero, nada me abalou tanto quanto Umamusume: Pretty Derby. Não vou negar que já foi um jogo que eu tinha vergonha de jogar. Mas agora? Estou dentro, cara. EU...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/games-of-2025-umamusume-pretty-derby"
     },
     {
       "id": "https://www.eurogamer.net/in-2025-elden-ring-nightreign-was-my-playground-for-experimentation",
@@ -121,19 +181,34 @@
       "url": "https://www.eurogamer.net/three-characters-a-life-changing-experience-and-the-mysterious-project-w-for-maxence-cazorla-expedition-33-is-more-than-just-a-game-of-the-year-contender"
     },
     {
-      "id": "https://www.techpowerup.com/344398/intel-envisions-16-compute-dies-and-24-hbm5-modules-in-a-single-package",
-      "title": "Intel prevê 16 matrizes de computação e 24 módulos HBM5 em um único pacote",
-      "original_title": "Intel Envisions 16 Compute Dies and 24 HBM5 Modules in a Single Package",
-      "image": "https://tpucdn.com/img/IBF6eCnC9BhaetTo_thm.jpg",
+      "id": "https://www.techpowerup.com/344404/laptop-sodimm-to-dimm-adapters-gain-traction-as-dram-costs-rise",
+      "title": "Adaptadores SODIMM para DIMM para laptop ganham força à medida que os custos de DRAM aumentam",
+      "original_title": "Laptop SODIMM-to-DIMM Adapters Gain Traction as DRAM Costs Rise",
+      "image": "https://tpucdn.com/img/uZubGEJstCxWGgOG_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2025-12-24",
-      "summary": "A Intel Foundry publicou um breve vídeo de demonstração de suas tecnologias avançadas de empacotamento, demonstrando o dimensionamento do silício além dos limites do retículo de 830 mm². De acordo com o vídeo, a interconexão Foveros 3D e EMIB-T da Intel pode escalar o silício para retificação de 12x...",
+      "summary": "À medida que os preços normais da memória de desktop dispararam no ano passado, mais jogadores estão se voltando para o reaproveitamento da memória SODIMM de laptop usando adaptadores SODIMM para DIMM. Isso permite que eles usem memória mais acessível em suas compilações. De acordo com 3DCenter...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/344398/intel-envisions-16-compute-dies-and-24-hbm5-modules-in-a-single-package"
+      "url": "https://www.techpowerup.com/344404/laptop-sodimm-to-dimm-adapters-gain-traction-as-dram-costs-rise"
+    },
+    {
+      "id": "https://www.techpowerup.com/344402/highpoint-launches-rocket-7634d-industrys-first-independent-pcie-gen-5-external-cdfp-host-interface-card",
+      "title": "(PR) HighPoint lança a primeira placa de interface de host CDFP externa independente PCIe Gen 5 da indústria Rocket 7634D",
+      "original_title": "(PR) HighPoint Launches Rocket 7634D Industry's First Independent PCIe Gen 5 External CDFP Host Interface Card",
+      "image": "https://tpucdn.com/img/HeAaycHWBUxzdLk8_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-24",
+      "summary": "HighPoint Technologies, Inc., líder global em soluções avançadas de armazenamento e conectividade PCIe, anunciou hoje o Rocket 7634D, o primeiro adaptador CDFP externo PCIe Gen 5 independente do setor. Projetado para servir como a pedra angular da próxima geração...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344402/highpoint-launches-rocket-7634d-industrys-first-independent-pcie-gen-5-external-cdfp-host-interface-card"
     },
     {
       "id": "https://www.techpowerup.com/344241/lifetime-access-to-microsoft-office-2021-and-windows-11-pro-for-usd-40",
@@ -149,6 +224,51 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/344241/lifetime-access-to-microsoft-office-2021-and-windows-11-pro-for-usd-40"
+    },
+    {
+      "id": "https://www.techpowerup.com/344401/nvidia-tested-intels-18a-node-but-did-not-commit-to-intel-foundry",
+      "title": "NVIDIA testou o nó 18A da Intel, mas não se comprometeu com a Intel Foundry",
+      "original_title": "NVIDIA Tested Intel's 18A Node but Did Not Commit to Intel Foundry",
+      "image": "https://tpucdn.com/img/hDBurpKtYwyg1jun_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-24",
+      "summary": "De acordo com um relatório da Reuters, a NVIDIA explorou o uso do nó 18A da Intel Foundry, mas não iniciou a produção em massa. A Reuters afirma: \"A NVIDIA testou recentemente se fabricaria seus chips usando o processo de produção conhecido da Intel...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344401/nvidia-tested-intels-18a-node-but-did-not-commit-to-intel-foundry"
+    },
+    {
+      "id": "https://www.techpowerup.com/344400/msi-launches-all-new-digime-with-voicemod-integration",
+      "title": "(PR) MSI lança novo DigiME com integração Voicemod",
+      "original_title": "(PR) MSI Launches All-New DigiME with Voicemod Integration",
+      "image": "https://tpucdn.com/img/0ByJ8VRzeB4RMso5_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-24",
+      "summary": "A MSI orgulhosamente anuncia uma grande reformulação em sua plataforma virtual de transmissão ao vivo, DigiME. A nova versão apresenta UI/UX e fluxo de trabalho totalmente otimizados, juntamente com a integração oficial do Voicemod, o principal software de transformação de voz em tempo real do mundo.",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344400/msi-launches-all-new-digime-with-voicemod-integration"
+    },
+    {
+      "id": "https://www.techpowerup.com/344398/intel-envisions-16-compute-dies-and-24-hbm5-modules-in-a-single-package",
+      "title": "Intel prevê 16 matrizes de computação e 24 módulos HBM5 em um único pacote",
+      "original_title": "Intel Envisions 16 Compute Dies and 24 HBM5 Modules in a Single Package",
+      "image": "https://tpucdn.com/img/IBF6eCnC9BhaetTo_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-24",
+      "summary": "A Intel Foundry publicou um breve vídeo de demonstração de suas tecnologias avançadas de empacotamento, demonstrando o dimensionamento do silício além dos limites do retículo de 830 mm². De acordo com o vídeo, a interconexão Foveros 3D e EMIB-T da Intel pode escalar o silício para retificação de 12x...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344398/intel-envisions-16-compute-dies-and-24-hbm5-modules-in-a-single-package"
     },
     {
       "id": "https://www.techpowerup.com/344395/intels-fab-52-is-bigger-than-tsmc-arizona-produces-more-than-40-000-wafers-per-month",
@@ -211,21 +331,6 @@
       "url": "https://www.techpowerup.com/344385/arch-linux-drops-support-for-nvidia-pascal-and-older-gpus"
     },
     {
-      "id": "https://www.techpowerup.com/344382/why-rockstar-never-gave-us-gta-tokyo",
-      "title": "Por que a Rockstar nunca nos deu “GTA: Tokyo”",
-      "original_title": "Why Rockstar Never Gave Us \"GTA: Tokyo\"",
-      "image": "https://tpucdn.com/img/vPNtpBFijk9txUJf_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-24",
-      "summary": "Grand Theft Auto VI está chegando, salvo quaisquer atrasos, como o mais recente capítulo da série de jogos baseado nos EUA, mas uma entrevista recente no GamesHub com o ex-diretor técnico da Rockstar, Obbe Vermeij, revelou que a série pode ter...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344382/why-rockstar-never-gave-us-gta-tokyo"
-    },
-    {
       "id": "https://www.eurogamer.net/merry-christmas-james-bond-game-007-first-light-has-been-delayed",
       "title": "Feliz Natal, o jogo de James Bond 007 First Light foi adiado",
       "original_title": "Merry Christmas, James Bond game 007 First Light has been delayed",
@@ -254,111 +359,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/grand-theft-auto-tokyo-rio-moscow-istanbul-rockstar-had-ideas-for-them-all"
-    },
-    {
-      "id": "https://www.eurogamer.net/ea-shareholders-approve-saudi-arabian-buyout-leaving-only-the-us-government-able-to-block-the-deal",
-      "title": "Os acionistas da EA aprovam a aquisição da Arábia Saudita, deixando apenas o governo dos EUA capaz de bloquear o negócio",
-      "original_title": "EA shareholders approve Saudi Arabian buyout, leaving only the US Government able to block the deal",
-      "image": "https://assetsio.gnwcdn.com/Apex-Legends-Season-26-Wildcard-mode-promo-art-stacked-legends.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-23",
-      "summary": "Os acionistas da EA aprovaram a proposta de aquisição da gigante dos videojogos por 55 mil milhões de dólares pela Arábia Saudita e empresas de capital privado, deixando apenas o governo dos EUA no caminho daquela que seria a maior aquisição corporativa de todos os tempos. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/ea-shareholders-approve-saudi-arabian-buyout-leaving-only-the-us-government-able-to-block-the-deal"
-    },
-    {
-      "id": "https://www.eurogamer.net/in-2025-blades-of-fire-and-hideo-kojima-showed-me-i-can-still-be-surprised-by-a-video-game-and-that-originality-is-essential",
-      "title": "Blades of Fire e Hideo Kojima me mostraram que ainda posso me surpreender com um videogame e que originalidade é essencial",
-      "original_title": "Blades of Fire and Hideo Kojima showed me I can still be surprised by a video game and that originality is essential",
-      "image": "https://assetsio.gnwcdn.com/TomO_2025_Gameofyear.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-23",
-      "summary": "Estou bastante confiante em minha capacidade de julgar videogames. Eu os toco (cada vez mais mal nos últimos anos!) Há quase 40 anos e escrevo sobre eles há mais de 20, então é raro que algo me surpreenda. Mas é exatamente isso que...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/in-2025-blades-of-fire-and-hideo-kojima-showed-me-i-can-still-be-surprised-by-a-video-game-and-that-originality-is-essential"
-    },
-    {
-      "id": "https://www.eurogamer.net/we-were-worried-hed-never-work-with-us-again-dispatch-creators-on-working-with-breaking-bad-star-aaron-paul-and-whether-hed-want-to-be-involved-again",
-      "title": "“Estávamos preocupados que ele nunca mais trabalhasse conosco” – criadores do Dispatch sobre como trabalhar com a estrela de Breaking Bad, Aaron Paul, e se ele gostaria de se envolver novamente",
-      "original_title": "\"We were worried he'd never work with us again\" - Dispatch creators on working with Breaking Bad star Aaron Paul, and whether he'd want to be involved again",
-      "image": "https://assetsio.gnwcdn.com/aaron-paul-dispatch-robert.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-23",
-      "summary": "Dois dos principais criadores do Dispatch acreditam que a estrela de Breaking Bad, Aaron Paul, não teria concordado em estar no jogo se percebesse o quanto isso realmente daria trabalho. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/we-were-worried-hed-never-work-with-us-again-dispatch-creators-on-working-with-breaking-bad-star-aaron-paul-and-whether-hed-want-to-be-involved-again"
-    },
-    {
-      "id": "https://www.eurogamer.net/battlefield-6-ai-sticker-backlash",
-      "title": "Os jogadores do Battlefield 6 suspeitam que cosméticos de IA foram introduzidos no jogo, apesar da EA dizer que isso não aconteceria",
-      "original_title": "Battlefield 6 players suspect AI cosmetics have been snuck into the game, despite EA saying that wouldn't happen",
-      "image": "https://assetsio.gnwcdn.com/battlefield-6-phantom-skins.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-23",
-      "summary": "Os fãs de Battlefield 6 estão começando a suspeitar que cosméticos generativos de IA foram adicionados ao Battlefield 6, apesar de declarações anteriores de funcionários seniores da EA afirmando que isso não aconteceria. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/battlefield-6-ai-sticker-backlash"
-    },
-    {
-      "id": "https://www.techpowerup.com/344352/system-integrators-start-offering-no-ram-pcs-amid-rising-memory-costs",
-      "title": "Integradores de sistemas começam a oferecer PCs sem RAM em meio ao aumento dos custos de memória",
-      "original_title": "System Integrators Start Offering No-RAM PCs Amid Rising Memory Costs",
-      "image": "https://tpucdn.com/img/ayKFATEeCpSzO4f9_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-23",
-      "summary": "A Paradox Customs, uma boutique construtora de sistemas com sede no Arizona, agora oferece aos clientes a opção de comprar PCs para jogos pré-construídos sem memória instalada. A empresa atualizou seu configurador online e anunciou essa mudança em sua conta oficial X. Isso...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344352/system-integrators-start-offering-no-ram-pcs-amid-rising-memory-costs"
-    },
-    {
-      "id": "https://www.techpowerup.com/344378/amd-prepares-expo-v1-2-for-better-memory-oc-profiles",
-      "title": "AMD prepara EXPO v1.2 para melhores perfis de OC de memória",
-      "original_title": "AMD Prepares EXPO v1.2 for Better Memory OC Profiles",
-      "image": "https://tpucdn.com/img/b2JGQfsMZdNe1oA4_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-23",
-      "summary": "A tecnologia Extended Profiles for Overclocking (EXPO) da AMD está recebendo uma atualização com a versão 1.2. De acordo com o último HWiNFO v8.35-5890 Beta, esta ferramenta adicionou suporte para AMD EXPO 1.2, embora a AMD não tenha lançado oficialmente esta versão...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344378/amd-prepares-expo-v1-2-for-better-memory-oc-profiles"
-    },
-    {
-      "id": "https://www.techpowerup.com/344375/amd-zen-6-skus-with-3d-v-cache-could-pack-up-to-288-mb-of-cache",
-      "title": "SKUs AMD “Zen 6” com 3D V-Cache podem conter até 288 MB de cache",
-      "original_title": "AMD \"Zen 6\" SKUs with 3D V-Cache Could Pack Up to 288 MB of Cache",
-      "image": "https://tpucdn.com/img/43XH6w7E0ZeTCTwD_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-23",
-      "summary": "Espera-se que os próximos processadores clientes “Zen 6” da AMD continuem a tendência de oferecer SKUs opcionais com 3D V-Cache, semelhantes aos seus antecessores. No entanto, esses novos processadores podem apresentar capacidades de cache significativamente maiores em comparação com o cu...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344375/amd-zen-6-skus-with-3d-v-cache-could-pack-up-to-288-mb-of-cache"
     }
   ]
 }
