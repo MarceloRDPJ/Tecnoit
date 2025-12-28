@@ -1,64 +1,169 @@
 {
-  "last_updated": "2025-12-27T12:39:54",
-  "display_date": "27/12/2025 12:39",
+  "last_updated": "2025-12-28T12:41:09",
+  "display_date": "28/12/2025 12:41",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "194ms",
+    "latency": "156ms",
     "current_games": [
       {
-        "title": "We Were Here Together",
-        "description": "À medida que exploramos esses resíduos congelados, o infortúnio ataca mais uma vez. Em meio à forte nevasca, um clarão ilumina o céu, seguido por um pedido de socorro no rádio - quebrado, morrendo... Ninguém mais pode vir em seu socorro. Podemos voltar juntos?",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec26_giveaway_2560x144011_2560x1440-f07874de2abc47b3a7d2ff9a7fe7d79c",
-        "url": "https://store.epicgames.com/p/mysterygame2025-10",
-        "price": "0",
-        "start_date": "2025-12-26T16:00:00.000Z",
-        "end_date": "2025-12-27T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 11",
-        "description": "Jogo Mistério 11",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "Cassette Beasts",
+        "description": "Colecione monstros incríveis para usar durante batalhas por turnos neste RPG de mundo aberto, agora com modo multijogador online. Combine quaisquer duas formas de monstros usando o sistema de fusão do Cassette Beasts para criar novos e únicos e poderosos!",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec27_giveaway_2560x14401_2560x1440-5f94bf795c3e4e6f8af0c66453261a7b",
         "url": "https://store.epicgames.com/p/mysterygame2025-11",
         "price": "0",
         "start_date": "2025-12-27T16:00:00.000Z",
         "end_date": "2025-12-28T16:00:00.000Z"
       }
     ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 12",
+        "description": "Jogo Mistério 12",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-12",
+        "price": "0",
+        "start_date": "2025-12-28T16:00:00.000Z",
+        "end_date": "2025-12-29T16:00:00.000Z"
+      }
+    ],
     "mystery_detected": true
   },
   "items": [
     {
-      "id": "https://store.epicgames.com/p/mysterygame2025-10",
-      "title": "GRÁTIS: We Were Here Together",
-      "original_title": "We Were Here Together",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec26_giveaway_2560x144011_2560x1440-f07874de2abc47b3a7d2ff9a7fe7d79c",
+      "id": "https://store.epicgames.com/p/mysterygame2025-11",
+      "title": "GRÁTIS: Cassette Beasts",
+      "original_title": "Cassette Beasts",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec27_giveaway_2560x14401_2560x1440-5f94bf795c3e4e6f8af0c66453261a7b",
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2025-12-27",
-      "summary": "À medida que exploramos esses resíduos congelados, o infortúnio ataca mais uma vez. Em meio à forte nevasca, um clarão ilumina o céu, seguido por um pedido de socorro no rádio - quebrado, morrendo... Ninguém mais pode vir em seu socorro. Podemos voltar juntos?",
-      "sources": [
-        "Epic Games Store"
-      ],
-      "url": "https://store.epicgames.com/p/mysterygame2025-10"
-    },
-    {
-      "id": "https://store.epicgames.com/p/mysterygame2025-11",
-      "title": "EM BREVE: Mystery Game 11",
-      "original_title": "Mystery Game 11",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Release Date",
-      "date": "2025-12-27",
-      "summary": "Disponível gratuitamente a partir de 27/12. Jogo Mistério 11",
+      "date": "2025-12-28",
+      "summary": "Colecione monstros incríveis para usar durante batalhas por turnos neste RPG de mundo aberto, agora com modo multijogador online. Combine quaisquer duas formas de monstros usando o sistema de fusão do Cassette Beasts para criar novos e únicos e poderosos!",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/mysterygame2025-11"
+    },
+    {
+      "id": "https://store.epicgames.com/p/mysterygame2025-12",
+      "title": "EM BREVE: Mystery Game 12",
+      "original_title": "Mystery Game 12",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2025-12-28",
+      "summary": "Disponível gratuitamente a partir de 28/12. Jogo Mistério 12",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/mysterygame2025-12"
+    },
+    {
+      "id": "https://www.eurogamer.net/games-of-2025-despelote",
+      "title": "Despelote me mostrou a melhor sequência de introdução do ano e seu melhor anúncio para videogames e ponto final",
+      "original_title": "Despelote showed me the year's greatest intro sequence, and its greatest advert for video games full stop",
+      "image": "https://assetsio.gnwcdn.com/despelote-eoy-header.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-28",
+      "summary": "Vou estragar a abertura de Despelote aqui – uma abertura que eu acho, como você provavelmente pode perceber, muito gloriosa. Não é tanto um spoiler, mas sim um contaminador, um dedo na balança de algo que será maravilhoso entrar sem peso. ...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/games-of-2025-despelote"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pxdyqk/adriyan_rae_south_of_midnight_actress_plays_the/",
+      "title": "Adriyan Rae (atriz de South of Midnight) interpreta o companheiro telecinético do vilão em um jogo secreto de 2K que provavelmente é BioShock 4",
+      "original_title": "Adriyan Rae (South of Midnight actress) plays the Villain's telekinetic sidekick in a secret 2K game that's probably BioShock 4",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-28",
+      "summary": "Para continuar as novidades do BioShock 4 que estão rolando hoje, isso é de semanas atrás mas nunca vi postado aqui, são algumas entrevistas onde ela menciona que desempenhou um papel em um jogo 2K que se encaixa na descrição do BioShock 4: https://www.tiktok.com/@itstherespawn/vi...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pxdyqk/adriyan_rae_south_of_midnight_actress_plays_the/"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pxp5od/kingdom_come_1_upgrade_info/",
+      "title": "Informações de atualização do Kingdom Come 1",
+      "original_title": "Kingdom Come 1 upgrade Info",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-28",
+      "summary": "Há dois meses escrevi sobre a atualização do primeiro Kingdom Come e do novo jogo. Hoje quero compartilhar informações sobre a próxima atualização para consoles de próxima geração. Pelo que ouvi, uma remasterização do Kingdom Come original supostamente chegará em fevereiro. Fazer...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pxp5od/kingdom_come_1_upgrade_info/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pxotv8/games_could_be_the_next_freebies/",
+      "title": "Os jogos podem ser os próximos brindes",
+      "original_title": "Games could be the next freebies",
+      "image": "https://b.thumbs.redditmedia.com/f7EVTz-2vbrmyvqBLLSBmMuFlIMrmUUtU9C-4-Kbzak.jpg",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-28",
+      "summary": "Um desses jogos pode ser gratuito nos dias restantes porque não há desconto neles (muitas repetições também).  O que vocês acham, pessoal?    enviado por /u/Mahmoud-TMX [link] [comentários] ...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pxotv8/games_could_be_the_next_freebies/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pxm934/next_game_could_likely_be_mortal_kombat_11_2019/",
+      "title": "O próximo jogo provavelmente poderá ser Mortal Kombat 11 (2019)",
+      "original_title": "Next game could likely be Mortal Kombat 11 (2019)",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-28",
+      "summary": "Não está disponível na Coreia do Sul e, para usuários sul-coreanos, a imagem do próximo jogo não aparece. Postado novamente porque erro de digitação na postagem anterior enviada por /u/Sj_________ [link] [comentários]...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pxm934/next_game_could_likely_be_mortal_kombat_11_2019/"
+    },
+    {
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pxnldx/steamepicps5xboxswitch_other_faaast_penguin_200/",
+      "title": "[Steam/Epic/PS5/Xbox/Switch] (Outro) Faaast Penguin - 200 cristais e óculos do ano 2026 e cores 2026",
+      "original_title": "[Steam/Epic/PS5/Xbox/Switch] (Other) Faaast Penguin - 200 Crystals & Year 2026 Glasses & 2026 Color",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-28",
+      "summary": "enviado por /u/eonvu [link] [comentários]...",
+      "sources": [
+        "r/FreeGameFindings"
+      ],
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pxnldx/steamepicps5xboxswitch_other_faaast_penguin_200/"
+    },
+    {
+      "id": "https://www.techpowerup.com/344493/this-week-in-gaming-week-1",
+      "title": "Esta semana em jogos (semana 1)",
+      "original_title": "This Week in Gaming (Week 1)",
+      "image": "https://tpucdn.com/img/jBuKzf5JsipBcEOu_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-28",
+      "summary": "Feliz Ano Novo, embora tecnicamente quase metade da próxima semana ainda faça parte do ano atual. Esta semana temos uma programação muito escassa de jogos para você, mas ainda é um pouquinho melhor que a do ano passado. Começamos com muita diversão de carnaval,...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344493/this-week-in-gaming-week-1"
     },
     {
       "id": "https://www.eurogamer.net/in-2025-deltarune-reminded-me-of-the-joy-and-importance-of-secret-hunting",
@@ -91,6 +196,141 @@
       "url": "https://www.eurogamer.net/games-of-2025-skin-deep"
     },
     {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1px7pep/mp1st_new_details_and_pics_for_bioshock_4/",
+      "title": "MP1st: Novos detalhes e fotos de Bioshock 4",
+      "original_title": "MP1st: New details and pics for Bioshock 4",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-27",
+      "summary": "fonte Alguns novos locais incluem um cassino e um lugar chamado Solaria/Solaris. ADAM possivelmente retornando. Inimigos chamados \"Flushers\" Existem ambientes com neve. Desenvolvimento conturbado em um período \"em (ou anterior a) 2022\" Também há fotos com...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1px7pep/mp1st_new_details_and_pics_for_bioshock_4/"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwr83c/high_on_life_2_for_the_nintendo_switch_2_has_been/",
+      "title": "High on Life 2 para Nintendo Switch 2 foi listado em várias lojas online europeias.",
+      "original_title": "High on Life 2 for the Nintendo Switch 2 has been listed on several European Online Shops.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-27",
+      "summary": "Uma porta High On Life 2 ainda não foi anunciada, mas o primeiro jogo não apenas recebeu uma porta Switch 1, mas também recebeu uma versão Switch 2 do jogo durante o verão. As listagens indicam como High On Life 2 está sendo publicado por ...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwr83c/high_on_life_2_for_the_nintendo_switch_2_has_been/"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwp1m2/upcoming_dual_vcache_9950x3d2_gaming_cpu_from_amd/",
+      "title": "O próximo CPU para jogos Dual V-Cache 9950X3D2 da AMD vazou, com 192 MB de cache L3",
+      "original_title": "Upcoming Dual V-Cache 9950X3D2 Gaming CPU from AMD leaked, to feature 192MB of L3 Cache",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Rumor",
+      "date": "2025-12-27",
+      "summary": "Fonte: https://xcancel.com/Olrak29_/status/2004502876731965677 https://xcancel.com/x86deadandback/status/2004495963101258058 enviado por /u/JohnBarry_Dost [link] [comentários]...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwp1m2/upcoming_dual_vcache_9950x3d2_gaming_cpu_from_amd/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1px17o8/december_28_mystery_game_leaksspeculation/",
+      "title": "28 de dezembro, vazamentos/especulações de jogos misteriosos",
+      "original_title": "December 28 Mystery Game Leaks/Speculation",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Rumor",
+      "date": "2025-12-27",
+      "summary": "Este mega tópico é para vazamentos e especulações de jogos misteriosos de amanhã.    enviado por /u/AutoModerator [link] [comentários]...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1px17o8/december_28_mystery_game_leaksspeculation/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1px05oy/mystery_game_11_of_17cassette_beasts/",
+      "title": "Jogo de mistério nº 11 de 17｜Bestas em cassete",
+      "original_title": "Mystery Game #11 of 17｜Cassette Beasts",
+      "image": "https://preview.redd.it/886hzawyjr9g1.png?width=320&crop=smart&auto=webp&s=0fdb14b09f5232c5e849c54fe4c55bc207dfa87f",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-27",
+      "summary": "enviado por /u/MeguminShiro [link] [comentários] ...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1px05oy/mystery_game_11_of_17cassette_beasts/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pwwigc/microsoft_and_capcom_games/",
+      "title": "Jogos Microsoft e Capcom",
+      "original_title": "Microsoft and capcom games",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-27",
+      "summary": "Por que não há jogos publicados pela Microsoft e pela Capcom na Epic Games Store?    enviado por /u/pdnr76 [link] [comentários]...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pwwigc/microsoft_and_capcom_games/"
+    },
+    {
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1px16dk/epic_games_game_cassette_beasts/",
+      "title": "[Jogos Épicos] (Jogo) Bestas Cassete",
+      "original_title": "[Epic Games] (Game) Cassette Beasts",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-27",
+      "summary": "enviado por /u/LighteningOneIN [link] [comentários]...",
+      "sources": [
+        "r/FreeGameFindings"
+      ],
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1px16dk/epic_games_game_cassette_beasts/"
+    },
+    {
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1px9lo7/itchio_game_cottageville/",
+      "title": "[Itch.io] (Jogo) CottageVille",
+      "original_title": "[Itch.io] (Game) CottageVille",
+      "image": "https://external-preview.redd.it/Rl8jcf4uUsdbd_g9JUPROFWXkDHqGc_SMuSOmVKS5wQ.gif?width=216&crop=smart&s=506aeda4f779e1f238f3dfadbaa05ca0b076f2ab",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-27",
+      "summary": "enviado por /u/Slippy2k [link] [comentários] ...",
+      "sources": [
+        "r/FreeGameFindings"
+      ],
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1px9lo7/itchio_game_cottageville/"
+    },
+    {
+      "id": "https://www.techpowerup.com/344472/4-tb-rdimm-ddr5-memory-kit-arrives-at-eye-watering-usd-70-000-price-tag",
+      "title": "Kit de memória RDIMM DDR5 de 4 TB chega a US$ 70.000 + etiqueta de preço",
+      "original_title": "4 TB RDIMM DDR5 Memory Kit Arrives at Eye-Watering $70,000+ Price Tag",
+      "image": "https://tpucdn.com/img/mNzLuzwiJERBPVp3_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-27",
+      "summary": "Se você está procurando um kit de memória DDR5 de alta capacidade com RDIMMs ECC, esta pode ser sua boa oportunidade. NEMIX, um fornecedor de memória e armazenamento com sede nos EUA que colabora com grandes empresas de tecnologia e o governo, listou um DDR5 de 4 TB...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344472/4-tb-rdimm-ddr5-memory-kit-arrives-at-eye-watering-usd-70-000-price-tag"
+    },
+    {
       "id": "https://www.techpowerup.com/344461/hp-omen-16l-gaming-desktop-to-get-raptor-lake-r-cpus-alongside-rtx-50-series-gpus",
       "title": "Desktop para jogos HP Omen 16L para obter CPUs Raptor Lake-R junto com GPUs RTX série 50",
       "original_title": "HP Omen 16L Gaming Desktop To Get Raptor Lake-R CPUs Alongside RTX 50-Series GPUs",
@@ -119,6 +359,96 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/in-2025-winter-burrow-showed-how-a-little-kindness-goes-a-long-way"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwdebv/report_halo_studios_going_all_in_on_genai_xbox/",
+      "title": "Relatório: Halo Studios apostando tudo na GenAI, Xbox Studios contratando especialistas em ML para Gears e Forza também",
+      "original_title": "Report: Halo Studios Going All In On GenAI, Xbox Studios Hiring ML Experts for Gears and Forza As Well",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-26",
+      "summary": "https://clawsomegamer.com/new-evidence-reveals-halo-studios-going-all-in-on-generative-ai/ enviado por /u/TheVideogaming101 [link] [comentários]...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pwdebv/report_halo_studios_going_all_in_on_genai_xbox/"
+    },
+    {
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pw3gui/unreleased_re9_interview_video_showcases_the/",
+      "title": "Vídeo inédito de entrevista de RE9 mostra o tema do jogo.",
+      "original_title": "Unreleased RE9 interview video showcases the games theme.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-26",
+      "summary": "https://www.youtube.com/watch?v=6pempD1tE1s 1:04 enviado por /u/Solid-Entertainer-39 [link] [comentários]...",
+      "sources": [
+        "r/GamingLeaksAndRumours"
+      ],
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pw3gui/unreleased_re9_interview_video_showcases_the/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pw6llo/mystery_game_10_of_17we_were_here_together/",
+      "title": "Jogo de mistério nº 10 de 17｜Estávamos aqui juntos",
+      "original_title": "Mystery Game #10 of 17｜We Were Here Together",
+      "image": "https://preview.redd.it/ohh18yn1fk9g1.png?width=640&crop=smart&auto=webp&s=125506f38707b663c56d1b4c31d3b4c735412422",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "News",
+      "date": "2025-12-26",
+      "summary": "enviado por /u/MeguminShiro [link] [comentários] ...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pw6llo/mystery_game_10_of_17we_were_here_together/"
+    },
+    {
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pw7nix/december_27_mystery_game_leaksspeculation/",
+      "title": "27 de dezembro Vazamentos/especulações de jogos misteriosos",
+      "original_title": "December 27 Mystery Game Leaks/Speculation",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Rumor",
+      "date": "2025-12-26",
+      "summary": "Este mega tópico é para vazamentos e especulações de jogos misteriosos de amanhã.    enviado por /u/AutoModerator [link] [comentários]...",
+      "sources": [
+        "r/EpicGamesPC"
+      ],
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pw7nix/december_27_mystery_game_leaksspeculation/"
+    },
+    {
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pw7m87/epic_games_game_we_were_here_together/",
+      "title": "[Epic Games] (Jogo) Estávamos aqui juntos",
+      "original_title": "[Epic Games] (Game) We Were Here Together",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-26",
+      "summary": "enviado por /u/LighteningOneIN [link] [comentários]...",
+      "sources": [
+        "r/FreeGameFindings"
+      ],
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pw7m87/epic_games_game_we_were_here_together/"
+    },
+    {
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pw5cib/steamepicxbps_other_path_of_exile_1_2_the_last_of/",
+      "title": "[Steam/Epic/XB/PS] (Outro) Path of Exile 1 e 2 - Caixa Misteriosa O Último dos Druidas",
+      "original_title": "[Steam/Epic/XB/PS] (Other) Path of Exile 1 & 2 - The Last of the Druids Mystery Box",
+      "image": "https://external-preview.redd.it/ArTk8y34SYIDi_1NjB4jdM4YaHEvgbnRycvHse5Aqy8.png?width=640&crop=smart&auto=webp&s=281aef6966b4c68ecd44fb78579307c3c1a919f8",
+      "source_count": 1,
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-26",
+      "summary": "Para resgatar sua Caixa Misteriosa The Last of the Druids gratuita, tudo o que você precisa fazer é abrir a loja do jogo no Path of Exile 1 ou no Path of Exile 2! A Caixa Misteriosa será automaticamente adicionada à sua conta e você a encontrará em seu Microtran...",
+      "sources": [
+        "r/FreeGameFindings"
+      ],
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pw5cib/steamepicxbps_other_path_of_exile_1_2_the_last_of/"
     },
     {
       "id": "https://www.techpowerup.com/344447/redragon-launches-slew-of-gaming-and-office-peripherals-including-an-ai-mouse",
@@ -226,94 +556,94 @@
       "url": "https://www.techpowerup.com/344432/lg-unveils-ultragear-evo-ai-series-gaming-monitors-with-in-built-ai-upscaling"
     },
     {
-      "id": "https://www.eurogamer.net/banjo-kazooie-freezeezy-peak-greatest-christmas-level-rare",
-      "title": "Uma carta de amor ao Freezeezy Peak do Banjo Kazooie, (provavelmente) o maior nível de Natal de todos os tempos",
-      "original_title": "A love letter to Banjo Kazooie's Freezeezy Peak, (probably) the greatest Christmas level of all time",
-      "image": "https://assetsio.gnwcdn.com/bj-freezeezy.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pvocn8/asus_rumored_to_enter_the_dram_market_next_year/",
+      "title": "Há rumores de que a ASUS entrará no mercado de DRAM no próximo ano para lidar com a escassez de memória.",
+      "original_title": "ASUS rumored to enter the DRAM market next year to tackle memory shortages.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
       "source_count": 1,
-      "reliability": "High",
+      "reliability": "Medium",
       "category": "News",
       "date": "2025-12-25",
-      "summary": "Amamos um bioma em videogames. Até a palavra é uma que associo inerentemente aos videogames, apesar de suas origens como uma terminologia geográfica adequada para adultos. Dentro desse panteão temático gloriosamente exagerado… existe alguma coisa...",
+      "summary": "https://xcancel.com/wccftech/status/2004221782132510982?s=46 enviado por /u/Solid-Entertainer-39 [link] [comentários]...",
       "sources": [
-        "Eurogamer"
+        "r/GamingLeaksAndRumours"
       ],
-      "url": "https://www.eurogamer.net/banjo-kazooie-freezeezy-peak-greatest-christmas-level-rare"
+      "url": "https://www.reddit.com/r/GamingLeaksAndRumours/comments/1pvocn8/asus_rumored_to_enter_the_dram_market_next_year/"
     },
     {
-      "id": "https://www.eurogamer.net/what-weve-been-playing-christmas-day-edition-hope-i-dont-disgrace-myself",
-      "title": "O que temos tocado, edição do dia de Natal - \"espero não me desonrar\"",
-      "original_title": "What we've been playing, Christmas Day edition - \"hope I don't disgrace myself\"",
-      "image": "https://assetsio.gnwcdn.com/wwbp-christmas.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pvf9mw/mystery_game_9_of_17disco_elysium_the_final_cut/",
+      "title": "Jogo de mistério #9 de 17｜Disco Elysium - The Final Cut",
+      "original_title": "Mystery Game #9 of 17｜Disco Elysium - The Final Cut",
+      "image": "https://preview.redd.it/wij87zhu8d9g1.png?width=320&crop=smart&auto=webp&s=77f0ffba79d4d5928532e594636ddd620a7435bd",
       "source_count": 1,
-      "reliability": "High",
+      "reliability": "Medium",
       "category": "News",
       "date": "2025-12-25",
-      "summary": "Olá e bem-vindo de volta ao nosso artigo regular, onde escrevemos um pouco sobre alguns dos jogos que temos jogado. Esta semana não se trata do que tocamos, mas do que esperamos tocar no dia de Natal (você está lendo isso agora, mas nós ...",
+      "summary": "enviado por /u/MeguminShiro [link] [comentários] ...",
       "sources": [
-        "Eurogamer"
+        "r/EpicGamesPC"
       ],
-      "url": "https://www.eurogamer.net/what-weve-been-playing-christmas-day-edition-hope-i-dont-disgrace-myself"
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pvf9mw/mystery_game_9_of_17disco_elysium_the_final_cut/"
     },
     {
-      "id": "https://www.techpowerup.com/344428/framework-announces-another-dram-price-hike-memory-costs-usd-10-per-gb-of-capacity",
-      "title": "Framework anuncia outro aumento no preço da DRAM, a memória custa US$ 10 por GB de capacidade",
-      "original_title": "Framework Announces Another DRAM Price Hike, Memory Costs $10 per GB of Capacity",
-      "image": "https://tpucdn.com/img/Fs0LogTNT97yhlkb_thm.jpg",
+      "id": "https://www.reddit.com/r/EpicGamesPC/comments/1pvdroq/epic_game_or_steam/",
+      "title": "Jogo épico ou Steam",
+      "original_title": "Epic game or steam",
+      "image": "https://preview.redd.it/5gssalfouc9g1.jpeg?width=640&crop=smart&auto=webp&s=5ea30dadab85d5415b713a701f09304ab18ea5e4",
       "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
+      "reliability": "Medium",
+      "category": "Epic News",
       "date": "2025-12-25",
-      "summary": "Framework atualizou sua postagem original no blog sobre aumento de preços de DRAM em 24 de dezembro de 2025, explicando que a empresa deve responder à volatilidade de preços que seus fornecedores estão enfrentando. Inicialmente, a Framework anunciou um aumento de 50% no preço de sua memória DDR5...",
+      "summary": "enviado por /u/Ornery-Restaurant-72 [link] [comentários] ...",
       "sources": [
-        "TechPowerUp"
+        "r/EpicGamesPC"
       ],
-      "url": "https://www.techpowerup.com/344428/framework-announces-another-dram-price-hike-memory-costs-usd-10-per-gb-of-capacity"
+      "url": "https://www.reddit.com/r/EpicGamesPC/comments/1pvdroq/epic_game_or_steam/"
     },
     {
-      "id": "https://www.techpowerup.com/344425/nuphy-launches-node-100-low-profile-and-full-height-retro-mechanical-keyboard",
-      "title": "NuPhy lança teclado mecânico retrô Node 100 de baixo perfil e altura total",
-      "original_title": "NuPhy Launches Node 100 Low-Profile and Full-Height Retro Mechanical Keyboard",
-      "image": "https://tpucdn.com/img/rVHSgDrQRj0p87P8_thm.jpg",
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pvgacw/epic_games_game_disco_elysium_the_final_cut/",
+      "title": "[Epic Games] (Jogo) Disco Elysium - A versão final",
+      "original_title": "[Epic Games] (Game) Disco Elysium - The Final Cut",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
       "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
+      "reliability": "Medium",
+      "category": "Free Games",
       "date": "2025-12-25",
-      "summary": "A NuPhy lançou no início deste ano o Node 75, um teclado mecânico 75% sem fio com um design retrô inspirado no Braun T3, e agora trouxe essa linguagem de design retrô para um layout 1800, o que significa que você obtém um teclado com um teclado numérico de tamanho normal...",
+      "summary": "enviado por /u/LighteningOneIN [link] [comentários]...",
       "sources": [
-        "TechPowerUp"
+        "r/FreeGameFindings"
       ],
-      "url": "https://www.techpowerup.com/344425/nuphy-launches-node-100-low-profile-and-full-height-retro-mechanical-keyboard"
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pvgacw/epic_games_game_disco_elysium_the_final_cut/"
     },
     {
-      "id": "https://www.eurogamer.net/eurogamers-alternate-game-awards-2025",
-      "title": "Prêmio de jogo alternativo da Eurogamer 2025",
-      "original_title": "Eurogamer's Alternate Game Awards 2025",
-      "image": "https://assetsio.gnwcdn.com/Alt-awards-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pviv04/steam_game_caveman_world_mountains_of_unga_boonga/",
+      "title": "[Steam] (Jogo) Caveman World: Montanhas de Unga Boonga",
+      "original_title": "[Steam] (Game) Caveman World: Mountains of Unga Boonga",
+      "image": "https://external-preview.redd.it/joscM-feaMhURHvSydxaXeY77fHy2YJIUFGhvmQsIhI.jpeg?width=320&crop=smart&auto=webp&s=647b53fd7410e0435b2f7f7f8e347c032106f0a5",
       "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-24",
-      "summary": "O ano acabou! Ou perto o suficiente. Faça soar o refrão que se tornou muito familiar nos últimos anos: Que ano para videogames/pesadelo/sucesso/desastre. Esta pode ser a única vez no Eurogamer em que consigo usar o velho clichê '...",
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-25",
+      "summary": "enviado por /u/iambaldy [link] [comentários] ...",
       "sources": [
-        "Eurogamer"
+        "r/FreeGameFindings"
       ],
-      "url": "https://www.eurogamer.net/eurogamers-alternate-game-awards-2025"
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pviv04/steam_game_caveman_world_mountains_of_unga_boonga/"
     },
     {
-      "id": "https://www.eurogamer.net/games-of-2025-umamusume-pretty-derby",
-      "title": "Como aprendi a parar de me preocupar e a amar o jogo de corrida de cavalos de anime",
-      "original_title": "How I learned to stop worrying and love the anime horse racing game",
-      "image": "https://assetsio.gnwcdn.com/umamasume-(1).jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.reddit.com/r/FreeGameFindings/comments/1pvgez2/epic_games_mobile_game_monument_valley_monument/",
+      "title": "[Epic Games Mobile] (Jogo) Monument Valley 🔁 e Monument Valley II 🔁",
+      "original_title": "[Epic Games Mobile] (Game) Monument Valley 🔁 & Monument Valley II 🔁",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80",
       "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-24",
-      "summary": "De todos os jogos lançados este ano, todos os sucessos de bilheteria AAA e sucessos que definiram o gênero, nada me abalou tanto quanto Umamusume: Pretty Derby. Não vou negar que já foi um jogo que eu tinha vergonha de jogar. Mas agora? Estou dentro, cara. EU...",
+      "reliability": "Medium",
+      "category": "Free Games",
+      "date": "2025-12-25",
+      "summary": "📝 Página de transações (para ver se você reivindicou ou não) ⏩ Check-out instantâneo (faça login primeiro na Epic Games) Check-out instantâneo de itens 🎮 REIVINDICAR TODOS Android e iOS 🎮﻿ Monument Valley 🔁 Android／iOS 🎮﻿ Monument Valley II 🔁 Android／iOS 🎮 Monument Valley...",
       "sources": [
-        "Eurogamer"
+        "r/FreeGameFindings"
       ],
-      "url": "https://www.eurogamer.net/games-of-2025-umamusume-pretty-derby"
+      "url": "https://www.reddit.com/r/FreeGameFindings/comments/1pvgez2/epic_games_mobile_game_monument_valley_monument/"
     }
   ]
 }
