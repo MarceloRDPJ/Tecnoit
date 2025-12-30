@@ -1,64 +1,184 @@
 {
-  "last_updated": "2025-12-29T12:45:15",
-  "display_date": "29/12/2025 12:45",
+  "last_updated": "2025-12-30T12:44:06",
+  "display_date": "30/12/2025 12:44",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "181ms",
+    "latency": "434ms",
     "current_games": [
       {
-        "title": "SKALD Against the Black Priory",
-        "description": "SKALD é um RPG de estilo retrô baseado em festas, ambientado em um mundo de fantasia sombrio e sombrio de heróis trágicos, mortes violentas e terror Lovecraftiano. Aproveite a chance e jogue os dados ao embarcar em uma história envolvente repleta de criaturas mortais, história ramificada e combate tático baseado em turnos",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec28_giveaway_2560x1440_2560x1440-6e65e3af8d0742b391724579dc4b3822",
-        "url": "https://store.epicgames.com/p/mysterygame2025-12",
-        "price": "0",
-        "start_date": "2025-12-28T16:00:00.000Z",
-        "end_date": "2025-12-29T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Mystery Game 13",
-        "description": "Jogo Mistério 13",
-        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "title": "Viewfinder",
+        "description": "Desafie a percepção, redefina a realidade e remodele o mundo ao seu redor com uma câmera instantânea. Viewfinder é um novo jogo para um jogador que oferece aos jogadores horas de experiências interessantes e divertidas enquanto descobrem os mistérios deixados para trás.",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec29_giveaway_2560x1440_2560x1440-ead4f1cf762e477ba1bd89e07eca452b",
         "url": "https://store.epicgames.com/p/mysterygame2025-13",
         "price": "0",
         "start_date": "2025-12-29T16:00:00.000Z",
         "end_date": "2025-12-30T16:00:00.000Z"
       }
     ],
+    "upcoming_games": [
+      {
+        "title": "Mystery Game 14",
+        "description": "Jogo Mistério 14",
+        "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+        "url": "https://store.epicgames.com/p/mysterygame2025-14",
+        "price": "0",
+        "start_date": "2025-12-30T16:00:00.000Z",
+        "end_date": "2025-12-31T16:00:00.000Z"
+      }
+    ],
     "mystery_detected": true
   },
   "items": [
     {
-      "id": "https://store.epicgames.com/p/mysterygame2025-12",
-      "title": "GRÁTIS: SKALD Against the Black Priory",
-      "original_title": "SKALD Against the Black Priory",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec28_giveaway_2560x1440_2560x1440-6e65e3af8d0742b391724579dc4b3822",
+      "id": "https://store.epicgames.com/p/mysterygame2025-13",
+      "title": "GRÁTIS: Viewfinder",
+      "original_title": "Viewfinder",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Dec29_giveaway_2560x1440_2560x1440-ead4f1cf762e477ba1bd89e07eca452b",
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2025-12-29",
-      "summary": "SKALD é um RPG de estilo retrô baseado em festas, ambientado em um mundo de fantasia sombrio e sombrio de heróis trágicos, mortes violentas e terror Lovecraftiano. Aproveite a chance e jogue os dados ao embarcar em uma história envolvente repleta de criaturas mortais, história ramificada e combate tático baseado em turnos",
-      "sources": [
-        "Epic Games Store"
-      ],
-      "url": "https://store.epicgames.com/p/mysterygame2025-12"
-    },
-    {
-      "id": "https://store.epicgames.com/p/mysterygame2025-13",
-      "title": "EM BREVE: Mystery Game 13",
-      "original_title": "Mystery Game 13",
-      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Release Date",
-      "date": "2025-12-29",
-      "summary": "Disponível gratuitamente a partir de 29/12. Jogo Mistério 13",
+      "date": "2025-12-30",
+      "summary": "Desafie a percepção, redefina a realidade e remodele o mundo ao seu redor com uma câmera instantânea. Viewfinder é um novo jogo para um jogador que oferece aos jogadores horas de experiências interessantes e divertidas enquanto descobrem os mistérios deixados para trás.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/mysterygame2025-13"
+    },
+    {
+      "id": "https://store.epicgames.com/p/mysterygame2025-14",
+      "title": "EM BREVE: Mystery Game 14",
+      "original_title": "Mystery Game 14",
+      "image": "https://cdn1.epicgames.com/offer/d5241c76f178492ea1540fce45616757/Holiday25_FreeGames_Teaser_2560x1440_2560x1440-012542ce76be0f7521af765ba97d3453",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2025-12-30",
+      "summary": "Disponível gratuitamente a partir de 30/12. Jogo Mistério 14",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/mysterygame2025-14"
+    },
+    {
+      "id": "https://www.eurogamer.net/eurogamer-readers-top-50-games-of-2025",
+      "title": "Os 50 melhores jogos de 2025 dos leitores da Eurogamer – “Isso me fez chorar três vezes”",
+      "original_title": "Eurogamer readers' top 50 games of 2025 - \"It made me cry three times\"",
+      "image": "https://assetsio.gnwcdn.com/readers.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-30",
+      "summary": "2025 passou num piscar de olhos, não é? Bem, tirando os dias que passei tabulando todos os votos do Jogo do Ano e apresentando os resultados aqui - isso pareceu uma eternidade e acho que me deu uma dor permanente no pescoço. Mas, não vamos nos preocupar...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/eurogamer-readers-top-50-games-of-2025"
+    },
+    {
+      "id": "https://www.techpowerup.com/344532/moaiplay-debuts-ora-pro-g1-series-power-supplies",
+      "title": "(PR) Moaiplay estreia fontes de alimentação da série Ora Pro G1",
+      "original_title": "(PR) Moaiplay Debuts Ora Pro G1 Series Power Supplies",
+      "image": "https://tpucdn.com/img/rKDrfcvhK8qi79oz_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-30",
+      "summary": "MOAIPLAY, uma marca impulsionada pela missão de oferecer “preços acessíveis, mas melhor desempenho”, anuncia hoje oficialmente sua primeira linha de produtos – as fontes de alimentação da série ORA PRO G1. Baseado na crença de que cada jogador é uma lenda em seu próprio mundo...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344532/moaiplay-debuts-ora-pro-g1-series-power-supplies"
+    },
+    {
+      "id": "https://www.techpowerup.com/344529/asus-previews-next-gen-zenbook-duo-first-ever-proart-gopro-laptop-and-new-ai-pc-lineup-ahead-of-ces-2026",
+      "title": "(PR) ASUS apresenta Zenbook DUO de última geração, primeiro laptop ProArt GoPro e nova linha de AI PC antes da CES 2026",
+      "original_title": "(PR) ASUS Previews Next-Gen Zenbook DUO, First-Ever ProArt GoPro Laptop, and New AI PC Lineup Ahead of CES 2026",
+      "image": "https://tpucdn.com/img/ipTNSDN7VOy4nfc7_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-30",
+      "summary": "A ASUS anunciou o próximo evento de lançamento virtual Always Incredible na CES 2026, onde a empresa apresentará o mais recente portfólio de PCs com IA. Transmitindo globalmente em 6 de janeiro de 2026, às 09:00 PST (17:00 GMT) através do site do evento ASUS, o showcase será...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344529/asus-previews-next-gen-zenbook-duo-first-ever-proart-gopro-laptop-and-new-ai-pc-lineup-ahead-of-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool",
+      "title": "Substitua todas as suas assinaturas de IA por uma ferramenta única e vitalícia",
+      "original_title": "Replace All of Your AI Subscriptions with a Single Lifetime Tool",
+      "image": "https://tpucdn.com/img/qVCOhxtMGUvf66Xu_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-30",
+      "summary": "Se você está alternando entre ChatGPT, Claude, Gemini e meia dúzia de outras ferramentas de IA para obter uma resposta sólida, provavelmente está pagando pelas mesmas ferramentas mais de uma vez. ChatPlayground AI oferece uma alternativa mais simples: uma plataforma onde você pode executar um si...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool"
+    },
+    {
+      "id": "https://www.techpowerup.com/344524/cdpr-sells-gog-to-co-founder-drm-free-more-important-than-ever",
+      "title": "CDPR vende GOG para cofundador: “Sem DRM, mais importante do que nunca”",
+      "original_title": "CDPR Sells GOG to Co-Founder: \"DRM-free More Important Than Ever\"",
+      "image": "https://tpucdn.com/img/DABgW8dVX0pNlS04_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-30",
+      "summary": "GOG (anteriormente Good Old Games) mudou oficialmente de propriedade, de acordo com comunicado divulgado pela empresa, com Michał Kiciński, cofundador da GOG e CD Projekt Red, assumindo a plataforma de distribuição de jogos da CD Projekt Red. De acordo com ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344524/cdpr-sells-gog-to-co-founder-drm-free-more-important-than-ever"
+    },
+    {
+      "id": "https://www.eurogamer.net/peak-isnt-trying-to-be-game-of-the-year-but-friendslop-games-do-put-connection-front-and-centre-of-the-experience",
+      "title": "Peak não está “tentando ser o Jogo do Ano”, mas os jogos “friendslop” colocam “a conexão na frente e no centro da experiência”",
+      "original_title": "Peak isn't \"trying to be Game of the Year\", but \"friendslop\" games do put \"connection front and centre of the experience\"",
+      "image": "https://assetsio.gnwcdn.com/Three-characters-in-Peak-climbing-beside-an-active-volcano.-There-is-a-lot-of-lava.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-29",
+      "summary": "O desenvolvedor da Peak, Aggro Crab, respondeu aos que odeiam o \"friendslop\", insistindo que há um lugar para jogos cooperativos que \"oferecem uma experiência específica\", especialmente porque podem ser \"muito econômicos para a produção independente\". Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/peak-isnt-trying-to-be-game-of-the-year-but-friendslop-games-do-put-connection-front-and-centre-of-the-experience"
+    },
+    {
+      "id": "https://www.eurogamer.net/gog-and-cd-projekt-founder-micha-kicinski-acquires-100-ownership-of-gog",
+      "title": "O fundador do GOG e CD Projekt, Michał Kiciński, adquire 100% da propriedade do GOG",
+      "original_title": "GOG and CD Projekt founder Michał Kiciński acquires 100% ownership of GOG",
+      "image": "https://assetsio.gnwcdn.com/Screenshot-2025-12-29-at-16.51.45.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-29",
+      "summary": "Micha&lstrok Kici&nacuteski, cofundador da CD Projekt, adquiriu 100% da propriedade da GOG, a loja de jogos digitais sem DRM. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/gog-and-cd-projekt-founder-micha-kicinski-acquires-100-ownership-of-gog"
+    },
+    {
+      "id": "https://www.eurogamer.net/games-of-2025-no-mans-sky",
+      "title": "Apesar de muitos jogos excelentes em 2025, No Man's Sky é o lugar feliz que continua me atraindo de volta",
+      "original_title": "Despite a load of great games in 2025, No Man's Sky is the happy place that keeps drawing me back in again",
+      "image": "https://assetsio.gnwcdn.com/no-mans-sky-end-of-year-header2025.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2025-12-29",
+      "summary": "Se estamos planejando o ano com base em obsessões inesperadas, as minhas foram (sem nenhuma ordem específica) o estranho cinema italiano dos anos 60 e 70, um apetite doentio por edições de colecionador de mídia física desnecessariamente elaboradas, terror folclórico em li...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/games-of-2025-no-mans-sky"
     },
     {
       "id": "https://www.eurogamer.net/games-of-2025-dispatch",
@@ -76,34 +196,94 @@
       "url": "https://www.eurogamer.net/games-of-2025-dispatch"
     },
     {
-      "id": "https://www.techpowerup.com/344504/lg-innotek-unveils-next-generation-under-display-camera",
-      "title": "(PR) LG Innotek lança câmera sob display de última geração",
-      "original_title": "(PR) LG Innotek Unveils Next-Generation Under-Display Camera",
-      "image": "https://tpucdn.com/img/ibJwMukqWec9rG0C_thm.jpg",
+      "id": "https://www.techpowerup.com/344521/leak-tips-500-hz-hp-hyperx-omen-oled-gaming-monitor-for-ces-among-others",
+      "title": "Dicas de vazamento Monitor de jogos HP HyperX Omen OLED de 500 Hz para CES – entre outros",
+      "original_title": "Leak Tips 500 Hz HP HyperX Omen OLED Gaming Monitor for CES—Among Others",
+      "image": "https://tpucdn.com/img/xHBZNDV9yw55Bvo9_thm.jpg",
       "source_count": 1,
       "reliability": "High",
-      "category": "Hardware",
+      "category": "Rumor",
       "date": "2025-12-29",
-      "summary": "A LG Innotek anunciou seu sucesso no desenvolvimento de um 'Módulo de câmera sob display (UDC) de próxima geração' instalado atrás do painel de instrumentos de um veículo para monitorar o motorista, com planos de revelá-lo na CES 2026. O UDC é um componente central do Driver...",
+      "summary": "Com a CES 2026 chegando, começaram a surgir vazamentos sobre os lançamentos de hardware programados para aparecer na feira anual. Alguns dos últimos vazamentos do Windows Latest revelam a nova linha de produtos de jogos HyperX Omen da HP, que inclui...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/344504/lg-innotek-unveils-next-generation-under-display-camera"
+      "url": "https://www.techpowerup.com/344521/leak-tips-500-hz-hp-hyperx-omen-oled-gaming-monitor-for-ces-among-others"
     },
     {
-      "id": "https://www.techpowerup.com/344502/ayaneo-releases-pocket-vert-retro-gaming-handheld",
-      "title": "(PR) Ayaneo lança portátil para jogos Pocket Vert Retro",
-      "original_title": "(PR) Ayaneo Releases Pocket Vert Retro Gaming Handheld",
-      "image": "https://tpucdn.com/img/nxHhDXKfCak1cwgN_thm.jpg",
+      "id": "https://www.techpowerup.com/344517/cyberpunk-2-predicted-to-launch-in-late-2030-with-usd-419-million-budget",
+      "title": "Cyberpunk 2 previsto para lançamento no final de 2030 com orçamento de US$ 419 milhões",
+      "original_title": "Cyberpunk 2 Predicted To Launch in Late 2030 With $419 Million Budget",
+      "image": "https://tpucdn.com/img/KrMhXtC2XehcybZh_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2025-12-29",
-      "summary": "Em 27 de dezembro de 2025, o portátil de última geração projetado para entusiastas de jogos retrô verticais, o Ayaneo Pocket VERT, foi oficialmente apresentado. O CEO da Ayaneo, Arthur, apresentou o dispositivo por meio de uma transmissão ao vivo, apresentando a filosofia de design do Pocket VERT, principais...",
+      "summary": "Já vimos sinais de que o desenvolvimento do Cyberpunk 2 está em pleno andamento na CD Projekt Red, com o estúdio de jogos no início deste ano expandindo sua equipe de desenvolvimento para o próximo jogo baseado no Unreal Engine 5. Anteriormente, não havia data de lançamento para o novo jogo...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/344502/ayaneo-releases-pocket-vert-retro-gaming-handheld"
+      "url": "https://www.techpowerup.com/344517/cyberpunk-2-predicted-to-launch-in-late-2030-with-usd-419-million-budget"
+    },
+    {
+      "id": "https://www.techpowerup.com/344514/ram-crisis-may-result-in-next-gen-console-delay",
+      "title": "Crise de RAM pode resultar em atraso no console da próxima geração",
+      "original_title": "RAM Crisis May Result in Next-Gen Console Delay",
+      "image": "https://tpucdn.com/img/fy3TlYq1hO1Gufhr_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-29",
+      "summary": "Já relatamos o impacto descomunal que a demanda da indústria de IA por RAM e a consequente escassez de RAM tiveram na indústria de jogos para PC - incluindo tudo, desde aumentos de preços até possíveis atrasos no lançamento de produtos de hardware de PC de próxima geração - b...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344514/ram-crisis-may-result-in-next-gen-console-delay"
+    },
+    {
+      "id": "https://www.techpowerup.com/344513/unifydrive-announces-availability-of-its-up6-mobile-nas-with-built-in-display-and-ups",
+      "title": "(PR) UnifyDrive anuncia disponibilidade de seu NAS móvel UP6 com display integrado e UPS",
+      "original_title": "(PR) UnifyDrive Announces Availability of Its UP6 Mobile NAS with Built-in Display and UPS",
+      "image": "https://tpucdn.com/img/h2qqmsFx7QsC9d2B_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-29",
+      "summary": "UnifyDrive, inovador em soluções de armazenamento de rede, anunciou hoje o lançamento do UnifyDrive UP6. Este NAS móvel totalmente flash é o primeiro de seu tipo a integrar uma tela sensível ao toque de 6 polegadas, uma fonte de alimentação ininterrupta (UPS) integrada e A...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344513/unifydrive-announces-availability-of-its-up6-mobile-nas-with-built-in-display-and-ups"
+    },
+    {
+      "id": "https://www.techpowerup.com/344512/maxon-introduces-cinebench-2026",
+      "title": "(PR) Maxon apresenta Cinebench 2026",
+      "original_title": "(PR) Maxon Introduces Cinebench 2026",
+      "image": "https://tpucdn.com/img/Ajn41Bq367m55qbD_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-29",
+      "summary": "A Maxon tem o prazer de anunciar o tão aguardado lançamento do Cinebench 2026, sua mais recente iteração do software de benchmarking padrão da indústria, que tem sido uma pedra angular na avaliação de desempenho de computadores por duas décadas. Amplamente utilizado por revis...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344512/maxon-introduces-cinebench-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344511/lg-display-to-showcases-wide-line-up-of-world-first-leading-oled-monitors-at-ces-2026",
+      "title": "(PR) LG Display apresenta ampla linha de monitores OLED líderes mundiais na CES 2026",
+      "original_title": "(PR) LG Display to Showcases Wide Line-up of World-first, Leading OLED Monitors at CES 2026",
+      "image": "https://tpucdn.com/img/ez2mnDoAeO77eYdn_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2025-12-29",
+      "summary": "A LG Display, líder mundial em inovação em tecnologias de display, está preparada para reescrever os recordes da indústria mais uma vez na CES 2026, a maior exposição mundial de TI e produtos eletrônicos de consumo. Durante o show de Las Vegas, de 6 a 9 de janeiro, o LG Display usará...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344511/lg-display-to-showcases-wide-line-up-of-world-first-leading-oled-monitors-at-ces-2026"
     },
     {
       "id": "https://www.eurogamer.net/donkey-kong-bananza-might-not-be-the-best-game-of-the-year-but-its-surely-the-one-i-loved-the-most",
@@ -129,131 +309,11 @@
       "reliability": "High",
       "category": "News",
       "date": "2025-12-28",
-      "summary": "Vou estragar a abertura de Despelote aqui – uma abertura que eu acho, como você provavelmente pode perceber, muito gloriosa. Não é tanto um spoiler, mas sim um contaminador, um dedo na balança de algo que será maravilhoso entrar sem peso. ...",
+      "summary": "Vou estragar a abertura de Despelote aqui – uma abertura que eu acho, como você provavelmente pode perceber, muito gloriosa. Não é tanto um spoiler quanto um contaminador, um dedo na balança de algo que será maravilhoso entrar sem peso. ...",
       "sources": [
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/games-of-2025-despelote"
-    },
-    {
-      "id": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool",
-      "title": "Substitua todas as suas assinaturas de IA por uma ferramenta única e vitalícia",
-      "original_title": "Replace All of Your AI Subscriptions with a Single Lifetime Tool",
-      "image": "https://tpucdn.com/img/qVCOhxtMGUvf66Xu_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-28",
-      "summary": "Se você está alternando entre ChatGPT, Claude, Gemini e meia dúzia de outras ferramentas de IA para obter uma resposta sólida, provavelmente está pagando pelas mesmas ferramentas mais de uma vez. ChatPlayground AI oferece uma alternativa mais simples: uma plataforma onde você pode executar um si...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool"
-    },
-    {
-      "id": "https://www.techpowerup.com/344493/this-week-in-gaming-week-1",
-      "title": "Esta semana em jogos (semana 1)",
-      "original_title": "This Week in Gaming (Week 1)",
-      "image": "https://tpucdn.com/img/jBuKzf5JsipBcEOu_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-28",
-      "summary": "Feliz Ano Novo, embora tecnicamente quase metade da próxima semana ainda faça parte do ano atual. Esta semana temos uma programação muito escassa de jogos para você, mas ainda é um pouquinho melhor que a do ano passado. Começamos com muita diversão de carnaval,...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344493/this-week-in-gaming-week-1"
-    },
-    {
-      "id": "https://www.eurogamer.net/in-2025-deltarune-reminded-me-of-the-joy-and-importance-of-secret-hunting",
-      "title": "Em 2025, Deltarune me lembrou da alegria e da importância da caça secreta",
-      "original_title": "In 2025, Deltarune reminded me of the joy and importance of secret hunting",
-      "image": "https://assetsio.gnwcdn.com/deltarune_3QgaoNa.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-27",
-      "summary": "Uma redatora de guia falando sobre como seu momento favorito relacionado a jogos em 2025 foi descobrir segredos? Quem previu isso... Sério, deixe-me contar uma pequena desvantagem do meu trabalho: se estamos cobrindo um jogo, ou pensando em fazê-lo, eu tenho...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/in-2025-deltarune-reminded-me-of-the-joy-and-importance-of-secret-hunting"
-    },
-    {
-      "id": "https://www.eurogamer.net/games-of-2025-skin-deep",
-      "title": "Skin Deep foi o lembrete deste ano de que é um privilégio reconhecer a caligrafia de um desenvolvedor",
-      "original_title": "Skin Deep was this year's reminder that it's a privilege to recognise a developer's handwriting",
-      "image": "https://assetsio.gnwcdn.com/skin-deep-eoy-header.png?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-27",
-      "summary": "No espaço existem objetos que orbitam um ao outro por tanto tempo, e em um ritmo tão imponente, que quando ambos chegam ao mesmo ponto, não colidem com algum tipo de explosão terrível. Em vez disso, eles apenas se tocam. Eles pastam. Eles ...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/games-of-2025-skin-deep"
-    },
-    {
-      "id": "https://www.techpowerup.com/344472/4-tb-rdimm-ddr5-memory-kit-arrives-at-eye-watering-usd-70-000-price-tag",
-      "title": "Kit de memória RDIMM DDR5 de 4 TB chega com preço impressionante de US$ 70.000 ou mais",
-      "original_title": "4 TB RDIMM DDR5 Memory Kit Arrives at Eye-Watering $70,000+ Price Tag",
-      "image": "https://tpucdn.com/img/mNzLuzwiJERBPVp3_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-27",
-      "summary": "Se você está procurando um kit de memória DDR5 de alta capacidade com RDIMMs ECC, esta pode ser sua boa oportunidade. NEMIX, um fornecedor de memória e armazenamento com sede nos EUA que colabora com grandes empresas de tecnologia e o governo, listou um DDR5 de 4 TB...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344472/4-tb-rdimm-ddr5-memory-kit-arrives-at-eye-watering-usd-70-000-price-tag"
-    },
-    {
-      "id": "https://www.techpowerup.com/344461/hp-omen-16l-gaming-desktop-to-get-raptor-lake-r-cpus-alongside-rtx-50-series-gpus",
-      "title": "Desktop para jogos HP Omen 16L para obter CPUs Raptor Lake-R junto com GPUs RTX série 50",
-      "original_title": "HP Omen 16L Gaming Desktop To Get Raptor Lake-R CPUs Alongside RTX 50-Series GPUs",
-      "image": "https://tpucdn.com/img/KAhCGep8bSRv5wG1_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-27",
-      "summary": "A HP aparentemente está planejando atualizar sua linha Omen 16L de desktops para jogos SFF, desta vez introduzindo as CPUs Raptor Lake da Intel na mistura. Isso está de acordo com um boato recente postado por @realVictor_M no X. Supostamente, o novo Omen 16L será potenciado...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344461/hp-omen-16l-gaming-desktop-to-get-raptor-lake-r-cpus-alongside-rtx-50-series-gpus"
-    },
-    {
-      "id": "https://www.techpowerup.com/344447/redragon-launches-slew-of-gaming-and-office-peripherals-including-an-ai-mouse",
-      "title": "Redragon lança uma série de periféricos para jogos e escritório, incluindo um “mouse AI”",
-      "original_title": "Redragon Launches Slew of Gaming and Office Peripherals Including an \"AI Mouse\"",
-      "image": "https://tpucdn.com/img/c6kiVbyamx59aRKz_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-26",
-      "summary": "Redragon anunciou oficialmente o Wyvern K761 Pro como seu mais recente teclado mecânico sem fio de tamanho normal, com conectividade sem fio Bluetooth 5.0 e 2,4 GHz. O K761 Pro está sendo lançado por apenas US$ 74,99 e apresenta alguns recursos para entusiastas...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344447/redragon-launches-slew-of-gaming-and-office-peripherals-including-an-ai-mouse"
-    },
-    {
-      "id": "https://www.techpowerup.com/344445/dram-shortage-predicted-to-cause-launch-delays-for-major-brands",
-      "title": "Prevê-se que a escassez de DRAM cause atrasos no lançamento de grandes marcas",
-      "original_title": "DRAM Shortage Predicted To Cause Launch Delays For Major Brands",
-      "image": "https://tpucdn.com/img/YunS905esSrhhbxO_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2025-12-26",
-      "summary": "A contínua escassez de RAM já teve um efeito indireto no mercado consumidor, desde aumentos de preços até integradores de sistemas começando a oferecer opções de construção \"traga sua própria RAM\" e fabricantes de smartphones voltando a oferecer 8 GB de RAM em dispositivos principais...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344445/dram-shortage-predicted-to-cause-launch-delays-for-major-brands"
     }
   ]
 }
