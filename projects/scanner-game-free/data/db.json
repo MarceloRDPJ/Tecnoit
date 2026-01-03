@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-02T12:42:00",
-  "display_date": "02/01/2026 12:42",
+  "last_updated": "2026-01-03T12:40:21",
+  "display_date": "03/01/2026 12:40",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "379ms",
+    "latency": "186ms",
     "current_games": [
       {
         "title": "Wildgate",
@@ -28,7 +28,7 @@
     "upcoming_games": [
       {
         "title": "Bloons TD 6",
-        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
         "image": "https://cdn1.epicgames.com/spt-assets/764b2d57552c436590f50318bd7587f9/bloons-td-6-offer-1jl6n.jpg",
         "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5",
         "price": "$13.99",
@@ -47,7 +47,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-02",
+      "date": "2026-01-03",
       "summary": "Wildgate é um jogo de tiro multijogador PVP baseado em tripulação que combina combate tático entre navios e ação em primeira pessoa em ritmo acelerado. Evite perigos ambientais mortais, procure armas poderosas e atualizações de navios e seja a primeira tripulação a escapar com o Artefato.",
       "sources": [
         "Epic Games Store"
@@ -62,7 +62,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-02",
+      "date": "2026-01-03",
       "summary": "Total War: THREE KINGDOMS recria conflitos épicos na China antiga em uma era de heróis e lendas, combinando emocionante construção de império, política e conquista com impressionantes batalhas em tempo real.",
       "sources": [
         "Epic Games Store"
@@ -77,12 +77,57 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-02",
-      "summary": "Disponível gratuitamente a partir de 08/01. Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+      "date": "2026-01-03",
+      "summary": "Disponível gratuitamente a partir de 08/01. Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5"
+    },
+    {
+      "id": "https://www.eurogamer.net/anthems-end-is-nearly-here",
+      "title": "O fim do Anthem está quase aqui - faltam apenas alguns dias para a EA desligar os servidores do malfadado jogo multijogador da BioWare",
+      "original_title": "Anthem's end is nearly here - only days remain before EA will switch off the servers to BioWare's ill-fated multiplayer game",
+      "image": "https://assetsio.gnwcdn.com/anthem_header_reveal.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-02",
+      "summary": "O tempo voa (como um traje Javelin): faltam apenas 10 dias para jogar o malfadado jogo multijogador da BioWare, Anthem, antes que os servidores sejam desligados, provavelmente para sempre. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/anthems-end-is-nearly-here"
+    },
+    {
+      "id": "https://www.eurogamer.net/amd-and-nvidia-will-reportedly-raise-gpu-prices-significantly-in-2026",
+      "title": "AMD e Nvidia supostamente aumentarão os preços da GPU “significativamente” em 2026",
+      "original_title": "AMD and Nvidia will reportedly raise GPU prices \"significantly\" in 2026",
+      "image": "https://assetsio.gnwcdn.com/msi-rtx-5070-shadow-oc-tech-deal.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-02",
+      "summary": "De acordo com um novo relatório, tanto a AMD quanto a Nvidia aumentarão “significativamente” os preços de suas GPUs de consumo este ano. Se este relatório for verdadeiro, ambas as empresas terão adiado estes aumentos de preços até ao próximo mês. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/amd-and-nvidia-will-reportedly-raise-gpu-prices-significantly-in-2026"
+    },
+    {
+      "id": "https://www.eurogamer.net/rpg-fantasy-life-i-gets-roguelike-mode-in-free-new-year-update",
+      "title": "Subestimado ‘RPG de vida lenta’ Fantasy Life i ganha um modo roguelike gratuito na atualização surpresa de ano novo",
+      "original_title": "Underrated 'slow life RPG' Fantasy Life i gets a free roguelike mode in surprise new year update",
+      "image": "https://assetsio.gnwcdn.com/fantasy-life-i-snoozaland.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-02",
+      "summary": "O subestimado jogo de RPG de ‘vida lenta’ Fantasy Life i: The Girl Who Steals Time – que roubou muito do meu tempo no ano passado no Switch 2 – acaba de receber um emocionante lançamento de conteúdo de ano novo. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/rpg-fantasy-life-i-gets-roguelike-mode-in-free-new-year-update"
     },
     {
       "id": "https://www.eurogamer.net/is-there-really-going-to-be-a-2026-witcher-3-expansion",
@@ -93,7 +138,7 @@
       "reliability": "High",
       "category": "News",
       "date": "2026-01-02",
-      "summary": "Haverá realmente uma nova expansão paga lançada para The Witcher 3: Wild Hunt em 2026? Porque essa é a sugestão que vi. Esse é o boato que tem ricocheteado na internet enquanto eu tento saborear um sanduíche que sobrou...",
+      "summary": "ATUALIZAÇÃO 16h10 GMT: CD Projekt Red, pelo que vale, me disse que não comenta boatos ou especulações – a linha usual da empresa. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
@@ -108,7 +153,7 @@
       "reliability": "High",
       "category": "News",
       "date": "2026-01-02",
-      "summary": "O preço de um jogo PS4 obscuro está disparando no mercado de segunda mão, graças à necessidade de um novo jailbreak do PS5. Este jogo, do qual foram produzidas 1.000 ou menos cópias físicas, de repente se tornou uma mercadoria quente entre os entusiastas do jailbreak...",
+      "summary": "O preço de um jogo PS4 obscuro está disparando no mercado de segunda mão, graças à necessidade de um novo jailbreak do PS5. Este jogo, do qual foram produzidas 1.000 ou menos cópias físicas, de repente se tornou uma mercadoria popular entre os entusiastas do jailbreak...",
       "sources": [
         "Eurogamer"
       ],
@@ -145,6 +190,66 @@
       "url": "https://www.eurogamer.net/deus-ex-no-2026-people-in-charge-psychopaths"
     },
     {
+      "id": "https://www.techpowerup.com/344628/nvidia-geforce-now-gets-14-new-games-in-january",
+      "title": "(PR) NVIDIA GeForce AGORA ganha 14 novos jogos em janeiro",
+      "original_title": "(PR) NVIDIA GeForce NOW Gets 14 New Games in January",
+      "image": "https://tpucdn.com/img/N8jss6n5DLDJM5tI_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-02",
+      "summary": "Ano novo, jogos novos, tudo com energia de nuvem alimentada pelo RTX 5080. GeForce NOW está iniciando 2026 relembrando um ano inesquecível de vitórias e taxas de quadros extremamente altas. Desde transmissões dos maiores sucessos de bilheteria até novas maneiras de jogar em qualquer lugar, os membros...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344628/nvidia-geforce-now-gets-14-new-games-in-january"
+    },
+    {
+      "id": "https://www.techpowerup.com/344626/yplasma-to-debut-noiseless-laptop-cooled-with-dbd-plasma-actuators-at-ces-2026",
+      "title": "(PR) YPlasma lançará laptop silencioso resfriado com atuadores de plasma DBD na CES 2026",
+      "original_title": "(PR) YPlasma to Debut Noiseless Laptop Cooled with DBD Plasma Actuators at CES 2026",
+      "image": "https://tpucdn.com/img/CE7HyFxHjA7Ectkz_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-02",
+      "summary": "YPlasma, pioneira em gerenciamento térmico de estado sólido com operações em Newark, NJ e Espanha, anunciou hoje sua participação na CES Las Vegas 2026. Localizada no Eureka Park, estande nº 60845, a YPlasma sediará a estreia mundial da primeira aplicação...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344626/yplasma-to-debut-noiseless-laptop-cooled-with-dbd-plasma-actuators-at-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool",
+      "title": "Substitua todas as suas assinaturas de IA por uma ferramenta única e vitalícia",
+      "original_title": "Replace All of Your AI Subscriptions with a Single Lifetime Tool",
+      "image": "https://tpucdn.com/img/qVCOhxtMGUvf66Xu_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-02",
+      "summary": "Se você está alternando entre ChatGPT, Claude, Gemini e meia dúzia de outras ferramentas de IA para obter uma resposta sólida, provavelmente está pagando pelas mesmas ferramentas mais de uma vez. ChatPlayground AI oferece uma alternativa mais simples: uma plataforma onde você pode executar um si...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool"
+    },
+    {
+      "id": "https://www.techpowerup.com/344624/fender-audio-debuts-at-ces-2026-with-elie-speakers-and-mix-headphones",
+      "title": "(PR) Fender Audio estreia na CES 2026 com alto-falantes Elie e fones de ouvido Mix",
+      "original_title": "(PR) Fender Audio Debuts at CES 2026 With Elie Speakers and Mix Headphones",
+      "image": "https://tpucdn.com/img/sVmgebuh1GZBld3s_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-02",
+      "summary": "Fender Audio, uma marca de eletrônicos de consumo de propriedade da Fender Musical Instruments Corporation (FMIC) e operada sob licença pela Riffsound Pte. Ltd., faz sua estreia na CES com o lançamento de dois produtos carro-chefe: a série de alto-falantes portáteis ELIE e MI...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344624/fender-audio-debuts-at-ces-2026-with-elie-speakers-and-mix-headphones"
+    },
+    {
       "id": "https://www.techpowerup.com/344619/acemagic-reveals-retro-x5-mini-pc-with-ryzen-ai-9-hx-370",
       "title": "Acemagic revela Mini PC Retro X5 com Ryzen AI 9 HX 370",
       "original_title": "Acemagic Reveals Retro X5 Mini PC with Ryzen AI 9 HX 370",
@@ -175,21 +280,6 @@
       "url": "https://www.techpowerup.com/344620/asus-intros-pro-ws-b850m-ace-se-motherboard-with-ipmi-for-home-and-smb-servers"
     },
     {
-      "id": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool",
-      "title": "Substitua todas as suas assinaturas de IA por uma ferramenta única e vitalícia",
-      "original_title": "Replace All of Your AI Subscriptions with a Single Lifetime Tool",
-      "image": "https://tpucdn.com/img/qVCOhxtMGUvf66Xu_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Se você está alternando entre ChatGPT, Claude, Gemini e meia dúzia de outras ferramentas de IA para obter uma resposta sólida, provavelmente está pagando pelas mesmas ferramentas mais de uma vez. ChatPlayground AI oferece uma alternativa mais simples: uma plataforma onde você pode executar um si...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool"
-    },
-    {
       "id": "https://www.techpowerup.com/344617/thermaltake-intros-th-s-v3-argb-sync-aio-cpu-coolers",
       "title": "Thermaltake apresenta coolers para CPU TH-S V3 ARGB Sync AIO",
       "original_title": "Thermaltake Intros TH-S V3 ARGB Sync AIO CPU Coolers",
@@ -213,7 +303,7 @@
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-02",
-      "summary": "A GIGABYTE acaba de lançar quatro novos modelos de placas-mãe AMD Socket AM4 enquanto os jogadores procuram plataformas de PC mais antigas que suportem memória DDR4 disponíveis a preços mais acessíveis. Isso se alinha com nosso relatório recente que fala sobre como a escassez aguda de m DDR5...",
+      "summary": "A GIGABYTE acaba de lançar quatro novos modelos de placas-mãe AMD Socket AM4 enquanto os jogadores procuram plataformas de PC mais antigas que suportem memória DDR4 disponíveis a preços mais acessíveis. Isso está de acordo com nosso relatório recente que fala sobre como a escassez aguda de DDR5...",
       "sources": [
         "TechPowerUp"
       ],
@@ -250,21 +340,6 @@
       "url": "https://www.techpowerup.com/344610/lg-introduces-2026-lg-gram-lineup-elevated-by-aerominum"
     },
     {
-      "id": "https://www.techpowerup.com/344609/adata-pioneers-new-era-of-ai-innovation-at-ces-2026",
-      "title": "(PR) ADATA é pioneira na nova era de inovação em IA na CES 2026",
-      "original_title": "(PR) ADATA Pioneers New Era of AI Innovation at CES 2026",
-      "image": "https://tpucdn.com/img/4K0LN0DBrVN7344w_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Líder global em módulos de memória e armazenamento flash, ADATA Technology Co., Ltd. apresentará seus mais recentes avanços na CES 2026, sob o tema “Advancing Innovation”. Marcando seu próximo 25º aniversário, a ADATA apresentará suas mais recentes inovações...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344609/adata-pioneers-new-era-of-ai-innovation-at-ces-2026"
-    },
-    {
       "id": "https://www.eurogamer.net/blue-prince-our-game-of-the-year-is-so-much-more-than-just-a-brilliant-puzzler",
       "title": "Blue Prince, nosso jogo do ano, é muito mais do que apenas um quebra-cabeças brilhante",
       "original_title": "Blue Prince, our game of the year, is so much more than just a brilliant puzzler",
@@ -278,36 +353,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/blue-prince-our-game-of-the-year-is-so-much-more-than-just-a-brilliant-puzzler"
-    },
-    {
-      "id": "https://www.techpowerup.com/344597/lg-reveals-its-full-ces-2026-monitor-lineup",
-      "title": "LG revela sua linha completa de monitores CES 2026",
-      "original_title": "LG Reveals its Full CES 2026 Monitor Lineup",
-      "image": "https://tpucdn.com/img/FGbWkImd51dIxQxF_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-01",
-      "summary": "A LG deu uma prévia de cinco novos monitores que serão exibidos na CES na próxima semana, dos quais três usam tipos diferentes de telas OLED, um é MiniLED e o outro não está totalmente claro. A empresa já mostrou três dos novos modelos em torno de Chris...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344597/lg-reveals-its-full-ces-2026-monitor-lineup"
-    },
-    {
-      "id": "https://www.techpowerup.com/344595/chinese-government-mandate-local-chipmakers-use-50-percent-domestic-chip-manufacturing-equipment",
-      "title": "O governo chinês determina que os fabricantes locais de chips usem 50% de equipamentos domésticos de fabricação de chips",
-      "original_title": "Chinese Government Mandate Local Chipmakers Use 50 Percent Domestic Chip Manufacturing Equipment",
-      "image": "https://tpucdn.com/img/hII1h8JcbHLDsOd5_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-01",
-      "summary": "Notícias via Reuters sugerem que o governo chinês começou a exigir que os fabricantes chineses de semicondutores usem pelo menos 50% de equipamentos de fabricação de chips produzidos localmente em fábricas novas ou ampliadas. A Reuters afirma que não há...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344595/chinese-government-mandate-local-chipmakers-use-50-percent-domestic-chip-manufacturing-equipment"
     },
     {
       "id": "https://www.eurogamer.net/here-are-our-ps-plus-monthly-games-for-january",
@@ -338,51 +383,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/arc-raiders-was-steams-best-selling-game-over-the-holiday-period"
-    },
-    {
-      "id": "https://www.eurogamer.net/square-enixs-yosuke-saito-teases-theres-just-a-little-something-on-the-way-for-fans-of-nier-and-dragon-quest-in-2026",
-      "title": "Yosuke Saito da Square Enix brinca que há “só uma coisinha” a caminho para os fãs de Nier e Dragon Quest em 2026",
-      "original_title": "Square Enix's Yosuke Saito teases there's \"just a little something\" on the way for fans of Nier and Dragon Quest in 2026",
-      "image": "https://assetsio.gnwcdn.com/nier-automata-2b.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-31",
-      "summary": "O produtor de Nier, Yosuke Saito, brincou que há “só uma coisinha” a caminho para os fãs em 2026. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/square-enixs-yosuke-saito-teases-theres-just-a-little-something-on-the-way-for-fans-of-nier-and-dragon-quest-in-2026"
-    },
-    {
-      "id": "https://www.eurogamer.net/the-50-best-games-of-2025-ranked",
-      "title": "Os 50 melhores jogos de 2025, classificados",
-      "original_title": "The 50 best games of 2025, ranked",
-      "image": "https://assetsio.gnwcdn.com/eg-top-50.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-31",
-      "summary": "Foi outro ano estranho, difícil e, de alguma forma, também brilhante para os videogames em 2025. Os lançamentos Triple-A foram esparsos novamente, em comparação com os tempos de boom de antigamente, com um grande buraco em forma de GTA 6 deixado nos últimos meses do ano...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/the-50-best-games-of-2025-ranked"
-    },
-    {
-      "id": "https://www.eurogamer.net/rainbow-six-siege-still-struggling-after-ubisoft-was-forced-to-briefly-intentionally-shut-it-down-following-third-party-hack",
-      "title": "Rainbow Six Siege ainda está lutando depois que a Ubisoft foi forçada a desligá-lo brevemente “intencionalmente” após hack de terceiros",
-      "original_title": "Rainbow Six Siege still struggling after Ubisoft was forced to briefly \"intentionally\" shut it down following third-party hack",
-      "image": "https://assetsio.gnwcdn.com/Rainbow-Six-Siege-X-221344609.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2025-12-30",
-      "summary": "Rainbow Six Siege ainda está em dificuldades hoje, depois que hackers distribuíram “bilhões” em moeda do jogo, forçando a Ubisoft a encerrar o jogo “intencionalmente” por um breve período. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/rainbow-six-siege-still-struggling-after-ubisoft-was-forced-to-briefly-intentionally-shut-it-down-following-third-party-hack"
     }
   ]
 }
