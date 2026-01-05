@@ -81,7 +81,22 @@
                 <a href="sobre.html" class="nav-link active text-vibrantCyan">Sobre Mim</a>
                 <a href="https://wa.me/5562996780498" target="_blank" class="px-4 py-2 rounded-lg bg-vibrantCyan/10 text-vibrantCyan hover:bg-vibrantCyan hover:text-white transition-all">Contato</a>
             </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl p-2 z-50 relative group">
+                <div class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <i class="fa-solid fa-bars relative z-10"></i>
+            </button>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8 md:hidden">
+            <a href="index.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Home</a>
+            <a href="projetos.html" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">Projetos</a>
+            <a href="index.html#empresa" class="text-2xl font-bold text-white hover:text-vibrantCyan transition-colors mobile-link">A Empresa</a>
+            <a href="sobre.html" class="text-2xl font-bold text-vibrantCyan hover:text-vibrantCyan transition-colors mobile-link">Sobre Mim</a>
+            <a href="https://wa.me/5562996780498" target="_blank" class="px-8 py-3 rounded-full bg-vibrantCyan text-white font-bold text-lg shadow-lg shadow-vibrantCyan/20 mobile-link">Contato</a>
+        </div>
 
         <!-- Main Content -->
         <main class="flex-grow space-y-16 max-w-5xl mx-auto w-full">
@@ -276,6 +291,41 @@
             }
             document.getElementById("age-display").textContent = `${age} anos`;
         });
+
+        // --- MOBILE MENU LOGIC ---
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        if (menuBtn && menuOverlay) {
+            menuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                const icon = menuBtn.querySelector('i');
+                if (isMenuOpen) {
+                    menuOverlay.classList.remove('translate-x-full');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    menuOverlay.classList.add('translate-x-full');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    menuOverlay.classList.add('translate-x-full');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
     </script>
 </body>
 </html>
