@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-04T12:40:23",
-  "display_date": "04/01/2026 12:40",
+  "last_updated": "2026-01-05T12:47:58",
+  "display_date": "05/01/2026 12:47",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "118ms",
+    "latency": "174ms",
     "current_games": [
       {
         "title": "Wildgate",
@@ -28,7 +28,7 @@
     "upcoming_games": [
       {
         "title": "Bloons TD 6",
-        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
         "image": "https://cdn1.epicgames.com/spt-assets/764b2d57552c436590f50318bd7587f9/bloons-td-6-offer-1jl6n.jpg",
         "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5",
         "price": "$13.99",
@@ -47,7 +47,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-04",
+      "date": "2026-01-05",
       "summary": "Wildgate é um jogo de tiro multijogador PVP baseado em tripulação que combina combate tático entre navios e ação em primeira pessoa em ritmo acelerado. Evite perigos ambientais mortais, procure armas poderosas e atualizações de navios e seja a primeira tripulação a escapar com o Artefato.",
       "sources": [
         "Epic Games Store"
@@ -62,7 +62,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-04",
+      "date": "2026-01-05",
       "summary": "Total War: THREE KINGDOMS recria conflitos épicos na China antiga em uma era de heróis e lendas, combinando emocionante construção de império, política e conquista com impressionantes batalhas em tempo real.",
       "sources": [
         "Epic Games Store"
@@ -77,27 +77,267 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-04",
-      "summary": "Disponível gratuitamente a partir de 08/01. Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+      "date": "2026-01-05",
+      "summary": "Disponível gratuitamente a partir de 08/01. Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5"
     },
     {
-      "id": "https://www.techpowerup.com/344646/this-week-in-gaming-week-2",
-      "title": "Esta semana em jogos (semana 2)",
-      "original_title": "This Week in Gaming (Week 2)",
-      "image": "https://tpucdn.com/img/8Hy8KxJykfElAF36_thm.jpg",
+      "id": "https://www.eurogamer.net/oops-league-of-legends-was-briefly-unplayable-as-riot-games-forgot-to-renew-the-digital-licence",
+      "title": "Ops, League of Legends ficou brevemente impossível de jogar porque a Riot Games se esqueceu de renovar a licença digital",
+      "original_title": "Oops, League of Legends was briefly unplayable as Riot Games forgot to renew the digital licence",
+      "image": "https://assetsio.gnwcdn.com/league-of-legends_aTCaNiH.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "O popular MOBA League of Legends ficou brevemente impossível de jogar nas últimas 24 horas, pois a licença digital do jogo expirou. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/oops-league-of-legends-was-briefly-unplayable-as-riot-games-forgot-to-renew-the-digital-licence"
+    },
+    {
+      "id": "https://www.eurogamer.net/clair-obscur-expedition-33-developer-feels-it-needs-to-trust-its-instincts-for-its-next-game-instead-of-being-guided-by-fan-pressure",
+      "title": "Clair Obscur: O desenvolvedor do Expedition 33 sente que precisa “confiar em seus instintos” para seu próximo jogo, em vez de ser guiado pela pressão dos fãs",
+      "original_title": "Clair Obscur: Expedition 33 developer feels it needs to \"trust its instincts\" for its next game, instead of being guided by fan pressure",
+      "image": "https://assetsio.gnwcdn.com/clair-obscur-expedition-33-lune-battling-enemy.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "Clair Obscur: O desenvolvedor do Expedition 33, Sandfall, se concentrará no que os funcionários do estúdio pessoalmente consideram \"legal\" para seu próximo jogo, em vez de sentir qualquer pressão para se concentrar no que os outros acham que deveria ser feito. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/clair-obscur-expedition-33-developer-feels-it-needs-to-trust-its-instincts-for-its-next-game-instead-of-being-guided-by-fan-pressure"
+    },
+    {
+      "id": "https://www.eurogamer.net/after-a-controversial-marketing-campaign-splitgate-2-fails-to-find-an-audience-despite-two-official-launches",
+      "title": "Depois de uma polêmica campanha de marketing, Splitgate Arena Reloaded não consegue encontrar público, apesar de dois lançamentos oficiais",
+      "original_title": "After a controversial marketing campaign, Splitgate Arena Reloaded fails to find an audience despite two official launches",
+      "image": "https://assetsio.gnwcdn.com/splitgate-reloaded-characters.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "Splitgate Arena Reloaded, um relançamento revisado do atirador de arena Splitgate 2, parece estar enfrentando um começo difícil em seus esforços para revitalizar o jogo. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/after-a-controversial-marketing-campaign-splitgate-2-fails-to-find-an-audience-despite-two-official-launches"
+    },
+    {
+      "id": "https://www.techpowerup.com/344681/asus-republic-of-gamers-announces-rog-xreal-r1-ar-gaming-glasses",
+      "title": "(PR) ASUS Republic of Gamers anuncia óculos para jogos ROG XREAL R1 AR",
+      "original_title": "(PR) ASUS Republic of Gamers Announces ROG XREAL R1 AR Gaming Glasses",
+      "image": "https://tpucdn.com/img/mbwlzHbTVZZ1A53i_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-04",
-      "summary": "Bem-vindo à primeira semana completa de 2026 e começamos a semana com um jogo de terror de sobrevivência onde você tem que salvar uma cidade de uma praga como o grande lançamento desta semana. Se essa não é a sua praia, então temos um jogo cooperativo em um mundo deserto, um mundo alienígena...",
+      "date": "2026-01-05",
+      "summary": "A ASUS Republic of Gamers anunciou hoje o ROG XREAL R1, os primeiros óculos de jogo micro-OLED FHD (1920 x 1080) de 240 Hz do mundo, apresentando o ROG Control Dock para ampla conectividade e compatibilidade com PCs e consoles. A ROG constantemente empurra...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/344646/this-week-in-gaming-week-2"
+      "url": "https://www.techpowerup.com/344681/asus-republic-of-gamers-announces-rog-xreal-r1-ar-gaming-glasses"
+    },
+    {
+      "id": "https://www.techpowerup.com/344679/blu-ray-disc-turns-20-still-a-relevant-distribution-medium",
+      "title": "Disco Blu-ray completa 20 anos, ainda um meio de distribuição relevante",
+      "original_title": "Blu-ray Disc Turns 20, Still a Relevant Distribution Medium",
+      "image": "https://tpucdn.com/img/aROceMRrhrODKaaN_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "O formato de armazenamento removível de disco Blu-ray completa 20 anos este ano. Foi lançado há exatamente duas décadas na CES Internacional de 2006 e é o último dos formatos populares de disco óptico antes que a Internet de alta velocidade tornasse obsoleta a distribuição baseada em disco...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344679/blu-ray-disc-turns-20-still-a-relevant-distribution-medium"
+    },
+    {
+      "id": "https://www.techpowerup.com/344677/sudokoo-debuts-at-ces-2026-with-high-performance-cpu-air-and-liquid-cooling-solutions",
+      "title": "(PR) SUDOKOO estreia na CES 2026 com soluções de refrigeração líquida e de ar para CPU de alto desempenho",
+      "original_title": "(PR) SUDOKOO Debuts at CES 2026 with High-Performance CPU Air and Liquid Cooling Solutions",
+      "image": "https://tpucdn.com/img/iXN8IqRrG9k0vv6i_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "Na CES 2026, a SUDOKOO, uma marca de refrigeração para PC voltada para a engenharia, fará sua primeira estreia global oficial, revelando uma nova linha de coolers de ar para CPU de alto desempenho e soluções de refrigeração líquida projetadas para estações de trabalho, entusiastas de PC, criadores e ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344677/sudokoo-debuts-at-ces-2026-with-high-performance-cpu-air-and-liquid-cooling-solutions"
+    },
+    {
+      "id": "https://www.techpowerup.com/344673/belkin-unveils-next-generation-chargers-gaming-power-accessories-and-more-at-ces-2026",
+      "title": "(PR) Belkin revela carregadores de última geração, acessórios elétricos para jogos e muito mais na CES 2026",
+      "original_title": "(PR) Belkin Unveils Next-Generation Chargers, Gaming Power Accessories and More at CES 2026",
+      "image": "https://tpucdn.com/img/3eJmoMYYKtGja2jk_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "A Belkin, marca líder em eletrônicos de consumo há mais de 40 anos, anunciou hoje uma nova linha ousada de acessórios projetados para alimentar, proteger e aprimorar a maneira como as pessoas trabalham, se divertem e se conectam. A nova coleção, que estreia na CES 2026, inclui avanços...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344673/belkin-unveils-next-generation-chargers-gaming-power-accessories-and-more-at-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344675/nvidia-prepares-native-geforce-now-support-for-linux-powered-operating-systems",
+      "title": "NVIDIA prepara suporte nativo GeForce NOW para sistemas operacionais baseados em Linux",
+      "original_title": "NVIDIA Prepares Native GeForce NOW Support for Linux-Powered Operating Systems",
+      "image": "https://tpucdn.com/img/vW212rVnJY7ojLmk_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "A NVIDIA está se preparando para oferecer suporte nativo para seu serviço de streaming GeForce NOW em sistemas operacionais baseados em Linux. Este desenvolvimento é significativo para jogadores que dependem de soluções alternativas instáveis ​​em seus desktops Linux, que...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344675/nvidia-prepares-native-geforce-now-support-for-linux-powered-operating-systems"
+    },
+    {
+      "id": "https://www.techpowerup.com/344676/msi-announces-the-meg-x-and-mpg-341cqr-qd-oled-x36",
+      "title": "(PR) MSI anuncia MEG X e MPG 341CQR QD-OLED X36",
+      "original_title": "(PR) MSI Announces the MEG X and MPG 341CQR QD-OLED X36",
+      "image": "https://tpucdn.com/img/2rY7tiP76GZ6axeN_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "Apresentando os monitores de jogos MEG X e MPG 341CQR QD-OLED X36, 34\" 21:9 UWQHD 360 Hz com o mais recente painel QD-OLED de 5ª geração com um layout de subpixel RGB Stripe. Eles vêm equipados com o AI Care Sensor exclusivo da MSI de OLED Care 3.0 alimentado por...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344676/msi-announces-the-meg-x-and-mpg-341cqr-qd-oled-x36"
+    },
+    {
+      "id": "https://www.techpowerup.com/344674/asus-rog-announces-next-gen-rgb-oled-technology-at-ces-2026",
+      "title": "(PR) ASUS ROG anuncia tecnologia RGB OLED de última geração na CES 2026",
+      "original_title": "(PR) ASUS ROG Announces Next-Gen RGB OLED Technology at CES 2026",
+      "image": "https://tpucdn.com/img/uWckNaUdKfOtPilF_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "A ASUS Republic of Gamers (ROG) anunciou hoje na CES 2026 uma impressionante variedade de monitores de jogos criados para redefinir a imersão visual. A ASUS e a ROG continuam a liderar globalmente, ocupando as primeiras posições em monitores OLED e permanecendo como a primeira escolha...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344674/asus-rog-announces-next-gen-rgb-oled-technology-at-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344672/asus-showcases-its-first-white-rog-crosshair-motherboard",
+      "title": "ASUS apresenta sua primeira placa-mãe ROG Crosshair branca",
+      "original_title": "ASUS Showcases its First White ROG Crosshair Motherboard",
+      "image": "https://tpucdn.com/img/RUrHcirGgLFZAo6e_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "A ASUS na CES 2026 apresentará sua primeira placa-mãe de plataforma AMD carro-chefe da série ROG Crosshair com PCB branco e esquema de cores, chamada ROG Crosshair X870E Extreme Glacial. Funcionalmente idêntico ao ROG Crosshair X870E Extreme que...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344672/asus-showcases-its-first-white-rog-crosshair-motherboard"
+    },
+    {
+      "id": "https://www.techpowerup.com/344670/memory-makers-prioritize-server-applications-driving-across-the-board-price-increases-in-1q26",
+      "title": "(PR) Fabricantes de memória priorizam aplicativos de servidor, gerando aumentos generalizados de preços no 1T26",
+      "original_title": "(PR) Memory Makers Prioritize Server Applications, Driving Across-the-Board Price Increases in 1Q26",
+      "image": "https://tpucdn.com/img/e0yu7sXPbtRudccr_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "As investigações mais recentes da TrendForce indicam que os fornecedores de DRAM no 1T26 continuarão a realocar nós de processos avançados e nova capacidade para servidores e produtos HBM para apoiar a crescente demanda de servidores de IA. Esta mudança limitou significativamente a oferta...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344670/memory-makers-prioritize-server-applications-driving-across-the-board-price-increases-in-1q26"
+    },
+    {
+      "id": "https://www.techpowerup.com/344669/msi-geforce-rtx-5090-lighting-z-comes-with-2-500-w-xoc-bios-and-dual-12v-2x6-connectors",
+      "title": "MSI GeForce RTX 5090 Lighting Z vem com BIOS XOC de 2.500 W e conectores duplos 12V-2x6",
+      "original_title": "MSI GeForce RTX 5090 Lighting Z Comes with 2,500 W XOC BIOS and Dual 12V-2x6 Connectors",
+      "image": "https://tpucdn.com/img/p2HKI7ZM6169Y58k_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-05",
+      "summary": "Na semana passada, a MSI provocou o retorno de sua famosa marca de GPU MSI Lightning, vista pela última vez na agora distante MSI GeForce RTX 2080 Ti Lightning Z. Graças ao CES 2026 Innovation Awards, agora temos mais detalhes antes do lançamento oficial, como o MSI GeFo...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344669/msi-geforce-rtx-5090-lighting-z-comes-with-2-500-w-xoc-bios-and-dual-12v-2x6-connectors"
+    },
+    {
+      "id": "https://www.eurogamer.net/yes-aggression-matchmaking-is-now-a-thing-in-arc-raiders",
+      "title": "Sim, matchmaking agressivo agora é uma coisa em Arc Raiders",
+      "original_title": "Yes, aggression-matchmaking is now a thing in Arc Raiders",
+      "image": "https://assetsio.gnwcdn.com/arc-raiders-review-header-(1).png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-04",
+      "summary": "Se você descobriu que recentemente enfrentou jogadores mais difíceis em Arc Raiders, pode muito bem ser porque você foi considerado um jogador “agressivo”. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/yes-aggression-matchmaking-is-now-a-thing-in-arc-raiders"
+    },
+    {
+      "id": "https://www.eurogamer.net/resident-evil-4-remake-cut-an-entire-opening-chapter-that-starred-ashley",
+      "title": "Resident Evil 4 Remake cortou um capítulo de abertura inteiro estrelado por Ashley",
+      "original_title": "Resident Evil 4 Remake cut an entire opening chapter that starred Ashley",
+      "image": "https://assetsio.gnwcdn.com/RE4_Ashley_01.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-04",
+      "summary": "A Capcom cortou um capítulo inteiro em que você interpretou Ashley na abertura de Resident Evil 4 Remake. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/resident-evil-4-remake-cut-an-entire-opening-chapter-that-starred-ashley"
+    },
+    {
+      "id": "https://www.eurogamer.net/dataminers-think-theyve-discovered-even-more-proof-that-monster-hunter-wilds-is-coming-to-nintendo-switch-2",
+      "title": "Dataminers acham que descobriram ainda mais provas de que Monster Hunter Wilds está chegando ao Nintendo Switch 2",
+      "original_title": "Dataminers think they've discovered even more proof that Monster Hunter Wilds is coming to Nintendo Switch 2",
+      "image": "https://assetsio.gnwcdn.com/Monster-Hunter-Wilds---Free-Title-Update-2-1-52-screenshot.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-04",
+      "summary": "Dataminers acreditam ter descoberto mais evidências de que Monster Hunter Wilds pode estar chegando ao Nintendo Switch 2. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/dataminers-think-theyve-discovered-even-more-proof-that-monster-hunter-wilds-is-coming-to-nintendo-switch-2"
+    },
+    {
+      "id": "https://www.eurogamer.net/2025-steam-award-winners-announced-and-the-player-voted-results-are-a-little-surprising",
+      "title": "Anunciados os vencedores do Prêmio Steam de 2025, e os resultados votados pelos jogadores são um pouco surpreendentes",
+      "original_title": "2025 Steam Award winners announced, and the player-voted results are a little surprising",
+      "image": "https://assetsio.gnwcdn.com/game-awards-2025-winners-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-04",
+      "summary": "43,8 milhões de votos de jogadores depois, os vencedores do Steam Awards 2025 foram anunciados, com Hollow Knight: Silksong garantindo o prêmio principal, Jogo do Ano. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/2025-steam-award-winners-announced-and-the-player-voted-results-are-a-little-surprising"
     },
     {
       "id": "https://www.eurogamer.net/xbox-suffers-worst-year-on-record-for-console-sales-in-the-uk",
@@ -143,231 +383,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/anthems-end-is-nearly-here"
-    },
-    {
-      "id": "https://www.eurogamer.net/amd-and-nvidia-will-reportedly-raise-gpu-prices-significantly-in-2026",
-      "title": "AMD e Nvidia supostamente aumentarão os preços da GPU “significativamente” em 2026",
-      "original_title": "AMD and Nvidia will reportedly raise GPU prices \"significantly\" in 2026",
-      "image": "https://assetsio.gnwcdn.com/msi-rtx-5070-shadow-oc-tech-deal.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "De acordo com um novo relatório, tanto a AMD quanto a Nvidia aumentarão “significativamente” os preços de suas GPUs de consumo este ano. Se este relatório for verdadeiro, ambas as empresas terão adiado estes aumentos de preços até ao próximo mês. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/amd-and-nvidia-will-reportedly-raise-gpu-prices-significantly-in-2026"
-    },
-    {
-      "id": "https://www.eurogamer.net/rpg-fantasy-life-i-gets-roguelike-mode-in-free-new-year-update",
-      "title": "Subestimado ‘RPG de vida lenta’ Fantasy Life i ganha um modo roguelike gratuito na atualização surpresa de ano novo",
-      "original_title": "Underrated 'slow life RPG' Fantasy Life i gets a free roguelike mode in surprise new year update",
-      "image": "https://assetsio.gnwcdn.com/fantasy-life-i-snoozaland.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "O subestimado jogo de RPG de ‘vida lenta’ Fantasy Life i: The Girl Who Steals Time – que roubou muito do meu tempo no ano passado no Switch 2 – acaba de receber um emocionante lançamento de conteúdo de ano novo. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/rpg-fantasy-life-i-gets-roguelike-mode-in-free-new-year-update"
-    },
-    {
-      "id": "https://www.eurogamer.net/is-there-really-going-to-be-a-2026-witcher-3-expansion",
-      "title": "Haverá realmente uma nova expansão de Witcher 3 este ano?",
-      "original_title": "Is there really going to be a new Witcher 3 expansion this year?",
-      "image": "https://assetsio.gnwcdn.com/witcher-3-geralt_uS0zYOX.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "ATUALIZAÇÃO 16h10 GMT: CD Projekt Red, pelo que vale, me disse que não comenta boatos ou especulações – a linha usual da empresa. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/is-there-really-going-to-be-a-2026-witcher-3-expansion"
-    },
-    {
-      "id": "https://www.eurogamer.net/ps5-jail-break-star-wars-racer-revenge",
-      "title": "Os preços de um jogo PS4 obscuro estão disparando graças aos mais recentes esforços de jailbreak do PS5",
-      "original_title": "Prices of an obscure PS4 game are skyrocketing thanks to the latest PS5 jailbreak efforts",
-      "image": "https://assetsio.gnwcdn.com/star-wars-racer-revenge.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "O preço de um jogo PS4 obscuro está disparando no mercado de segunda mão, graças à necessidade de um novo jailbreak do PS5. Este jogo, do qual foram produzidas 1.000 ou menos cópias físicas, de repente se tornou uma mercadoria popular entre os entusiastas do jailbreak...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/ps5-jail-break-star-wars-racer-revenge"
-    },
-    {
-      "id": "https://www.eurogamer.net/persona-30th-anniversary-boxing-fitness-more-announcements",
-      "title": "O primeiro anúncio do 30º aniversário do Persona não é tão emocionante, mas não se preocupe: há mais por vir",
-      "original_title": "The first announcement for Persona's 30th anniversary isn't that thrilling, but don't worry: there's more to come",
-      "image": "https://assetsio.gnwcdn.com/persona-30th.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "É um grande ano para aniversários de jogos. Existem cinco séries massivas que completam 40 anos em 2026 - The Legend of Zelda, Metroid, Dragon Quest, Kid Icarus e Castlevania - enquanto Sonic the Hedgehog completa 35 anos, e Persona e Pokémon completam ...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/persona-30th-anniversary-boxing-fitness-more-announcements"
-    },
-    {
-      "id": "https://www.eurogamer.net/deus-ex-no-2026-people-in-charge-psychopaths",
-      "title": "Um novo Deux Ex não chegará em 2026 porque os responsáveis ​​​​são “psicopatas”, brinca o dublador da série",
-      "original_title": "A new Deux Ex isn't coming in 2026 as people in charge are \"psychopaths\", jokes series voice lead",
-      "image": "https://assetsio.gnwcdn.com/deus-ex-mankind-divided-crop.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-02",
-      "summary": "Elias Toufexis, o dublador do funcionário robótico do ano e personagem principal de Deus Ex, Adam Jensen, garantiu aos fãs que uma nova entrada na série de ficção científica não chegará em 2026, já que os responsáveis ​​​​são “psicopatas”. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/deus-ex-no-2026-people-in-charge-psychopaths"
-    },
-    {
-      "id": "https://www.techpowerup.com/344628/nvidia-geforce-now-gets-14-new-games-in-january",
-      "title": "(PR) NVIDIA GeForce AGORA ganha 14 novos jogos em janeiro",
-      "original_title": "(PR) NVIDIA GeForce NOW Gets 14 New Games in January",
-      "image": "https://tpucdn.com/img/N8jss6n5DLDJM5tI_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Ano novo, jogos novos, tudo com energia de nuvem alimentada pelo RTX 5080. GeForce NOW está iniciando 2026 relembrando um ano inesquecível de vitórias e taxas de quadros extremamente altas. Desde transmissões dos maiores sucessos de bilheteria até novas maneiras de jogar em qualquer lugar, os membros...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344628/nvidia-geforce-now-gets-14-new-games-in-january"
-    },
-    {
-      "id": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool",
-      "title": "Substitua todas as suas assinaturas de IA por uma ferramenta única e vitalícia",
-      "original_title": "Replace All of Your AI Subscriptions with a Single Lifetime Tool",
-      "image": "https://tpucdn.com/img/qVCOhxtMGUvf66Xu_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Se você está alternando entre ChatGPT, Claude, Gemini e meia dúzia de outras ferramentas de IA para obter uma resposta sólida, provavelmente está pagando pelas mesmas ferramentas mais de uma vez. ChatPlayground AI oferece uma alternativa mais simples: uma plataforma onde você pode executar um si...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344501/replace-all-of-your-ai-subscriptions-with-a-single-lifetime-tool"
-    },
-    {
-      "id": "https://www.techpowerup.com/344626/yplasma-to-debut-noiseless-laptop-cooled-with-dbd-plasma-actuators-at-ces-2026",
-      "title": "(PR) YPlasma lançará laptop silencioso resfriado com atuadores de plasma DBD na CES 2026",
-      "original_title": "(PR) YPlasma to Debut Noiseless Laptop Cooled with DBD Plasma Actuators at CES 2026",
-      "image": "https://tpucdn.com/img/CE7HyFxHjA7Ectkz_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "YPlasma, pioneira em gerenciamento térmico de estado sólido com operações em Newark, NJ e Espanha, anunciou hoje sua participação na CES Las Vegas 2026. Localizada no Eureka Park, estande nº 60845, a YPlasma sediará a estreia mundial da primeira aplicação...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344626/yplasma-to-debut-noiseless-laptop-cooled-with-dbd-plasma-actuators-at-ces-2026"
-    },
-    {
-      "id": "https://www.techpowerup.com/344624/fender-audio-debuts-at-ces-2026-with-elie-speakers-and-mix-headphones",
-      "title": "(PR) Fender Audio estreia na CES 2026 com alto-falantes Elie e fones de ouvido Mix",
-      "original_title": "(PR) Fender Audio Debuts at CES 2026 With Elie Speakers and Mix Headphones",
-      "image": "https://tpucdn.com/img/sVmgebuh1GZBld3s_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Fender Audio, uma marca de eletrônicos de consumo de propriedade da Fender Musical Instruments Corporation (FMIC) e operada sob licença pela Riffsound Pte. Ltd., faz sua estreia na CES com o lançamento de dois produtos carro-chefe: a série de alto-falantes portáteis ELIE e MI...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344624/fender-audio-debuts-at-ces-2026-with-elie-speakers-and-mix-headphones"
-    },
-    {
-      "id": "https://www.techpowerup.com/344619/acemagic-reveals-retro-x5-mini-pc-with-ryzen-ai-9-hx-370",
-      "title": "Acemagic revela Mini PC Retro X5 com Ryzen AI 9 HX 370",
-      "original_title": "Acemagic Reveals Retro X5 Mini PC with Ryzen AI 9 HX 370",
-      "image": "https://tpucdn.com/img/E8YFW2KFXNmJOZMl_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "Acemagic revelou o mini PC Retro X5, um sistema compacto que combina um exterior retrô estilo NES com hardware AMD moderno. O sistema é voltado para usuários interessados ​​em jogos clássicos, reprodução de mídia e tarefas cotidianas, tudo isso em um formato pequeno...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344619/acemagic-reveals-retro-x5-mini-pc-with-ryzen-ai-9-hx-370"
-    },
-    {
-      "id": "https://www.techpowerup.com/344620/asus-intros-pro-ws-b850m-ace-se-motherboard-with-ipmi-for-home-and-smb-servers",
-      "title": "Placa-mãe ASUS Intros Pro WS B850M-ACE SE com IPMI para servidores domésticos e SMB",
-      "original_title": "ASUS Intros Pro WS B850M-ACE SE Motherboard with IPMI for Home and SMB Servers",
-      "image": "https://tpucdn.com/img/x5zxyixRyFPAnPTl_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "A ASUS apresentou a Pro WS B850M-ACE SE, uma placa-mãe AMD Socket AM5 no formato microATX que é projetada como uma placa-mãe de servidor, mas é voltada para uma variedade de consumidores, desde servidores domésticos e de pequenas empresas até estações de trabalho com armazenamento.",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344620/asus-intros-pro-ws-b850m-ace-se-motherboard-with-ipmi-for-home-and-smb-servers"
-    },
-    {
-      "id": "https://www.techpowerup.com/344617/thermaltake-intros-th-s-v3-argb-sync-aio-cpu-coolers",
-      "title": "Thermaltake apresenta coolers para CPU TH-S V3 ARGB Sync AIO",
-      "original_title": "Thermaltake Intros TH-S V3 ARGB Sync AIO CPU Coolers",
-      "image": "https://tpucdn.com/img/f0fPSPkEQLTPsXyX_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "A Thermaltake apresentou hoje o TH-S V3 ARGB Sync, uma linha de coolers líquidos multifuncionais de gama média para CPU. O cooler vem em acabamentos em preto e branco e em variantes baseadas no tamanho do radiador de 240 mm e 360 ​​mm para cada. Esses coolers são caracterizados...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344617/thermaltake-intros-th-s-v3-argb-sync-aio-cpu-coolers"
-    },
-    {
-      "id": "https://www.techpowerup.com/344614/gigabyte-releases-four-new-amd-socket-am4-motherboards",
-      "title": "GIGABYTE lança quatro novas placas-mãe AMD Socket AM4",
-      "original_title": "GIGABYTE Releases Four New AMD Socket AM4 Motherboards",
-      "image": "https://tpucdn.com/img/EkzwTTGLk0nikp9i_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "A GIGABYTE acaba de lançar quatro novos modelos de placas-mãe AMD Socket AM4 enquanto os jogadores procuram plataformas de PC mais antigas que suportem memória DDR4 disponíveis a preços mais acessíveis. Isso está de acordo com nosso relatório recente que fala sobre como a escassez aguda de DDR5...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344614/gigabyte-releases-four-new-amd-socket-am4-motherboards"
-    },
-    {
-      "id": "https://www.techpowerup.com/344611/samsung-unveils-the-freestyle-ahead-of-ces-2026-a-smart-portable-screen",
-      "title": "(PR) Samsung revela o Freestyle+ antes da CES 2026, uma tela portátil inteligente",
-      "original_title": "(PR) Samsung Unveils the Freestyle+ Ahead of CES 2026, a Smart Portable Screen",
-      "image": "https://tpucdn.com/img/pjyVoxUEE4E6HA22_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-02",
-      "summary": "A Samsung Electronics anunciou hoje o lançamento global do The Freestyle+, seu mais recente projetor portátil com tecnologia de IA projetado para oferecer uma experiência de entretenimento mais flexível e personalizada em uma ampla variedade de espaços. Revelado antes da CES 2026 ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344611/samsung-unveils-the-freestyle-ahead-of-ces-2026-a-smart-portable-screen"
     }
   ]
 }
