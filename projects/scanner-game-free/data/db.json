@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-05T12:47:58",
-  "display_date": "05/01/2026 12:47",
+  "last_updated": "2026-01-06T12:45:01",
+  "display_date": "06/01/2026 12:45",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "174ms",
+    "latency": "318ms",
     "current_games": [
       {
         "title": "Wildgate",
@@ -47,7 +47,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-05",
+      "date": "2026-01-06",
       "summary": "Wildgate é um jogo de tiro multijogador PVP baseado em tripulação que combina combate tático entre navios e ação em primeira pessoa em ritmo acelerado. Evite perigos ambientais mortais, procure armas poderosas e atualizações de navios e seja a primeira tripulação a escapar com o Artefato.",
       "sources": [
         "Epic Games Store"
@@ -62,7 +62,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-05",
+      "date": "2026-01-06",
       "summary": "Total War: THREE KINGDOMS recria conflitos épicos na China antiga em uma era de heróis e lendas, combinando emocionante construção de império, política e conquista com impressionantes batalhas em tempo real.",
       "sources": [
         "Epic Games Store"
@@ -77,7 +77,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-05",
+      "date": "2026-01-06",
       "summary": "Disponível gratuitamente a partir de 08/01. Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
       "sources": [
         "Epic Games Store"
@@ -85,304 +85,304 @@
       "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5"
     },
     {
-      "id": "https://www.eurogamer.net/oops-league-of-legends-was-briefly-unplayable-as-riot-games-forgot-to-renew-the-digital-licence",
-      "title": "Ops, League of Legends ficou brevemente impossível de jogar porque a Riot Games se esqueceu de renovar a licença digital",
-      "original_title": "Oops, League of Legends was briefly unplayable as Riot Games forgot to renew the digital licence",
-      "image": "https://assetsio.gnwcdn.com/league-of-legends_aTCaNiH.png?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-05",
-      "summary": "O popular MOBA League of Legends ficou brevemente impossível de jogar nas últimas 24 horas, pois a licença digital do jogo expirou. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/oops-league-of-legends-was-briefly-unplayable-as-riot-games-forgot-to-renew-the-digital-licence"
-    },
-    {
-      "id": "https://www.eurogamer.net/clair-obscur-expedition-33-developer-feels-it-needs-to-trust-its-instincts-for-its-next-game-instead-of-being-guided-by-fan-pressure",
-      "title": "Clair Obscur: O desenvolvedor do Expedition 33 sente que precisa “confiar em seus instintos” para seu próximo jogo, em vez de ser guiado pela pressão dos fãs",
-      "original_title": "Clair Obscur: Expedition 33 developer feels it needs to \"trust its instincts\" for its next game, instead of being guided by fan pressure",
-      "image": "https://assetsio.gnwcdn.com/clair-obscur-expedition-33-lune-battling-enemy.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-05",
-      "summary": "Clair Obscur: O desenvolvedor do Expedition 33, Sandfall, se concentrará no que os funcionários do estúdio pessoalmente consideram \"legal\" para seu próximo jogo, em vez de sentir qualquer pressão para se concentrar no que os outros acham que deveria ser feito. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/clair-obscur-expedition-33-developer-feels-it-needs-to-trust-its-instincts-for-its-next-game-instead-of-being-guided-by-fan-pressure"
-    },
-    {
-      "id": "https://www.eurogamer.net/after-a-controversial-marketing-campaign-splitgate-2-fails-to-find-an-audience-despite-two-official-launches",
-      "title": "Depois de uma polêmica campanha de marketing, Splitgate Arena Reloaded não consegue encontrar público, apesar de dois lançamentos oficiais",
-      "original_title": "After a controversial marketing campaign, Splitgate Arena Reloaded fails to find an audience despite two official launches",
-      "image": "https://assetsio.gnwcdn.com/splitgate-reloaded-characters.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-05",
-      "summary": "Splitgate Arena Reloaded, um relançamento revisado do atirador de arena Splitgate 2, parece estar enfrentando um começo difícil em seus esforços para revitalizar o jogo. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/after-a-controversial-marketing-campaign-splitgate-2-fails-to-find-an-audience-despite-two-official-launches"
-    },
-    {
-      "id": "https://www.techpowerup.com/344681/asus-republic-of-gamers-announces-rog-xreal-r1-ar-gaming-glasses",
-      "title": "(PR) ASUS Republic of Gamers anuncia óculos para jogos ROG XREAL R1 AR",
-      "original_title": "(PR) ASUS Republic of Gamers Announces ROG XREAL R1 AR Gaming Glasses",
-      "image": "https://tpucdn.com/img/mbwlzHbTVZZ1A53i_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "A ASUS Republic of Gamers anunciou hoje o ROG XREAL R1, os primeiros óculos de jogo micro-OLED FHD (1920 x 1080) de 240 Hz do mundo, apresentando o ROG Control Dock para ampla conectividade e compatibilidade com PCs e consoles. A ROG constantemente empurra...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344681/asus-republic-of-gamers-announces-rog-xreal-r1-ar-gaming-glasses"
-    },
-    {
-      "id": "https://www.techpowerup.com/344679/blu-ray-disc-turns-20-still-a-relevant-distribution-medium",
-      "title": "Disco Blu-ray completa 20 anos, ainda um meio de distribuição relevante",
-      "original_title": "Blu-ray Disc Turns 20, Still a Relevant Distribution Medium",
-      "image": "https://tpucdn.com/img/aROceMRrhrODKaaN_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "O formato de armazenamento removível de disco Blu-ray completa 20 anos este ano. Foi lançado há exatamente duas décadas na CES Internacional de 2006 e é o último dos formatos populares de disco óptico antes que a Internet de alta velocidade tornasse obsoleta a distribuição baseada em disco...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344679/blu-ray-disc-turns-20-still-a-relevant-distribution-medium"
-    },
-    {
-      "id": "https://www.techpowerup.com/344677/sudokoo-debuts-at-ces-2026-with-high-performance-cpu-air-and-liquid-cooling-solutions",
-      "title": "(PR) SUDOKOO estreia na CES 2026 com soluções de refrigeração líquida e de ar para CPU de alto desempenho",
-      "original_title": "(PR) SUDOKOO Debuts at CES 2026 with High-Performance CPU Air and Liquid Cooling Solutions",
-      "image": "https://tpucdn.com/img/iXN8IqRrG9k0vv6i_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "Na CES 2026, a SUDOKOO, uma marca de refrigeração para PC voltada para a engenharia, fará sua primeira estreia global oficial, revelando uma nova linha de coolers de ar para CPU de alto desempenho e soluções de refrigeração líquida projetadas para estações de trabalho, entusiastas de PC, criadores e ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344677/sudokoo-debuts-at-ces-2026-with-high-performance-cpu-air-and-liquid-cooling-solutions"
-    },
-    {
-      "id": "https://www.techpowerup.com/344673/belkin-unveils-next-generation-chargers-gaming-power-accessories-and-more-at-ces-2026",
-      "title": "(PR) Belkin revela carregadores de última geração, acessórios elétricos para jogos e muito mais na CES 2026",
-      "original_title": "(PR) Belkin Unveils Next-Generation Chargers, Gaming Power Accessories and More at CES 2026",
-      "image": "https://tpucdn.com/img/3eJmoMYYKtGja2jk_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "A Belkin, marca líder em eletrônicos de consumo há mais de 40 anos, anunciou hoje uma nova linha ousada de acessórios projetados para alimentar, proteger e aprimorar a maneira como as pessoas trabalham, se divertem e se conectam. A nova coleção, que estreia na CES 2026, inclui avanços...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344673/belkin-unveils-next-generation-chargers-gaming-power-accessories-and-more-at-ces-2026"
-    },
-    {
-      "id": "https://www.techpowerup.com/344675/nvidia-prepares-native-geforce-now-support-for-linux-powered-operating-systems",
-      "title": "NVIDIA prepara suporte nativo GeForce NOW para sistemas operacionais baseados em Linux",
-      "original_title": "NVIDIA Prepares Native GeForce NOW Support for Linux-Powered Operating Systems",
-      "image": "https://tpucdn.com/img/vW212rVnJY7ojLmk_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "A NVIDIA está se preparando para oferecer suporte nativo para seu serviço de streaming GeForce NOW em sistemas operacionais baseados em Linux. Este desenvolvimento é significativo para jogadores que dependem de soluções alternativas instáveis ​​em seus desktops Linux, que...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344675/nvidia-prepares-native-geforce-now-support-for-linux-powered-operating-systems"
-    },
-    {
-      "id": "https://www.techpowerup.com/344676/msi-announces-the-meg-x-and-mpg-341cqr-qd-oled-x36",
-      "title": "(PR) MSI anuncia MEG X e MPG 341CQR QD-OLED X36",
-      "original_title": "(PR) MSI Announces the MEG X and MPG 341CQR QD-OLED X36",
-      "image": "https://tpucdn.com/img/2rY7tiP76GZ6axeN_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "Apresentando os monitores de jogos MEG X e MPG 341CQR QD-OLED X36, 34\" 21:9 UWQHD 360 Hz com o mais recente painel QD-OLED de 5ª geração com um layout de subpixel RGB Stripe. Eles vêm equipados com o AI Care Sensor exclusivo da MSI de OLED Care 3.0 alimentado por...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344676/msi-announces-the-meg-x-and-mpg-341cqr-qd-oled-x36"
-    },
-    {
-      "id": "https://www.techpowerup.com/344674/asus-rog-announces-next-gen-rgb-oled-technology-at-ces-2026",
-      "title": "(PR) ASUS ROG anuncia tecnologia RGB OLED de última geração na CES 2026",
-      "original_title": "(PR) ASUS ROG Announces Next-Gen RGB OLED Technology at CES 2026",
-      "image": "https://tpucdn.com/img/uWckNaUdKfOtPilF_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "A ASUS Republic of Gamers (ROG) anunciou hoje na CES 2026 uma impressionante variedade de monitores de jogos criados para redefinir a imersão visual. A ASUS e a ROG continuam a liderar globalmente, ocupando as primeiras posições em monitores OLED e permanecendo como a primeira escolha...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344674/asus-rog-announces-next-gen-rgb-oled-technology-at-ces-2026"
-    },
-    {
-      "id": "https://www.techpowerup.com/344672/asus-showcases-its-first-white-rog-crosshair-motherboard",
-      "title": "ASUS apresenta sua primeira placa-mãe ROG Crosshair branca",
-      "original_title": "ASUS Showcases its First White ROG Crosshair Motherboard",
-      "image": "https://tpucdn.com/img/RUrHcirGgLFZAo6e_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "A ASUS na CES 2026 apresentará sua primeira placa-mãe de plataforma AMD carro-chefe da série ROG Crosshair com PCB branco e esquema de cores, chamada ROG Crosshair X870E Extreme Glacial. Funcionalmente idêntico ao ROG Crosshair X870E Extreme que...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344672/asus-showcases-its-first-white-rog-crosshair-motherboard"
-    },
-    {
-      "id": "https://www.techpowerup.com/344670/memory-makers-prioritize-server-applications-driving-across-the-board-price-increases-in-1q26",
-      "title": "(PR) Fabricantes de memória priorizam aplicativos de servidor, gerando aumentos generalizados de preços no 1T26",
-      "original_title": "(PR) Memory Makers Prioritize Server Applications, Driving Across-the-Board Price Increases in 1Q26",
-      "image": "https://tpucdn.com/img/e0yu7sXPbtRudccr_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "As investigações mais recentes da TrendForce indicam que os fornecedores de DRAM no 1T26 continuarão a realocar nós de processos avançados e nova capacidade para servidores e produtos HBM para apoiar a crescente demanda de servidores de IA. Esta mudança limitou significativamente a oferta...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344670/memory-makers-prioritize-server-applications-driving-across-the-board-price-increases-in-1q26"
-    },
-    {
-      "id": "https://www.techpowerup.com/344669/msi-geforce-rtx-5090-lighting-z-comes-with-2-500-w-xoc-bios-and-dual-12v-2x6-connectors",
-      "title": "MSI GeForce RTX 5090 Lighting Z vem com BIOS XOC de 2.500 W e conectores duplos 12V-2x6",
-      "original_title": "MSI GeForce RTX 5090 Lighting Z Comes with 2,500 W XOC BIOS and Dual 12V-2x6 Connectors",
-      "image": "https://tpucdn.com/img/p2HKI7ZM6169Y58k_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-05",
-      "summary": "Na semana passada, a MSI provocou o retorno de sua famosa marca de GPU MSI Lightning, vista pela última vez na agora distante MSI GeForce RTX 2080 Ti Lightning Z. Graças ao CES 2026 Innovation Awards, agora temos mais detalhes antes do lançamento oficial, como o MSI GeFo...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/344669/msi-geforce-rtx-5090-lighting-z-comes-with-2-500-w-xoc-bios-and-dual-12v-2x6-connectors"
-    },
-    {
-      "id": "https://www.eurogamer.net/yes-aggression-matchmaking-is-now-a-thing-in-arc-raiders",
-      "title": "Sim, matchmaking agressivo agora é uma coisa em Arc Raiders",
-      "original_title": "Yes, aggression-matchmaking is now a thing in Arc Raiders",
+      "id": "https://www.eurogamer.net/arc-raiders-player-calls-for-help-during-game-gets-door-kicked-in-by-concerned-neighbour",
+      "title": "Jogador do Arc Raiders pede ajuda durante o jogo e é arrombado por um vizinho preocupado",
+      "original_title": "Arc Raiders player calls for help during game, gets door kicked-in by concerned neighbour",
       "image": "https://assetsio.gnwcdn.com/arc-raiders-review-header-(1).png?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-04",
-      "summary": "Se você descobriu que recentemente enfrentou jogadores mais difíceis em Arc Raiders, pode muito bem ser porque você foi considerado um jogador “agressivo”. Leia mais...",
+      "date": "2026-01-06",
+      "summary": "Um jogador do Arc Raiders pedindo ajuda durante o jogo teve sua porta arrombada por um vizinho preocupado, que pensou que seus gritos eram um sinal de angústia no mundo real. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/yes-aggression-matchmaking-is-now-a-thing-in-arc-raiders"
+      "url": "https://www.eurogamer.net/arc-raiders-player-calls-for-help-during-game-gets-door-kicked-in-by-concerned-neighbour"
     },
     {
-      "id": "https://www.eurogamer.net/resident-evil-4-remake-cut-an-entire-opening-chapter-that-starred-ashley",
-      "title": "Resident Evil 4 Remake cortou um capítulo de abertura inteiro estrelado por Ashley",
-      "original_title": "Resident Evil 4 Remake cut an entire opening chapter that starred Ashley",
-      "image": "https://assetsio.gnwcdn.com/RE4_Ashley_01.png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/sega-co-founder-david-rosen-dies",
+      "title": "Da Força Aérea aos fliperamas e aos consoles domésticos: o cofundador da Sega, David Rosen, morre aos 95 anos",
+      "original_title": "From the Air Force to arcades to home consoles: Sega co-founder David Rosen dies aged 95",
+      "image": "https://assetsio.gnwcdn.com/david-rosen-sega.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-04",
-      "summary": "A Capcom cortou um capítulo inteiro em que você interpretou Ashley na abertura de Resident Evil 4 Remake. Leia mais...",
+      "date": "2026-01-06",
+      "summary": "David Rosen, o cofundador da Sega – uma pessoa-chave envolvida em grande parte do sucesso inicial dos arcades e consoles da empresa – faleceu. Ele tinha 95 anos. Ele morreu no dia de Natal em sua casa em Hollywood Hills, parte de Los Angeles, RePlay ...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/resident-evil-4-remake-cut-an-entire-opening-chapter-that-starred-ashley"
+      "url": "https://www.eurogamer.net/sega-co-founder-david-rosen-dies"
     },
     {
-      "id": "https://www.eurogamer.net/dataminers-think-theyve-discovered-even-more-proof-that-monster-hunter-wilds-is-coming-to-nintendo-switch-2",
-      "title": "Dataminers acham que descobriram ainda mais provas de que Monster Hunter Wilds está chegando ao Nintendo Switch 2",
-      "original_title": "Dataminers think they've discovered even more proof that Monster Hunter Wilds is coming to Nintendo Switch 2",
-      "image": "https://assetsio.gnwcdn.com/Monster-Hunter-Wilds---Free-Title-Update-2-1-52-screenshot.png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/surprise-xbox-game-pass-has-added-two-more-games-as-five-others-get-ready-to-leave-the-service-soon",
+      "title": "Surpresa! O Xbox Game Pass adicionou mais dois jogos, enquanto outros cinco se preparam para deixar o serviço em breve",
+      "original_title": "Surprise! Xbox Game Pass has added two more games, as five others get ready to leave the service soon",
+      "image": "https://assetsio.gnwcdn.com/Brews-and-Bastards-promo-art-showing-tipsy-characters.-An-Xbox-logo-is-in-the-lower-left-corner.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-04",
-      "summary": "Dataminers acreditam ter descoberto mais evidências de que Monster Hunter Wilds pode estar chegando ao Nintendo Switch 2. Leia mais...",
+      "date": "2026-01-06",
+      "summary": "A equipe do Xbox adicionou dois jogos não anunciados ao serviço de assinatura Game Pass. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/dataminers-think-theyve-discovered-even-more-proof-that-monster-hunter-wilds-is-coming-to-nintendo-switch-2"
+      "url": "https://www.eurogamer.net/surprise-xbox-game-pass-has-added-two-more-games-as-five-others-get-ready-to-leave-the-service-soon"
     },
     {
-      "id": "https://www.eurogamer.net/2025-steam-award-winners-announced-and-the-player-voted-results-are-a-little-surprising",
-      "title": "Anunciados os vencedores do Prêmio Steam de 2025, e os resultados votados pelos jogadores são um pouco surpreendentes",
-      "original_title": "2025 Steam Award winners announced, and the player-voted results are a little surprising",
-      "image": "https://assetsio.gnwcdn.com/game-awards-2025-winners-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/one-of-the-best-action-games-released-in-recent-memory-is-getting-a-special-re-release-soon",
+      "title": "Um dos melhores jogos de ação lançados recentemente receberá um relançamento especial em breve",
+      "original_title": "One of the best action games released in recent memory is getting a special re-release soon",
+      "image": "https://assetsio.gnwcdn.com/hi-fi-rush-chai-and-808-on-his-shoulder.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-04",
-      "summary": "43,8 milhões de votos de jogadores depois, os vencedores do Steam Awards 2025 foram anunciados, com Hollow Knight: Silksong garantindo o prêmio principal, Jogo do Ano. Leia mais...",
+      "date": "2026-01-06",
+      "summary": "Hi-Fi Rush, o jogo mais recente da Tango Gameworks, está sendo relançado especial em colaboração com a Limited Run Games. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/2025-steam-award-winners-announced-and-the-player-voted-results-are-a-little-surprising"
+      "url": "https://www.eurogamer.net/one-of-the-best-action-games-released-in-recent-memory-is-getting-a-special-re-release-soon"
     },
     {
-      "id": "https://www.eurogamer.net/xbox-suffers-worst-year-on-record-for-console-sales-in-the-uk",
-      "title": "Xbox sofre “pior ano já registrado” em vendas de consoles no Reino Unido",
-      "original_title": "Xbox suffers \"worst year on record\" for console sales in the UK",
-      "image": "https://assetsio.gnwcdn.com/Screenshot-2026-01-03-at-18.17.32.png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.techpowerup.com/344790/amd-ryzen-ai-halo-more-than-a-mini-pc-an-ai-development-platform-akin-to-dgx-spark",
+      "title": "AMD Ryzen AI Halo mais que um mini-PC, uma plataforma de desenvolvimento de IA semelhante ao DGX Spark",
+      "original_title": "AMD Ryzen AI Halo More Than a Mini-PC, an AI Development Platform Akin to DGX Spark",
+      "image": "https://tpucdn.com/img/uJ7AFZXasxFM3R1w_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A AMD na 2026 International CES exibiu sua caixa Ryzen AI Halo, que é um desktop compacto original baseado nos processadores AMD Ryzen AI Max “Strix Halo”. Acontece que este produto não está sendo apresentado apenas como um desktop de consumo, mas sim como um f...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344790/amd-ryzen-ai-halo-more-than-a-mini-pc-an-ai-development-platform-akin-to-dgx-spark"
+    },
+    {
+      "id": "https://www.techpowerup.com/344788/amd-zen-6-epyc-venice-introduces-a-radical-package-redesign",
+      "title": "AMD Zen 6 EPYC “Veneza” apresenta uma reformulação radical do pacote",
+      "original_title": "AMD Zen 6 EPYC \"Venice\" Introduces a Radical Package Redesign",
+      "image": "https://tpucdn.com/img/dy4oD03LEA6jhd6Y_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A CEO da AMD, Dra. Lisa Su, no evento 2026 International CES da empresa, apresentou o processador empresarial EPYC \"Veneza\" de próxima geração, conduzindo os racks de IA \"Helios\" 2026 da empresa, equipados com GPUs AMD MI455X AI. Cada nó no rack possui quatro GPU MI455X...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344788/amd-zen-6-epyc-venice-introduces-a-radical-package-redesign"
+    },
+    {
+      "id": "https://www.techpowerup.com/344787/novachips-debuts-new-self-encrypting-p2-series-ssds-compliant-with-cnsa-2-0",
+      "title": "(PR) Novachips lança novos SSDs da série P2 com autocriptografia compatíveis com CNSA 2.0",
+      "original_title": "(PR) Novachips Debuts New Self-Encrypting P2-series SSDs Compliant with CNSA 2.0",
+      "image": "https://tpucdn.com/img/EI0i4mcyCJJtXllC_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "Novachips Co., Ltd., inovadora em soluções de armazenamento flash, apresentou hoje os novos SSDs da série P2, que permitirão que desenvolvedores e integradores de sistemas embarcados atendam aos requisitos de segurança de criptografia PQ (pós-quântica) adotando...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344787/novachips-debuts-new-self-encrypting-p2-series-ssds-compliant-with-cnsa-2-0"
+    },
+    {
+      "id": "https://www.techpowerup.com/344785/viewsonic-shows-off-new-monitors-and-a-dual-portable-display-at-ces-2026",
+      "title": "ViewSonic mostra novos monitores e um display portátil duplo na CES 2026",
+      "original_title": "ViewSonic Shows Off New Monitors and a Dual Portable Display at CES 2026",
+      "image": "https://tpucdn.com/img/5aevcUrZRHC7WOu0_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A ViewSonic apresentou na CES 2026 novos monitores dedicados a jogadores e profissionais, incluindo um modelo portátil duplo de 14 polegadas. Para gamers, o VX2730D-4K é uma tela de 27 polegadas que pode alternar entre 4K a 144 Hz e Full HD a 288 Hz, com resolução de 0,5 ms...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344785/viewsonic-shows-off-new-monitors-and-a-dual-portable-display-at-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344786/amd-expands-ryzen-ai-max-strix-halo-processor-lineup-launches-ryzen-ai-halo-mini-pc",
+      "title": "AMD expande linha de processadores Ryzen AI MAX “Strix Halo” e lança Ryzen AI Halo Mini PC",
+      "original_title": "AMD Expands Ryzen AI MAX \"Strix Halo\" Processor Lineup, Launches Ryzen AI Halo Mini PC",
+      "image": "https://tpucdn.com/img/fuFpJhMOL9FEg9Jc_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A AMD expandiu hoje sua linha de super-APUs Ryzen AI MAX \"Strix Halo\" com dois novos modelos de processador, o Ryzen AI Max+ 392 e o Ryzen AI Max+ 388. Ambos são baseados no pacote \"Strix Halo\" existente, que combina uma CPU \"Zen 5\" de 16 núcleos/32 threads baseada ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344786/amd-expands-ryzen-ai-max-strix-halo-processor-lineup-launches-ryzen-ai-halo-mini-pc"
+    },
+    {
+      "id": "https://www.techpowerup.com/344782/amd-launches-ryzen-7-9850x3d-the-worlds-fastest-gaming-cpu-gets-even-faster",
+      "title": "AMD lança Ryzen 7 9850X3D, a CPU para jogos mais rápida do mundo fica ainda mais rápida",
+      "original_title": "AMD Launches Ryzen 7 9850X3D, The World's Fastest Gaming CPU Gets Even Faster",
+      "image": "https://tpucdn.com/img/is55edkSxAzTeGEl_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A AMD lançou hoje o processador para desktop Ryzen 7 9850X3D. Este processador de 8 núcleos/16 threads é alimentado pela microarquitetura “Zen 5” sobrecarregada com tecnologia 3D V-Cache e é essencialmente um aumento de velocidade em relação ao atual 9800X3D. Chegou o chip...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344782/amd-launches-ryzen-7-9850x3d-the-worlds-fastest-gaming-cpu-gets-even-faster"
+    },
+    {
+      "id": "https://www.techpowerup.com/344732/amd-to-brand-its-next-gen-desktop-apus-under-ryzen-ai-400-series",
+      "title": "AMD marcará suas APUs para desktop de última geração sob Ryzen AI 400 Series",
+      "original_title": "AMD to Brand its Next-Gen Desktop APUs under Ryzen AI 400 Series",
+      "image": "https://tpucdn.com/img/jsSqHVS9ywVlKO6n_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A AMD anunciou em seu briefing de mídia na CES que seus próximos APUs de desktop Socket AM5 que sucederão a série Ryzen 8000G serão marcados sob a série Ryzen AI 400, em linha com seus novos processadores móveis da série Ryzen AI 400 que compartilham o sub...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344732/amd-to-brand-its-next-gen-desktop-apus-under-ryzen-ai-400-series"
+    },
+    {
+      "id": "https://www.techpowerup.com/344730/amd-announces-ryzen-ai-400-series-gorgon-point-mobile-processors",
+      "title": "AMD anuncia processadores móveis Ryzen AI 400 Series “Gorgon Point”",
+      "original_title": "AMD Announces Ryzen AI 400 Series \"Gorgon Point\" Mobile Processors",
+      "image": "https://tpucdn.com/img/YUVXnTe6GVDZKMeq_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "A AMD na 2026 International CES anunciou os novos processadores móveis Ryzen AI 400 série \"Gorgon Point\" que alimentarão a linha de processadores clientes da empresa até 2026. Esses chips são baseados no novo silício \"Gorgon Point\" de 4 nm que é uma atualização do...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344730/amd-announces-ryzen-ai-400-series-gorgon-point-mobile-processors"
+    },
+    {
+      "id": "https://www.techpowerup.com/344781/owc-displays-thunderbolt-product-lineup-at-ces-2026",
+      "title": "OWC exibe linha de produtos Thunderbolt na CES 2026",
+      "original_title": "OWC Displays Thunderbolt Product Lineup at CES 2026",
+      "image": "https://tpucdn.com/img/AVjCvvifx61BPvnd_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "No início da CES 2026, a OWC anunciou vários novos produtos Thunderbolt 5, liderados pelo Envoy Ultra, agora disponíveis com capacidade de 8 TB. O SSD portátil oferece mais de 6.000 MB/s e é até duas vezes mais rápido que as soluções Thunderbolt 4 e USB4. Apresenta...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344781/owc-displays-thunderbolt-product-lineup-at-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/344780/sandisk-optimus-drives-pictured-at-ces-2026-former-wd-black-ssds",
+      "title": "Unidades Sandisk Optimus retratadas na CES 2026: antigos SSDs WD_BLACK",
+      "original_title": "Sandisk Optimus Drives Pictured at CES 2026: Former WD_BLACK SSDs",
+      "image": "https://tpucdn.com/img/1PJxfMivuTixH76R_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-06",
+      "summary": "No início da CES 2026, a Sandisk chocou a todos com a mudança da família SSD WD_Black para uma nova marca chamada Sandisk Optimus. A nova família de unidades Sandisk Optimus reúne a antiga e confiável família SSD WD_BLACK sob um único nome. Lá...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/344780/sandisk-optimus-drives-pictured-at-ces-2026-former-wd-black-ssds"
+    },
+    {
+      "id": "https://www.eurogamer.net/tech-ces-2026-hp-announces-the-worlds-most-powerful-gaming-laptop-and-next-gen-qd-oled-monitor",
+      "title": "CES 2026: HP anuncia o “laptop para jogos mais poderoso do mundo” e monitor QD-OLED de última geração",
+      "original_title": "CES 2026: HP announces the \"world's most powerful gaming laptop\" and next-gen QD-OLED monitor",
+      "image": "https://assetsio.gnwcdn.com/hp-family-grey.png?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-03",
-      "summary": "2025 foi o pior ano já registrado para vendas de consoles Xbox no Reino Unido. Leia mais...",
+      "date": "2026-01-05",
+      "summary": "A HP é sempre um participante importante na CES em Las Vegas e anunciou uma série de laptops para jogos da marca HyperX e equipados com OLED com processadores Intel e AMD de última geração - incluindo um que afirma ser o \"laptop para jogos mais poderoso do mundo com total i...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/xbox-suffers-worst-year-on-record-for-console-sales-in-the-uk"
+      "url": "https://www.eurogamer.net/tech-ces-2026-hp-announces-the-worlds-most-powerful-gaming-laptop-and-next-gen-qd-oled-monitor"
     },
     {
-      "id": "https://www.eurogamer.net/silent-hill-2-remake-and-cronos-dev-has-one-word-for-you-remosdneulserorehsoovamceyerd",
-      "title": "Silent Hill 2 Remake e desenvolvedor de Cronos têm uma palavra para você – RemosdNeulSerorehsoOvamCeyerd",
-      "original_title": "Silent Hill 2 Remake and Cronos dev has one word for you - RemosdNeulSerorehsoOvamCeyerd",
-      "image": "https://assetsio.gnwcdn.com/CRONOS-THE-NEW-DAWN---KEY-ART_NO-LOGO.png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/the-last-of-us-season-three-to-recast-manny",
+      "title": "Terceira temporada de The Last of Us vai reformular Manny",
+      "original_title": "The Last of Us season three to recast Manny",
+      "image": "https://assetsio.gnwcdn.com/Manny-in-The-Last-of-Us-Part-2-next-to-an-image-of-Danny-Remirez-in-The-Last-of-Us-season-two.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-03",
-      "summary": "Silent Hill 2 Remake e Chronos: The New Dawn, desenvolvedor Blooper Team, iniciou o novo ano com uma palavra misteriosa: remosdneulserorehsoovamceyerd. Leia mais...",
+      "date": "2026-01-05",
+      "summary": "A próxima terceira temporada da adaptação para TV de The Last of Us da HBO contará com um novo ator interpretando o membro do WLF, Manny. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/silent-hill-2-remake-and-cronos-dev-has-one-word-for-you-remosdneulserorehsoovamceyerd"
+      "url": "https://www.eurogamer.net/the-last-of-us-season-three-to-recast-manny"
     },
     {
-      "id": "https://www.eurogamer.net/anthems-end-is-nearly-here",
-      "title": "O fim do Anthem está quase aqui - faltam apenas alguns dias para a EA desligar os servidores do malfadado jogo multijogador da BioWare",
-      "original_title": "Anthem's end is nearly here - only days remain before EA will switch off the servers to BioWare's ill-fated multiplayer game",
-      "image": "https://assetsio.gnwcdn.com/anthem_header_reveal.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/beloved-final-fantasy-artist-toshiyuki-itahana-leaves-square-enix",
+      "title": "O amado artista de Final Fantasy Toshiyuki Itahana deixa a Square Enix",
+      "original_title": "Beloved Final Fantasy artist Toshiyuki Itahana leaves Square Enix",
+      "image": "https://assetsio.gnwcdn.com/final-fantasy-9-remaster-now-on-switch-and-xbox-one-1550145783781.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-02",
-      "summary": "O tempo voa (como um traje Javelin): faltam apenas 10 dias para jogar o malfadado jogo multijogador da BioWare, Anthem, antes que os servidores sejam desligados, provavelmente para sempre. Leia mais...",
+      "date": "2026-01-05",
+      "summary": "Toshiyuki Itahana, artista de personagens da série Final Fantasy, incluindo jogos como Final Fantasy 9, Final Fantasy Crystal Chronicles e Final Fantasy 14: Dawntrail, deixou a Square Enix. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/anthems-end-is-nearly-here"
+      "url": "https://www.eurogamer.net/beloved-final-fantasy-artist-toshiyuki-itahana-leaves-square-enix"
+    },
+    {
+      "id": "https://www.eurogamer.net/alicia-vikanders-tomb-raider-film-from-2018-just-made-it-onto-netflixs-top-10-ahead-of-series-30th-anniversary-this-year",
+      "title": "O filme Tomb Raider de Alicia Vikander de 2018 acabou de chegar ao top 10 da Netflix, antes do 30º aniversário da série este ano",
+      "original_title": "Alicia Vikander's Tomb Raider film from 2018 just made it onto Netflix's top 10, ahead of series' 30th anniversary this year",
+      "image": "https://assetsio.gnwcdn.com/Alicia-Vikander-as-Lara-Croft-in-Tomb-Raider.-She-is-holding-a-gun-up-and-has-her-hair-in-a-long-braid.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "A vez de Alicia Vikander como Lara Croft na adaptação de Tomb Raider de 2018 está passando por um renascimento, ao que parece. O filme, que é amplamente baseado na linha do tempo reiniciada de Survivor, apareceu recentemente na lista dos 10 melhores filmes da Netflix, sete anos (gi...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/alicia-vikanders-tomb-raider-film-from-2018-just-made-it-onto-netflixs-top-10-ahead-of-series-30th-anniversary-this-year"
+    },
+    {
+      "id": "https://www.eurogamer.net/arc-raiders-12-million-sales",
+      "title": "Arc Raiders pode ter ultrapassado mais de 12 milhões de vendas vitalícias, estimam analistas",
+      "original_title": "Arc Raiders may have just surpassed over 12m lifetime sales, analyst estimates",
+      "image": "https://assetsio.gnwcdn.com/ARC-Raiders-_-Release-Date-Reveal-Trailer-1-25-screenshot-(1).png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "Arc Raiders pode ter ultrapassado 12 milhões de vendas no início de 2026, de acordo com analistas da indústria de videogames. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/arc-raiders-12-million-sales"
+    },
+    {
+      "id": "https://www.eurogamer.net/blood-of-the-dawnwalker-main-musical-theme-sounds-like-witcher-3",
+      "title": "O tema musical principal de The Blood of Dawnwalker parece muito com o de The Witcher 3 – e por um bom motivo",
+      "original_title": "The Blood of Dawnwalker's main musical theme sounds a lot like The Witcher 3's - and for good reason",
+      "image": "https://assetsio.gnwcdn.com/dawnwalker-art.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-05",
+      "summary": "A desenvolvedora polonesa Rebel Wolves revelou o tema musical principal de seu promissor RPG de fantasia sombria The Blood of Dawnwalker, e surpresa surpresa, parece muito com The Witcher 3. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/blood-of-the-dawnwalker-main-musical-theme-sounds-like-witcher-3"
     }
   ]
 }
