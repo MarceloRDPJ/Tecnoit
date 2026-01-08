@@ -39,6 +39,7 @@ const fileInput = document.getElementById('fileInput');
 const processButton = document.getElementById('processButton');
 const clearButton = document.getElementById('clearButton');
 const resultsArea = document.getElementById('resultsArea');
+const emptyState = document.getElementById('emptyState');
 const summaryDisplay = document.getElementById('summary');
 const downloadTemplateButton = document.getElementById('downloadTemplateButton');
 
@@ -54,6 +55,22 @@ const cardErrors = document.getElementById('cardErrors');
 const badgeErrors = document.getElementById('badgeErrors');
 const downloadErrors = document.getElementById('downloadErrors');
 
+// Info Toggle Logic
+const toggleInfoBtn = document.getElementById('toggleInfoBtn');
+const infoSection = document.getElementById('infoSection');
+const infoChevron = document.getElementById('infoChevron');
+
+if (toggleInfoBtn && infoSection) {
+    toggleInfoBtn.addEventListener('click', () => {
+        infoSection.classList.toggle('hidden');
+        if (infoSection.classList.contains('hidden')) {
+            infoChevron.style.transform = 'rotate(0deg)';
+        } else {
+            infoChevron.style.transform = 'rotate(180deg)';
+        }
+    });
+}
+
 let generatedObjectsScript = "";
 let generatedGroupScript = "";
 let generatedErrorsData = [];
@@ -63,7 +80,9 @@ if (clearButton) {
         dataInput.value = '';
         fileInput.value = '';
         dataInput.focus();
-        resultsArea.classList.add('hidden');
+        // Reset Result View
+        if (emptyState) emptyState.classList.remove('hidden');
+        if (summaryDisplay) summaryDisplay.innerHTML = '';
         cardObjects.classList.add('hidden');
         cardGroup.classList.add('hidden');
         cardErrors.classList.add('hidden');
@@ -81,7 +100,11 @@ if (fileInput) {
             reader.readAsText(file, 'iso-8859-1');
         }
         dataInput.focus();
-        resultsArea.classList.add('hidden');
+        // Reset view on new input? Maybe not necessary, but cleaner.
+        if (emptyState) emptyState.classList.remove('hidden');
+        cardObjects.classList.add('hidden');
+        cardGroup.classList.add('hidden');
+        cardErrors.classList.add('hidden');
     });
 }
 
@@ -97,10 +120,12 @@ if (processButton) {
         btnText.innerText = "PROCESSANDO...";
         processButton.disabled = true;
 
-        resultsArea.classList.add('hidden');
+        // Don't hide resultsArea, just reset cards
+        if (emptyState) emptyState.classList.remove('hidden');
         cardObjects.classList.add('hidden');
         cardGroup.classList.add('hidden');
         cardErrors.classList.add('hidden');
+        if (summaryDisplay) summaryDisplay.innerHTML = '';
 
         setTimeout(() => {
             processData(content);
@@ -244,7 +269,10 @@ function processData(content) {
         <div class="px-3 py-1 rounded bg-trustGreen/10 text-xs text-trustGreen border border-trustGreen/20">Válidos: <span class="font-bold">${numSucesso}</span></div>
         <div class="px-3 py-1 rounded bg-red-500/10 text-xs text-red-400 border border-red-500/20">Erros: <span class="font-bold">${numErros}</span></div>
     `;
-    resultsArea.classList.remove('hidden');
+
+    // Hide empty state and show results
+    if (emptyState) emptyState.classList.add('hidden');
+    // resultsArea is always visible now
 }
 
 const modal = document.getElementById('previewModal');

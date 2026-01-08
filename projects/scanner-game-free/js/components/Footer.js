@@ -14,7 +14,7 @@ window.Footer = () => (
                 </a>
             </div>
             <p className="text-sm text-slate-500 mb-2">
-                © 2025 RDP STUDIO. Todos os direitos reservados.
+                © 2026 RDP STUDIO. Todos os direitos reservados.
             </p>
             <p className="text-xs text-slate-600 font-mono">
                 Desenvolvido com <i className="fa-solid fa-heart text-red-900 animate-pulse"></i> por Marcelo Rodrigues
