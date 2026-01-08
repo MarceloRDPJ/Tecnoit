@@ -1,6 +1,6 @@
 // Footer Component
 window.Footer = () => (
-    <footer className="border-t border-slate-800/50 pt-12 pb-8 mt-auto bg-darkSlate">
+    <footer className="border-t border-slate-800/50 pt-12 pb-8 mt-auto">
         <div className="flex flex-col items-center text-center">
             <div className="flex justify-center gap-8 mb-8">
                 <a href="https://instagram.com/marcelo_rpj" target="_blank" aria-label="Instagram" className="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200">
