@@ -21,7 +21,7 @@ window.NavBar = ({ lastUpdate, status }) => {
         <nav className="sticky top-0 z-50 glass-panel border-b border-white/5">
             <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
                 <div className="flex items-center gap-6">
-                    <a href="../../index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
+                    <a href="../../hub/index.html" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
                         <div className="p-2 rounded-lg bg-white/5 border border-white/10 group-hover:border-vibrantCyan/50 transition-colors">
                             <Icon name="arrow-left" />
                         </div>
