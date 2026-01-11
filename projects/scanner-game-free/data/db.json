@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-10T12:40:38",
-  "display_date": "10/01/2026 12:40",
+  "last_updated": "2026-01-11T12:41:03",
+  "display_date": "11/01/2026 12:41",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "220ms",
+    "latency": "408ms",
     "current_games": [
       {
         "title": "Bloons TD 6",
@@ -47,7 +47,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-10",
+      "date": "2026-01-11",
       "summary": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
       "sources": [
         "Epic Games Store"
@@ -62,7 +62,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-10",
+      "date": "2026-01-11",
       "summary": "Disponível gratuitamente a partir de 15/01. Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
       "sources": [
         "Epic Games Store"
@@ -77,12 +77,87 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-10",
+      "date": "2026-01-11",
       "summary": "Disponível gratuitamente a partir de 15/01. Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d"
+    },
+    {
+      "id": "https://www.techpowerup.com/345060/this-week-in-gaming-week-3",
+      "title": "Esta semana em jogos (semana 3)",
+      "original_title": "This Week in Gaming (Week 3)",
+      "image": "https://tpucdn.com/img/HnQUE41QOaHyTEcT_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-11",
+      "summary": "Ainda levará mais uma semana até começarmos a ver alguns lançamentos de jogos maiores, o que significa que temos outra semana bastante lenta de novos jogos pela frente. O maior lançamento desta semana envolve você trabalhando como uma espécie de agente da TSA, exceto que você fará a triagem ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345060/this-week-in-gaming-week-3"
+    },
+    {
+      "id": "https://www.eurogamer.net/poppy-playtime-chapter-5-broken-things-gets-a-subtitle-and-a-pc-release-date-but-console-players-will-have-a-wait-a-little-longer",
+      "title": "Poppy Playtime: Capítulo 5 - Broken Things ganha legenda e data de lançamento para PC, mas jogadores de console terão que esperar um pouco mais",
+      "original_title": "Poppy Playtime: Chapter 5 - Broken Things gets a subtitle and a PC release date, but console players will have to wait a little longer",
+      "image": "https://assetsio.gnwcdn.com/unnamed-(2)_VCqbKI8.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-10",
+      "summary": "Surpresa! Finalmente temos uma data de lançamento e um subtítulo – “Broken Things” – para Poppy Playtime 5: 18 de fevereiro de 2026. O lançamento do console para o Capítulo 5 irá supostamente “seguir nos próximos meses”. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/poppy-playtime-chapter-5-broken-things-gets-a-subtitle-and-a-pc-release-date-but-console-players-will-have-a-wait-a-little-longer"
+    },
+    {
+      "id": "https://www.eurogamer.net/the-sims-wants-you-to-know-its-values-are-unchanged-despite-ea-sale",
+      "title": "The Sims quer que você saiba que seus valores “mantêm-se inalterados”, apesar da venda da EA",
+      "original_title": "The Sims wants you to know its values \"are unchanged\" despite EA sale",
+      "image": "https://assetsio.gnwcdn.com/sims-4-adventure-awaits.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-10",
+      "summary": "A EA enfatizou à sua comunidade que “os valores do The Sims permanecem inalterados” à medida que avançamos para 2026. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/the-sims-wants-you-to-know-its-values-are-unchanged-despite-ea-sale"
+    },
+    {
+      "id": "https://www.eurogamer.net/2026-will-be-one-of-the-biggest-years-in-the-history-of-co-op-ghosthunting-game-phasmophobia",
+      "title": "2026 será “um dos maiores anos da história” do jogo cooperativo de caça aos fantasmas Phasmophobia",
+      "original_title": "2026 will be \"one of the biggest years in the history\" of co-op ghosthunting game Phasmophobia",
+      "image": "https://assetsio.gnwcdn.com/phasmophobia_header_AdobeStock_291529108.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-10",
+      "summary": "A desenvolvedora de Phasmophobia, Kinetic Games, avalia que 2026 será “um dos maiores [anos] na história do jogo”, à medida que avança em direção ao lançamento completo do jogo. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/2026-will-be-one-of-the-biggest-years-in-the-history-of-co-op-ghosthunting-game-phasmophobia"
+    },
+    {
+      "id": "https://www.eurogamer.net/forza-horizon-5-ps5-port-tops-5-million-sales-securing-300m-in-additional-sales-for-xbox",
+      "title": "A versão PS5 do Forza Horizon 5 supera 5 milhões de vendas, garantindo US$ 300 milhões em vendas adicionais para Xbox",
+      "original_title": "Forza Horizon 5 PS5 port tops 5 million sales, securing $300m in additional sales for Xbox",
+      "image": "https://assetsio.gnwcdn.com/Forza-Horizon-5-PS5-Header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-10",
+      "summary": "Forza Horizon 5 supostamente vendeu mais de 5 milhões de cópias no PS5. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/forza-horizon-5-ps5-port-tops-5-million-sales-securing-300m-in-additional-sales-for-xbox"
     },
     {
       "id": "https://www.eurogamer.net/what-weve-been-playing-fishcakes",
@@ -98,6 +173,36 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/what-weve-been-playing-fishcakes"
+    },
+    {
+      "id": "https://www.techpowerup.com/345051/the-5-biggest-no-shows-of-ces-2026",
+      "title": "Os 5 maiores não comparecimentos da CES 2026",
+      "original_title": "The 5 Biggest No-Shows of CES 2026",
+      "image": "https://tpucdn.com/img/MVJY4U9VrIDcBN0f_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-10",
+      "summary": "À medida que a Consumer Electronics Show de 2026 chega ao fim, nossa equipe de campo tem trabalhado muito para manter os leitores atualizados. No entanto, as expectativas pré-CES eram altas para o lançamento de vários produtos, o que infelizmente não aconteceu. No artigo de hoje estamos classificando...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345051/the-5-biggest-no-shows-of-ces-2026"
+    },
+    {
+      "id": "https://www.techpowerup.com/345053/intel-core-ultra-x9-388h-panther-lake-igpu-doubles-amd-strix-point-performance-in-cyberpunk-2077",
+      "title": "Intel Core Ultra X9 388H “Panther Lake” iGPU dobra o desempenho do AMD “Strix Point” no Cyberpunk 2077",
+      "original_title": "Intel Core Ultra X9 388H \"Panther Lake\" iGPU Doubles AMD \"Strix Point\" Performance in Cyberpunk 2077",
+      "image": "https://tpucdn.com/img/utQluW8QjursxemP_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-10",
+      "summary": "Os chips “Panther Lake” da Intel, construídos no nó 18A, foram lançados na CES 2026, apresentando gráficos integrados Arc B390. Este lançamento mostra que a Intel está agora comprometida em oferecer o melhor desempenho de iGPU da categoria. Digital Foundry relatou impr...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345053/intel-core-ultra-x9-388h-panther-lake-igpu-doubles-amd-strix-point-performance-in-cyberpunk-2077"
     },
     {
       "id": "https://www.techpowerup.com/345046/zettlab-brings-its-d4-and-d6-ai-nas-to-ces-2026",
@@ -235,66 +340,6 @@
       "url": "https://www.eurogamer.net/22-year-old-eve-online-new-players-why"
     },
     {
-      "id": "https://www.eurogamer.net/despite-helping-create-it-fromsofts-hidetaka-miyazaki-reckons-game-of-thrones-author-george-r-r-martin-would-probably-be-quite-surprised-by-how-the-world-of-elden-ring-turned-out",
-      "title": "Apesar de ter ajudado a criá-lo, Hidetaka Miyazaki, da FromSoft, avalia que o autor de Game of Thrones, George R. R. Martin, provavelmente ficaria bastante surpreso com a forma como o mundo de Elden Ring acabou.",
-      "original_title": "Despite helping create it, FromSoft's Hidetaka Miyazaki reckons Game of Thrones author George R. R. Martin would probably be quite surprised by how the world of Elden Ring turned out",
-      "image": "https://assetsio.gnwcdn.com/Elden-Ring-screenshot-showing-a-knight-holding-up-a-torch-in-an-area-full-of-giant-gem-like-looking-rocks.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-09",
-      "summary": "O autor de Game of Thrones, George R. R. Martin, provavelmente ficaria bastante surpreso com a forma como o mundo de Elden Ring - para o qual ele ajudou o desenvolvedor FromSoftware a criar uma história de fundo - realmente acabou. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/despite-helping-create-it-fromsofts-hidetaka-miyazaki-reckons-game-of-thrones-author-george-r-r-martin-would-probably-be-quite-surprised-by-how-the-world-of-elden-ring-turned-out"
-    },
-    {
-      "id": "https://www.eurogamer.net/our-new-year-2026-gaming-resolutions-i-want-to-see-how-close-i-can-get-to-100-percenting-the-game-in-24-hours",
-      "title": "Nossas resoluções de jogos para o Ano Novo de 2026 - \"Quero ver o quão perto posso chegar de 100 por cento do jogo em 24 horas\"",
-      "original_title": "Our New Year 2026 gaming resolutions - \"I want to see how close I can get to 100 percenting the game in 24 hours\"",
-      "image": "https://assetsio.gnwcdn.com/2026-gaming-resolution.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-09",
-      "summary": "Janeiro é o mês que, onde moro, no sul da Inglaterra, todo mundo volta a ficar sério. Toda a parafernália do Natal – toda a alegria, alegria e iluminação colorida – é eliminada em favor de metas sérias para o ano que se inicia. ...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/our-new-year-2026-gaming-resolutions-i-want-to-see-how-close-i-can-get-to-100-percenting-the-game-in-24-hours"
-    },
-    {
-      "id": "https://www.eurogamer.net/cygames-ai-studio-formed",
-      "title": "Desenvolvedores do amado jogo de cavalos, Umamusume, confirmam planos para estabelecer um subestúdio focado em IA",
-      "original_title": "Developers of beloved horse game, Umamusume, confirm plans to establish AI-focused sub-studio",
-      "image": "https://assetsio.gnwcdn.com/umamusume-pretty-derby-running.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-09",
-      "summary": "Cygames, desenvolvedora japonesa de videogames responsável por uma variedade de jogos populares, incluindo Umamusume: Pretty Derby, anunciou sua intenção de criar uma empresa subsidiária focada em IA. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/cygames-ai-studio-formed"
-    },
-    {
-      "id": "https://www.eurogamer.net/xbox-rpg-avowed-is-finally-coming-to-playstation-5",
-      "title": "Um ano depois, o Xbox RPG Avowed está finalmente chegando ao PlayStation 5",
-      "original_title": "A year later, Xbox RPG Avowed is finally coming to PlayStation 5",
-      "image": "https://assetsio.gnwcdn.com/avowed-title-alternative.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-09",
-      "summary": "O antigo jogo de RPG exclusivo do Xbox, Avowed, está chegando ao PlayStation 5 e será lançado no primeiro aniversário do jogo: 17 de fevereiro de 2026 (nota: o lançamento original para PC e Xbox Series S/X aconteceu em 18 de fevereiro de 2025, mas é apenas um dia...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/xbox-rpg-avowed-is-finally-coming-to-playstation-5"
-    },
-    {
       "id": "https://www.techpowerup.com/345036/keychron-unveils-nape-pro-wireless-trackball-mouse-and-new-keyboards-at-ces-2026",
       "title": "Keychron lança mouse trackball sem fio Nape Pro e novos teclados na CES 2026",
       "original_title": "Keychron Unveils Nape Pro Wireless Trackball Mouse and New Keyboards at CES 2026",
@@ -338,51 +383,6 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/345033/thunderobot-launches-zero-air-gaming-laptops-with-intel-panther-lake-at-ces-2026"
-    },
-    {
-      "id": "https://www.techpowerup.com/345032/huion-at-ces-2026-shows-kamvas-gen-3-tablets-for-digital-artwork",
-      "title": "Huion na CES 2026 mostra tablets Kamvas Gen 3 para arte digital",
-      "original_title": "Huion at CES 2026 Shows Kamvas Gen 3 Tablets for Digital Artwork",
-      "image": "https://tpucdn.com/img/9raWSJczCZksQI9h_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-09",
-      "summary": "A Huion surpreendeu os artistas digitais na CES 2026 com Kamvas Pro 27 e Kamvas 22, construídos com base na tecnologia de exibição Gen 3 da Huion. A tela Kamvas “menor” de 22 polegadas vem com resolução de 2560x1440 em proporção de 16:9 com taxa de atualização de 90 Hz. O painel ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345032/huion-at-ces-2026-shows-kamvas-gen-3-tablets-for-digital-artwork"
-    },
-    {
-      "id": "https://www.techpowerup.com/345031/gpd-mini-laptops-and-handhelds-powered-by-amd-strix-halo-point-arrive-to-ces-2026",
-      "title": "Mini laptops e dispositivos portáteis GPD com tecnologia AMD \"Strix Halo/Point\" chegam à CES 2026",
-      "original_title": "GPD Mini Laptops and Handhelds Powered by AMD \"Strix Halo/Point\" Arrive to CES 2026",
-      "image": "https://tpucdn.com/img/CU8f7EnOKv65IfFF_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-09",
-      "summary": "GPD, um conhecido fabricante de mini PCs com formatos exclusivos, apresentou toda a sua linha de sistemas equipados com AMD \"Strix Halo\" e \"Strix Point\" na CES 2026. Liderando a linha está o GPD WIN 5, um dispositivo portátil com o AMD Ryzen AI M...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345031/gpd-mini-laptops-and-handhelds-powered-by-amd-strix-halo-point-arrive-to-ces-2026"
-    },
-    {
-      "id": "https://www.techpowerup.com/345029/tianma-introduces-27-inch-qhd-610-hz-oxide-display-at-ces-2026",
-      "title": "(PR) Tianma apresenta display de óxido QHD de 27 polegadas e 610 Hz na CES 2026",
-      "original_title": "(PR) Tianma Introduces 27-inch QHD 610 Hz Oxide Display at CES 2026",
-      "image": "https://tpucdn.com/img/r76v6S0VFYFzSbKs_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-09",
-      "summary": "A Tianma, fabricante líder global de monitores de tela plana, está lançando um monitor Oxide TFT-LCD de 27 polegadas com resolução QHD (2560×1440) e uma taxa de atualização de 610 Hz líder do setor para movimentos ultra suaves em jogos competitivos. Aproveitando o avanço...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345029/tianma-introduces-27-inch-qhd-610-hz-oxide-display-at-ces-2026"
     }
   ]
 }
