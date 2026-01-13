@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-01-12T12:48:30",
-  "display_date": "12/01/2026 12:48",
+  "last_updated": "2026-01-13T12:49:02",
+  "display_date": "13/01/2026 12:49",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "256ms",
+    "latency": "590ms",
     "current_games": [
       {
         "title": "Bloons TD 6",
-        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
         "image": "https://cdn1.epicgames.com/spt-assets/764b2d57552c436590f50318bd7587f9/bloons-td-6-offer-1jl6n.jpg",
         "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5",
         "price": "$13.99",
@@ -17,6 +17,15 @@
       }
     ],
     "upcoming_games": [
+      {
+        "title": "Ghostrunner 2",
+        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cibernética.",
+        "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
+        "url": "https://store.epicgames.com/p/ghostrunner-2",
+        "price": "$39.99",
+        "start_date": "2026-02-09T16:00:00.000Z",
+        "end_date": "2026-02-23T16:00:00.000Z"
+      },
       {
         "title": "Styx: Master of Shadows",
         "description": "Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
@@ -47,12 +56,27 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-12",
-      "summary": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+      "date": "2026-01-13",
+      "summary": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5"
+    },
+    {
+      "id": "https://store.epicgames.com/p/ghostrunner-2",
+      "title": "EM BREVE: Ghostrunner 2",
+      "original_title": "Ghostrunner 2",
+      "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2026-01-13",
+      "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cibernética.",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/ghostrunner-2"
     },
     {
       "id": "https://store.epicgames.com/p/0aa23c9aff4045d7b4b9b5ccc06b5c03",
@@ -62,7 +86,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-12",
+      "date": "2026-01-13",
       "summary": "Disponível gratuitamente a partir de 15/01. Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
       "sources": [
         "Epic Games Store"
@@ -77,7 +101,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-12",
+      "date": "2026-01-13",
       "summary": "Disponível gratuitamente a partir de 15/01. Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
       "sources": [
         "Epic Games Store"
@@ -85,304 +109,304 @@
       "url": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d"
     },
     {
-      "id": "https://www.eurogamer.net/palworld-is-getting-an-official-card-game-this-summer",
-      "title": "Palworld receberá um jogo de cartas oficial neste verão",
-      "original_title": "Palworld is getting an official card game this summer",
-      "image": "https://assetsio.gnwcdn.com/Promo-image-for-Palworld-Official-Card-Game-showing-a-number-of-Pals-around-a-playing-card.jfif?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/the-93-most-exciting-games-of-2026",
+      "title": "Os 93 jogos mais emocionantes de 2026",
+      "original_title": "The 93 most exciting games of 2026",
+      "image": "https://assetsio.gnwcdn.com/2026-best.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-13",
+      "summary": "O novo ano está chegando! Na verdade, isso já está acontecendo há algumas semanas, mas ouça: esta é uma lista muito longa, então você entenderá se demoramos um pouco para nos recompormos. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/the-93-most-exciting-games-of-2026"
+    },
+    {
+      "id": "https://www.eurogamer.net/arc-raiders-has-now-sold-more-than-12-million-copies-so-youre-all-getting-a-golden-pickaxe-as-a-reward",
+      "title": "Arc Raiders já vendeu mais de 12 milhões de cópias, então todos vocês receberão uma picareta dourada como recompensa",
+      "original_title": "Arc Raiders has now sold more than 12 million copies, so you’re all getting a golden pickaxe as a reward",
+      "image": "https://assetsio.gnwcdn.com/Arc-Raiders-pickaxe.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-13",
+      "summary": "Não importa como você se sinta sobre o uso de IA para vozes de NPCs por Arc Raiders, é difícil negar que o jogo foi um grande sucesso que “abriu” o subgênero de tiro de extração para jogadores casuais e até arpoou algumas baleias de serviço vivas mais antigas. Agora...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/arc-raiders-has-now-sold-more-than-12-million-copies-so-youre-all-getting-a-golden-pickaxe-as-a-reward"
+    },
+    {
+      "id": "https://www.eurogamer.net/fired-employees-at-gta-6-studio-rockstar-denied-interim-pay-by-uk-tribunal-union-highlights-firms-flimsy-grounds-for-defence",
+      "title": "Funcionários demitidos do estúdio GTA 6 Rockstar negaram pagamento provisório pelo tribunal do Reino Unido - \"fundos de defesa frágeis\" da empresa de destaque sindical",
+      "original_title": "Fired employees at GTA 6 studio Rockstar denied interim pay by UK tribunal - union highlight's firm's \"flimsy grounds for defence\"",
+      "image": "https://assetsio.gnwcdn.com/Raul-Bautista-in-GTA-6.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-13",
+      "summary": "A disputa entre o estúdio Rockstar de Grand Theft Auto 6 e mais de 30 de seus ex-desenvolvedores continua, com os afetados negados o pagamento provisório por um tribunal do Reino Unido. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/fired-employees-at-gta-6-studio-rockstar-denied-interim-pay-by-uk-tribunal-union-highlights-firms-flimsy-grounds-for-defence"
+    },
+    {
+      "id": "https://www.eurogamer.net/stellar-blade-director-goes-all-in-on-ai-as-south-koreas-games-industry-looks-to-compete-on-the-global-stage",
+      "title": "O diretor do Stellar Blade aposta tudo na IA enquanto a indústria de jogos da Coreia do Sul busca competir no cenário global",
+      "original_title": "Stellar Blade director goes all-in on AI as South Korea's games industry looks to compete on the global stage",
+      "image": "https://assetsio.gnwcdn.com/stellar-blade-2_ePmcRqr.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-13",
+      "summary": "Muito tem sido escrito sobre a forma como Stellar Blade lidou com sua personagem feminina principal, a guerra cultural que a cerca e os vários erros surpreendentes do desenvolvedor Shift Up à medida que o jogo chegava à consciência dominante. Independentemente disso, o PS5...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/stellar-blade-director-goes-all-in-on-ai-as-south-koreas-games-industry-looks-to-compete-on-the-global-stage"
+    },
+    {
+      "id": "https://www.eurogamer.net/resident-evil-requiem-showcase-coming-this-week-heres-when-to-watch",
+      "title": "Mostruário de Resident Evil Requiem chegando esta semana, é quando assistir",
+      "original_title": "Resident Evil Requiem showcase coming this week, here's when to watch",
+      "image": "https://assetsio.gnwcdn.com/Leon-in-Resident-Evil-Requiem.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-13",
+      "summary": "A Capcom anunciou um showcase de Resident Evil, que nos dará uma visão mais detalhada do que a equipe tem reservado para seu próximo lançamento, Requiem. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/resident-evil-requiem-showcase-coming-this-week-heres-when-to-watch"
+    },
+    {
+      "id": "https://www.techpowerup.com/345128/infortrend-launches-edge-ai-server-bringing-ai-to-the-edge-without-complex-setup",
+      "title": "(PR) Infortrend lança Edge AI Server, levando IA ao Edge sem configurações complexas",
+      "original_title": "(PR) Infortrend Launches Edge AI Server, Bringing AI to The Edge Without Complex Setup",
+      "image": "https://tpucdn.com/img/Gv1Gxo4OiHnUy9xy_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-13",
+      "summary": "A Infortrend Technology, Inc., fornecedora líder de armazenamento empresarial e soluções de IA, anunciou hoje o lançamento do servidor de IA de borda KS 3000U. A plataforma permite que organizações de médio porte e sites distribuídos implantem inferência de IA na borda com...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345128/infortrend-launches-edge-ai-server-bringing-ai-to-the-edge-without-complex-setup"
+    },
+    {
+      "id": "https://www.techpowerup.com/345127/be-quiet-announces-power-zone-2-1200w-and-pure-power-13-m-1200w-psus",
+      "title": "(PR) fique quieto! anuncia fontes de alimentação Power Zone 2 1200W e Pure Power 13 M 1200W",
+      "original_title": "(PR) be quiet! announces Power Zone 2 1200W and Pure Power 13 M 1200W PSUs",
+      "image": "https://tpucdn.com/img/JeSwTaOsZ52n8UxL_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-13",
+      "summary": "fique quieto!, o fabricante alemão de componentes e periféricos premium para PC, tem o orgulho de anunciar duas novas fontes de alimentação de alta potência: Power Zone 2 1200 W e Pure Power 13 M 1200 W. Essas adições à premiada linha de fontes de alimentação da empresa oferecem ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345127/be-quiet-announces-power-zone-2-1200w-and-pure-power-13-m-1200w-psus"
+    },
+    {
+      "id": "https://www.techpowerup.com/345125/thermalright-intros-frost-tower-140-dual-fin-stack-cpu-cooler",
+      "title": "Thermalright apresenta cooler para CPU Frost Tower 140 Dual Fin-Stack",
+      "original_title": "Thermalright Intros Frost Tower 140 Dual Fin-Stack CPU Cooler",
+      "image": "https://tpucdn.com/img/YMSDePlNP8pggbbu_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-13",
+      "summary": "A Thermalright apresentou hoje o Frost Tower 140, um cooler de CPU dual fin-stack premium projetado para oferecer desempenho de resfriamento equivalente a AIOs de 240 mm, mas com menos confusão. O cooler vem em três acabamentos - todos pretos (incluindo barbatanas pretas e h...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345125/thermalright-intros-frost-tower-140-dual-fin-stack-cpu-cooler"
+    },
+    {
+      "id": "https://www.techpowerup.com/345122/many-game-devs-reject-ai-in-gaming",
+      "title": "Muitos desenvolvedores de jogos rejeitam IA em jogos",
+      "original_title": "Many Game Devs Reject AI in Gaming",
+      "image": "https://tpucdn.com/img/cqqbBL2h8JnoA5Zl_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-13",
+      "summary": "Parece que a divisão entre os desenvolvedores de jogos que mergulham de cabeça na IA generativa e aqueles que se opõem a ela está crescendo novamente. Enquanto marcas como EA, Ubisoft e Xbox estão se inclinando ainda mais para a tecnologia, vários estúdios menores e independentes...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345122/many-game-devs-reject-ai-in-gaming"
+    },
+    {
+      "id": "https://www.techpowerup.com/345118/khadas-mind-pro-mini-pc-gets-intel-panther-lake-new-mind-graphics-2-egpu-packs-rtx-5060-ti",
+      "title": "Mini-PC Khadas Mind Pro recebe Intel Panther Lake, novos pacotes Mind Graphics 2 eGPU RTX 5060 Ti",
+      "original_title": "Khadas Mind Pro Mini-PC Gets Intel Panther Lake, New Mind Graphics 2 eGPU Packs RTX 5060 Ti",
+      "image": "https://tpucdn.com/img/INIum2BZYK7DVMHC_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-13",
+      "summary": "Em meio à enxurrada de notícias da CES 2026, Khadas, um popular fabricante de mini PCs, anunciou uma série de atualizações em sua linha de produtos Mind. A mais emocionante de todas as atualizações é o novo mini PC Khadas Mind Pro com Intel Panther Lake e o novo Mind Graph...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345118/khadas-mind-pro-mini-pc-gets-intel-panther-lake-new-mind-graphics-2-egpu-packs-rtx-5060-ti"
+    },
+    {
+      "id": "https://www.eurogamer.net/long-awaited-minecraft-a-like-hytale-has-already-sold-enough-to-fund-the-next-two-years-of-development-and-its-not-even-out-yet",
+      "title": "Hytale, semelhante ao Minecraft, já vendeu o suficiente para financiar os próximos dois anos de desenvolvimento e ainda nem foi lançado",
+      "original_title": "Minecraft-like Hytale has already sold enough to fund the next two years of development, and it's not even out yet",
+      "image": "https://assetsio.gnwcdn.com/hytale-layered-2.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
       "date": "2026-01-12",
-      "summary": "Pocketpair anunciou Palworld Official Card Game, que é, sim, um jogo de cartas oficial baseado no jogo de sobrevivência de captura de monstros do desenvolvedor, Palworld. Leia mais...",
+      "summary": "Já sabíamos que Hytale provavelmente teria um grande lançamento de acesso antecipado esta semana, mas o desenvolvedor Hypixel Studios revelou agora que o tão esperado Minecraft vendeu tantas cópias antes de seu lançamento que ganhou dinheiro suficiente para financiar o novo...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/palworld-is-getting-an-official-card-game-this-summer"
+      "url": "https://www.eurogamer.net/long-awaited-minecraft-a-like-hytale-has-already-sold-enough-to-fund-the-next-two-years-of-development-and-its-not-even-out-yet"
     },
     {
-      "id": "https://www.eurogamer.net/arc-raiders-expeditions-one-in-ten",
-      "title": "À medida que cerca de um em cada dez jogadores do Arc Raiders redefinem seus personagens, a Embark Studios está procurando novas maneiras de incentivar expedições",
-      "original_title": "As roughly one-in-ten Arc Raiders players reset their characters, Embark Studios is looking for new ways to incentivise expeditions",
-      "image": "https://assetsio.gnwcdn.com/Pre-Order-Trailer-_-ARC-Raiders-1-0-screenshot-(1).png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/masters-of-albion-is-a-culmination-of-peter-molyneuxs-lifes-work-and-its-coming-to-pc-this-april",
+      "title": "Masters of Albion é o “culminar” do trabalho da vida de Peter Molyneux e chegará ao PC em abril",
+      "original_title": "Masters of Albion is a \"culmination\" of Peter Molyneux's life's work, and it's coming to PC this April",
+      "image": "https://assetsio.gnwcdn.com/a-hand-with-flames-coming-from-it-in-Masters-of-Albion.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
       "date": "2026-01-12",
-      "summary": "Com a primeira janela de expedição para Arc Raiders concluída em dezembro, a Embark Studios revelou que pouco mais de um milhão de jogadores optaram por redefinir seus personagens em troca de diversas recompensas. Tendo vendido mais de 12 milhões de cópias de acordo com analista...",
+      "summary": "Masters of Albion de Peter Molyneux - que o criador do jogo disse ser o \"culminância\" do trabalho de sua vida - ganhou uma data de lançamento. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/arc-raiders-expeditions-one-in-ten"
+      "url": "https://www.eurogamer.net/masters-of-albion-is-a-culmination-of-peter-molyneuxs-lifes-work-and-its-coming-to-pc-this-april"
     },
     {
-      "id": "https://www.eurogamer.net/fond-anthem-farewells-begin-as-biowares-destiny-like-game-reaches-last-day-of-operation",
-      "title": "“Um triste final para uma história triste” – as despedidas carinhosas de Anthem começam quando o jogo estilo Destiny da BioWare chega ao último dia de operação",
-      "original_title": "\"A sad end to a sad story\" - fond Anthem farewells begin as BioWare's Destiny-like game reaches last day of operation",
-      "image": "https://assetsio.gnwcdn.com/anthem_1_11.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/is-the-switch-2-getting-more-expensive-soon-nintendo-says-theres-no-immediate-impact-but-will-keep-an-eye-on-volatile-memory-market",
+      "title": "O Switch 2 ficará mais caro em breve? Nintendo diz que não há “impacto imediato”, mas ficará de olho no volátil mercado de memórias",
+      "original_title": "Is the Switch 2 getting more expensive soon? Nintendo says there’s no \"immediate impact\", but will keep an eye on volatile memory market",
+      "image": "https://assetsio.gnwcdn.com/switch-2-stock-eurogamer.png?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
       "date": "2026-01-12",
-      "summary": "Em algum momento hoje, a EA desligará os servidores Anthem, tornando o jogo de tiro multijogador online da BioWare inacessível e impossível de jogar, provavelmente para sempre. E despedidas carinhosas já começaram a chegar. Leia mais...",
+      "summary": "Os jogos não conseguem escapar da sombra da incerteza econômica global, e as coisas vão piorar após os aumentos de preços em 2025 devido à escassez de memória causada pela corrida do ouro da IA ​​e dos data centers (que não parece estar produzindo muito ouro apenas...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/fond-anthem-farewells-begin-as-biowares-destiny-like-game-reaches-last-day-of-operation"
+      "url": "https://www.eurogamer.net/is-the-switch-2-getting-more-expensive-soon-nintendo-says-theres-no-immediate-impact-but-will-keep-an-eye-on-volatile-memory-market"
     },
     {
-      "id": "https://www.eurogamer.net/why-dont-we-see-male-v-in-post-launch-cyberpunk-2077-marketing-the-cyberpunk-2-creative-director-has-a-very-simple-explanation",
-      "title": "Por que não vemos V masculino no marketing pós-lançamento do Cyberpunk 2077? O diretor criativo do Cyberpunk 2 tem uma explicação muito simples",
-      "original_title": "Why don't we see male V in post-launch Cyberpunk 2077 marketing? The Cyberpunk 2 creative director has a very simple explanation",
-      "image": "https://assetsio.gnwcdn.com/Male-V-cyberpunk.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/steam-blasts-past-42-million-concurrent-users-as-its-sustained-growth-continues",
+      "title": "Steam ultrapassa 42 milhões de usuários simultâneos à medida que seu crescimento sustentado continua",
+      "original_title": "Steam blasts past 42 million concurrent users as its sustained growth continues",
+      "image": "https://assetsio.gnwcdn.com/steam-games.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
       "date": "2026-01-12",
-      "summary": "Quando Cyberpunk 2077 foi relançado com sua atualização 2.0 e a expansão Phantom Liberty, a V feminina assumiu como a cara do jogo. Mais de dois anos depois, e com o RPG ainda vendendo bem e atraindo novos jogadores, isso não mudou...",
+      "summary": "Muitos de vocês estão jogando duro, ao que parece. O Steam está em uma trajetória de crescimento constante há anos, com a pandemia de Covid sozinha adicionando cinco milhões de usuários únicos apenas em 2020. Em 1º de janeiro, a plataforma da Valve ultrapassou a barreira dos 42 milhões, estabelecendo...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/why-dont-we-see-male-v-in-post-launch-cyberpunk-2077-marketing-the-cyberpunk-2-creative-director-has-a-very-simple-explanation"
+      "url": "https://www.eurogamer.net/steam-blasts-past-42-million-concurrent-users-as-its-sustained-growth-continues"
     },
     {
-      "id": "https://www.eurogamer.net/the-division-definitive-edition",
-      "title": "The Division parece receber o tratamento de “edição definitiva” em breve, mas ainda não sabemos o que isso significa",
-      "original_title": "The Division appears to be getting the \"definitive edition\" treatment soon, but we don’t know yet quite what that means",
-      "image": "https://assetsio.gnwcdn.com/TheDivision_prZlgEz.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/lego-pokemon-unveiled-but-catching-em-all-will-cost-you",
+      "title": "Lego Pokémon revelado, mas capturá-los vai custar caro",
+      "original_title": "Lego Pokémon unveiled, but catching 'em all will cost you",
+      "image": "https://assetsio.gnwcdn.com/72152_WEB_SEC03_NOBG.png?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
       "date": "2026-01-12",
-      "summary": "The Division 2 de Tom Clancy ainda está avançando, e com um ambicioso roteiro para 2026, enquanto o desenvolvimento do terceiro jogo continua. Mais chocante, porém, é a aparente provocação de que The Division 1 está retornando para seu 10º aniversário...",
+      "summary": "A Lego revelou seus conjuntos Pokémon anunciados anteriormente, que incluem Pikachu e Poké Ball, Venusaur, Charizard, Blastoise e Eevee. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/the-division-definitive-edition"
+      "url": "https://www.eurogamer.net/lego-pokemon-unveiled-but-catching-em-all-will-cost-you"
     },
     {
-      "id": "https://www.eurogamer.net/hytale-launch-million-players",
-      "title": "Após o cancelamento pela Riot, os desenvolvedores da Hytale antecipam mais de um milhão de jogadores somente no acesso antecipado",
-      "original_title": "Following its cancellation by Riot, Hytale devs anticipate over a million players in Early Access alone",
-      "image": "https://assetsio.gnwcdn.com/Hytale_System_Requirements_3.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-12",
-      "summary": "O fundador da Hytale, Simon Collins-Laflamme, revelou que a equipe espera mais de um milhão de jogadores no dia do lançamento do acesso antecipado do jogo, em 13 de janeiro. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/hytale-launch-million-players"
-    },
-    {
-      "id": "https://www.eurogamer.net/larian-wanted-a-baldurs-gate-3-switch-2-release-but-that-decision-apparently-wasnt-in-the-studios-hands",
-      "title": "Larian queria o lançamento do Baldur’s Gate 3 Switch 2, mas essa decisão aparentemente não estava nas mãos do estúdio",
-      "original_title": "Larian wanted a Baldur's Gate 3 Switch 2 release, but that decision apparently wasn't in the studio's hands",
-      "image": "https://assetsio.gnwcdn.com/Baldur's-Gate-3-characters-including-Karlach-and-Astarian-holding-up-torches.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-12",
-      "summary": "Não foi escolha de Larian não lançar Baldur's Gate 3 no Switch 2. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/larian-wanted-a-baldurs-gate-3-switch-2-release-but-that-decision-apparently-wasnt-in-the-studios-hands"
-    },
-    {
-      "id": "https://www.techpowerup.com/345085/ruix-gaming-at-2026-ces-new-cases-and-psus",
-      "title": "RUIX Gaming na CES 2026: novos cases e PSUs",
-      "original_title": "RUIX Gaming at 2026 CES: New Cases and PSUs",
-      "image": "https://tpucdn.com/img/OIxoglO8ERW5176k_thm.jpg",
+      "id": "https://www.techpowerup.com/345115/atk-gear-teases-rs7-air-new-affordable-he-keyboard-potentially-coming-soon",
+      "title": "ATK Gear provoca RS7 Air: novo teclado HE acessível potencialmente disponível em breve",
+      "original_title": "ATK Gear Teases RS7 Air: New Affordable HE Keyboard Potentially Coming Soon",
+      "image": "https://tpucdn.com/img/7TXKLdesYkjDZ42H_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-12",
-      "summary": "RUIX Gaming fez sua estreia na CES este ano, com uma nova linha de gabinetes, fontes de alimentação e produtos de refrigeração. Para começar, temos a nova série RT de fontes de alimentação ATX 3.1 premium da empresa. Eles vêm em variantes de 750 W, 850 W, 1000 W e 1200 W, embora...",
+      "summary": "ATK Gear é mais conhecido por seus mouses leves para jogos, mas a marca de esportes eletrônicos também tem uma linha completa de teclados para jogos com efeito Hall. Agora, de acordo com um teaser do X, parece que um de seus atuais teclados 75% HE, o RS7 V2, está ficando...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345085/ruix-gaming-at-2026-ces-new-cases-and-psus"
+      "url": "https://www.techpowerup.com/345115/atk-gear-teases-rs7-air-new-affordable-he-keyboard-potentially-coming-soon"
     },
     {
-      "id": "https://www.techpowerup.com/345084/hkc-showed-off-5k-dimming-zone-rgb-miniled-tech-at-ces",
-      "title": "HKC exibiu tecnologia MiniLED RGB de zona de dimerização 5K na CES",
-      "original_title": "HKC Showed Off 5K Dimming Zone RGB MiniLED Tech at CES",
-      "image": "https://tpucdn.com/img/HhdzGKtL92oH30zi_thm.jpg",
+      "id": "https://www.techpowerup.com/345114/tcomas-shows-aio-coolers-with-different-design-approaches-at-ces-2026",
+      "title": "TCOMAS mostra coolers AIO com diferentes abordagens de design na CES 2026",
+      "original_title": "TCOMAS Shows AIO Coolers with Different Design Approaches at CES 2026",
+      "image": "https://tpucdn.com/img/5jal5fjrE53NbkdT_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-12",
-      "summary": "O fabricante de painéis de exibição HKC exibiu sua mais recente tecnologia RGB MiniLED durante a CES e a empresa está trabalhando em seu próprio driver de vídeo para esta tecnologia de exibição emergente. O chip é chamado simplesmente de HV9901, mas promete ser capaz de d...",
+      "summary": "A TCOMAS apresentou na CES dois designs de coolers para CPU AIO muito diferentes, voltados para usuários em extremos opostos do espectro estético. A série WG900 foi desenvolvida para entusiastas de LCD, enquanto o WA300 oferece um design de bloco de bomba compacto e sem display. Primeiro, ...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345084/hkc-showed-off-5k-dimming-zone-rgb-miniled-tech-at-ces"
+      "url": "https://www.techpowerup.com/345114/tcomas-shows-aio-coolers-with-different-design-approaches-at-ces-2026"
     },
     {
-      "id": "https://www.techpowerup.com/345083/aula-unveils-keyboard-with-large-integrated-touchscreen-replacing-the-num-pad",
-      "title": "AULA lança teclado com grande tela sensível ao toque integrada, substituindo o teclado NUM",
-      "original_title": "AULA Unveils Keyboard with Large Integrated Touchscreen Replacing the NUM Pad",
-      "image": "https://tpucdn.com/img/WFsk70FQLTnJUhqk_thm.jpg",
+      "id": "https://www.techpowerup.com/345113/amd-ryzen-ai-pro-400-am5-desktop-apu-shown-during-lenovo-presentation",
+      "title": "APU de desktop AMD Ryzen AI PRO 400 AM5 mostrada durante apresentação da Lenovo",
+      "original_title": "AMD Ryzen AI PRO 400 AM5 Desktop APU Shown During Lenovo Presentation",
+      "image": "https://tpucdn.com/img/JwjMxhdtcrftsB5h_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-12",
-      "summary": "AULA na 2026 International CES apresentou seus mais recentes teclados para jogos. Fomos recebidos pela linha de teclados sem fio F87PRO V2 da empresa em vários esquemas de cores, que apresentam interruptores mecânicos gaxetados. Há também o supercomp AG60...",
+      "summary": "No início da semana passada, a AMD informou à imprensa sobre uma nova série Ryzen AI 400 chegando aos desktops em um futuro próximo. Na época, os detalhes e o material visual eram escassos - fundamentalmente, o silício monolítico \"Gorgon Point\" de 4 nm parece estar liberando seu...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345083/aula-unveils-keyboard-with-large-integrated-touchscreen-replacing-the-num-pad"
+      "url": "https://www.techpowerup.com/345113/amd-ryzen-ai-pro-400-am5-desktop-apu-shown-during-lenovo-presentation"
     },
     {
-      "id": "https://www.techpowerup.com/345082/modue-is-an-innovative-stackable-input-device-for-streamers-and-content-creators",
-      "title": "Modue é um dispositivo de entrada inovador e empilhável para streamers e criadores de conteúdo",
-      "original_title": "Modue is an Innovative, Stackable Input Device for Streamers and Content Creators",
-      "image": "https://tpucdn.com/img/tR2o0Lz36vhZMjbd_thm.jpg",
+      "id": "https://www.techpowerup.com/345112/gamblers-table-out-now-on-pc-attracts-9000-concurrent-players-on-launch-day",
+      "title": "(PR) Gamblers Table Out Now no PC - atrai mais de 9.000 jogadores simultâneos no dia do lançamento",
+      "original_title": "(PR) Gamblers Table Out Now on PC - Attracts 9000+ Concurrent Players on Launch Day",
+      "image": "https://tpucdn.com/img/rj5eJ6r4SUfcpXex_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-12",
-      "summary": "Modue é um novo dispositivo de entrada do tipo stream deck que encontramos na 2026 International CES. Como o próprio nome sugere, é um dispositivo de entrada modular que consiste em vários módulos de entrada digitais, analógicos e touchscreen que você conecta na cintura usando...",
+      "summary": "A Mesa dos Jogadores acaba de ser lançada! Estamos muito gratos a todos os comentários, sugestões, relatórios de bugs, ideias, testadores e jogadores de demonstração que recebemos neste ano emocionante. Caso você já tenha jogado a demo, você pode importar seu progresso,...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345082/modue-is-an-innovative-stackable-input-device-for-streamers-and-content-creators"
+      "url": "https://www.techpowerup.com/345112/gamblers-table-out-now-on-pc-attracts-9000-concurrent-players-on-launch-day"
     },
     {
-      "id": "https://www.techpowerup.com/345081/redragon-at-the-2026-international-ces-new-keyboards-and-headsets",
-      "title": "REDRAGON na CES Internacional de 2026: Novos teclados e fones de ouvido",
-      "original_title": "REDRAGON at the 2026 International CES: New Keyboards and Headsets",
-      "image": "https://tpucdn.com/img/MvXdB1xsBVXK3vou_thm.jpg",
+      "id": "https://www.techpowerup.com/345111/amd-ryzen-9-pro-9965x3d-model-leaked-document-describes-16-core-cpu-170-w-tdp",
+      "title": "Modelo AMD “Ryzen 9 Pro 9965X3D” vazado, documento descreve CPU de 16 núcleos e TDP de 170 W",
+      "original_title": "AMD \"Ryzen 9 Pro 9965X3D\" Model Leaked, Document Describes 16-core CPU & 170 W TDP",
+      "image": "https://tpucdn.com/img/T1xqDQ0kWNQ2KauM_thm.jpg",
       "source_count": 1,
       "reliability": "High",
-      "category": "Hardware",
+      "category": "Rumor",
       "date": "2026-01-12",
-      "summary": "REDRAGON (pronuncia-se Red Dragon) trouxe uma excelente seleção de novos teclados, conjuntos de teclas e fones de ouvido para jogos para a 2026 International CES. Para começar, temos o REDRAGON Flekact Pro, um teclado compacto de formato 65% com três m...",
+      "summary": "Os detetives de hardware de PC ainda estão procurando online por mais evidências do processador de jogos para desktop Ryzen 9 9950X3D2 da AMD, ainda não lançado, mas a última descoberta mudou o foco para a linha de produtos “Ryzen PRO” da Team Red na plataforma AM5. Orelha...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345081/redragon-at-the-2026-international-ces-new-keyboards-and-headsets"
-    },
-    {
-      "id": "https://www.techpowerup.com/345080/qnap-launches-the-qxg-100g2sf-bcm-dual-port-100gbe-network-expansion-card",
-      "title": "(PR) QNAP lança placa de expansão de rede 100GbE de porta dupla QXG-100G2SF-BCM",
-      "original_title": "(PR) QNAP Launches the QXG-100G2SF-BCM, Dual-port 100GbE Network Expansion Card",
-      "image": "https://tpucdn.com/img/ROyc8WhLpxFswH1i_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-12",
-      "summary": "(QNAP), uma inovadora líder em soluções de computação, rede e armazenamento, apresentou hoje a QXG-100G2SF-BCM, uma placa de expansão de rede 100GbE de porta dupla. Apresentando PCIe Gen 4.0 x16, taxa de transferência total de 200 Gbps e tecnologia de descarregamento avançada...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345080/qnap-launches-the-qxg-100g2sf-bcm-dual-port-100gbe-network-expansion-card"
-    },
-    {
-      "id": "https://www.techpowerup.com/345078/noctua-delays-pulsar-mouse-and-seasonic-psu-by-three-months",
-      "title": "Noctua atrasa Pulsar Mouse e Seasonic PSU em três meses",
-      "original_title": "Noctua Delays Pulsar Mouse and Seasonic PSU by Three Months",
-      "image": "https://tpucdn.com/img/6LWfw9W4zTCmhdxm_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-12",
-      "summary": "O roteiro de janeiro de 2026 da Noctua mantém a mesma linha de produtos, mas muitas janelas de lançamento foram movidas no final do ano. O gabinete Antec Flux Pro Noctua Edition permanece programado para o primeiro trimestre, e os refrigeradores de água independentes ainda estão listados para o segundo trimestre. Além daqueles ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345078/noctua-delays-pulsar-mouse-and-seasonic-psu-by-three-months"
-    },
-    {
-      "id": "https://www.eurogamer.net/awesome-games-done-quick-2026-closes-with-18m-raised-for-prevent-cancer-foundation-and-a-70-player-relay-in-super-mario-64-replay",
-      "title": "Awesome Games Done Quick 2026 fecha com £ 1,8 milhões arrecadados para a Prevent Cancer Foundation e um revezamento de 70 jogadores em Super Mario 64 Replay",
-      "original_title": "Awesome Games Done Quick 2026 closes with £1.8m raised for Prevent Cancer Foundation and a 70-player relay in Super Mario 64 Replay",
-      "image": "https://assetsio.gnwcdn.com/Mario-gives-the-peace-sign-in-Super-Mario-64.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-11",
-      "summary": "Awesome Games Done Quick 2026 arrecadou US$ 2,44 milhões (£ 1,8 milhões) para sua causa mais recente, a Prevent Cancer Foundation. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/awesome-games-done-quick-2026-closes-with-18m-raised-for-prevent-cancer-foundation-and-a-70-player-relay-in-super-mario-64-replay"
-    },
-    {
-      "id": "https://www.eurogamer.net/gamestop-reportedly-shuts-hundreds-of-us-stores-as-ceo-strives-for-35bn-pay-packet",
-      "title": "A GameStop supostamente fecha centenas de lojas nos EUA enquanto o CEO se esforça por um pacote de pagamento de US$ 35 bilhões",
-      "original_title": "GameStop reportedly shuts hundreds of US stores as CEO strives for $35bn pay packet",
-      "image": "https://assetsio.gnwcdn.com/gamestop-security-breach-puts-customers-credit-cards-at-risk-149705322511.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-11",
-      "summary": "A varejista de jogos norte-americana GameStop supostamente fechou centenas de lojas. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/gamestop-reportedly-shuts-hundreds-of-us-stores-as-ceo-strives-for-35bn-pay-packet"
-    },
-    {
-      "id": "https://www.eurogamer.net/former-assassins-creed-director-says-the-future-of-game-design-lies-in-smaller-teams",
-      "title": "O ex-diretor de Assassin’s Creed diz que o futuro do design de jogos “está em equipes menores”",
-      "original_title": "Former Assassin's Creed director says the future of game design \"lies in smaller teams\"",
-      "image": "https://assetsio.gnwcdn.com/2076177-3356774701.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-11",
-      "summary": "O ex-diretor de Assassin's Creed, Alexandre Amancio, compartilhou seus pensamentos sobre o desenvolvimento de AAA, sugerindo que precisamos de \"equipes menores\" e admitindo que desenvolvedores de grande orçamento não podem \"resolver um problema jogando pessoas nele\". Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/former-assassins-creed-director-says-the-future-of-game-design-lies-in-smaller-teams"
-    },
-    {
-      "id": "https://www.techpowerup.com/345062/power-supplies-and-cpu-coolers-are-next-for-price-hikes-6-10-increase-expected",
-      "title": "Fontes de alimentação e coolers de CPU são os próximos a aumentar os preços, aumento esperado de 6 a 10%",
-      "original_title": "Power Supplies and CPU Coolers are Next For Price Hikes, 6-10% Increase Expected",
-      "image": "https://tpucdn.com/img/07vrxSyMDv5qMATB_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-11",
-      "summary": "Com o ciclo de DRAM e GPUs se tornando mais caro apenas começando, parece que o próximo passo na tendência de aumento de preços são as peças mais básicas de construção de PC, como fontes de alimentação e coolers de CPU. De acordo com um relatório do VideoCardz, Guangzhou Xinhongzhe...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345062/power-supplies-and-cpu-coolers-are-next-for-price-hikes-6-10-increase-expected"
-    },
-    {
-      "id": "https://www.techpowerup.com/345060/this-week-in-gaming-week-3",
-      "title": "Esta semana em jogos (semana 3)",
-      "original_title": "This Week in Gaming (Week 3)",
-      "image": "https://tpucdn.com/img/HnQUE41QOaHyTEcT_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-11",
-      "summary": "Ainda levará mais uma semana até começarmos a ver alguns lançamentos de jogos maiores, o que significa que temos outra semana bastante lenta de novos jogos pela frente. O maior lançamento desta semana envolve você trabalhando como uma espécie de agente da TSA, exceto que você fará a triagem ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345060/this-week-in-gaming-week-3"
-    },
-    {
-      "id": "https://www.techpowerup.com/345051/the-5-biggest-no-shows-of-ces-2026",
-      "title": "Os 5 maiores não comparecimentos da CES 2026",
-      "original_title": "The 5 Biggest No-Shows of CES 2026",
-      "image": "https://tpucdn.com/img/MVJY4U9VrIDcBN0f_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-10",
-      "summary": "À medida que a Consumer Electronics Show de 2026 chega ao fim, nossa equipe de campo tem trabalhado muito para manter os leitores atualizados. No entanto, as expectativas pré-CES eram altas para o lançamento de vários produtos, o que infelizmente não aconteceu. No artigo de hoje estamos classificando...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345051/the-5-biggest-no-shows-of-ces-2026"
+      "url": "https://www.techpowerup.com/345111/amd-ryzen-9-pro-9965x3d-model-leaked-document-describes-16-core-cpu-170-w-tdp"
     }
   ]
 }
