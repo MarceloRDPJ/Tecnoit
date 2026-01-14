@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Interativo | RDP Studio</title>
+    <meta name="description" content="Dashboard Financeiro Interativo da RDP Studio. Business Intelligence client-side para análise de dados e geração de relatórios PDF.">
+
+    <!-- RDP Studio Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <!-- Bibliotecas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#1E3A5F',
+                        techGray: '#2D3748',
+                        vibrantCyan: '#00B4D8',
+                        energeticAmber: '#F59E0B',
+                        trustGreen: '#10B981',
+                        darkSlate: '#020617',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617;
+            background-image: radial-gradient(circle at 15% 50%, rgba(30, 58, 95, 0.15), transparent 25%), radial-gradient(circle at 85% 30%, rgba(0, 180, 216, 0.1), transparent 25%);
+            background-attachment: fixed;
+            color: #F8FAFC;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .upload-area {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .upload-area:hover {
+            border-color: #00B4D8;
+            background: rgba(30, 41, 59, 0.6);
+            transform: scale(1.01);
+        }
+
+        .nav-link { color: #94a3b8; transition: color 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #fff; }
+
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #2D3748; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4A5568; }
+
+        /* Input Styles for Dark Mode */
+        input[type="date"], input[type="text"], select {
+            color-scheme: dark;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-vibrantCyan selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="flex justify-between items-center px-6 py-6 border-b border-slate-800/50 relative z-50">
+        <a href="../../hub/index.html" class="flex items-center gap-4 group">
+            <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center p-1">
+                 <img src="../../assets/images/branding/logo.png" alt="Logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform">
+            </div>
+            <h1 class="text-xl font-bold tracking-tight text-white">RDP <span class="text-vibrantCyan font-light">STUDIO</span></h1>
+        </a>
+
+        <!-- Back Button & Nav -->
+        <div class="flex items-center gap-4">
+             <a href="../../hub/projetos.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all text-sm font-medium border border-white/5">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar ao Hub
+            </a>
+            <!-- Mobile Menu Toggle (Simplified) -->
+            <button onclick="window.location.href='../../hub/projetos.html'" class="md:hidden text-slate-300 p-2">
+                <i class="fa-solid fa-arrow-left text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow p-6 w-full max-w-7xl mx-auto flex flex-col">
+
+        <!-- TELA DE UPLOAD -->
+        <div id="uploadScreen" class="py-12 animate-fade-in-up flex-grow flex flex-col justify-center">
+            <div class="max-w-3xl mx-auto text-center w-full">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-vibrantCyan/10 text-vibrantCyan mb-6 border border-vibrantCyan/20">
+                    <i class="fa-solid fa-chart-pie text-2xl"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Relatório <span class="text-vibrantCyan">Interativo</span></h2>
+                <p class="text-slate-400 mb-12 text-lg max-w-2xl mx-auto">
+                    Transforme planilhas estáticas em inteligência de negócios. Importe seus dados financeiros para gerar dashboards executivos em segundos.
+                </p>
+
+                <div id="dropZone" class="upload-area p-16 cursor-pointer group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-vibrantCyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    <div class="relative z-10">
+                        <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300 border border-slate-700 group-hover:border-vibrantCyan/50 shadow-lg">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-slate-400 group-hover:text-vibrantCyan transition-colors"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white mb-2 group-hover:text-vibrantCyan transition-colors">Arraste seu arquivo Excel ou CSV</h3>
+                        <p class="text-sm text-slate-500 mb-6">Processamento local seguro (Offline Mode)</p>
+
+                        <div class="inline-block px-4 py-2 rounded-full bg-slate-800 text-xs text-slate-400 border border-slate-700">
+                            Suporta: .xlsx, .xls, .csv
+                        </div>
+                    </div>
+
+                    <input type="file" id="fileInput" class="hidden" accept=".csv, .xlsx, .xls">
+
+                    <div id="loading" class="hidden absolute inset-0 bg-slate-900/90 backdrop-blur-sm flex items-center justify-center z-20">
+                        <div class="flex flex-col items-center gap-4">
+                            <i class="fas fa-circle-notch fa-spin text-vibrantCyan text-3xl"></i>
+                            <span class="text-white font-mono text-sm animate-pulse">Processando dados...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-center gap-8 text-xs text-slate-600 font-mono">
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> 100% Client-Side</span>
+                    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt"></i> Zero Latency</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- DASHBOARD (Conteúdo) -->
+        <div id="dashboardContent" class="hidden space-y-8 animate-fade-in-up">
+
+            <!-- Controle e Filtros -->
+            <div class="glass-card p-6 rounded-2xl border border-slate-700/50">
+                <div class="flex flex-col lg:flex-row justify-between items-end lg:items-center gap-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+                            <i class="fa-solid fa-chart-line text-vibrantCyan"></i>
+                            Visão Financeira
+                        </h2>
+                        <p class="text-sm text-slate-400 mt-1 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-trustGreen animate-pulse"></span>
+                            Dados Auditados &bull; <span id="dateDisplay">--/--/----</span>
+                        </p>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="flex flex-wrap items-end gap-3 w-full lg:w-auto">
+                        <div class="flex flex-col gap-1 w-full sm:w-auto">
+                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Período</label>
+                            <div class="flex items-center gap-2 bg-slate-800/50 p-1 rounded-lg border border-slate-700">
+                                <input type="date" id="filterStartDate" class="bg-transparent text-white text-xs border-none outline-none p-1 w-24">
+                                <span class="text-slate-600">-</span>
+                                <input type="date" id="filterEndDate" class="bg-transparent text-white text-xs border-none outline-none p-1 w-24">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-1 w-full sm:w-auto">
+                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Categoria</label>
+                            <select id="filterCategory" class="bg-slate-800/50 text-white text-xs border border-slate-700 rounded-lg p-2 outline-none focus:border-vibrantCyan transition-colors h-[34px]">
+                                <option value="all">Todas</option>
+                                <option value="Receita">Receitas</option>
+                                <option value="Despesa">Despesas</option>
+                            </select>
+                        </div>
+
+                        <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0">
+                            <button onclick="applyFilters()" class="flex-1 sm:flex-none px-4 py-2 bg-vibrantCyan hover:bg-cyan-600 text-white rounded-lg text-xs font-bold transition-all h-[34px]">
+                                Filtrar
+                            </button>
+                            <button onclick="resetFilters()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Limpar Filtros">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                             <button id="btnExport" onclick="generatePDF()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg text-xs font-bold transition-all flex items-center gap-2 h-[34px]">
+                                <i class="fas fa-file-pdf text-red-500"></i> PDF
+                            </button>
+                             <button onclick="location.reload()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Novo Arquivo">
+                                <i class="fas fa-folder-open"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. KPIs (CARDS) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Receita -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-trustGreen relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-arrow-trend-up text-6xl text-trustGreen"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Entradas Totais</p>
+                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiReceita">R$ 0,00</h3>
+                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
+                        <div class="bg-trustGreen h-1 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <!-- Despesa -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-red-500 relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-arrow-trend-down text-6xl text-red-500"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Saídas Totais</p>
+                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiDespesa">R$ 0,00</h3>
+                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
+                        <div class="bg-red-500 h-1 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.5)]" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <!-- Saldo -->
+                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-vibrantCyan relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-wallet text-6xl text-vibrantCyan"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Resultado Líquido</p>
+                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiSaldo">R$ 0,00</h3>
+                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
+                        <div class="bg-vibrantCyan h-1 rounded-full shadow-[0_0_10px_rgba(0,180,216,0.5)]" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. GRÁFICOS PRINCIPAIS (Rankings) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
+                        <i class="fas fa-sort-amount-down-alt text-red-500"></i> Top Centros de Despesa
+                    </h3>
+                    <div class="h-64">
+                        <canvas id="chartRankDespesa"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
+                        <i class="fas fa-medal text-trustGreen"></i> Top Fontes de Receita
+                    </h3>
+                    <div class="h-64">
+                        <canvas id="chartRankReceita"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. SCATTER PLOT (Dispersão) -->
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
+                        <i class="fas fa-microscope text-vibrantCyan"></i> Raio-X de Transações
+                    </h3>
+                    <div class="flex gap-4 text-[10px] font-bold uppercase text-slate-400">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-trustGreen"></span> Receitas</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-500"></span> Despesas</span>
+                    </div>
+                </div>
+                <div class="h-72 w-full">
+                    <canvas id="chartScatter"></canvas>
+                </div>
+            </div>
+
+            <!-- 4. DISTRIBUIÇÃO E EVOLUÇÃO -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Mix de Custos</h4>
+                    <div class="h-48 relative">
+                        <canvas id="chartPizzaDespesa"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Tendência Financeira</h4>
+                    <div class="h-48 relative">
+                        <canvas id="chartEvolucao"></canvas>
+                    </div>
+                </div>
+
+                 <div class="glass-card p-6 rounded-2xl">
+                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Mix de Receitas</h4>
+                    <div class="h-48 relative">
+                        <canvas id="chartPizzaReceita"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer do Relatório (Aparece no PDF) -->
+            <div class="text-center text-[10px] text-slate-600 font-mono py-4 border-t border-slate-800/50 mt-4">
+                <p>RDP STUDIO &bull; Generated Intelligence &bull; Confidencial</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="border-t border-slate-800/50 pt-12 pb-8 mt-auto relative z-10 bg-slate-900/50 backdrop-blur-md">
+        <div class="flex flex-col items-center text-center">
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://instagram.com/marcelo_rpj" target="_blank" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/marcelo-rodrigues-088478211/" target="_blank" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:rdpstudio@gmail.com" class="text-slate-400 hover:text-vibrantCyan transition-colors text-2xl transform hover:scale-110 duration-200"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+            <p class="text-sm text-slate-500 mb-2">© 2026 RDP STUDIO. Todos os direitos reservados.</p>
+            <p class="text-xs text-slate-600 font-mono">Desenvolvido com <i class="fa-solid fa-heart text-red-900 animate-pulse"></i> por Marcelo Rodrigues</p>
+            <div class="watermark-container hidden"></div>
+        </div>
+    </footer>
+
+    <!-- LOGIC -->
+    <script>
+        // --- CHART.JS DEFAULTS FOR DARK MODE ---
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.borderColor = '#1e293b';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+
+        // --- GLOBAL STATE ---
+        let rawData = []; // Store original full dataset
+        let filteredData = []; // Store currently displayed dataset
+
+        // --- UPLOAD SYSTEM ---
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = '#00B4D8'; dropZone.style.background = 'rgba(30, 58, 95, 0.6)'; });
+        dropZone.addEventListener('dragleave', (e) => { e.preventDefault(); dropZone.style.borderColor = 'rgba(255, 255, 255, 0.1)'; dropZone.style.background = 'rgba(30, 41, 59, 0.4)'; });
+        dropZone.addEventListener('drop', (e) => { e.preventDefault(); if(e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]); });
+        fileInput.addEventListener('change', (e) => { if(e.target.files.length) processFile(e.target.files[0]); });
+
+        async function processFile(file) {
+            document.getElementById('loading').classList.remove('hidden');
+            try {
+                let rows = [];
+                if (file.name.endsWith('.csv')) rows = await parseCSV(file);
+                else rows = await parseExcel(file);
+
+                rawData = cleanDataLogic(rows);
+                if (rawData.length === 0) throw new Error("Dados inválidos ou vazios.");
+
+                // Initialize Filters
+                initFilters(rawData);
+
+                // First Render
+                applyFilters();
+
+                document.getElementById('uploadScreen').classList.add('hidden');
+                document.getElementById('dashboardContent').classList.remove('hidden');
+                document.getElementById('dateDisplay').innerText = new Date().toLocaleDateString();
+
+            } catch (err) {
+                alert("Erro: " + err.message);
+                document.getElementById('loading').classList.add('hidden');
+            }
+        }
+
+        function parseCSV(file) { return new Promise((resolve) => Papa.parse(file, { complete: res => resolve(res.data) })); }
+        function parseExcel(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const wb = XLSX.read(e.target.result, { type: 'array' });
+                    const ws = wb.Sheets[wb.SheetNames[0]];
+                    resolve(XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" }));
+                };
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        function cleanDataLogic(rows) {
+            // Smart Parsing Logic (Maintained from original but refactored for clarity)
+            let yearRowIdx = -1, monthRowIdx = -1;
+            // Scan first 20 rows to find header structure
+            for(let i=0; i<Math.min(rows.length, 20); i++) {
+                const rowStr = JSON.stringify(rows[i]).toUpperCase();
+                if (yearRowIdx === -1 && rowStr.match(/202[0-9]/)) yearRowIdx = i;
+                if (monthRowIdx === -1 && (rowStr.includes('JANEIRO') || rowStr.includes('DEZEMBRO'))) monthRowIdx = i;
+            }
+            if (monthRowIdx === -1) monthRowIdx = 4; // Fallback
+            if (yearRowIdx === -1) yearRowIdx = monthRowIdx - 1;
+
+            const dateMap = {};
+            const monthMap = { 'JANEIRO':0,'FEVEREIRO':1,'MARÇO':2,'ABRIL':3,'MAIO':4,'JUNHO':5,'JULHO':6,'AGOSTO':7,'SETEMBRO':8,'OUTUBRO':9,'NOVEMBRO':10,'DEZEMBRO':11 };
+            let lastYear = new Date().getFullYear();
+            const yearRow = rows[yearRowIdx] || [];
+            const monthRow = rows[monthRowIdx] || [];
+
+            for(let col=0; col<monthRow.length; col++) {
+                let yVal = String(yearRow[col]).trim();
+                if(yVal.match(/^\d{4}$/)) lastYear = parseInt(yVal);
+                let mVal = String(monthRow[col]).toUpperCase().match(/([A-ZÇ]+)/);
+                if(mVal && monthMap.hasOwnProperty(mVal[1])) dateMap[col] = new Date(lastYear, monthMap[mVal[1]], 1);
+            }
+
+            let clean = [];
+            let currentCat = "Despesa";
+            for(let i=monthRowIdx+1; i<rows.length; i++) {
+                const row = rows[i];
+                if(!row) continue;
+                let c0 = String(row[0]||"").trim().toUpperCase();
+
+                // Detect Category Change
+                if(c0.includes('RECEITA') || c0.includes('RECEBER')) currentCat = 'Receita';
+                else if(c0.includes('PAGAR') || c0.includes('DESPESA')) currentCat = 'Despesa';
+
+                let cc = String(row[9]||"").trim(); // Assuming Cost Center/Description is at index 9 based on original code
+                // Try to find description if col 9 is empty or looks like a total
+                if ((!cc || cc.toUpperCase().includes('TOTAL')) && c0.length > 3) cc = c0;
+
+                if(!cc || cc.toUpperCase().includes('TOTAL')) continue;
+
+                for(let col in dateMap) {
+                    let val = parseMoney(row[col]);
+                    if(val !== 0) clean.push({ cat: currentCat, cc: cc, val: Math.abs(val), realVal: val, date: dateMap[col] });
+                }
+            }
+            return clean;
+        }
+
+        function parseMoney(val) {
+            if(typeof val === 'number') return val;
+            let str = String(val).replace(/[R$\s]/g, '').trim();
+            if(!str) return 0;
+            // Handle BR format 1.000,00 vs US 1,000.00
+            if(str.includes(',') && !str.includes('.')) str = str.replace(',', '.');
+            else if(str.includes('.') && str.includes(',')) str = str.replace('.', '').replace(',', '.');
+            let f = parseFloat(str);
+            return isNaN(f) ? 0 : f;
+        }
+
+        // --- FILTER LOGIC ---
+        function initFilters(data) {
+            // Find Min and Max Date
+            if(data.length === 0) return;
+            const sortedDates = data.map(d => d.date.getTime()).sort((a,b)=>a-b);
+            const minDate = new Date(sortedDates[0]);
+            const maxDate = new Date(sortedDates[sortedDates.length-1]);
+
+            document.getElementById('filterStartDate').valueAsDate = minDate;
+            document.getElementById('filterEndDate').valueAsDate = maxDate;
+        }
+
+        function applyFilters() {
+            const startDate = document.getElementById('filterStartDate').valueAsDate;
+            const endDate = document.getElementById('filterEndDate').valueAsDate;
+            const category = document.getElementById('filterCategory').value;
+
+            filteredData = rawData.filter(d => {
+                const inDate = (!startDate || d.date >= startDate) && (!endDate || d.date <= endDate);
+                const inCat = category === 'all' || d.cat === category;
+                return inDate && inCat;
+            });
+
+            renderDashboard(filteredData);
+        }
+
+        function resetFilters() {
+            document.getElementById('filterCategory').value = 'all';
+            initFilters(rawData); // Reset dates
+            applyFilters();
+        }
+
+        // --- RENDER LOGIC ---
+        let charts = {}; // Store chart instances to destroy them before re-render
+
+        function renderDashboard(data) {
+            const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // Aggregations
+            let totalRec = 0, totalDesp = 0;
+            const ccStats = {};
+            const timeline = {};
+
+            data.forEach(d => {
+                const isRec = d.cat === 'Receita';
+                if (isRec) totalRec += d.val; else totalDesp += d.val;
+
+                if (!ccStats[d.cc]) ccStats[d.cc] = { rec: 0, desp: 0 };
+                if (isRec) ccStats[d.cc].rec += d.val; else ccStats[d.cc].desp += d.val;
+
+                const tKey = d.date.toLocaleDateString('pt-BR', {month:'short', year:'numeric'});
+                if (!timeline[tKey]) timeline[tKey] = { rec: 0, desp: 0, sortDate: d.date };
+                if (isRec) timeline[tKey].rec += d.val; else timeline[tKey].desp += d.val;
+            });
+
+            const saldo = totalRec - totalDesp;
+
+            // KPIs
+            document.getElementById('kpiReceita').innerText = fmt.format(totalRec);
+            document.getElementById('kpiDespesa').innerText = fmt.format(totalDesp);
+            document.getElementById('kpiSaldo').innerText = fmt.format(saldo);
+            document.getElementById('kpiSaldo').className = `text-3xl font-bold mb-2 ${saldo >= 0 ? 'text-vibrantCyan' : 'text-red-500'}`;
+
+            // PREPARE CHART DATA
+            const topDesp = Object.entries(ccStats).map(([n, s]) => ({ n, v: s.desp })).sort((a,b) => b.v - a.v).slice(0, 5);
+            const topRec = Object.entries(ccStats).map(([n, s]) => ({ n, v: s.rec })).sort((a,b) => b.v - a.v).slice(0, 5);
+
+            // Colors
+            const colorRec = '#10B981'; // Trust Green
+            const colorDesp = '#ef4444'; // Red
+            const colorPalette = ['#00B4D8', '#F59E0B', '#10B981', '#ef4444', '#8b5cf6', '#ec4899'];
+
+            // RENDER CHARTS
+            updateChart('chartRankDespesa', 'bar', {
+                labels: topDesp.map(x => x.n),
+                datasets: [{ label: 'Despesa', data: topDesp.map(x => x.v), backgroundColor: colorDesp, borderRadius: 4 }]
+            }, { indexAxis: 'y' });
+
+            updateChart('chartRankReceita', 'bar', {
+                labels: topRec.map(x => x.n),
+                datasets: [{ label: 'Receita', data: topRec.map(x => x.v), backgroundColor: colorRec, borderRadius: 4 }]
+            }, { indexAxis: 'y' });
+
+            // SCATTER
+            const scatterRec = data.filter(d => d.cat === 'Receita').map(d => ({ x: d.date, y: d.val, cc: d.cc }));
+            const scatterDesp = data.filter(d => d.cat === 'Despesa').map(d => ({ x: d.date, y: d.val, cc: d.cc }));
+
+            updateChart('chartScatter', 'scatter', {
+                datasets: [
+                    { label: 'Receitas', data: scatterRec, backgroundColor: colorRec, pointRadius: 4 },
+                    { label: 'Despesas', data: scatterDesp, backgroundColor: colorDesp, pointRadius: 4 }
+                ]
+            }, {
+                scales: {
+                    x: { type: 'time', time: { unit: 'month' }, grid: { display: false } },
+                    y: { grid: { color: 'rgba(255,255,255,0.05)' } }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => (ctx.raw.cc || '') + ': ' + fmt.format(ctx.raw.y)
+                        }
+                    }
+                }
+            });
+
+            // PIES
+            updatePieChart('chartPizzaDespesa', topDesp, totalDesp, colorPalette);
+            updatePieChart('chartPizzaReceita', topRec, totalRec, colorPalette);
+
+            // LINE (EVOLUTION)
+            // Sort timeline
+            const sortedTimelineKeys = Object.keys(timeline).sort((a,b) => timeline[a].sortDate - timeline[b].sortDate);
+
+            updateChart('chartEvolucao', 'line', {
+                labels: sortedTimelineKeys,
+                datasets: [
+                    { label: 'Entradas', data: sortedTimelineKeys.map(k => timeline[k].rec), borderColor: colorRec, backgroundColor: colorRec, tension: 0.3 },
+                    { label: 'Saídas', data: sortedTimelineKeys.map(k => timeline[k].desp), borderColor: colorDesp, backgroundColor: colorDesp, tension: 0.3 }
+                ]
+            }, {
+                scales: { x: { grid: {display:false} }, y: { grid: {color: 'rgba(255,255,255,0.05)'} } }
+            });
+        }
+
+        function updateChart(id, type, data, extraOptions = {}) {
+            if (charts[id]) charts[id].destroy();
+            charts[id] = new Chart(document.getElementById(id), {
+                type: type,
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: type !== 'bar', labels: { color: '#94a3b8' } } },
+                    ...extraOptions
+                }
+            });
+        }
+
+        function updatePieChart(id, topData, total, colors) {
+            let labels = topData.map(x => x.n);
+            let values = topData.map(x => x.v);
+            const others = total - values.reduce((a,b)=>a+b, 0);
+            if(others > 0) { labels.push('Outros'); values.push(others); }
+
+            updateChart(id, 'doughnut', {
+                labels: labels,
+                datasets: [{
+                    data: values,
+                    backgroundColor: colors,
+                    borderWidth: 0
+                }]
+            }, { cutout: '70%' });
+        }
+
+        async function generatePDF() {
+            const btn = document.getElementById('btnExport');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Gerando...';
+
+            // Wait a bit for UI to update
+            await new Promise(r => setTimeout(r, 100));
+
+            const element = document.getElementById('dashboardContent');
+
+            // Temporarily disable glassmorphism transparency for better PDF rendering
+            // Actually html2canvas does a decent job with styles if background is set.
+            // We set a dark background for the capture to match the theme.
+
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    backgroundColor: '#020617', // Match body bg
+                    useCORS: true,
+                    logging: false
+                });
+
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+                // If height > A4 height, we might need pages, but for this summary one page is often preferred.
+                // We will just scale to fit width.
+
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('Relatorio_RDP_Studio.pdf');
+            } catch (e) {
+                console.error(e);
+                alert('Erro ao gerar PDF. Verifique o console.');
+            }
+
+            btn.innerHTML = originalHTML;
+        }
+    </script>
+</body>
+</html>

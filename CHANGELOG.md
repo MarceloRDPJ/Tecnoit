@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- New Project: **Relatório Interativo** (Financial BI Tool). A client-side dashboard for converting Excel/CSV financial data into interactive charts and PDF reports.
+- Added "Relatório Interativo" card to the Projects Hub (`hub/projetos.html`) with filtering capabilities.
+
 ### Changed
 - Refactored "Clients" section in `index.html` to replace static logos with an infinite text carousel (marquee) for a cleaner, modern look.
 - Refactored "Clients" section in `index.html` to use a responsive grid layout and glassmorphism cards.
