@@ -292,10 +292,11 @@
             <div class="glass-card p-6 rounded-2xl">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
-                        <i class="fas fa-list-ul text-vibrantCyan"></i> Visão Geral de Despesas
+                        <i class="fas fa-list-ul text-vibrantCyan"></i> Visão Geral Financeira (Detalhada)
                     </h3>
                 </div>
-                <div class="h-[500px] w-full">
+                <!-- Dynamic Height Container -->
+                <div class="w-full transition-all duration-500 ease-in-out" style="min-height: 500px;">
                     <canvas id="chartVisaoGeral"></canvas>
                 </div>
             </div>
@@ -550,22 +551,34 @@
                 datasets: [{ label: 'Receita', data: topRec.map(x => x.v), backgroundColor: colorRec, borderRadius: 4 }]
             }, { indexAxis: 'y' });
 
-            // VISÃO GERAL (Todas as Despesas)
-            const allDespStats = {};
-            data.filter(d => d.cat === 'Despesa').forEach(d => {
-                 if (!allDespStats[d.cc]) allDespStats[d.cc] = 0;
-                 allDespStats[d.cc] += d.val;
+            // VISÃO GERAL (Todas as Transações)
+            const allStats = {};
+            // Use provided 'data' (which is filteredData) directly
+            data.forEach(d => {
+                 if (!allStats[d.cc]) allStats[d.cc] = { val: 0, cat: d.cat }; // Assume primary cat matches first entry
+                 allStats[d.cc].val += d.val;
+                 // If mixed, dominant wins? Or just keep first found. Usually consistently one type per Natureza.
             });
-            const sortedAllDesp = Object.entries(allDespStats)
-                .map(([n, v]) => ({ n, v }))
-                .sort((a, b) => b.v - a.v);
+
+            const sortedAll = Object.entries(allStats)
+                .map(([n, obj]) => ({ n, v: obj.val, cat: obj.cat }))
+                .sort((a, b) => b.v - a.v); // Sort by Magnitude
+
+            // Dynamic Height Calculation
+            const rowHeight = 30; // px per bar
+            const minHeight = 500;
+            const dynamicHeight = Math.max(minHeight, sortedAll.length * rowHeight);
+
+            const chartContainer = document.getElementById('chartVisaoGeral').parentElement;
+            chartContainer.style.height = `${dynamicHeight}px`;
+            chartContainer.style.transition = "height 0.5s ease-in-out";
 
             updateChart('chartVisaoGeral', 'bar', {
-                labels: sortedAllDesp.map(x => x.n),
+                labels: sortedAll.map(x => x.n),
                 datasets: [{
-                    label: 'Despesas Totais',
-                    data: sortedAllDesp.map(x => x.v),
-                    backgroundColor: colorDesp,
+                    label: 'Valor Total',
+                    data: sortedAll.map(x => x.v),
+                    backgroundColor: sortedAll.map(x => x.cat === 'Receita' ? colorRec : colorDesp),
                     borderRadius: 4
                 }]
             }, {
@@ -575,7 +588,7 @@
                     x: { grid: { color: 'rgba(255,255,255,0.05)' } },
                     y: {
                         grid: { display: false },
-                        ticks: { autoSkip: false, font: { size: 10 } } // Ensure all labels are shown
+                        ticks: { autoSkip: false, font: { size: 11, family: "'Inter', sans-serif" } }
                     }
                 }
             });
