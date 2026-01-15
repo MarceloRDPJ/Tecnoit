@@ -137,9 +137,61 @@
                     <i class="fa-solid fa-chart-pie text-2xl"></i>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Relatório <span class="text-vibrantCyan">Interativo</span></h2>
-                <p class="text-slate-400 mb-12 text-lg max-w-2xl mx-auto">
+                <p class="text-slate-400 mb-8 text-lg max-w-2xl mx-auto">
                     Transforme planilhas estáticas em inteligência de negócios. Importe seus dados financeiros para gerar dashboards executivos em segundos.
                 </p>
+
+                <button onclick="toggleInstructions()" class="mb-12 px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 transition-all hover:text-white flex items-center gap-2 mx-auto">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>GUIA RÁPIDO</span>
+                </button>
+
+                <!-- INSTRUÇÕES (Collapsible) -->
+                <div id="infoSection" class="hidden overflow-hidden transition-all duration-500 ease-in-out mb-12 text-left max-w-4xl mx-auto">
+                    <div class="glass-card rounded-2xl p-8 border border-white/10">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-list-check text-vibrantCyan"></i> Como Preparar sua Planilha</h3>
+                                <p class="text-slate-400 text-sm mb-4">Para garantir a leitura correta dos dados, sua planilha Excel ou CSV deve conter as seguintes colunas essenciais:</p>
+                                <ul class="space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Data:</strong> Data da transação.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Descrição/Natureza:</strong> O que é (ex: Vendas, Aluguel).</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Valor:</strong> Montante monetário.</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Categoria (Opcional):</strong> Receita ou Despesa.</li>
+                                </ul>
+                                <div class="mt-4 p-3 bg-slate-900/50 rounded-lg text-xs font-mono text-slate-400">
+                                    Atenção: O sistema detecta automaticamente colunas de "Entrada/Saída" ou valores negativos.
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-microchip text-vibrantCyan"></i> Funcionalidades</h3>
+                                <div class="space-y-3">
+                                    <div class="flex gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-vibrantCyan"><i class="fa-solid fa-bolt"></i></div>
+                                        <div>
+                                            <h4 class="text-white text-sm font-bold">Processamento Local</h4>
+                                            <p class="text-slate-500 text-xs">Seus dados nunca saem do seu computador.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-trustGreen"><i class="fa-solid fa-chart-column"></i></div>
+                                        <div>
+                                            <h4 class="text-white text-sm font-bold">Visão Tornado</h4>
+                                            <p class="text-slate-500 text-xs">Análise de Receitas vs Despesas centralizada.</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-energeticAmber"><i class="fa-solid fa-file-pdf"></i></div>
+                                        <div>
+                                            <h4 class="text-white text-sm font-bold">Exportação PDF</h4>
+                                            <p class="text-slate-500 text-xs">Gere relatórios executivos instantâneos.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="dropZone" class="upload-area p-16 cursor-pointer group relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-vibrantCyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -347,370 +399,46 @@
         </div>
     </footer>
 
+    <!-- Drill Down Modal -->
+    <div id="othersModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeOthersModal()"></div>
+        <div class="relative glass-card w-full max-w-4xl rounded-2xl flex flex-col overflow-hidden ring-1 ring-vibrantCyan/20 shadow-2xl">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b border-white/5 bg-slate-900/50">
+                <h3 class="text-lg font-bold text-white">Detalhamento de "Outros"</h3>
+                <button onclick="closeOthersModal()" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="p-6 overflow-auto custom-scrollbar flex-1 bg-[#020617]">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-center font-bold text-trustGreen mb-4">Composição Receitas</h4>
+                        <div class="h-64"><canvas id="chartOthersRec"></canvas></div>
+                    </div>
+                    <div>
+                        <h4 class="text-center font-bold text-red-500 mb-4">Composição Despesas</h4>
+                        <div class="h-64"><canvas id="chartOthersDesp"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- LOGIC -->
+    <script src="js/dashboard.js"></script>
     <script>
-        // --- CHART.JS DEFAULTS FOR DARK MODE ---
-        Chart.defaults.color = '#94a3b8';
-        Chart.defaults.borderColor = '#1e293b';
-        Chart.defaults.font.family = "'Inter', sans-serif";
-
-        // --- GLOBAL STATE ---
-        let rawData = []; // Store original full dataset
-        let filteredData = []; // Store currently displayed dataset
-
-        // --- UPLOAD SYSTEM ---
-        const dropZone = document.getElementById('dropZone');
-        const fileInput = document.getElementById('fileInput');
-
-        dropZone.addEventListener('click', () => fileInput.click());
-        dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = '#00B4D8'; dropZone.style.background = 'rgba(30, 58, 95, 0.6)'; });
-        dropZone.addEventListener('dragleave', (e) => { e.preventDefault(); dropZone.style.borderColor = 'rgba(255, 255, 255, 0.1)'; dropZone.style.background = 'rgba(30, 41, 59, 0.4)'; });
-        dropZone.addEventListener('drop', (e) => { e.preventDefault(); if(e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]); });
-        fileInput.addEventListener('change', (e) => { if(e.target.files.length) processFile(e.target.files[0]); });
-
-        async function processFile(file) {
-            document.getElementById('loading').classList.remove('hidden');
-            try {
-                let rows = [];
-                if (file.name.endsWith('.csv')) rows = await parseCSV(file);
-                else rows = await parseExcel(file);
-
-                rawData = cleanDataLogic(rows);
-                if (rawData.length === 0) throw new Error("Dados inválidos ou vazios.");
-
-                // Initialize Filters
-                initFilters(rawData);
-
-                // First Render
-                applyFilters();
-
-                document.getElementById('uploadScreen').classList.add('hidden');
-                document.getElementById('dashboardContent').classList.remove('hidden');
-                document.getElementById('dateDisplay').innerText = new Date().toLocaleDateString();
-
-            } catch (err) {
-                alert("Erro: " + err.message);
-                document.getElementById('loading').classList.add('hidden');
+        // Init RDP Mode
+        DashboardApp.init({
+            colors: {
+                rec: '#10B981',
+                desp: '#ef4444',
+                text: '#94a3b8',
+                grid: 'rgba(255,255,255,0.1)',
+                zeroLine: '#fff'
             }
-        }
-
-        function parseCSV(file) { return new Promise((resolve) => Papa.parse(file, { complete: res => resolve(res.data) })); }
-        function parseExcel(file) {
-            return new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const wb = XLSX.read(e.target.result, { type: 'array' });
-                    const ws = wb.Sheets[wb.SheetNames[0]];
-                    resolve(XLSX.utils.sheet_to_json(ws, { header: 1, defval: "" }));
-                };
-                reader.readAsArrayBuffer(file);
-            });
-        }
-
-        function cleanDataLogic(rows) {
-            // Smart Parsing Logic (Maintained from original but refactored for clarity)
-            let yearRowIdx = -1, monthRowIdx = -1;
-            // Scan first 20 rows to find header structure
-            for(let i=0; i<Math.min(rows.length, 20); i++) {
-                const rowStr = JSON.stringify(rows[i]).toUpperCase();
-                if (yearRowIdx === -1 && rowStr.match(/202[0-9]/)) yearRowIdx = i;
-                if (monthRowIdx === -1 && (rowStr.includes('JANEIRO') || rowStr.includes('DEZEMBRO'))) monthRowIdx = i;
-            }
-            if (monthRowIdx === -1) monthRowIdx = 4; // Fallback
-            if (yearRowIdx === -1) yearRowIdx = monthRowIdx - 1;
-
-            const dateMap = {};
-            const monthMap = { 'JANEIRO':0,'FEVEREIRO':1,'MARÇO':2,'ABRIL':3,'MAIO':4,'JUNHO':5,'JULHO':6,'AGOSTO':7,'SETEMBRO':8,'OUTUBRO':9,'NOVEMBRO':10,'DEZEMBRO':11 };
-            let lastYear = new Date().getFullYear();
-            const yearRow = rows[yearRowIdx] || [];
-            const monthRow = rows[monthRowIdx] || [];
-
-            for(let col=0; col<monthRow.length; col++) {
-                let yVal = String(yearRow[col]).trim();
-                if(yVal.match(/^\d{4}$/)) lastYear = parseInt(yVal);
-                let mVal = String(monthRow[col]).toUpperCase().match(/([A-ZÇ]+)/);
-                if(mVal && monthMap.hasOwnProperty(mVal[1])) dateMap[col] = new Date(lastYear, monthMap[mVal[1]], 1);
-            }
-
-            let clean = [];
-            let currentCat = "Despesa";
-            for(let i=monthRowIdx+1; i<rows.length; i++) {
-                const row = rows[i];
-                if(!row) continue;
-                let c0 = String(row[0]||"").trim().toUpperCase();
-
-                // Detect Category Change
-                if(c0.includes('RECEITA') || c0.includes('RECEBER')) currentCat = 'Receita';
-                else if(c0.includes('PAGAR') || c0.includes('DESPESA')) currentCat = 'Despesa';
-
-                let cc = String(row[9]||"").trim(); // Assuming Cost Center/Description is at index 9 based on original code
-                // Try to find description if col 9 is empty or looks like a total
-                if ((!cc || cc.toUpperCase().includes('TOTAL')) && c0.length > 3) cc = c0;
-
-                if(!cc || cc.toUpperCase().includes('TOTAL')) continue;
-
-                for(let col in dateMap) {
-                    let val = parseMoney(row[col]);
-                    if(val !== 0) clean.push({ cat: currentCat, cc: cc, val: Math.abs(val), realVal: val, date: dateMap[col] });
-                }
-            }
-            return clean;
-        }
-
-        function parseMoney(val) {
-            if(typeof val === 'number') return val;
-            let str = String(val).replace(/[R$\s]/g, '').trim();
-            if(!str) return 0;
-            // Handle BR format 1.000,00 vs US 1,000.00
-            if(str.includes(',') && !str.includes('.')) str = str.replace(',', '.');
-            else if(str.includes('.') && str.includes(',')) str = str.replace('.', '').replace(',', '.');
-            let f = parseFloat(str);
-            return isNaN(f) ? 0 : f;
-        }
-
-        // --- FILTER LOGIC ---
-        function initFilters(data) {
-            // Find Min and Max Date
-            if(data.length === 0) return;
-            const sortedDates = data.map(d => d.date.getTime()).sort((a,b)=>a-b);
-            const minDate = new Date(sortedDates[0]);
-            const maxDate = new Date(sortedDates[sortedDates.length-1]);
-
-            document.getElementById('filterStartDate').valueAsDate = minDate;
-            document.getElementById('filterEndDate').valueAsDate = maxDate;
-        }
-
-        function applyFilters() {
-            const startDate = document.getElementById('filterStartDate').valueAsDate;
-            const endDate = document.getElementById('filterEndDate').valueAsDate;
-            const category = document.getElementById('filterCategory').value;
-
-            filteredData = rawData.filter(d => {
-                const inDate = (!startDate || d.date >= startDate) && (!endDate || d.date <= endDate);
-                const inCat = category === 'all' || d.cat === category;
-                return inDate && inCat;
-            });
-
-            renderDashboard(filteredData);
-        }
-
-        function resetFilters() {
-            document.getElementById('filterCategory').value = 'all';
-            initFilters(rawData); // Reset dates
-            applyFilters();
-        }
-
-        // --- RENDER LOGIC ---
-        let charts = {}; // Store chart instances to destroy them before re-render
-
-        function renderDashboard(data) {
-            const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
-
-            // Aggregations
-            let totalRec = 0, totalDesp = 0;
-            const ccStats = {};
-            const timeline = {};
-
-            data.forEach(d => {
-                const isRec = d.cat === 'Receita';
-                if (isRec) totalRec += d.val; else totalDesp += d.val;
-
-                if (!ccStats[d.cc]) ccStats[d.cc] = { rec: 0, desp: 0 };
-                if (isRec) ccStats[d.cc].rec += d.val; else ccStats[d.cc].desp += d.val;
-
-                const tKey = d.date.toLocaleDateString('pt-BR', {month:'short', year:'numeric'});
-                if (!timeline[tKey]) timeline[tKey] = { rec: 0, desp: 0, sortDate: d.date };
-                if (isRec) timeline[tKey].rec += d.val; else timeline[tKey].desp += d.val;
-            });
-
-            const saldo = totalRec - totalDesp;
-
-            // KPIs
-            document.getElementById('kpiReceita').innerText = fmt.format(totalRec);
-            document.getElementById('kpiDespesa').innerText = fmt.format(totalDesp);
-            document.getElementById('kpiSaldo').innerText = fmt.format(saldo);
-            document.getElementById('kpiSaldo').className = `text-3xl font-bold mb-2 ${saldo >= 0 ? 'text-vibrantCyan' : 'text-red-500'}`;
-
-            // PREPARE CHART DATA
-            const topDesp = Object.entries(ccStats).map(([n, s]) => ({ n, v: s.desp })).sort((a,b) => b.v - a.v).slice(0, 5);
-            const topRec = Object.entries(ccStats).map(([n, s]) => ({ n, v: s.rec })).sort((a,b) => b.v - a.v).slice(0, 5);
-
-            // Colors
-            const colorRec = '#10B981'; // Trust Green
-            const colorDesp = '#ef4444'; // Red
-            const colorPalette = ['#00B4D8', '#F59E0B', '#10B981', '#ef4444', '#8b5cf6', '#ec4899'];
-
-            // RENDER CHARTS
-            updateChart('chartRankDespesa', 'bar', {
-                labels: topDesp.map(x => x.n),
-                datasets: [{ label: 'Despesa', data: topDesp.map(x => x.v), backgroundColor: colorDesp, borderRadius: 4 }]
-            }, { indexAxis: 'y' });
-
-            updateChart('chartRankReceita', 'bar', {
-                labels: topRec.map(x => x.n),
-                datasets: [{ label: 'Receita', data: topRec.map(x => x.v), backgroundColor: colorRec, borderRadius: 4 }]
-            }, { indexAxis: 'y' });
-
-            // VISÃO GERAL (Tornado Chart - Divergente)
-            const tornadoStats = {};
-            data.forEach(d => {
-                 if (!tornadoStats[d.cc]) tornadoStats[d.cc] = { rec: 0, desp: 0 };
-                 if (d.cat === 'Receita') tornadoStats[d.cc].rec += d.val;
-                 else tornadoStats[d.cc].desp += d.val;
-            });
-
-            // Sort by Total Volume (Magnitude of activity)
-            const sortedTornado = Object.entries(tornadoStats)
-                .map(([n, s]) => ({ n, rec: s.rec, desp: s.desp, volume: s.rec + s.desp }))
-                .sort((a, b) => b.volume - a.volume);
-
-            // Dynamic Height Calculation
-            const rowHeight = 40; // slightly taller for better readability
-            const minHeight = 500;
-            const dynamicHeight = Math.max(minHeight, sortedTornado.length * rowHeight);
-
-            const chartContainer = document.getElementById('chartVisaoGeral').parentElement;
-            chartContainer.style.height = `${dynamicHeight}px`;
-
-            updateChart('chartVisaoGeral', 'bar', {
-                labels: sortedTornado.map(x => x.n),
-                datasets: [
-                    {
-                        label: 'Receitas',
-                        data: sortedTornado.map(x => x.rec),
-                        backgroundColor: colorRec,
-                        borderRadius: 4,
-                        stack: 'Stack 0'
-                    },
-                    {
-                        label: 'Despesas',
-                        data: sortedTornado.map(x => -x.desp), // Negative for left direction
-                        backgroundColor: colorDesp,
-                        borderRadius: 4,
-                        stack: 'Stack 0'
-                    }
-                ]
-            }, {
-                indexAxis: 'y',
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        stacked: true,
-                        grid: { color: 'rgba(255,255,255,0.1)', zeroLineColor: '#fff', zeroLineWidth: 2 },
-                        ticks: {
-                            callback: function(val) { return fmt.format(Math.abs(val)); }
-                        }
-                    },
-                    y: {
-                        stacked: true,
-                        grid: { display: false },
-                        ticks: { autoSkip: false, font: { size: 11, family: "'Inter', sans-serif" }, color: '#94a3b8' }
-                    }
-                },
-                plugins: {
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) label += ': ';
-                                if (context.parsed.x !== null) {
-                                    label += fmt.format(Math.abs(context.parsed.x));
-                                }
-                                return label;
-                            }
-                        }
-                    }
-                }
-            });
-
-            // PIES
-            updatePieChart('chartPizzaDespesa', topDesp, totalDesp, colorPalette);
-            updatePieChart('chartPizzaReceita', topRec, totalRec, colorPalette);
-
-            // LINE (EVOLUTION)
-            // Sort timeline
-            const sortedTimelineKeys = Object.keys(timeline).sort((a,b) => timeline[a].sortDate - timeline[b].sortDate);
-
-            updateChart('chartEvolucao', 'line', {
-                labels: sortedTimelineKeys,
-                datasets: [
-                    { label: 'Entradas', data: sortedTimelineKeys.map(k => timeline[k].rec), borderColor: colorRec, backgroundColor: colorRec, tension: 0.3 },
-                    { label: 'Saídas', data: sortedTimelineKeys.map(k => timeline[k].desp), borderColor: colorDesp, backgroundColor: colorDesp, tension: 0.3 }
-                ]
-            }, {
-                scales: { x: { grid: {display:false} }, y: { grid: {color: 'rgba(255,255,255,0.05)'} } }
-            });
-        }
-
-        function updateChart(id, type, data, extraOptions = {}) {
-            if (charts[id]) charts[id].destroy();
-            charts[id] = new Chart(document.getElementById(id), {
-                type: type,
-                data: data,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: type !== 'bar', labels: { color: '#94a3b8' } } },
-                    ...extraOptions
-                }
-            });
-        }
-
-        function updatePieChart(id, topData, total, colors) {
-            let labels = topData.map(x => x.n);
-            let values = topData.map(x => x.v);
-            const others = total - values.reduce((a,b)=>a+b, 0);
-            if(others > 0) { labels.push('Outros'); values.push(others); }
-
-            updateChart(id, 'doughnut', {
-                labels: labels,
-                datasets: [{
-                    data: values,
-                    backgroundColor: colors,
-                    borderWidth: 0
-                }]
-            }, { cutout: '70%' });
-        }
-
-        async function generatePDF() {
-            const btn = document.getElementById('btnExport');
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Gerando...';
-
-            // Wait a bit for UI to update
-            await new Promise(r => setTimeout(r, 100));
-
-            const element = document.getElementById('dashboardContent');
-
-            // Temporarily disable glassmorphism transparency for better PDF rendering
-            // Actually html2canvas does a decent job with styles if background is set.
-            // We set a dark background for the capture to match the theme.
-
-            try {
-                const canvas = await html2canvas(element, {
-                    scale: 2,
-                    backgroundColor: '#020617', // Match body bg
-                    useCORS: true,
-                    logging: false
-                });
-
-                const imgData = canvas.toDataURL('image/png');
-                const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-                const pdfWidth = pdf.internal.pageSize.getWidth();
-                const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-                // If height > A4 height, we might need pages, but for this summary one page is often preferred.
-                // We will just scale to fit width.
-
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                pdf.save('Relatorio_RDP_Studio.pdf');
-            } catch (e) {
-                console.error(e);
-                alert('Erro ao gerar PDF. Verifique o console.');
-            }
-
-            btn.innerHTML = originalHTML;
-        }
+        });
     </script>
 </body>
 </html>
