@@ -262,6 +262,13 @@
                             </select>
                         </div>
 
+                        <div class="flex flex-col gap-1 w-full sm:w-auto">
+                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Natureza</label>
+                            <select id="filterNatureza" class="bg-slate-800/50 text-white text-xs border border-slate-700 rounded-lg p-2 outline-none focus:border-vibrantCyan transition-colors h-[34px] max-w-[150px]">
+                                <option value="all">Todas as Naturezas</option>
+                            </select>
+                        </div>
+
                         <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0">
                             <button onclick="applyFilters()" class="flex-1 sm:flex-none px-4 py-2 bg-vibrantCyan hover:bg-cyan-600 text-white rounded-lg text-xs font-bold transition-all h-[34px]">
                                 Filtrar
@@ -269,8 +276,8 @@
                             <button onclick="resetFilters()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Limpar Filtros">
                                 <i class="fa-solid fa-rotate-right"></i>
                             </button>
-                             <button id="btnExport" onclick="generatePDF()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg text-xs font-bold transition-all flex items-center gap-2 h-[34px]">
-                                <i class="fas fa-file-pdf text-red-500"></i> PDF
+                             <button id="btnExport" onclick="openReportBuilder()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg text-xs font-bold transition-all flex items-center gap-2 h-[34px]">
+                                <i class="fas fa-file-pdf text-red-500"></i> Relatório
                             </button>
                              <button onclick="location.reload()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Novo Arquivo">
                                 <i class="fas fa-folder-open"></i>
@@ -420,6 +427,56 @@
                     <div>
                         <h4 class="text-center font-bold text-red-500 mb-4">Composição Despesas</h4>
                         <div class="h-64"><canvas id="chartOthersDesp"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Builder Modal -->
+    <div id="reportModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeReportBuilder()"></div>
+        <div class="relative glass-card w-full max-w-5xl h-[90vh] rounded-2xl flex flex-col overflow-hidden ring-1 ring-vibrantCyan/20 shadow-2xl">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-6 border-b border-white/5 bg-slate-900/50">
+                <h3 class="text-lg font-bold text-white"><i class="fas fa-file-pdf text-red-500 mr-2"></i> Gerador de Relatório</h3>
+                <button onclick="closeReportBuilder()" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-1 overflow-hidden">
+                <!-- Sidebar Controls -->
+                <div class="w-64 border-r border-white/5 p-6 flex flex-col gap-6 bg-slate-900/30">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Conteúdo</h4>
+                        <div class="space-y-3">
+                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
+                                <input type="checkbox" id="chkKPI" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
+                                <span class="group-hover:text-vibrantCyan transition-colors">Resumo (KPIs)</span>
+                            </label>
+                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
+                                <input type="checkbox" id="chkCharts" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
+                                <span class="group-hover:text-vibrantCyan transition-colors">Gráficos (Top 5)</span>
+                            </label>
+                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
+                                <input type="checkbox" id="chkList" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
+                                <span class="group-hover:text-vibrantCyan transition-colors">Lista (Detalhamento)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto">
+                        <button id="btnDownloadReport" onclick="downloadCustomReport()" class="w-full py-3 rounded-lg bg-vibrantCyan hover:bg-cyan-600 text-white font-bold text-sm transition-all shadow-lg shadow-vibrantCyan/20">
+                            <i class="fa-solid fa-download mr-2"></i> Baixar PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Preview Area -->
+                <div class="flex-1 bg-slate-800/50 p-8 overflow-auto flex justify-center">
+                    <div id="reportPreviewContent" class="bg-white text-black w-[210mm] min-h-[297mm] shadow-xl p-[20mm]">
+                        <!-- Preview Content Rendered Here via JS -->
                     </div>
                 </div>
             </div>
