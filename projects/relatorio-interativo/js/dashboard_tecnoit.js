@@ -73,7 +73,7 @@ const App = {
         loadingBar.style.width = '100%';
 
         if(allData.length === 0) {
-            alert("Nenhum dado válido encontrado. Verifique se a planilha possui colunas de Natureza e Valores.");
+            alert("Nenhum dado válido encontrado.\n\nVerifique se o cabeçalho da planilha contém:\n- 'NATUREZA'\n- 'CENTRO DE CUSTO' (ou 'CCUSTO')\n- Meses por extenso (ex: JANEIRO, FEVEREIRO...)");
             loading.classList.add('hidden');
             document.getElementById('btn-process-all').classList.remove('hidden');
             return;
@@ -284,15 +284,18 @@ const App = {
         App.renderDashboard();
     },
 
-    createShadowChart: (id, map, color) => {
-        // Prepara dados: Top 5 itens (mesma lógica das tabelas)
+    createShadowChart: (id, map, color, limit=5, isSimpleMap=false) => {
         const sorted = Object.entries(map)
             .map(([k,v]) => {
-                const [cc, n] = k.split('||');
-                return { label: cc.length > 15 ? cc.substring(0,15)+'...' : cc, v };
+                let label = k;
+                if(!isSimpleMap && k.includes('||')) {
+                     const [cc, n] = k.split('||');
+                     label = cc;
+                }
+                return { label: label.length > 25 ? label.substring(0,25)+'...' : label, v };
             })
             .sort((a,b) => b.v - a.v)
-            .slice(0, 5);
+            .slice(0, limit);
 
         if(App.charts[id]) App.charts[id].destroy();
 
@@ -304,20 +307,24 @@ const App = {
                     data: sorted.map(i => i.v),
                     backgroundColor: color,
                     borderRadius: 4,
-                    barThickness: 20
+                    barThickness: 30
                 }]
             },
             options: {
                 indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
-                animation: false, // Vital para o PDF sair renderizado na hora
+                animation: false,
+                layout: { padding: { right: 30, left: 10 } },
                 plugins: { legend: { display: false } },
                 scales: {
                     x: { display: false },
                     y: {
                         grid: { display: false },
-                        ticks: { font: { size: 10 } }
+                        ticks: {
+                            font: { size: 14, weight: 'bold', family: "'Inter', sans-serif" },
+                            color: '#1e293b'
+                        }
                     }
                 }
             }
@@ -410,9 +417,13 @@ const App = {
         fillTable(agg.ccDesp, 'table-top-desp');
         fillTable(agg.ccRec, 'table-top-rec');
 
-        // Gera gráficos ocultos para o relatório
-        App.createShadowChart('chart-top-rec-cc', agg.ccRec, '#10b981');
-        App.createShadowChart('chart-top-desp-cc', agg.ccDesp, '#ef4444');
+        // Gera gráficos ocultos para o relatório (Alta Resolução)
+        App.createShadowChart('chart-top-rec-cc', agg.ccRec, '#10b981', 5, false);
+        App.createShadowChart('chart-top-desp-cc', agg.ccDesp, '#ef4444', 5, false);
+
+        // Shadow Chart para Top Naturezas (para substituir o Pie no PDF)
+        const natColors = ['#F97316','#ef4444','#f59e0b','#10b981','#3b82f6','#6366f1','#8b5cf6','#ec4899'];
+        App.createShadowChart('chart-top-naturezas-report', agg.nature, natColors, 8, true);
     },
 
     // --- DEBUG / CONFERÊNCIA ---
@@ -461,9 +472,9 @@ const App = {
         d.forEach(i => i.type === 'RECEITA' ? rec += i.absVal : desp += i.absVal);
 
         const imgLine = App.charts.timeline.toBase64Image();
-        const imgPie = App.charts.pie.toBase64Image();
+        // Usa o Shadow Chart para Top Naturezas (melhor resolução e layout de barras)
+        const imgTopNat = App.charts['chart-top-naturezas-report'] ? App.charts['chart-top-naturezas-report'].toBase64Image() : '';
 
-        // Ensure shadow charts are rendered before capturing
         const imgRecCC = App.charts['chart-top-rec-cc'] ? App.charts['chart-top-rec-cc'].toBase64Image() : '';
         const imgDespCC = App.charts['chart-top-desp-cc'] ? App.charts['chart-top-desp-cc'].toBase64Image() : '';
 
@@ -523,7 +534,7 @@ const App = {
                             <h4 class="font-bold text-slate-700 text-sm">Top Naturezas</h4>
                             <span class="text-[10px] text-slate-400 uppercase">Despesas</span>
                         </div>
-                        <img src="${imgPie}" class="w-full h-auto object-contain">
+                        <img src="${imgTopNat}" class="w-full h-auto object-contain">
                     </div>
                 </div>
 
