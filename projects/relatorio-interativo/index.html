@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Interativo | RDP Studio</title>
-    <meta name="description" content="Dashboard Financeiro Interativo da RDP Studio. Business Intelligence client-side para análise de dados e geração de relatórios PDF.">
+    <meta name="description" content="Dashboard Financeiro Inteligente">
 
-    <!-- RDP Studio Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
+    <!-- RDP Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/site/favicon-16x16.png">
 
     <!-- Bibliotecas -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-    <!-- Fonts -->
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -40,9 +39,6 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                     }
                 }
             }
@@ -62,337 +58,285 @@
             background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
             transition: all 0.3s ease;
         }
 
         .glass-card:hover {
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(0, 180, 216, 0.3);
         }
 
-        .upload-area {
-            background: rgba(30, 41, 59, 0.4);
-            backdrop-filter: blur(12px);
-            border: 2px dashed rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            transition: all 0.3s ease;
+        .btn-primary {
+            background-color: #00B4D8;
+            color: white;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .upload-area:hover {
-            border-color: #00B4D8;
-            background: rgba(30, 41, 59, 0.6);
-            transform: scale(1.01);
+        .btn-primary:hover { background-color: #0096b3; }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #94a3b8;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
         }
+        .btn-secondary:hover { border-color: #fff; color: #fff; }
 
-        .nav-link { color: #94a3b8; transition: color 0.3s; }
-        .nav-link:hover, .nav-link.active { color: #fff; }
-
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .fade-in-up { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s forwards; }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #020617; }
         ::-webkit-scrollbar-thumb { background: #2D3748; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #4A5568; }
 
+        .wizard-step { display: none; }
+        .wizard-step.active { display: block; animation: fadeIn 0.5s ease-out; }
+
         /* Input Styles for Dark Mode */
-        input[type="date"], input[type="text"], select {
+        input[type="date"], input[type="text"], select, textarea {
             color-scheme: dark;
+            background: rgba(30, 41, 59, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
+            color: white;
         }
+
+        table th { font-weight: 600; color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        table td { font-size: 0.8rem; color: #e2e8f0; }
     </style>
 </head>
-<body class="antialiased selection:bg-vibrantCyan selection:text-white flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen">
 
     <!-- Header -->
-    <header class="flex justify-between items-center px-6 py-6 border-b border-slate-800/50 relative z-50">
-        <a href="../../hub/index.html" class="flex items-center gap-4 group">
-            <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center p-1">
-                 <img src="../../assets/images/branding/logo.png" alt="Logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform">
-            </div>
-            <h1 class="text-xl font-bold tracking-tight text-white">RDP <span class="text-vibrantCyan font-light">STUDIO</span></h1>
-        </a>
+    <header class="border-b border-slate-800/50 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="../../hub/index.html" class="flex items-center gap-4 group">
+                <div class="w-10 h-10 rounded-xl glass-card flex items-center justify-center p-1">
+                     <img src="../../assets/images/branding/logo.png" alt="Logo" class="w-full h-full object-contain group-hover:scale-110 transition-transform">
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-white">RDP <span class="text-vibrantCyan font-light">STUDIO</span></h1>
+            </a>
 
-        <!-- Back Button & Nav -->
-        <div class="flex items-center gap-4">
-            <a href="tecnoit.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/80 hover:bg-white backdrop-blur-md text-slate-900 transition-all text-sm font-medium border border-white/10 shadow-lg shadow-white/5">
-                <img src="assets/tecnoit/logo-full.png" alt="TecnoIT" class="h-6">
-                Modo TecnoIT
-            </a>
-             <a href="../../hub/projetos.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-all text-sm font-medium border border-white/5">
-                <i class="fa-solid fa-arrow-left"></i>
-                Voltar ao Hub
-            </a>
-            <!-- Mobile Menu Toggle (Simplified) -->
-            <button onclick="window.location.href='../../hub/projetos.html'" class="md:hidden text-slate-300 p-2">
-                <i class="fa-solid fa-arrow-left text-xl"></i>
-            </button>
+            <nav class="hidden md:flex gap-4">
+                <button onclick="App.switchView('dashboard')" id="btn-view-dashboard" class="text-sm font-medium text-vibrantCyan bg-vibrantCyan/20 px-3 py-1.5 rounded-lg transition border border-vibrantCyan/50">Dashboard</button>
+                <button onclick="App.switchView('debug')" id="btn-view-debug" class="text-sm font-medium text-slate-400 hover:bg-slate-800 px-3 py-1.5 rounded-lg transition">Conferência de Dados</button>
+                <button onclick="App.switchView('report')" id="btn-view-report" class="text-sm font-medium text-slate-400 hover:bg-slate-800 px-3 py-1.5 rounded-lg transition">Relatórios</button>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="tecnoit.html" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg bg-white/80 hover:bg-white backdrop-blur-md text-slate-900 transition-all text-sm font-medium border border-white/10 shadow-lg shadow-white/5">
+                    <img src="assets/tecnoit/logo-full.png" alt="TecnoIT" class="h-6">
+                    Modo TecnoIT
+                </a>
+                <button onclick="location.reload()" class="text-slate-400 hover:text-red-500 transition" title="Reiniciar">
+                    <i class="fa-solid fa-power-off"></i>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="flex-grow p-6 w-full max-w-7xl mx-auto flex flex-col">
+    <main class="flex-grow w-full max-w-7xl mx-auto p-6">
 
         <!-- TELA DE UPLOAD -->
-        <div id="uploadScreen" class="py-12 animate-fade-in-up flex-grow flex flex-col justify-center">
-            <div class="max-w-3xl mx-auto text-center w-full">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-vibrantCyan/10 text-vibrantCyan mb-6 border border-vibrantCyan/20">
-                    <i class="fa-solid fa-chart-pie text-2xl"></i>
-                </div>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Relatório <span class="text-vibrantCyan">Interativo</span></h2>
-                <p class="text-slate-400 mb-8 text-lg max-w-2xl mx-auto">
-                    Transforme planilhas estáticas em inteligência de negócios. Importe seus dados financeiros para gerar dashboards executivos em segundos.
+        <div id="screen-upload" class="flex flex-col items-center justify-center min-h-[70vh]">
+            <div class="text-center max-w-3xl w-full">
+                <h1 class="text-4xl font-bold text-white mb-4">Inteligência Financeira</h1>
+                <p class="text-slate-400 mb-8">
+                    Análise sem duplicação de dados.<br>
+                    <span class="text-xs text-vibrantCyan font-bold bg-vibrantCyan/10 px-2 py-1 rounded border border-vibrantCyan/20">Ignora "Totais" Automaticamente</span>
                 </p>
 
-                <button onclick="toggleInstructions()" class="mb-12 px-6 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-bold text-slate-300 transition-all hover:text-white flex items-center gap-2 mx-auto">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span>GUIA RÁPIDO</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+                    <!-- Opção 1: Upload -->
+                    <div id="dropZone" class="glass-card p-8 cursor-pointer hover:border-vibrantCyan/50 group transition text-center border-dashed border-2 border-slate-700 relative">
+                        <input type="file" id="fileInput" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" multiple accept=".csv, .xlsx, .xls" onchange="App.handleFiles(this.files)">
+                        <div class="pointer-events-none">
+                            <div class="w-16 h-16 bg-slate-800 text-vibrantCyan rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition border border-slate-700">
+                                <i class="fa-solid fa-layer-group text-2xl"></i>
+                            </div>
+                            <h3 class="font-bold text-white">Arraste Planilhas Aqui</h3>
+                            <p class="text-xs text-slate-500 mt-2">Suporta múltiplos arquivos</p>
+                            <p class="text-[10px] text-vibrantCyan mt-2 font-bold">Pode usar a planilha original (com totais)</p>
+                        </div>
+                    </div>
+
+                    <!-- Opção 2: Colar -->
+                    <div onclick="App.openPasteWizard()" class="glass-card p-8 cursor-pointer hover:border-vibrantCyan/50 group transition text-center border-dashed border-2 border-slate-700">
+                        <div class="w-16 h-16 bg-slate-800 text-energeticAmber rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition border border-slate-700">
+                            <i class="fa-solid fa-keyboard text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-white">Entrada Manual</h3>
+                        <p class="text-xs text-slate-500 mt-2">Copie do Excel e cole aqui</p>
+                    </div>
+                </div>
+
+                <div id="file-list" class="w-full max-w-2xl mx-auto space-y-2 hidden">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase text-left mb-2">Arquivos na Fila:</h4>
+                </div>
+
+                <button id="btn-process-all" onclick="App.processAllFiles()" class="hidden mt-6 btn-primary w-full max-w-xs justify-center shadow-lg shadow-vibrantCyan/20">
+                    Iniciar Processamento <i class="fa-solid fa-bolt ml-2"></i>
                 </button>
 
-                <!-- INSTRUÇÕES (Collapsible) -->
-                <div id="infoSection" class="hidden overflow-hidden transition-all duration-500 ease-in-out mb-12 text-left max-w-4xl mx-auto">
-                    <div class="glass-card rounded-2xl p-8 border border-white/10">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-list-check text-vibrantCyan"></i> Como Preparar sua Planilha</h3>
-                                <p class="text-slate-400 text-sm mb-4">Para garantir a leitura correta dos dados, sua planilha Excel ou CSV deve conter as seguintes colunas essenciais:</p>
-                                <ul class="space-y-2 text-sm text-slate-300">
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Data:</strong> Data da transação.</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Descrição/Natureza:</strong> O que é (ex: Vendas, Aluguel).</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Valor:</strong> Montante monetário.</li>
-                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-trustGreen"></i> <strong>Categoria (Opcional):</strong> Receita ou Despesa.</li>
-                                </ul>
-                                <div class="mt-4 p-3 bg-slate-900/50 rounded-lg text-xs font-mono text-slate-400">
-                                    Atenção: O sistema detecta automaticamente colunas de "Entrada/Saída" ou valores negativos.
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white mb-4"><i class="fa-solid fa-microchip text-vibrantCyan"></i> Funcionalidades</h3>
-                                <div class="space-y-3">
-                                    <div class="flex gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-vibrantCyan"><i class="fa-solid fa-bolt"></i></div>
-                                        <div>
-                                            <h4 class="text-white text-sm font-bold">Processamento Local</h4>
-                                            <p class="text-slate-500 text-xs">Seus dados nunca saem do seu computador.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-trustGreen"><i class="fa-solid fa-chart-column"></i></div>
-                                        <div>
-                                            <h4 class="text-white text-sm font-bold">Visão Tornado</h4>
-                                            <p class="text-slate-500 text-xs">Análise de Receitas vs Despesas centralizada.</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-energeticAmber"><i class="fa-solid fa-file-pdf"></i></div>
-                                        <div>
-                                            <h4 class="text-white text-sm font-bold">Exportação PDF</h4>
-                                            <p class="text-slate-500 text-xs">Gere relatórios executivos instantâneos.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div id="loading" class="hidden mt-8 flex flex-col items-center">
+                    <i class="fas fa-circle-notch fa-spin text-vibrantCyan text-2xl mb-2"></i>
+                    <span class="text-sm font-mono text-slate-400" id="loading-text">Iniciando...</span>
+                    <div class="w-64 h-2 bg-slate-800 rounded mt-2 overflow-hidden">
+                        <div id="loading-bar" class="h-full bg-vibrantCyan w-0 transition-all duration-500"></div>
                     </div>
-                </div>
-
-                <div id="dropZone" class="upload-area p-16 cursor-pointer group relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-vibrantCyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    <div class="relative z-10">
-                        <div class="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition duration-300 border border-slate-700 group-hover:border-vibrantCyan/50 shadow-lg">
-                            <i class="fas fa-cloud-upload-alt text-4xl text-slate-400 group-hover:text-vibrantCyan transition-colors"></i>
-                        </div>
-                        <h3 class="font-bold text-xl text-white mb-2 group-hover:text-vibrantCyan transition-colors">Arraste seu arquivo Excel ou CSV</h3>
-                        <p class="text-sm text-slate-500 mb-6">Processamento local seguro (Offline Mode)</p>
-
-                        <div class="inline-block px-4 py-2 rounded-full bg-slate-800 text-xs text-slate-400 border border-slate-700">
-                            Suporta: .xlsx, .xls, .csv
-                        </div>
-                    </div>
-
-                    <input type="file" id="fileInput" class="hidden" accept=".csv, .xlsx, .xls">
-
-                    <div id="loading" class="hidden absolute inset-0 bg-slate-900/90 backdrop-blur-sm flex items-center justify-center z-20">
-                        <div class="flex flex-col items-center gap-4">
-                            <i class="fas fa-circle-notch fa-spin text-vibrantCyan text-3xl"></i>
-                            <span class="text-white font-mono text-sm animate-pulse">Processando dados...</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 flex justify-center gap-8 text-xs text-slate-600 font-mono">
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved"></i> 100% Client-Side</span>
-                    <span class="flex items-center gap-2"><i class="fa-solid fa-bolt"></i> Zero Latency</span>
                 </div>
             </div>
         </div>
 
-        <!-- DASHBOARD (Conteúdo) -->
-        <div id="dashboardContent" class="hidden space-y-8 animate-fade-in-up">
-
-            <!-- Controle e Filtros -->
-            <div class="glass-card p-6 rounded-2xl border border-slate-700/50">
-                <div class="flex flex-col lg:flex-row justify-between items-end lg:items-center gap-6">
-                    <div>
-                        <h2 class="text-2xl font-bold text-white flex items-center gap-3">
-                            <i class="fa-solid fa-chart-line text-vibrantCyan"></i>
-                            Visão Financeira
-                        </h2>
-                        <p class="text-sm text-slate-400 mt-1 flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-trustGreen animate-pulse"></span>
-                            Dados Auditados &bull; <span id="dateDisplay">--/--/----</span>
-                        </p>
+        <!-- MODAL WIZARD -->
+        <div id="modal-wizard" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="bg-slate-900 w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] border border-slate-700">
+                <div class="bg-slate-800/50 p-4 border-b border-slate-700 flex justify-between items-center">
+                    <h3 class="font-bold text-white">Assistente de Importação</h3>
+                    <button onclick="App.closeWizard()" class="text-slate-400 hover:text-red-500"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="p-6 flex-grow overflow-y-auto">
+                    <div id="step-1" class="wizard-step active">
+                        <p class="text-xs text-slate-400 mb-2">Cole os dados do Excel (com cabeçalho):</p>
+                        <textarea id="paste-area" class="w-full h-64 p-3 bg-slate-800 border border-slate-700 rounded-lg text-xs font-mono text-white focus:ring-2 focus:ring-vibrantCyan focus:outline-none resize-none" placeholder="Cole aqui..."></textarea>
+                        <div class="mt-4 flex justify-end">
+                            <button onclick="App.processPaste()" class="btn-primary text-sm">Processar</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Filtros -->
-                    <div class="flex flex-wrap items-end gap-3 w-full lg:w-auto">
-                        <div class="flex flex-col gap-1 w-full sm:w-auto">
-                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Período</label>
-                            <div class="flex items-center gap-2 bg-slate-800/50 p-1 rounded-lg border border-slate-700">
-                                <input type="date" id="filterStartDate" class="bg-transparent text-white text-xs border-none outline-none p-1 w-24">
-                                <span class="text-slate-600">-</span>
-                                <input type="date" id="filterEndDate" class="bg-transparent text-white text-xs border-none outline-none p-1 w-24">
-                            </div>
+        <!-- APP CONTENT -->
+        <div id="app-content" class="hidden space-y-8">
+
+            <!-- DASHBOARD -->
+            <div id="view-dashboard" class="space-y-6">
+                <!-- Filtros -->
+                <div class="glass-card p-4 flex flex-wrap items-center justify-between gap-4 sticky top-20 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-700">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-filter text-vibrantCyan"></i>
+                        <span class="font-bold text-sm text-white">Período</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="date" id="d-start" class="border border-slate-600 rounded px-2 py-1 text-xs text-white bg-slate-700">
+                        <input type="date" id="d-end" class="border border-slate-600 rounded px-2 py-1 text-xs text-white bg-slate-700">
+                        <button onclick="App.applyFilters()" class="bg-vibrantCyan text-white px-3 py-1 rounded text-xs font-bold hover:bg-cyan-600">Aplicar</button>
+                    </div>
+                </div>
+
+                <!-- KPIs -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 border-l-4 border-trustGreen">
+                        <p class="text-xs font-bold text-slate-400 uppercase">Entrada Total (Recebimentos)</p>
+                        <h3 id="kpi-rec" class="text-2xl font-bold text-white">R$ 0,00</h3>
+                    </div>
+                    <div class="glass-card p-6 border-l-4 border-red-500">
+                        <p class="text-xs font-bold text-slate-400 uppercase">Saída Total (Pagamentos)</p>
+                        <h3 id="kpi-desp" class="text-2xl font-bold text-white">R$ 0,00</h3>
+                    </div>
+                    <div class="glass-card p-6 border-l-4 border-vibrantCyan">
+                        <p class="text-xs font-bold text-slate-400 uppercase">Saldo Final</p>
+                        <h3 id="kpi-saldo" class="text-2xl font-bold text-white">R$ 0,00</h3>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 glass-card p-6">
+                        <h4 class="font-bold text-white mb-4 text-sm">Fluxo de Caixa (Linha do Tempo)</h4>
+                        <div class="h-64"><canvas id="chart-timeline"></canvas></div>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-white mb-4 text-sm">Top Naturezas (Despesas)</h4>
+                        <div class="h-64"><canvas id="chart-pie"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Tabelas -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="glass-card overflow-hidden">
+                        <div class="bg-red-900/20 p-4 border-b border-red-500/20">
+                            <h4 class="font-bold text-red-500 text-sm">Top 5 Despesas (Centros de Custo)</h4>
                         </div>
-
-                        <div class="flex flex-col gap-1 w-full sm:w-auto">
-                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Categoria</label>
-                            <select id="filterCategory" class="bg-slate-800/50 text-white text-xs border border-slate-700 rounded-lg p-2 outline-none focus:border-vibrantCyan transition-colors h-[34px]">
-                                <option value="all">Todas</option>
-                                <option value="Receita">Receitas</option>
-                                <option value="Despesa">Despesas</option>
-                            </select>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs text-left">
+                                <thead class="bg-slate-800 text-slate-400"><tr><th class="p-3">CC</th><th class="p-3">Natureza</th><th class="p-3 text-right">Valor</th></tr></thead>
+                                <tbody id="table-top-desp" class="divide-y divide-slate-800 text-slate-300"></tbody>
+                            </table>
                         </div>
-
-                        <div class="flex flex-col gap-1 w-full sm:w-auto">
-                            <label class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Natureza</label>
-                            <select id="filterNatureza" class="bg-slate-800/50 text-white text-xs border border-slate-700 rounded-lg p-2 outline-none focus:border-vibrantCyan transition-colors h-[34px] max-w-[150px]">
-                                <option value="all">Todas as Naturezas</option>
-                            </select>
+                    </div>
+                    <div class="glass-card overflow-hidden">
+                        <div class="bg-green-900/20 p-4 border-b border-green-500/20">
+                            <h4 class="font-bold text-trustGreen text-sm">Top 5 Receitas (Centros de Custo)</h4>
                         </div>
-
-                        <div class="flex gap-2 w-full sm:w-auto mt-2 sm:mt-0">
-                            <button onclick="applyFilters()" class="flex-1 sm:flex-none px-4 py-2 bg-vibrantCyan hover:bg-cyan-600 text-white rounded-lg text-xs font-bold transition-all h-[34px]">
-                                Filtrar
-                            </button>
-                            <button onclick="resetFilters()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Limpar Filtros">
-                                <i class="fa-solid fa-rotate-right"></i>
-                            </button>
-                             <button id="btnExport" onclick="openReportBuilder()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-lg text-xs font-bold transition-all flex items-center gap-2 h-[34px]">
-                                <i class="fas fa-file-pdf text-red-500"></i> Relatório
-                            </button>
-                             <button onclick="location.reload()" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 rounded-lg text-xs transition-all h-[34px]" title="Novo Arquivo">
-                                <i class="fas fa-folder-open"></i>
-                            </button>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs text-left">
+                                <thead class="bg-slate-800 text-slate-400"><tr><th class="p-3">CC</th><th class="p-3">Natureza</th><th class="p-3 text-right">Valor</th></tr></thead>
+                                <tbody id="table-top-rec" class="divide-y divide-slate-800 text-slate-300"></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 1. KPIs (CARDS) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Receita -->
-                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-trustGreen relative overflow-hidden group">
-                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fa-solid fa-arrow-trend-up text-6xl text-trustGreen"></i>
-                    </div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Entradas Totais</p>
-                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiReceita">R$ 0,00</h3>
-                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
-                        <div class="bg-trustGreen h-1 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.5)]" style="width: 100%"></div>
-                    </div>
-                </div>
-
-                <!-- Despesa -->
-                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-red-500 relative overflow-hidden group">
-                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fa-solid fa-arrow-trend-down text-6xl text-red-500"></i>
-                    </div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Saídas Totais</p>
-                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiDespesa">R$ 0,00</h3>
-                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
-                        <div class="bg-red-500 h-1 rounded-full shadow-[0_0_10px_rgba(239,68,68,0.5)]" style="width: 100%"></div>
-                    </div>
-                </div>
-
-                <!-- Saldo -->
-                <div class="glass-card p-6 rounded-2xl border-t-4 border-t-vibrantCyan relative overflow-hidden group">
-                    <div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fa-solid fa-wallet text-6xl text-vibrantCyan"></i>
-                    </div>
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Resultado Líquido</p>
-                    <h3 class="text-3xl font-bold text-white mb-2" id="kpiSaldo">R$ 0,00</h3>
-                    <div class="w-full bg-slate-800 rounded-full h-1 mt-4">
-                        <div class="bg-vibrantCyan h-1 rounded-full shadow-[0_0_10px_rgba(0,180,216,0.5)]" style="width: 100%"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. GRÁFICOS PRINCIPAIS (Rankings) -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="glass-card p-6 rounded-2xl">
-                    <h3 class="font-bold text-white text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-                        <i class="fas fa-sort-amount-down-alt text-red-500"></i> Top Centros de Despesa
-                    </h3>
-                    <div class="h-64">
-                        <canvas id="chartRankDespesa"></canvas>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-2xl">
-                    <h3 class="font-bold text-white text-sm uppercase tracking-wider mb-6 flex items-center gap-2">
-                        <i class="fas fa-medal text-trustGreen"></i> Top Fontes de Receita
-                    </h3>
-                    <div class="h-64">
-                        <canvas id="chartRankReceita"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. VISÃO GERAL (Barras Horizontais) -->
-            <div class="glass-card p-6 rounded-2xl">
+            <!-- DEBUG VIEW -->
+            <div id="view-debug" class="hidden glass-card p-6 overflow-hidden">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
-                        <i class="fas fa-list-ul text-vibrantCyan"></i> Visão Geral Financeira (Detalhada)
-                    </h3>
+                    <h3 class="font-bold text-white">Auditoria de Dados (Sem Totais)</h3>
+                    <div class="text-right">
+                        <p class="text-xs text-slate-400">Total de Itens Individuais: <span id="debug-count" class="font-bold text-white">0</span></p>
+                        <p class="text-[10px] text-vibrantCyan">Totais da planilha foram ignorados</p>
+                    </div>
                 </div>
-                <!-- Dynamic Height Container -->
-                <div class="w-full transition-all duration-500 ease-in-out" style="min-height: 500px;">
-                    <canvas id="chartVisaoGeral"></canvas>
+                <div class="overflow-x-auto max-h-[600px] border border-slate-700 rounded-lg">
+                    <table class="w-full text-xs text-left border-collapse">
+                        <thead class="bg-slate-800 sticky top-0 z-10 shadow-sm">
+                            <tr>
+                                <th class="p-3 border-b border-r border-slate-700">Data</th>
+                                <th class="p-3 border-b border-r border-slate-700">Tipo</th>
+                                <th class="p-3 border-b border-r border-slate-700 bg-blue-900/20 text-blue-300">Natureza</th>
+                                <th class="p-3 border-b border-r border-slate-700 bg-orange-900/20 text-orange-300">Centro de Custo</th>
+                                <th class="p-3 border-b border-slate-700 text-right">Valor Extraído</th>
+                            </tr>
+                        </thead>
+                        <tbody id="debug-table-body" class="divide-y divide-slate-800 bg-slate-900"></tbody>
+                    </table>
                 </div>
             </div>
 
-            <!-- 4. DISTRIBUIÇÃO E EVOLUÇÃO -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Mix de Custos</h4>
-                    <div class="h-48 relative">
-                        <canvas id="chartPizzaDespesa"></canvas>
+            <!-- REPORT VIEW -->
+            <div id="view-report" class="hidden grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-6">
+                    <h3 class="font-bold text-white mb-4">Gerar PDF</h3>
+                    <div class="mb-4">
+                        <label class="text-xs font-bold text-slate-400 uppercase">Filtros de Natureza</label>
+                        <div id="report-filter-list" class="mt-2 h-64 overflow-y-auto border border-slate-700 rounded p-2 text-xs space-y-1 bg-slate-800/50 text-white"></div>
+                        <div class="flex gap-2 mt-2">
+                            <button onclick="App.toggleReportChecks(true)" class="text-xs text-vibrantCyan hover:underline">Todos</button>
+                            <button onclick="App.toggleReportChecks(false)" class="text-xs text-slate-400 hover:underline">Nenhum</button>
+                        </div>
                     </div>
+                    <button onclick="App.generateReportPreview()" class="btn-primary w-full justify-center">Gerar Relatório</button>
                 </div>
-
-                <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Tendência Financeira</h4>
-                    <div class="h-48 relative">
-                        <canvas id="chartEvolucao"></canvas>
+                <div class="lg:col-span-2 glass-card p-8 bg-white min-h-[800px] flex flex-col">
+                    <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200">
+                        <h2 class="text-xl font-bold text-slate-900">Pré-visualização</h2>
+                        <button id="btn-download-pdf" onclick="App.downloadPDF()" class="btn-secondary text-green-600 border-green-200 hover:bg-green-50" disabled>Baixar PDF</button>
                     </div>
-                </div>
-
-                 <div class="glass-card p-6 rounded-2xl">
-                    <h4 class="text-center font-bold text-slate-400 mb-4 text-xs uppercase">Mix de Receitas</h4>
-                    <div class="h-48 relative">
-                        <canvas id="chartPizzaReceita"></canvas>
+                    <div id="report-paper" class="flex-grow bg-white text-slate-800">
+                        <div class="text-center py-20 text-slate-300"><p>Clique em "Gerar Relatório" para visualizar.</p></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Footer do Relatório (Aparece no PDF) -->
-            <div class="text-center text-[10px] text-slate-600 font-mono py-4 border-t border-slate-800/50 mt-4">
-                <p>RDP STUDIO &bull; Generated Intelligence &bull; Confidencial</p>
-            </div>
-
         </div>
     </main>
 
-    <!-- Global Footer -->
+    <!-- Footer -->
     <footer class="border-t border-slate-800/50 pt-12 pb-8 mt-auto relative z-10 bg-slate-900/50 backdrop-blur-md">
         <div class="flex flex-col items-center text-center">
             <div class="flex justify-center gap-8 mb-8">
@@ -402,100 +346,9 @@
             </div>
             <p class="text-sm text-slate-500 mb-2">© 2026 RDP STUDIO. Todos os direitos reservados.</p>
             <p class="text-xs text-slate-600 font-mono">Desenvolvido com <i class="fa-solid fa-heart text-red-900 animate-pulse"></i> por Marcelo Rodrigues</p>
-            <div class="watermark-container hidden"></div>
         </div>
     </footer>
 
-    <!-- Drill Down Modal -->
-    <div id="othersModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeOthersModal()"></div>
-        <div class="relative glass-card w-full max-w-4xl rounded-2xl flex flex-col overflow-hidden ring-1 ring-vibrantCyan/20 shadow-2xl">
-            <!-- Header -->
-            <div class="flex items-center justify-between p-6 border-b border-white/5 bg-slate-900/50">
-                <h3 class="text-lg font-bold text-white">Detalhamento de "Outros"</h3>
-                <button onclick="closeOthersModal()" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <!-- Body -->
-            <div class="p-6 overflow-auto custom-scrollbar flex-1 bg-[#020617]">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="text-center font-bold text-trustGreen mb-4">Composição Receitas</h4>
-                        <div class="h-64"><canvas id="chartOthersRec"></canvas></div>
-                    </div>
-                    <div>
-                        <h4 class="text-center font-bold text-red-500 mb-4">Composição Despesas</h4>
-                        <div class="h-64"><canvas id="chartOthersDesp"></canvas></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Report Builder Modal -->
-    <div id="reportModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity" onclick="closeReportBuilder()"></div>
-        <div class="relative glass-card w-full max-w-5xl h-[90vh] rounded-2xl flex flex-col overflow-hidden ring-1 ring-vibrantCyan/20 shadow-2xl">
-            <!-- Header -->
-            <div class="flex items-center justify-between p-6 border-b border-white/5 bg-slate-900/50">
-                <h3 class="text-lg font-bold text-white"><i class="fas fa-file-pdf text-red-500 mr-2"></i> Gerador de Relatório</h3>
-                <button onclick="closeReportBuilder()" class="w-8 h-8 rounded-full flex items-center justify-center bg-white/5 hover:bg-red-500/20 text-slate-400 hover:text-red-500 transition-colors">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div class="flex flex-1 overflow-hidden">
-                <!-- Sidebar Controls -->
-                <div class="w-64 border-r border-white/5 p-6 flex flex-col gap-6 bg-slate-900/30">
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Conteúdo</h4>
-                        <div class="space-y-3">
-                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
-                                <input type="checkbox" id="chkKPI" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
-                                <span class="group-hover:text-vibrantCyan transition-colors">Resumo (KPIs)</span>
-                            </label>
-                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
-                                <input type="checkbox" id="chkCharts" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
-                                <span class="group-hover:text-vibrantCyan transition-colors">Gráficos (Top 5)</span>
-                            </label>
-                            <label class="flex items-center gap-3 text-sm text-white cursor-pointer group">
-                                <input type="checkbox" id="chkList" checked onchange="updateReportPreview()" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-vibrantCyan focus:ring-vibrantCyan/50">
-                                <span class="group-hover:text-vibrantCyan transition-colors">Lista (Detalhamento)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="mt-auto">
-                        <button id="btnDownloadReport" onclick="downloadCustomReport()" class="w-full py-3 rounded-lg bg-vibrantCyan hover:bg-cyan-600 text-white font-bold text-sm transition-all shadow-lg shadow-vibrantCyan/20">
-                            <i class="fa-solid fa-download mr-2"></i> Baixar PDF
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Preview Area -->
-                <div class="flex-1 bg-slate-800/50 p-8 overflow-auto flex justify-center">
-                    <div id="reportPreviewContent" class="bg-white text-black w-[210mm] min-h-[297mm] shadow-xl p-[20mm]">
-                        <!-- Preview Content Rendered Here via JS -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- LOGIC -->
-    <script src="js/dashboard.js"></script>
-    <script>
-        // Init RDP Mode
-        DashboardApp.init({
-            colors: {
-                rec: '#10B981',
-                desp: '#ef4444',
-                text: '#94a3b8',
-                grid: 'rgba(255,255,255,0.1)',
-                zeroLine: '#fff'
-            }
-        });
-    </script>
+    <script src="js/dashboard_rdp.js"></script>
 </body>
 </html>
