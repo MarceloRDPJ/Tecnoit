@@ -495,28 +495,28 @@ const App = {
 
                 <!-- KPIS -->
                 <div class="grid grid-cols-3 gap-6 mb-10">
-                    <div class="bg-emerald-50 rounded-lg p-6 border border-emerald-100 flex flex-col justify-between items-center">
-                        <div class="flex items-center gap-2 mb-2 justify-center">
-                            <div class="p-2 bg-emerald-100 rounded-full text-emerald-600"><i class="fa-solid fa-arrow-up"></i></div>
+                    <div class="bg-emerald-50 rounded-lg p-6 border border-emerald-100 flex flex-col justify-between items-start shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-emerald-100 rounded-lg text-emerald-600"><i class="fa-solid fa-arrow-up"></i></div>
                             <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Entradas</span>
                         </div>
-                        <p class="text-xl font-bold text-emerald-900 font-mono text-center whitespace-nowrap">${fmt.format(rec)}</p>
+                        <p class="text-2xl font-bold text-emerald-900 font-mono text-left break-words w-full leading-none mt-2">${fmt.format(rec)}</p>
                     </div>
 
-                    <div class="bg-red-50 rounded-lg p-6 border border-red-100 flex flex-col justify-between items-center">
-                        <div class="flex items-center gap-2 mb-2 justify-center">
-                            <div class="p-2 bg-red-100 rounded-full text-red-600"><i class="fa-solid fa-arrow-down"></i></div>
+                    <div class="bg-red-50 rounded-lg p-6 border border-red-100 flex flex-col justify-between items-start shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-red-100 rounded-lg text-red-600"><i class="fa-solid fa-arrow-down"></i></div>
                             <span class="text-xs font-bold text-red-700 uppercase tracking-wider">Saídas</span>
                         </div>
-                        <p class="text-xl font-bold text-red-900 font-mono text-center whitespace-nowrap">${fmt.format(desp * -1)}</p>
+                        <p class="text-2xl font-bold text-red-900 font-mono text-left break-words w-full leading-none mt-2">${fmt.format(desp * -1)}</p>
                     </div>
 
-                    <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 flex flex-col justify-between items-center">
-                        <div class="flex items-center gap-2 mb-2 justify-center">
-                            <div class="p-2 bg-slate-200 rounded-full text-slate-600"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 flex flex-col justify-between items-start shadow-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2 bg-slate-200 rounded-lg text-slate-600"><i class="fa-solid fa-wallet"></i></div>
                             <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Resultado</span>
                         </div>
-                        <p class="text-xl font-bold text-slate-800 font-mono text-center whitespace-nowrap">${fmt.format(rec - desp)}</p>
+                        <p class="text-2xl font-bold text-slate-800 font-mono text-left break-words w-full leading-none mt-2">${fmt.format(rec - desp)}</p>
                     </div>
                 </div>
 
