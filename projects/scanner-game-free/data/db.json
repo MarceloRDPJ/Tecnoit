@@ -1,49 +1,11 @@
 {
-  "last_updated": "2026-01-15T12:46:31",
-  "display_date": "15/01/2026 12:46",
+  "last_updated": "2026-01-16T12:45:05",
+  "display_date": "16/01/2026 12:45",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "237ms",
+    "latency": "58ms",
     "current_games": [
-      {
-        "title": "Bloons TD 6",
-        "description": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
-        "image": "https://cdn1.epicgames.com/spt-assets/764b2d57552c436590f50318bd7587f9/bloons-td-6-offer-1jl6n.jpg",
-        "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5",
-        "price": "$13.99",
-        "start_date": "2026-01-08T16:00:00.000Z",
-        "end_date": "2026-01-15T16:00:00.000Z"
-      }
-    ],
-    "upcoming_games": [
-      {
-        "title": "Ghostrunner 2",
-        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
-        "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
-        "url": "https://store.epicgames.com/p/ghostrunner-2",
-        "price": "$39.99",
-        "start_date": "2026-02-09T16:00:00.000Z",
-        "end_date": "2026-02-23T16:00:00.000Z"
-      },
-      {
-        "title": "Monument Valley",
-        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
-        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
-        "url": "https://store.epicgames.com/p/monument-valley-02",
-        "price": "$7.99",
-        "start_date": "2026-03-30T15:00:00.000Z",
-        "end_date": "2026-04-13T15:00:00.000Z"
-      },
-      {
-        "title": "Monument Valley",
-        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
-        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
-        "url": "https://store.epicgames.com/p/monument-valley-02",
-        "price": "$7.99",
-        "start_date": "2026-02-09T16:00:00.000Z",
-        "end_date": "2026-02-23T16:00:00.000Z"
-      },
       {
         "title": "Styx: Master of Shadows",
         "description": "Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
@@ -63,23 +25,76 @@
         "end_date": "2026-01-22T16:00:00.000Z"
       }
     ],
+    "upcoming_games": [
+      {
+        "title": "Ghostrunner 2",
+        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
+        "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
+        "url": "https://store.epicgames.com/p/ghostrunner-2",
+        "price": "$39.99",
+        "start_date": "2026-02-09T16:00:00.000Z",
+        "end_date": "2026-02-23T16:00:00.000Z"
+      },
+      {
+        "title": "Monument Valley",
+        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
+        "url": "https://store.epicgames.com/p/monument-valley-02",
+        "price": "$7.99",
+        "start_date": "2026-02-09T16:00:00.000Z",
+        "end_date": "2026-02-23T16:00:00.000Z"
+      },
+      {
+        "title": "Monument Valley",
+        "description": "Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+        "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
+        "url": "https://store.epicgames.com/p/monument-valley-02",
+        "price": "$7.99",
+        "start_date": "2026-03-30T15:00:00.000Z",
+        "end_date": "2026-04-13T15:00:00.000Z"
+      },
+      {
+        "title": "Rustler - Grand Theft Horse",
+        "description": "Torne-se um bandido medieval em um jogo de ação maluco de mundo aberto, cheio de referências da cultura pop. Complete missões insanas, mate heróis, roube cavalos, lute contra guardas, roube camponeses, ouça música de bardo e muito mais! Tudo embalado no estilo de jogo da velha escola!",
+        "image": "https://cdn1.epicgames.com/spt-assets/a1324ca83bc543ae8747f8d5a99d777a/rustler--grand-theft-horse-1ukey.jpg",
+        "url": "https://store.epicgames.com/p/rustler-grand-theft-horse",
+        "price": "$24.99",
+        "start_date": "2026-01-22T16:00:00.000Z",
+        "end_date": "2026-01-29T16:00:00.000Z"
+      }
+    ],
     "mystery_detected": false
   },
   "items": [
     {
-      "id": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5",
-      "title": "GRÁTIS: Bloons TD 6",
-      "original_title": "Bloons TD 6",
-      "image": "https://cdn1.epicgames.com/spt-assets/764b2d57552c436590f50318bd7587f9/bloons-td-6-offer-1jl6n.jpg",
+      "id": "https://store.epicgames.com/p/0aa23c9aff4045d7b4b9b5ccc06b5c03",
+      "title": "GRÁTIS: Styx: Master of Shadows",
+      "original_title": "Styx: Master of Shadows",
+      "image": "https://cdn1.epicgames.com/spt-assets/45709e0bb07e43bd9e652991779d4dfa/styx-master-of-shadows-17of4.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-15",
-      "summary": "Os Bloons estão de volta e melhores do que nunca! Prepare-se para um enorme jogo de defesa de torre em 3D projetado para oferecer horas e horas do melhor jogo de estratégia disponível.",
+      "date": "2026-01-16",
+      "summary": "Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
       "sources": [
         "Epic Games Store"
       ],
-      "url": "https://store.epicgames.com/p/68621af956534439a7f8de5a0e5873e5"
+      "url": "https://store.epicgames.com/p/0aa23c9aff4045d7b4b9b5ccc06b5c03"
+    },
+    {
+      "id": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d",
+      "title": "GRÁTIS: Styx: Shards of Darkness - Deluxe Edition",
+      "original_title": "Styx: Shards of Darkness - Deluxe Edition",
+      "image": "https://cdn1.epicgames.com/spt-assets/6ccdf6a1518741f0842177137adc00b0/styx-shards-of-darkness-1bh52.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Free Games",
+      "date": "2026-01-16",
+      "summary": "Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d"
     },
     {
       "id": "https://store.epicgames.com/p/ghostrunner-2",
@@ -89,7 +104,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-15",
+      "date": "2026-01-16",
       "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
       "sources": [
         "Epic Games Store"
@@ -104,8 +119,8 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-15",
-      "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+      "date": "2026-01-16",
+      "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
       ],
@@ -119,162 +134,192 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-15",
-      "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+      "date": "2026-01-16",
+      "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/monument-valley-02"
     },
     {
-      "id": "https://store.epicgames.com/p/0aa23c9aff4045d7b4b9b5ccc06b5c03",
-      "title": "EM BREVE: Styx: Master of Shadows",
-      "original_title": "Styx: Master of Shadows",
-      "image": "https://cdn1.epicgames.com/spt-assets/45709e0bb07e43bd9e652991779d4dfa/styx-master-of-shadows-17of4.jpg",
+      "id": "https://store.epicgames.com/p/rustler-grand-theft-horse",
+      "title": "EM BREVE: Rustler - Grand Theft Horse",
+      "original_title": "Rustler - Grand Theft Horse",
+      "image": "https://cdn1.epicgames.com/spt-assets/a1324ca83bc543ae8747f8d5a99d777a/rustler--grand-theft-horse-1ukey.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-15",
-      "summary": "Disponível gratuitamente a partir de 15/01. Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
+      "date": "2026-01-16",
+      "summary": "Disponível gratuitamente a partir de 22/01. Torne-se um bandido medieval em um jogo de ação maluco de mundo aberto, cheio de referências da cultura pop. Complete missões insanas, mate heróis, roube cavalos, lute contra guardas, roube camponeses, ouça música de bardo e muito mais! Tudo embalado no estilo de jogo da velha escola!",
       "sources": [
         "Epic Games Store"
       ],
-      "url": "https://store.epicgames.com/p/0aa23c9aff4045d7b4b9b5ccc06b5c03"
+      "url": "https://store.epicgames.com/p/rustler-grand-theft-horse"
     },
     {
-      "id": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d",
-      "title": "EM BREVE: Styx: Shards of Darkness - Deluxe Edition",
-      "original_title": "Styx: Shards of Darkness - Deluxe Edition",
-      "image": "https://cdn1.epicgames.com/spt-assets/6ccdf6a1518741f0842177137adc00b0/styx-shards-of-darkness-1bh52.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Release Date",
-      "date": "2026-01-15",
-      "summary": "Disponível gratuitamente a partir de 15/01. Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
-      "sources": [
-        "Epic Games Store"
-      ],
-      "url": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d"
-    },
-    {
-      "id": "https://www.eurogamer.net/assassins-creed-black-flag-remake-music-upload",
-      "title": "Aumentam as evidências que sugerem que a Ubisoft realmente está prestes a anunciar um remake de Assassin’s Creed 4: Black Flag",
-      "original_title": "Evidence mounts to suggest Ubisoft really is about to announce an Assassin’s Creed 4: Black Flag remake",
-      "image": "https://assetsio.gnwcdn.com/black-flag-whale.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/ace-combat-7-has-sold-over-7-million-copies",
+      "title": "Ace Combat 7 vendeu mais de 7.000.000 de cópias, sete anos após seu lançamento",
+      "original_title": "Ace Combat 7 has sold over 7,000,000 copies, seven years after its launch",
+      "image": "https://assetsio.gnwcdn.com/ace-combat-7-review-a-stellar-return-for-the-skybound-series-1547747509530.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-15",
-      "summary": "A Ubisoft reenviou uma seleção considerável de barracas marítimas de Assassin's Creed 4: Black Flag, a mais recente indicação de que um anúncio de remake é iminente. Leia mais...",
+      "date": "2026-01-16",
+      "summary": "Ace Combat 7, o brilhante jogo de combate de simulação de vôo da Bandai Namco, vendeu mais de 7.000.000 de cópias desde seu lançamento em janeiro de 2019. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/assassins-creed-black-flag-remake-music-upload"
+      "url": "https://www.eurogamer.net/ace-combat-7-has-sold-over-7-million-copies"
     },
     {
-      "id": "https://www.eurogamer.net/io-interactive-revises-and-reduces-007-first-light-pc-system-specs-after-gamers-highlight-inconsistencies-in-previous-versions",
-      "title": "IO Interactive revisa (e reduz) as especificações do sistema 007 First Light PC depois que os jogadores destacam “inconsistências” nas versões anteriores",
-      "original_title": "IO Interactive revises (and reduces) 007 First Light PC system specs after gamers highlight \"inconsistencies\" in previous versions",
-      "image": "https://assetsio.gnwcdn.com/James-Bond-in-007-First-Light-dressed-as-a-chauffer.jfif?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/gog-says-selling-horses-when-steam-wouldnt-was-matter-of-freedom",
+      "title": "“Nós, como empresa, estamos sempre prontos para assumir uma posição sobre os valores certos” – GOG diz que vender o jogo independente Horses quando o Steam e a Epic não o fariam era “uma questão de liberdade”",
+      "original_title": "\"We as a company are always ready to take a stand on the right values\" - GOG says selling indie game Horses when Steam and Epic wouldn't was \"a matter of freedom\"",
+      "image": "https://assetsio.gnwcdn.com/gog-horses.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Epic News",
+      "date": "2026-01-16",
+      "summary": "Quando o provocativo jogo de terror Horses foi banido da venda no Steam e na Epic Game Store no final do ano passado, isso quase levou ao fechamento do aclamado estúdio italiano Santa Ragione - negado, como estava, o acesso a alguns dos maiores jogos pagos do mundo.",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/gog-says-selling-horses-when-steam-wouldnt-was-matter-of-freedom"
+    },
+    {
+      "id": "https://www.eurogamer.net/resident-evil-requiem-an-experience-with-an-emotional-range-unlike-any-other-series-entry-to-date-and-um-janitor-zombies",
+      "title": "Resident Evil Requiem “uma experiência com um alcance emocional” diferente de qualquer outra série até agora (e, hum, zumbis zeladores)",
+      "original_title": "Resident Evil Requiem \"an experience with an emotional range\" unlike any other series entry to date (and, um, janitor zombies)",
+      "image": "https://assetsio.gnwcdn.com/Resident-Evil-Requiem-screenshot-showing-a-scarred-character-in-a-strange-helmet-that-covers-their-eyes.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-15",
-      "summary": "A IO Interactive lançou um novo conjunto de especificações de PC para seu próximo jogo de origem Bond, 007 First Light. Isto segue “inconsistências” nas versões anteriores, que foram trazidas ao seu conhecimento pela comunidade. Leia mais...",
+      "date": "2026-01-16",
+      "summary": "O próximo Resident Evil Requiem da Capcom será “uma experiência com um alcance emocional diferente de qualquer outro título Resident Evil até agora”, completo com… (verifica as notas)… um zumbi de limpeza. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/io-interactive-revises-and-reduces-007-first-light-pc-system-specs-after-gamers-highlight-inconsistencies-in-previous-versions"
+      "url": "https://www.eurogamer.net/resident-evil-requiem-an-experience-with-an-emotional-range-unlike-any-other-series-entry-to-date-and-um-janitor-zombies"
     },
     {
-      "id": "https://www.eurogamer.net/british-comedian-packed-earth-must-die-gets-release-date-demo",
-      "title": "A comédia espacial repleta de comediantes britânicos Earth Must Die será lançada em breve e agora há uma demo",
-      "original_title": "British comedian-packed space comedy Earth Must Die releases really soon and there's now a demo",
-      "image": "https://assetsio.gnwcdn.com/earth-must-die.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/the-next-life-is-strange-game-will-be-revealed-next-week-following-pegi-rating-leak",
+      "title": "O próximo jogo Life is Strange será revelado na próxima semana, após vazamento de classificação PEGI",
+      "original_title": "The next Life is Strange game will be revealed next week, following PEGI rating leak",
+      "image": "https://assetsio.gnwcdn.com/Max-Caulfield-wears-a-yellow-beanie-in-Life-is-Strange-Double-Exposure.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Rumor",
+      "date": "2026-01-16",
+      "summary": "O próximo jogo da série Life is Strange será revelado ainda este mês. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/the-next-life-is-strange-game-will-be-revealed-next-week-following-pegi-rating-leak"
+    },
+    {
+      "id": "https://www.eurogamer.net/new-world-shutting-down-unless-saved-by-rust",
+      "title": "Você tem 12 meses para jogar o Novo Mundo da Amazon antes que ele feche para sempre (a menos que o COO da Rust se envolva)",
+      "original_title": "You have 12 months to play Amazon's New World before it shuts down forever (unless the COO of Rust gets involved)",
+      "image": "https://assetsio.gnwcdn.com/amazon-offers-advice-after-reports-its-mmo-new-world-is-bricking-pricey-rtx-3090-graphics-cards-1626892638027.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-15",
-      "summary": "Earth Must Die, o novo jogo do Size Five Game de Dan Marshall, acaba de receber uma data de lançamento em 27 de janeiro e uma demonstração do Steam. Leia mais...",
+      "date": "2026-01-16",
+      "summary": "Amazon Games anunciou que New World, seu MMORPG lançado pela primeira vez em 2021, será encerrado em 31 de janeiro de 2027. Isso ocorre alguns meses depois que o desenvolvedor “destruiu” um grande número de funcionários no ano passado. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/british-comedian-packed-earth-must-die-gets-release-date-demo"
+      "url": "https://www.eurogamer.net/new-world-shutting-down-unless-saved-by-rust"
     },
     {
-      "id": "https://www.eurogamer.net/hopes-around-the-unannounced-guild-wars-3-reignite-thanks-to-a-new-job-listing-posted-by-arenanet",
-      "title": "As esperanças em torno do não anunciado Guild Wars 3 reacendem graças a uma nova lista de empregos publicada pela ArenaNet",
-      "original_title": "Hopes around the unannounced Guild Wars 3 reignite thanks to a new job listing posted by ArenaNet",
-      "image": "https://assetsio.gnwcdn.com/guild-wars-2-characters.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/im-not-sure-animal-crossing-new-horizons-busted-megaphone-and-other-switch-2-bits-are-worth-419-but-30s-a-welcome-nudge-back-into-nintendos-lovely-world",
+      "title": "Não tenho certeza se o megafone quebrado de Animal Crossing: New Horizons e outros bits do Switch 2 valem £ 4,19, mas 3.0 é um empurrãozinho bem-vindo de volta ao adorável mundo da Nintendo",
+      "original_title": "I'm not sure Animal Crossing: New Horizons' busted megaphone and other Switch 2 bits are worth £4.19, but 3.0's a welcome nudge back into Nintendo's lovely world",
+      "image": "https://assetsio.gnwcdn.com/animal-crossing-megaphone-header.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-15",
-      "summary": "Uma nova lista de empregos publicada pelo desenvolvedor de MMO ArenaNet reacendeu as esperanças de que Guild Wars 3 esteja em desenvolvimento. Leia mais...",
+      "date": "2026-01-16",
+      "summary": "Não posso começar a dizer o quanto eu estava ansioso para içar o megafone e gritar insultos a Chops do outro lado da minha ilha em Animal Crossing: New Horizon's Switch 2 Edition, mas toda a coisa do reconhecimento de voz é tão esquisita - então.",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/hopes-around-the-unannounced-guild-wars-3-reignite-thanks-to-a-new-job-listing-posted-by-arenanet"
+      "url": "https://www.eurogamer.net/im-not-sure-animal-crossing-new-horizons-busted-megaphone-and-other-switch-2-bits-are-worth-419-but-30s-a-welcome-nudge-back-into-nintendos-lovely-world"
     },
     {
-      "id": "https://www.eurogamer.net/amazons-god-of-war-series-has-found-its-kratos-and-its-ragnaroks-thor",
-      "title": "A série God of War da Amazon encontrou seu Kratos e é o Thor de Ragnarök",
-      "original_title": "Amazon's God of War series has found its Kratos, and it's Ragnarök's Thor",
-      "image": "https://assetsio.gnwcdn.com/Kratos-and-Thor-fighting-in-God-of-War-Ragnarok.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/zelda-ocarina-of-time-lego-set-leaks-and-ganon-looks-fierce",
+      "title": "Zelda: Ocarina of Time Lego vaza e Ganon parece feroz",
+      "original_title": "Zelda: Ocarina of Time Lego set leaks, and Ganon looks fierce",
+      "image": "https://assetsio.gnwcdn.com/Ganondorf-looks-shocked-after-his-demise-in-Zelda-Ocarina-of-Time.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Rumor",
+      "date": "2026-01-16",
+      "summary": "O recentemente divulgado conjunto Legend of Zelda: Ocarina of Time Lego vazou. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/zelda-ocarina-of-time-lego-set-leaks-and-ganon-looks-fierce"
+    },
+    {
+      "id": "https://www.eurogamer.net/amazons-newly-announced-fallout-reality-show-will-plop-competitors-inside-a-vault-to-find-out-just-how-special-they-are",
+      "title": "O recém-anunciado reality show Fallout da Amazon colocará os concorrentes dentro de um cofre para descobrir o quão ESPECIAIS eles são",
+      "original_title": "Amazon's newly-announced Fallout reality show will plop competitors inside a vault to find out just how SPECIAL they are",
+      "image": "https://assetsio.gnwcdn.com/Fallout's-Vault-Boy-giving-a-thumbs-up-and-a-wink(1).jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-15",
-      "summary": "A série God of War de ação ao vivo da Amazon encontrou seu Kratos, e é um nome que você já deve reconhecer da franquia. Leia mais...",
+      "date": "2026-01-16",
+      "summary": "Após o inegável sucesso de sua adaptação live-action, Amazon Prime Video anunciou um reality show baseado nos jogos Fallout. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/amazons-god-of-war-series-has-found-its-kratos-and-its-ragnaroks-thor"
+      "url": "https://www.eurogamer.net/amazons-newly-announced-fallout-reality-show-will-plop-competitors-inside-a-vault-to-find-out-just-how-special-they-are"
     },
     {
-      "id": "https://www.techpowerup.com/345225/ai-drives-semiconductor-revenues-past-usd-1-trillion-for-the-first-time-in-2026",
-      "title": "(PR) IA impulsiona receitas de semicondutores acima de US$ 1 trilhão pela primeira vez em 2026",
-      "original_title": "(PR) AI Drives Semiconductor Revenues Past $1 Trillion for the First Time in 2026",
-      "image": "https://tpucdn.com/img/YWMgl3l2ucZifFO1_thm.jpg",
+      "id": "https://www.techpowerup.com/345260/hdd-prices-increase-by-an-average-of-46-over-the-past-four-months",
+      "title": "Os preços dos HDD aumentaram em média 46% nos últimos quatro meses",
+      "original_title": "HDD Prices Increase by an Average of 46% Over the Past Four Months",
+      "image": "https://tpucdn.com/img/MvZUa9hlIggeFbT3_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "As receitas globais de semicondutores ultrapassarão US$ 1 trilhão em 2026, marcando um marco histórico para a indústria, de acordo com a mais recente análise de mercado da Omdia. Este crescimento está sendo impulsionado pelo rápido aumento nas receitas de memória e IC lógicos, gerados por grandes d...",
+      "date": "2026-01-16",
+      "summary": "As unidades de disco rígido estão agora em grande demanda, o que aumentou seus preços em média 46% desde meados de setembro. De acordo com o rastreador ComputerBase, os preços dos HDDs aumentaram entre 23% e 66% nos últimos quatro meses...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345225/ai-drives-semiconductor-revenues-past-usd-1-trillion-for-the-first-time-in-2026"
+      "url": "https://www.techpowerup.com/345260/hdd-prices-increase-by-an-average-of-46-over-the-past-four-months"
     },
     {
-      "id": "https://www.techpowerup.com/345224/nvidia-reportedly-ends-geforce-rtx-5070-ti-production-rtx-5060-ti-16-gb-next",
-      "title": "Nvidia supostamente encerra Geforce RTX 5070 de produção, RTX 5060 de 16 GB Próximo",
-      "original_title": "NVIDIA Reportedly Ends GeForce RTX 5070 Ti Production, RTX 5060 Ti 16 GB Next",
-      "image": "https://tpucdn.com/img/iBpQ7TdhX5O4ufOR_thm.jpg",
+      "id": "https://www.techpowerup.com/345264/brook-gaming-unveils-wingman-p5-wireless-game-controller-adapter",
+      "title": "(PR) Brook Gaming lança adaptador de controlador de jogo sem fio Wingman P5",
+      "original_title": "(PR) Brook Gaming Unveils Wingman P5 Wireless Game Controller Adapter",
+      "image": "https://tpucdn.com/img/3G3XQHMitkhSq9RR_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "A NVIDIA supostamente interrompeu a produção de sua placa gráfica GeForce RTX 5070 Ti de gama média, de acordo com a ASUS, um dos maiores fabricantes de PC. A ASUS compartilhou informações exclusivas com Hardware Unboxed, revelando que a NVIDIA criou um fornecedor...",
+      "date": "2026-01-16",
+      "summary": "Brook Gaming, líder global em soluções de controladores multiplataforma, anunciou hoje o lançamento global do Wingman P5. Este conversor de alto desempenho permite que os entusiastas do PlayStation usem seus controladores profissionais preferidos - incluindo o ...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345224/nvidia-reportedly-ends-geforce-rtx-5070-ti-production-rtx-5060-ti-16-gb-next"
+      "url": "https://www.techpowerup.com/345264/brook-gaming-unveils-wingman-p5-wireless-game-controller-adapter"
     },
     {
-      "id": "https://www.techpowerup.com/345221/thermaltake-announces-the-ts120-ts140-ex-rgb-pc-cooling-fan",
-      "title": "(PR) Thermaltake anuncia ventoinha de resfriamento para PC TS120/TS140 EX RGB",
-      "original_title": "(PR) Thermaltake Announces the TS120/TS140 EX RGB PC Cooling Fan",
-      "image": "https://tpucdn.com/img/GjKHVU1Hq51uGdpY_thm.jpg",
+      "id": "https://www.techpowerup.com/345263/asrock-introduces-the-all-new-rock-series-motherboards",
+      "title": "(PR) ASRock apresenta as novas placas-mãe da série Rock",
+      "original_title": "(PR) ASRock Introduces the All New Rock Series Motherboards",
+      "image": "https://tpucdn.com/img/ieJdlydVzkW3pJ3d_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "A Thermaltake, marca líder de PC DIY em soluções de hardware premium, anuncia com orgulho o lançamento das ventoinhas de resfriamento TS120 EX RGB e TS140 EX RGB, disponíveis nas edições preto e branco. Marcando um avanço na tecnologia de ventiladores, o TS EX RGB é...",
+      "date": "2026-01-16",
+      "summary": "ASRock, líder global em placas-mãe, placas gráficas, monitores de jogos, PCs de fator de forma pequeno, unidades de fonte de alimentação e coolers líquidos AIO, apresenta hoje a nova linha Rock Series, projetada para fornecer soluções abrangentes para construção de PC DIY.",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345221/thermaltake-announces-the-ts120-ts140-ex-rgb-pc-cooling-fan"
+      "url": "https://www.techpowerup.com/345263/asrock-introduces-the-all-new-rock-series-motherboards"
     },
     {
       "id": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35",
@@ -284,7 +329,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
+      "date": "2026-01-16",
       "summary": "Pare de pagar taxas de renovação e obtenha uma licença vitalícia do Microsoft Office Professional 2021 para Windows por US$ 34,97 (MSRP US$ 219,99). Para muitos usuários do Windows, o Microsoft Office continua sendo o kit de ferramentas mais confiável para documentos, planilhas, e-mail e pres...",
       "sources": [
         "TechPowerUp"
@@ -292,169 +337,124 @@
       "url": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35"
     },
     {
-      "id": "https://www.techpowerup.com/345220/penguin-solutions-smart-modular-cxl-nv-cmm-e3-s-2t-memory-module-achieves-cxl-compliance",
-      "title": "(PR) Penguin Solutions Módulo de memória SMART Modular CXL NV-CMM E3.S 2T atinge conformidade com CXL",
-      "original_title": "(PR) Penguin Solutions SMART Modular CXL NV-CMM E3.S 2T Memory Module Achieves CXL Compliance",
-      "image": "https://tpucdn.com/img/pCXpDmDcBBO6T0kJ_thm.jpg",
+      "id": "https://www.techpowerup.com/345261/asus-unveils-mac-friendly-features-on-proart-displays-to-enhance-workflows",
+      "title": "(PR) ASUS revela recursos compatíveis com Mac em monitores ProArt para aprimorar fluxos de trabalho",
+      "original_title": "(PR) ASUS Unveils Mac-Friendly Features on ProArt Displays to Enhance Workflows",
+      "image": "https://tpucdn.com/img/GR1r83JxhGIvH35J_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "Penguin Solutions, Inc., fornecedora líder de soluções de computação de alto desempenho e infraestrutura de IA, anunciou hoje que seu módulo de memória não volátil SMART Modular CXL NV-CMM E3.S 2T passou com sucesso nos testes de conformidade CXL. Esta conquista...",
+      "date": "2026-01-16",
+      "summary": "A ASUS anunciou hoje novos recursos nos monitores ProArt para aumentar a produtividade e os fluxos de trabalho criativos para usuários de MacBook, Mac Mini e Mac Studio. O software ASUS DisplayWidget Center para macOS fornece uma interface intuitiva que permite aos usuários facilmente ...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345220/penguin-solutions-smart-modular-cxl-nv-cmm-e3-s-2t-memory-module-achieves-cxl-compliance"
+      "url": "https://www.techpowerup.com/345261/asus-unveils-mac-friendly-features-on-proart-displays-to-enhance-workflows"
     },
     {
-      "id": "https://www.techpowerup.com/345217/tsmc-reports-fourth-quarter-2025-results",
-      "title": "(PR) TSMC informa resultados do quarto trimestre de 2025",
-      "original_title": "(PR) TSMC Reports Fourth Quarter 2025 Results",
-      "image": "https://tpucdn.com/img/UiMcdbIBlVSsuQkd_thm.jpg",
+      "id": "https://www.techpowerup.com/345224/nvidia-reportedly-ends-geforce-rtx-5070-ti-production-rtx-5060-ti-16-gb-next",
+      "title": "Nvidia supostamente encerra Geforce RTX 5070 de produção, RTX 5060 de 16 GB Próximo",
+      "original_title": "NVIDIA Reportedly Ends GeForce RTX 5070 Ti Production, RTX 5060 Ti 16 GB Next",
+      "image": "https://tpucdn.com/img/iBpQ7TdhX5O4ufOR_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "A TSMC (TWSE: 2330, NYSE: TSM) anunciou hoje receita consolidada de NT$ 1.046,09 bilhões, lucro líquido de NT$ 505,74 bilhões e lucro diluído por ação de NT$ 19,50 (US$ 3,14 por unidade de ADR) para o quarto trimestre encerrado em 31 de dezembro de 2025. Ano a ano...",
+      "date": "2026-01-16",
+      "summary": "A NVIDIA supostamente interrompeu a produção de sua placa gráfica GeForce RTX 5070 Ti de gama média, de acordo com a ASUS, um dos maiores fabricantes de PC. A ASUS compartilhou informações exclusivas com Hardware Unboxed, revelando que a NVIDIA criou um fornecedor...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345217/tsmc-reports-fourth-quarter-2025-results"
+      "url": "https://www.techpowerup.com/345224/nvidia-reportedly-ends-geforce-rtx-5070-ti-production-rtx-5060-ti-16-gb-next"
     },
     {
-      "id": "https://www.techpowerup.com/345216/msi-motherboards-deliver-full-support-for-amd-ryzen-7-9850x3d-processor",
-      "title": "(PR) Placas-mãe MSI oferecem suporte total para processador AMD Ryzen 7 9850X3D",
-      "original_title": "(PR) MSI Motherboards Deliver Full Support for AMD Ryzen 7 9850X3D Processor",
-      "image": "https://tpucdn.com/img/WjEKIxDl5V9ElEsX_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "A MSI tem o prazer de anunciar o suporte para o próximo processador AMD Ryzen 7 9850X3D, construído na arquitetura Zen 5 e equipado com a mais recente tecnologia AMD 3D V-Cache da AMD. Compatível com placas-mãe MSI que suportam a plataforma AM5 da AMD, este proc...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345216/msi-motherboards-deliver-full-support-for-amd-ryzen-7-9850x3d-processor"
-    },
-    {
-      "id": "https://www.techpowerup.com/345213/cannonkeys-reveals-bullet-train-40-ish-mechanical-keyboard-price-and-details",
-      "title": "CannonKeys revela preço e detalhes do teclado mecânico do trem-bala ‘40%-ish’",
-      "original_title": "CannonKeys Reveals Bullet Train '40%-ish' Mechanical Keyboard Price and Details",
-      "image": "https://tpucdn.com/img/7L1s3faWKRvQEIfB_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "CannonKeys conhece teclados mecânicos peculiares, como o fofo Minimi40 com tema bento que abordamos anteriormente, e um dos próximos lançamentos da empresa permanece fiel a essa natureza entusiasta. O trem-bala é outro formato pequeno que...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345213/cannonkeys-reveals-bullet-train-40-ish-mechanical-keyboard-price-and-details"
-    },
-    {
-      "id": "https://www.techpowerup.com/345212/poor-monster-hunter-wilds-performance-chalked-up-to-aggressive-dlc-checks",
-      "title": "Desempenho ruim de Monster Hunter Wilds atribuído a verificações agressivas de DLC",
-      "original_title": "Poor Monster Hunter Wilds Performance Chalked Up to Aggressive DLC Checks",
-      "image": "https://tpucdn.com/img/3Expgx1f8XcN56na_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "Monster Hunter Wilds ganhou uma reputação de baixo desempenho e otimização e, embora sucessivas atualizações pós-lançamento tenham ajudado a melhorar um pouco as coisas, parece ser parte do problema, especialmente quando se trata de gama média.",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345212/poor-monster-hunter-wilds-performance-chalked-up-to-aggressive-dlc-checks"
-    },
-    {
-      "id": "https://www.techpowerup.com/345207/schenker-teases-element-16-modular-gaming-laptop-slated-for-2026-launch",
-      "title": "Schenker provoca laptop modular para jogos Element 16 previsto para lançamento em 2026",
-      "original_title": "Schenker Teases Element 16 Modular Gaming Laptop Slated for 2026 Launch",
-      "image": "https://tpucdn.com/img/7O2MrbuNW2iOA5LK_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-15",
-      "summary": "Schenker não é exatamente um nome familiar, mas a empresa é conhecida por fabricar laptops decentes para jogos para entusiastas, que geralmente vêm com um preço razoável e sem muito barulho quando se trata de design. Com seu design mais recente, o Element 1...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345207/schenker-teases-element-16-modular-gaming-laptop-slated-for-2026-launch"
-    },
-    {
-      "id": "https://www.eurogamer.net/hytales-early-access-launch-isnt-quite-ready-to-step-out-of-minecrafts-shadow-but-im-still-having-a-blast",
-      "title": "O lançamento de acesso antecipado do Hytale ainda não está pronto para sair da sombra do Minecraft, mas como um fã de sobrevivência que adora blocos, ainda estou me divertindo muito",
-      "original_title": "Hytale's early access launch isn't quite ready to step out of Minecraft's shadow, but as a block-loving survival fan I'm still having a blast",
-      "image": "https://assetsio.gnwcdn.com/hytale-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/gog-weighs-complicated-riddle-of-multiplayer-game-preservation",
+      "title": "\"O que é um ciclo de fim de vida justo para um jogo?\" Enquanto os servidores Anthem são desligados, GOG avalia o “enigma complicado” da preservação do jogo multijogador",
+      "original_title": "\"What is a fair end-of-life cycle for a game?\" As Anthem servers are switched off, GOG weighs the \"complicated riddle\" of multiplayer game preservation",
+      "image": "https://assetsio.gnwcdn.com/gog-anthem.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-14",
-      "summary": "Eu não esperava que levaria uma hora para iniciar meu primeiro jogo de Hytale depois de carregá-lo, mas você pode agradecer ao criador do personagem surpreendentemente envolvido por isso. Eventualmente, porém - depois de criar uma loira com franjas, peito nu e vestida de couro...",
+      "date": "2026-01-15",
+      "summary": "A loja de jogos digitais polonesa GOG construiu um negócio a partir da restauração de jogos clássicos - aqueles construídos para uma era diferente de computadores que não podem mais ser reproduzidos. Desde que começou a operar, vem encontrando uma maneira de trazer de volta velhos clássicos...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/hytales-early-access-launch-isnt-quite-ready-to-step-out-of-minecrafts-shadow-but-im-still-having-a-blast"
+      "url": "https://www.eurogamer.net/gog-weighs-complicated-riddle-of-multiplayer-game-preservation"
     },
     {
-      "id": "https://www.eurogamer.net/here-are-our-ps-plus-extra-and-premium-games-for-january",
-      "title": "Aqui estão nossos jogos PS Plus Extra e Premium de janeiro",
-      "original_title": "Here are our PS Plus Extra and Premium games for January",
-      "image": "https://assetsio.gnwcdn.com/The-Exit-8-screenshot-showing-a-poster-with-eyes-on-the-wall-of-a-Japanese-underground-with-a-PS-Plus-logo-in-the-corner.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/first-images-of-sophie-turner-as-lara-croft-revealed-in-classic-game-attire",
+      "title": "Primeiras imagens de Sophie Turner como Lara Croft reveladas em trajes clássicos do jogo",
+      "original_title": "First images of Sophie Turner as Lara Croft revealed in classic game attire",
+      "image": "https://assetsio.gnwcdn.com/G-tZ8YqWkAAE2iF.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-14",
-      "summary": "A Sony revelou suas ofertas de jogos PS Plus Premium e Extra para janeiro. Leia mais...",
+      "date": "2026-01-15",
+      "summary": "A Amazon divulgou a primeira imagem oficial de Sophie Turner como Lara Croft, antes do lançamento de sua série de TV Tomb Raider. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/here-are-our-ps-plus-extra-and-premium-games-for-january"
+      "url": "https://www.eurogamer.net/first-images-of-sophie-turner-as-lara-croft-revealed-in-classic-game-attire"
     },
     {
-      "id": "https://www.eurogamer.net/gog-eyes-indie-game-publishing-something-it-couldnt-do-under-cd-projekt-red",
-      "title": "“Não tenho medo do risco” – Um GOG recém-independente olha para a publicação de jogos independentes, algo que não poderia fazer sob o CD Projekt Red",
-      "original_title": "\"I'm not afraid of risk\" - A newly independent GOG eyes indie game publishing, something it couldn't do under CD Projekt Red",
-      "image": "https://assetsio.gnwcdn.com/gog_oCP6FKH.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.techpowerup.com/345257/gigabyte-ceo-wants-differentiation-before-committing-to-gaming-handheld",
+      "title": "CEO da Gigabyte quer ‘diferenciação’ antes de se comprometer com dispositivos portáteis para jogos",
+      "original_title": "Gigabyte CEO Wants 'Differentiation' Before Committing to Gaming Handheld",
+      "image": "https://tpucdn.com/img/11NCujZs3ZvGtoz9_thm.jpg",
       "source_count": 1,
       "reliability": "High",
-      "category": "News",
-      "date": "2026-01-14",
-      "summary": "A recém-independente loja de jogos digitais para PC GOG está interessada em publicar jogos independentes - algo que aparentemente não poderia fazer enquanto fazia parte do CD Projekt Red. Leia mais...",
+      "category": "Hardware",
+      "date": "2026-01-15",
+      "summary": "Os jogos para PC portáteis têm sido uma categoria de nicho, mas o lançamento de dispositivos como o Valve Steam Deck e os subsequentes ASUS ROG Ally e Lenovo Legion Go resultaram no aumento da popularidade do nicho. Independentemente disso, você teria que ser cego para ...",
       "sources": [
-        "Eurogamer"
+        "TechPowerUp"
       ],
-      "url": "https://www.eurogamer.net/gog-eyes-indie-game-publishing-something-it-couldnt-do-under-cd-projekt-red"
+      "url": "https://www.techpowerup.com/345257/gigabyte-ceo-wants-differentiation-before-committing-to-gaming-handheld"
     },
     {
-      "id": "https://www.eurogamer.net/forza-horizon-6s-release-date-might-have-been-revealed-early-and-its-allegedly-coming-sooner-than-anticipated",
-      "title": "A data de lançamento do Forza Horizon 6 pode ter sido revelada mais cedo e supostamente chegará mais cedo do que o previsto",
-      "original_title": "Forza Horizon 6's release date might have been revealed early, and it's allegedly coming sooner than anticipated",
-      "image": "https://assetsio.gnwcdn.com/Forza-Horizon-6-promo-image-showing-the-game's-name-overlaid-on-a-scenic-view-in-Japan.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.techpowerup.com/345255/amazons-new-world-aeternum-to-shut-down-in-january-2027",
+      "title": "New World Aeternum da Amazon será encerrado em janeiro de 2027",
+      "original_title": "Amazon's New World Aeternum To Shut Down in January 2027",
+      "image": "https://tpucdn.com/img/6DUu6FDMdHsA2kGC_thm.jpg",
       "source_count": 1,
       "reliability": "High",
-      "category": "News",
-      "date": "2026-01-14",
-      "summary": "Um novo stream do Developer Direct do Xbox acontecerá na próxima semana, e com ele daremos um “mergulho profundo” no Forza Horizon 6. Esta é a próxima entrada anunciada anteriormente na série de direção em mundo aberto, que nos levará ao Japão. Porém, uma surpresa ...",
+      "category": "Hardware",
+      "date": "2026-01-15",
+      "summary": "Depois que foi anunciado em outubro de 2025 que a Amazon estava se afastando dos jogos AAA e interrompendo o desenvolvimento de novos conteúdos para New World: Aeternum, especulamos que o jogo estava lentamente sendo encerrado. Originalmente, a Amazon disse que o jogo...",
       "sources": [
-        "Eurogamer"
+        "TechPowerUp"
       ],
-      "url": "https://www.eurogamer.net/forza-horizon-6s-release-date-might-have-been-revealed-early-and-its-allegedly-coming-sooner-than-anticipated"
+      "url": "https://www.techpowerup.com/345255/amazons-new-world-aeternum-to-shut-down-in-january-2027"
     },
     {
-      "id": "https://www.eurogamer.net/umamusume-developer-apologises-after-ai-studio-backlash-says-it-will-not-use-generative-ai-without-prior-notice",
-      "title": "Desenvolvedor Umamusume pede desculpas após reação do estúdio de IA, diz que não usará IA generativa “sem aviso prévio”",
-      "original_title": "Umamusume developer apologises after AI studio backlash, says it will not use generative AI \"without prior notice\"",
-      "image": "https://assetsio.gnwcdn.com/screenshot-from-Umamusume-Pretty-Derby-showing-female-anime-characters-racing.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.techpowerup.com/345253/intel-nova-lake-s-and-crescent-island-support-added-to-graphics-compiler",
+      "title": "Suporte Intel \"Nova Lake-S\" e \"Crescent Island\" adicionado ao compilador gráfico",
+      "original_title": "Intel \"Nova Lake-S\" and \"Crescent Island\" Support Added to Graphics Compiler",
+      "image": "https://tpucdn.com/img/CEMfI2RdR1HwrB1k_thm.jpg",
       "source_count": 1,
       "reliability": "High",
-      "category": "News",
-      "date": "2026-01-14",
-      "summary": "A desenvolvedora japonesa de videogames Cygames divulgou uma nova declaração sobre o uso de IA, depois de anunciar na semana passada sua intenção de criar uma empresa subsidiária focada em IA, o que despertou certo discurso. Leia mais...",
+      "category": "Hardware",
+      "date": "2026-01-15",
+      "summary": "No início da semana, a Intel lançou a versão mais recente de seu Graphics Compiler (IGC), agora atualizado para v2.27.10. Michael Larabel da Phoronix notou que os engenheiros de software do Team Blue adicionaram discretamente suporte inicial para Crescent Island - aparentemente, fora...",
       "sources": [
-        "Eurogamer"
+        "TechPowerUp"
       ],
-      "url": "https://www.eurogamer.net/umamusume-developer-apologises-after-ai-studio-backlash-says-it-will-not-use-generative-ai-without-prior-notice"
+      "url": "https://www.techpowerup.com/345253/intel-nova-lake-s-and-crescent-island-support-added-to-graphics-compiler"
+    },
+    {
+      "id": "https://www.techpowerup.com/345241/keychron-launches-k3-max-all-wood-edition-low-profile-mechanical-keyboard-with-walnut-case",
+      "title": "Keychron lança teclado mecânico de baixo perfil K3 Max All Wood Edition com caixa de nogueira",
+      "original_title": "Keychron Launches K3 Max All Wood Edition Low-Profile Mechanical Keyboard With Walnut Case",
+      "image": "https://tpucdn.com/img/eL8YAqnqie5PFOKT_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-15",
+      "summary": "Keychron tem estado em alta ultimamente quando se trata de colocar hardware de teclado em materiais de gabinete pouco ortodoxos. Primeiro foi o Q16 HE e seu case de cerâmica, depois o K2 HE All-Wood Edition e uma série de teclados de concreto, resina e mármore que vimos ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345241/keychron-launches-k3-max-all-wood-edition-low-profile-mechanical-keyboard-with-walnut-case"
     }
   ]
 }
