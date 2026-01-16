@@ -284,6 +284,46 @@ const App = {
         App.renderDashboard();
     },
 
+    createShadowChart: (id, map, color) => {
+        // Prepara dados: Top 5 itens (mesma lógica das tabelas)
+        const sorted = Object.entries(map)
+            .map(([k,v]) => {
+                const [cc, n] = k.split('||');
+                return { label: cc.length > 15 ? cc.substring(0,15)+'...' : cc, v };
+            })
+            .sort((a,b) => b.v - a.v)
+            .slice(0, 5);
+
+        if(App.charts[id]) App.charts[id].destroy();
+
+        App.charts[id] = new Chart(document.getElementById(id), {
+            type: 'bar',
+            data: {
+                labels: sorted.map(i => i.label),
+                datasets: [{
+                    data: sorted.map(i => i.v),
+                    backgroundColor: color,
+                    borderRadius: 4,
+                    barThickness: 20
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: false, // Vital para o PDF sair renderizado na hora
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { display: false },
+                    y: {
+                        grid: { display: false },
+                        ticks: { font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    },
+
     renderDashboard: () => {
         const fmt = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
         const d = App.filteredData;
@@ -369,6 +409,10 @@ const App = {
         }
         fillTable(agg.ccDesp, 'table-top-desp');
         fillTable(agg.ccRec, 'table-top-rec');
+
+        // Gera gráficos ocultos para o relatório
+        App.createShadowChart('chart-top-rec-cc', agg.ccRec, '#10b981');
+        App.createShadowChart('chart-top-desp-cc', agg.ccDesp, '#ef4444');
     },
 
     // --- DEBUG / CONFERÊNCIA ---
@@ -445,7 +489,7 @@ const App = {
                             <div class="p-2 bg-emerald-100 rounded-full text-emerald-600"><i class="fa-solid fa-arrow-up"></i></div>
                             <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Entradas</span>
                         </div>
-                        <p class="text-2xl font-bold text-emerald-900 font-mono text-left">${fmt.format(rec)}</p>
+                        <p class="text-xl font-bold text-emerald-900 font-mono text-left break-words">${fmt.format(rec)}</p>
                     </div>
 
                     <div class="bg-red-50 rounded-lg p-6 border border-red-100 flex flex-col justify-between">
@@ -453,7 +497,7 @@ const App = {
                             <div class="p-2 bg-red-100 rounded-full text-red-600"><i class="fa-solid fa-arrow-down"></i></div>
                             <span class="text-xs font-bold text-red-700 uppercase tracking-wider">Saídas</span>
                         </div>
-                        <p class="text-2xl font-bold text-red-900 font-mono text-left">${fmt.format(desp * -1)}</p>
+                        <p class="text-xl font-bold text-red-900 font-mono text-left break-words">${fmt.format(desp * -1)}</p>
                     </div>
 
                     <div class="bg-slate-50 rounded-lg p-6 border border-slate-200 flex flex-col justify-between">
@@ -461,7 +505,7 @@ const App = {
                             <div class="p-2 bg-slate-200 rounded-full text-slate-600"><i class="fa-solid fa-wallet"></i></div>
                             <span class="text-xs font-bold text-slate-600 uppercase tracking-wider">Resultado</span>
                         </div>
-                        <p class="text-2xl font-bold text-slate-800 font-mono text-left">${fmt.format(rec - desp)}</p>
+                        <p class="text-xl font-bold text-slate-800 font-mono text-left break-words">${fmt.format(rec - desp)}</p>
                     </div>
                 </div>
 
