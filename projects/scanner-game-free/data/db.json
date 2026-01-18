@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-17T12:40:23",
-  "display_date": "17/01/2026 12:40",
+  "last_updated": "2026-01-18T12:40:06",
+  "display_date": "18/01/2026 12:40",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "206ms",
+    "latency": "184ms",
     "current_games": [
       {
         "title": "Styx: Master of Shadows",
@@ -41,8 +41,8 @@
         "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
         "url": "https://store.epicgames.com/p/monument-valley-02",
         "price": "$7.99",
-        "start_date": "2026-03-30T15:00:00.000Z",
-        "end_date": "2026-04-13T15:00:00.000Z"
+        "start_date": "2026-02-09T16:00:00.000Z",
+        "end_date": "2026-02-23T16:00:00.000Z"
       },
       {
         "title": "Monument Valley",
@@ -50,8 +50,8 @@
         "image": "https://cdn1.epicgames.com/spt-assets/e56a7411805046d3b5b7253a6e4e0faa/monument-valley-1gys5.jpg",
         "url": "https://store.epicgames.com/p/monument-valley-02",
         "price": "$7.99",
-        "start_date": "2026-02-09T16:00:00.000Z",
-        "end_date": "2026-02-23T16:00:00.000Z"
+        "start_date": "2026-03-30T15:00:00.000Z",
+        "end_date": "2026-04-13T15:00:00.000Z"
       },
       {
         "title": "Rustler - Grand Theft Horse",
@@ -74,7 +74,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-17",
+      "date": "2026-01-18",
       "summary": "Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
       "sources": [
         "Epic Games Store"
@@ -89,7 +89,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-17",
+      "date": "2026-01-18",
       "summary": "Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
       "sources": [
         "Epic Games Store"
@@ -104,7 +104,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-17",
+      "date": "2026-01-18",
       "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
       "sources": [
         "Epic Games Store"
@@ -119,8 +119,8 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-17",
-      "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+      "date": "2026-01-18",
+      "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
       ],
@@ -134,8 +134,8 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-17",
-      "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
+      "date": "2026-01-18",
+      "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
       ],
@@ -149,12 +149,117 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-17",
+      "date": "2026-01-18",
       "summary": "Disponível gratuitamente a partir de 22/01. Torne-se um bandido medieval em um jogo de ação maluco de mundo aberto, cheio de referências da cultura pop. Complete missões insanas, mate heróis, roube cavalos, lute contra guardas, roube camponeses, ouça música de bardo e muito mais! Tudo embalado no estilo de jogo da velha escola!",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/rustler-grand-theft-horse"
+    },
+    {
+      "id": "https://www.eurogamer.net/that-pokemon-pricing-might-be-eye-watering-but-theres-never-been-a-better-time-to-love-lego-and-gaming-in-pretty-much-any-price-bracket",
+      "title": "O preço do Pokémon pode ser surpreendente, mas nunca houve melhor momento para amar Lego e jogos - em praticamente qualquer faixa de preço",
+      "original_title": "That Pokemon pricing might be eye-watering, but there's never been a better time to love Lego and gaming - in pretty much any price bracket",
+      "image": "https://assetsio.gnwcdn.com/pokemon-lego-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-18",
+      "summary": "É hora de ser alguém que adora videogames e Lego. De certa forma, talvez não devesse ser surpreendente que os mundos dos jogos digitais e dos brinquedos dinamarqueses de construção de peças estejam a colidir tão profundamente - o diagrama de Venn do público de...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/that-pokemon-pricing-might-be-eye-watering-but-theres-never-been-a-better-time-to-love-lego-and-gaming-in-pretty-much-any-price-bracket"
+    },
+    {
+      "id": "https://www.techpowerup.com/345321/this-week-in-gaming-week-4",
+      "title": "Esta semana em jogos (semana 4)",
+      "original_title": "This Week in Gaming (Week 4)",
+      "image": "https://tpucdn.com/img/rTf4mE9CwVv1ysoa_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-18",
+      "summary": "Bem-vindo a mais uma semana de lançamentos de novos jogos e as coisas estão finalmente começando a esquentar um pouco no novo ano, mesmo que haja muitos jogos de acesso antecipado esta semana. O grande lançamento desta semana é uma abordagem diferente do gênero metroidvania com...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345321/this-week-in-gaming-week-4"
+    },
+    {
+      "id": "https://www.eurogamer.net/looks-like-resident-evil-requiem-isnt-getting-a-collectors-edition-but-why",
+      "title": "Parece que Resident Evil Requiem não receberá uma edição de colecionador – mas por quê?",
+      "original_title": "Looks like Resident Evil Requiem isn't getting a collector's edition - but why?",
+      "image": "https://assetsio.gnwcdn.com/Leon-and-Grace-on-the-cover-of-Resident-Evil-Requiem.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-17",
+      "summary": "No início desta semana, a Capcom abriu a cortina (apodrecida) do último capítulo de sua famosa série de terror, Resident Evil. E embora tenhamos aprendido um pouco mais sobre a história de Resident Evil Requiem e como ela se desenrola, alguns fãs ficaram surpresos com isso...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/looks-like-resident-evil-requiem-isnt-getting-a-collectors-edition-but-why"
+    },
+    {
+      "id": "https://www.eurogamer.net/hytales-first-update-is-here-heres-whats-new",
+      "title": "A primeira atualização do Hytale está aqui – aqui estão as novidades",
+      "original_title": "Hytale's first update is here - here's what's new",
+      "image": "https://assetsio.gnwcdn.com/Hytale_Tips_2.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-17",
+      "summary": "A primeira atualização de Hytale está aqui, introduzindo uma série de correções e melhorias de qualidade de vida (QoL), já que a equipe promete estar “comprometida em manter uma cadência de patches rápida para resolver problemas e melhorar o jogo”. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/hytales-first-update-is-here-heres-whats-new"
+    },
+    {
+      "id": "https://www.eurogamer.net/sonys-live-action-adaptation-of-the-legend-of-zelda-will-stream-on-netflix",
+      "title": "A adaptação live-action de The Legend of Zelda da Sony será transmitida na Netflix",
+      "original_title": "Sony's live-action adaptation of The Legend of Zelda will stream on Netflix",
+      "image": "https://assetsio.gnwcdn.com/Link-in-the-Zelda-film.jfif?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-17",
+      "summary": "A tão aguardada adaptação live-action de The Legend of Zelda da Nintendo está chegando à Netflix após seus “períodos de lançamento no cinema e no entretenimento doméstico”. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/sonys-live-action-adaptation-of-the-legend-of-zelda-will-stream-on-netflix"
+    },
+    {
+      "id": "https://www.eurogamer.net/yakuza-3-remastered-will-not-be-available-to-buy-as-a-standalone-game-after-yakuza-kiwami-3-dark-ties-releases-next-month",
+      "title": "Yakuza 3 Remastered não estará disponível para compra como um jogo independente após o lançamento de Yakuza Kiwami 3 e Dark Ties no próximo mês",
+      "original_title": "Yakuza 3 Remastered will not be available to buy as a standalone game after Yakuza Kiwami 3 & Dark Ties releases next month",
+      "image": "https://assetsio.gnwcdn.com/Yakuza-Kiwami-3-%26-Dark-Ties-_-Announcement-Trailer-4-28-screenshot.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-17",
+      "summary": "O estúdio Yakuza, Ryu Ga Gotoku Studio, confirmou que Yakuza 3 Remastered não estará mais disponível como compra independente após o lançamento de Yakuza Kiwami 3 e Dark Ties no próximo mês. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/yakuza-3-remastered-will-not-be-available-to-buy-as-a-standalone-game-after-yakuza-kiwami-3-dark-ties-releases-next-month"
+    },
+    {
+      "id": "https://www.eurogamer.net/valve-amends-ai-disclosure-policy-but-still-stresses-players-need-to-be-informed-if-genai-is-used",
+      "title": "Valve altera política de divulgação de IA, mas ainda enfatiza que os jogadores precisam ser informados se genAI for usado",
+      "original_title": "Valve amends AI disclosure policy but still stresses players need to be informed if genAI is used",
+      "image": "https://assetsio.gnwcdn.com/steam-games.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-17",
+      "summary": "A Valve alterou a sua orientação sobre divulgação de IA e esclareceu que, embora os desenvolvedores que usam “ferramentas alimentadas por IA” para “ganhos de eficiência” não sejam o foco de sua política, eles ainda devem divulgar se IA generativa é usada em seus jogos. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/valve-amends-ai-disclosure-policy-but-still-stresses-players-need-to-be-informed-if-genai-is-used"
     },
     {
       "id": "https://www.eurogamer.net/what-weve-been-playing-i-am-snake-i-am-one-with-the-jungle-i-am-hungry",
@@ -180,7 +285,7 @@
       "reliability": "High",
       "category": "Hardware",
       "date": "2026-01-17",
-      "summary": "A AMD cria os principais chipsets X670E e X870E unindo dois chips AMD “Promontory 21” FCH no quadril. Cada um deles possui uma conexão PCI-Express 4.0 x4 e oferece 8 pistas PCIe 4.0 e quatro portas SATA 6 Gbps que podem ser reconfiguradas como quatro adicionais...",
+      "summary": "A AMD cria os principais chipsets X670E e X870E unindo dois chips AMD “Promontory 21” FCH no quadril. Cada um deles aceita uma conexão PCI-Express 4.0 x4 e oferece 8 pistas PCIe 4.0 e quatro portas SATA 6 Gbps que podem ser reconfiguradas como quatro...",
       "sources": [
         "TechPowerUp"
       ],
@@ -202,21 +307,6 @@
       "url": "https://www.techpowerup.com/345305/intel-core-ultra-9-290hx-plus-in-msi-laptop-stomps-285hx-in-leaked-passmark-run"
     },
     {
-      "id": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date",
-      "title": "Logitech Pro X2 Superstrike Gaming Mouse recebe data oficial de pré-encomenda",
-      "original_title": "Logitech Pro X2 Superstrike Gaming Mouse Gets Official Pre-Order Date",
-      "image": "https://tpucdn.com/img/qwihgOMQTkvANH5g_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-17",
-      "summary": "A Logitech anunciou o mouse para jogos Pro X2 Superstrike em setembro de 2025, alegando ser o primeiro mouse para jogos do setor com feedback tátil e distância de atuação de clique ajustável, este último obtido por meio de interruptores de indução. No entanto, enquanto o ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date"
-    },
-    {
       "id": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35",
       "title": "Pare de pagar taxas anuais e possua o Microsoft Office 2021 por apenas US$ 35",
       "original_title": "Stop Paying Annual Fees and Own Microsoft Office 2021 Outright for Just $35",
@@ -230,6 +320,21 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35"
+    },
+    {
+      "id": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date",
+      "title": "Logitech Pro X2 Superstrike Gaming Mouse recebe data oficial de pré-encomenda",
+      "original_title": "Logitech Pro X2 Superstrike Gaming Mouse Gets Official Pre-Order Date",
+      "image": "https://tpucdn.com/img/qwihgOMQTkvANH5g_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-17",
+      "summary": "A Logitech anunciou o mouse para jogos Pro X2 Superstrike em setembro de 2025, alegando ser o primeiro mouse para jogos do setor com feedback tátil e distância de atuação de clique ajustável, este último obtido por meio de interruptores de indução. No entanto, enquanto o ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date"
     },
     {
       "id": "https://www.eurogamer.net/the-division-3-creative-director-has-suddenly-left-to-join-battlefield-studios",
@@ -275,96 +380,6 @@
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/risque-animal-crossing-new-horizons-adult-only-island-deleted-by-nintendo-after-five-years"
-    },
-    {
-      "id": "https://www.eurogamer.net/the-elder-scrolls-6-could-have-been-like-star-wars-the-empire-strikes-back",
-      "title": "“Eu tinha em mente que The Elder Scrolls 6 seria como The Empire Strikes back”, diz o ex-designer da Bethesda que certa vez foi cotado para se tornar o líder do projeto",
-      "original_title": "\"I had in my mind that The Elder Scrolls 6 was going to be like The Empire Strikes back,\" says former Bethesda designer once tipped to become the project's lead",
-      "image": "https://assetsio.gnwcdn.com/luke-2.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "A pessoa supostamente designada para o papel de designer-chefe de The Elder Scrolls 6, Kurt Kuhlmann, disse que se eles pudessem, o jogo teria sido como o amado filme de Star Wars, The Empire Strikes Back. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/the-elder-scrolls-6-could-have-been-like-star-wars-the-empire-strikes-back"
-    },
-    {
-      "id": "https://www.eurogamer.net/we-are-developing-this-to-be-the-masterpiece-version-dragon-quest-7s-producer-on-taking-a-scalpel-to-the-structure-of-a-classic",
-      "title": "“Estamos desenvolvendo esta para ser a versão ‘Masterpiece’” Produtor de Dragon Quest 7 sobre levar um bisturi à estrutura de um clássico",
-      "original_title": "\"We are developing this to be the 'Masterpiece' version\" Dragon Quest 7's producer on taking a scalpel to the structure of a classic",
-      "image": "https://assetsio.gnwcdn.com/DQ-header.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "O Dragon Quest 7 original é uma obra-prima. Mas, apesar do seu estatuto lendário, mesmo aqueles que o amam profundamente deveriam ser capazes de admitir prontamente que também é altamente falho. Uma pessoa que sabe disso muito bem é Takeshi Ichikawa - o produtor e...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/we-are-developing-this-to-be-the-masterpiece-version-dragon-quest-7s-producer-on-taking-a-scalpel-to-the-structure-of-a-classic"
-    },
-    {
-      "id": "https://www.eurogamer.net/arknights-endfield-passes-35m-pre-registered-players-ahead-of-launch-this-month",
-      "title": "Arknights Endfield ultrapassa 35 milhões de jogadores pré-registrados antes do lançamento este mês",
-      "original_title": "Arknights Endfield passes 35m pre-registered players ahead of launch this month",
-      "image": "https://assetsio.gnwcdn.com/arknights-endfield-key-art-jpg.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "Arknights Endfield ultrapassou 35 milhões de jogadores pré-registrados antes de seu lançamento em 22 de janeiro. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/arknights-endfield-passes-35m-pre-registered-players-ahead-of-launch-this-month"
-    },
-    {
-      "id": "https://www.eurogamer.net/ubisoft-claims-assassins-creed-blag-flag-music-reuploads-were-due-to-technical-issues-and-nothing-more",
-      "title": "A Ubisoft afirma que os recarregamentos de músicas de Assassin's Creed: Black Flag foram devido a \"problemas técnicos\" e nada mais...",
-      "original_title": "Ubisoft claims Assassin's Creed: Black Flag music reuploads were due to \"technical issues\", and nothing more...",
-      "image": "https://assetsio.gnwcdn.com/Screenshot-from-Assassin's-Creed-Black-Flag-showing-a-pirate-with-a-feather-adorned-hat.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "Aquela música que foi repostada para Assassin's Creed: Black Flag aparentemente foi apenas por \"problemas técnicos\", então pare de ler muito sobre ela, ok. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/ubisoft-claims-assassins-creed-blag-flag-music-reuploads-were-due-to-technical-issues-and-nothing-more"
-    },
-    {
-      "id": "https://www.eurogamer.net/following-controversy-over-eas-recent-buyout-the-sims-4-starts-2026-with-a-big-expansion-about-familial-dynasties-kings-and-queens",
-      "title": "Após a polêmica sobre a recente aquisição da EA, The Sims 4 começa 2026 com uma grande expansão sobre dinastias familiares, reis e rainhas",
-      "original_title": "Following controversy over EA's recent buyout, The Sims 4 starts 2026 with a big expansion about familial dynasties, kings and queens",
-      "image": "https://assetsio.gnwcdn.com/the-sims-4-royalty-and-legacy-header.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "A EA revelou a primeira grande expansão do The Sims 4 de 2026. Chama-se Pacote de Expansão Royalty & Legacy e promete trazer dinastias familiares, escândalos e intrigas quando for lançado para todas as plataformas em 12 de fevereiro.\n Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/following-controversy-over-eas-recent-buyout-the-sims-4-starts-2026-with-a-big-expansion-about-familial-dynasties-kings-and-queens"
-    },
-    {
-      "id": "https://www.eurogamer.net/ace-combat-7-has-sold-over-7-million-copies",
-      "title": "Ace Combat 7 vendeu mais de 7 milhões de cópias, sete anos após seu lançamento",
-      "original_title": "Ace Combat 7 has sold over 7m copies, seven years after its launch",
-      "image": "https://assetsio.gnwcdn.com/ace-combat-7-review-a-stellar-return-for-the-skybound-series-1547747509530.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-16",
-      "summary": "Ace Combat 7, o brilhante jogo de combate de simulação de voo da Bandai Namco, vendeu mais de 7.000.000 de cópias desde o lançamento em janeiro de 2019. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/ace-combat-7-has-sold-over-7-million-copies"
     },
     {
       "id": "https://www.techpowerup.com/345302/steam-ai-disclosure-gets-clarification-for-ai-in-dev-tools",
@@ -440,21 +455,6 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/345298/ride-6-career-mode-detailed-by-games-director"
-    },
-    {
-      "id": "https://www.techpowerup.com/345297/samsung-reportedly-ahead-of-schedule-with-m6-macbook-pro-max-oled-panel-production",
-      "title": "Samsung supostamente adiantada com produção de painel M6 MacBook Pro/Max OLED",
-      "original_title": "Samsung Reportedly Ahead of Schedule with M6 MacBook Pro/Max OLED Panel Production",
-      "image": "https://tpucdn.com/img/ZUQ78317AaB18FHT_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-16",
-      "summary": "A experiência OLED “Experiência Cinematográfica” da Samsung Display pode chegar às pastagens premium dos laptops da Apple. De acordo com novas informações internas - cortesia de uma postagem no blog yeux1122 - a produção OLED de 8,6 geração do gigante sul-coreano Asan...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345297/samsung-reportedly-ahead-of-schedule-with-m6-macbook-pro-max-oled-panel-production"
     }
   ]
 }
