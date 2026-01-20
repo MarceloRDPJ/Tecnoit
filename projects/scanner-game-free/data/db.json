@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-19T12:51:00",
-  "display_date": "19/01/2026 12:51",
+  "last_updated": "2026-01-20T12:51:28",
+  "display_date": "20/01/2026 12:51",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "234ms",
+    "latency": "232ms",
     "current_games": [
       {
         "title": "Styx: Master of Shadows",
@@ -26,6 +26,15 @@
       }
     ],
     "upcoming_games": [
+      {
+        "title": "Eternal Threads",
+        "description": "Eternal Threads é um jogo de quebra-cabeça para um jogador, em primeira pessoa, baseado em uma história de manipulação, escolha e consequência do tempo.",
+        "image": "https://cdn1.epicgames.com/spt-assets/08813e055af64315b8a55b2e521f4e04/eternal-threads-1vm6i.jpg",
+        "url": "https://store.epicgames.com/p/a9152a8924cc4e438f0e61106ec02f7d",
+        "price": "$19.99",
+        "start_date": "2026-02-09T16:00:00.000Z",
+        "end_date": "2026-02-23T16:00:00.000Z"
+      },
       {
         "title": "Ghostrunner 2",
         "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
@@ -74,7 +83,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Styx: Master of Shadows é um jogo de infiltração com elementos de RPG que se passa em um universo sombrio de fantasia, onde você se esgueira, rouba e assassina como Styx, um Goblin de dois séculos de idade.",
       "sources": [
         "Epic Games Store"
@@ -89,12 +98,27 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Styx retorna em uma nova aventura furtiva! Explore e domine enormes ambientes abertos, passe furtivamente ou assassine novos inimigos e chefes e experimente a nova gama de habilidades e armas letais do arsenal do nosso goblin assassino.",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/81e2a51d2be949b986993cdca25f4d7d"
+    },
+    {
+      "id": "https://store.epicgames.com/p/a9152a8924cc4e438f0e61106ec02f7d",
+      "title": "EM BREVE: Eternal Threads",
+      "original_title": "Eternal Threads",
+      "image": "https://cdn1.epicgames.com/spt-assets/08813e055af64315b8a55b2e521f4e04/eternal-threads-1vm6i.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Release Date",
+      "date": "2026-01-20",
+      "summary": "Disponível gratuitamente a partir de 09/02. Eternal Threads é um jogo de quebra-cabeça para um jogador, em primeira pessoa, baseado em uma história de manipulação, escolha e consequência do tempo.",
+      "sources": [
+        "Epic Games Store"
+      ],
+      "url": "https://store.epicgames.com/p/a9152a8924cc4e438f0e61106ec02f7d"
     },
     {
       "id": "https://store.epicgames.com/p/ghostrunner-2",
@@ -104,7 +128,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
       "sources": [
         "Epic Games Store"
@@ -119,7 +143,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
@@ -134,7 +158,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
@@ -149,7 +173,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-19",
+      "date": "2026-01-20",
       "summary": "Disponível gratuitamente a partir de 22/01. Torne-se um bandido medieval em um jogo de ação maluco de mundo aberto, cheio de referências da cultura pop. Complete missões insanas, mate heróis, roube cavalos, lute contra guardas, roube camponeses, ouça música de bardo e muito mais! Tudo embalado no estilo de jogo da velha escola!",
       "sources": [
         "Epic Games Store"
@@ -157,199 +181,274 @@
       "url": "https://store.epicgames.com/p/rustler-grand-theft-horse"
     },
     {
-      "id": "https://www.eurogamer.net/far-cry-3s-rook-islands-can-be-experienced-with-60fps-later-this-week",
-      "title": "Rook Islands de Far Cry 3 pode ser experimentado com 60fps ainda esta semana",
-      "original_title": "Far Cry 3's Rook Islands can be experienced with 60fps later this week",
-      "image": "https://assetsio.gnwcdn.com/image-(168).png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/elder-scrolls-online-studio-says-smaller-seasonal-updates-unrelated-to-microsoft-layoffs",
+      "title": "O estúdio Elder Scrolls Online insiste na mudança de expansões para atualizações sazonais menores, não relacionadas às amplas demissões da Microsoft",
+      "original_title": "Elder Scrolls Online studio insists shift from expansions to smaller seasonal updates unrelated to sweeping Microsoft layoffs",
+      "image": "https://assetsio.gnwcdn.com/eso-screenshot-fire.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Far Cry 3: Classic Edition receberá um belo aumento de desempenho no final desta semana. Leia mais...",
+      "date": "2026-01-20",
+      "summary": "Após o anúncio da semana passada de que o MMO de longa duração The Elder Scrolls Online se afastaria das grandes expansões tradicionais para se concentrar em atualizações sazonais menores, o desenvolvedor ZeniMax Online insistiu que a grande mudança não está de forma alguma relacionada...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/far-cry-3s-rook-islands-can-be-experienced-with-60fps-later-this-week"
+      "url": "https://www.eurogamer.net/elder-scrolls-online-studio-says-smaller-seasonal-updates-unrelated-to-microsoft-layoffs"
     },
     {
-      "id": "https://www.eurogamer.net/marvel-rivals-developers-are-planning-to-go-after-cosmetic-hungry-farmers-with-players-hoping-the-disruptors-finally-touch-grass",
-      "title": "Os desenvolvedores do Marvel Rivals estão planejando ir atrás de agricultores famintos por cosméticos, com os jogadores esperando que os disruptores finalmente “toquem na grama”",
-      "original_title": "Marvel Rivals developers are planning to go after cosmetic-hungry farmers, with players hoping the disruptors finally \"touch grass\"",
-      "image": "https://assetsio.gnwcdn.com/deadpool-marvel-rivals.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/the-original-pokemon-games-took-lots-of-trial-and-error-to-develop",
+      "title": "Apesar de sua fórmula simples e nostálgica, os jogos Pokémon originais exigiram \"muitas tentativas e erros\" para serem desenvolvidos.",
+      "original_title": "Despite their simple, nostalgia-fuelled formula, the original Pokémon games took \"a great deal of trial and error\" to develop",
+      "image": "https://assetsio.gnwcdn.com/pokemon_TXoH4jO.png?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Marvel Rivals está atualmente desfrutando de um aumento no número de jogadores após a tão esperada estreia de Deadpool, mas alguns jogadores continuam a arruinar a diversão para todos. Felizmente, os desenvolvedores do jogo estão cuidando do caso e planejando ultizá-los...",
+      "date": "2026-01-20",
+      "summary": "Pokémon está comemorando seu 30º aniversário em 27 de fevereiro, e estamos ansiosos para ver o que pode ser revelado sobre o próximo jogo principal e outros projetos. Além disso, Pokopia pretende agitar as coisas com uma nova visão da cidade...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/marvel-rivals-developers-are-planning-to-go-after-cosmetic-hungry-farmers-with-players-hoping-the-disruptors-finally-touch-grass"
+      "url": "https://www.eurogamer.net/the-original-pokemon-games-took-lots-of-trial-and-error-to-develop"
     },
     {
-      "id": "https://www.eurogamer.net/arc-raiders-robot-bosses-set-to-become-even-scarier-pve-escalate-embark",
-      "title": "“Nossas ambições são definitivamente grandes” Os chefes robôs dos Arc Raiders devem se tornar ainda mais assustadores à medida que Embark procura “escalar” o PvE",
-      "original_title": "\"Our ambitions are definitely large\" Arc Raiders' robot bosses set to become even scarier as Embark looks to \"escalate\" PvE",
-      "image": "https://assetsio.gnwcdn.com/boss-arc.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/hitman-3-world-of-assassination-all-time-classic",
+      "title": "Quando Hitman 3 completa cinco anos, certamente temos retrospectiva suficiente para declarar: este é um dos maiores de todos os tempos, certo?",
+      "original_title": "As Hitman 3 turns five years old, we surely have enough hindsight to declare: this is one of the greatest of all time, right?",
+      "image": "https://assetsio.gnwcdn.com/hitman-3_720.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Depois de quase três meses de limpeza e luta, os jogadores de Arc Raiders tornaram-se muito bons em lidar com os inimigos PvE do atirador de extração. Os obstinados podem estar preocupados com o fato de esse lado do jogo ficar obsoleto em breve, mas não se preocupe: embarque co...",
+      "date": "2026-01-20",
+      "summary": "Ainda me lembro claramente da primeira vez que me contaram algo sobre Hitman de 2016, a reinicialização suave das aventuras do tapa mais querido dos jogos. Foi em um evento da indústria, vários meses antes do jogo ser anunciado na E3...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/arc-raiders-robot-bosses-set-to-become-even-scarier-pve-escalate-embark"
+      "url": "https://www.eurogamer.net/hitman-3-world-of-assassination-all-time-classic"
     },
     {
-      "id": "https://www.eurogamer.net/police-have-cordoned-off-rockstar-north-after-explosion-reportedly-caused-by-malfunctioning-boiler",
-      "title": "A polícia isolou a Rockstar ao norte após a explosão, supostamente causada por mau funcionamento da caldeira",
-      "original_title": "Police have cordoned off Rockstar north after explosion, reportedly caused by malfunctioning boiler",
-      "image": "https://assetsio.gnwcdn.com/grand-theft-auto-6-character-4k-wallpaper-uhdpaper.com-269%401%40n.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/tomb-raider-publishers-floated-a-lara-croft-anime-redesign-in-japan-but-the-original-developers-refused-it",
+      "title": "Os editores de Tomb Raider lançaram um redesenho do anime Lara Croft no Japão, mas os desenvolvedores originais recusaram",
+      "original_title": "Tomb Raider publishers floated a Lara Croft anime redesign in Japan, but the original developers refused it",
+      "image": "https://assetsio.gnwcdn.com/Lara-and-Natla-from-Tomb-Raider-manga-style.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "O escritório da Rockstar North foi isolado pela polícia após uma explosão. Embora a fonte não esteja atualmente confirmada, os relatórios sugerem que uma caldeira é a causa. Leia mais...",
+      "date": "2026-01-20",
+      "summary": "Um dos criadores originais de Tomb Raider compartilhou alguns detalhes sobre um pedido anterior de uma editora japonesa, que pedia à equipe que desse a Lara Croft um redesenho no estilo anime para torná-la mais atraente. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/police-have-cordoned-off-rockstar-north-after-explosion-reportedly-caused-by-malfunctioning-boiler"
+      "url": "https://www.eurogamer.net/tomb-raider-publishers-floated-a-lara-croft-anime-redesign-in-japan-but-the-original-developers-refused-it"
     },
     {
-      "id": "https://www.eurogamer.net/fallout-season-2-streaming-ratings-down",
-      "title": "As classificações de streaming da 2ª temporada de Fallout podem ter caído, mas Bethesda e Amazon provavelmente ainda estão se sentindo muito bem",
-      "original_title": "Fallout Season 2 streaming ratings may be down, but Bethesda and Amazon are probably still feeling pretty rad",
-      "image": "https://assetsio.gnwcdn.com/close-up-of-The-Ghoul-in-Amazon's-Fallout-show.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/atari-hotel-closer-to-reality-new-designs-renders",
+      "title": "O Atari Hotel está um passo mais próximo da realidade, mas olhe os designs e me diga: você realmente gostaria de dormir lá?",
+      "original_title": "The Atari Hotel is a step closer to reality, but look at the designs and tell me: would you actually want to sleep there?",
+      "image": "https://assetsio.gnwcdn.com/Phoenix-Atari-Hotel---4-Breezeway.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Temos gostado muito da 2ª temporada de Fallout até agora, e parece que a maioria dos fãs também está, mas a mudança da queda da temporada baseada na farra para uma programação de lançamento semanal teve um impacto nas avaliações do programa. Mas não se preocupe: esse tropeço não está em dia...",
+      "date": "2026-01-20",
+      "summary": "Um hotel completo com tema Atari está cada vez mais perto de se tornar uma realidade. Foi encontrado um local - no centro de Phoenix, Arizona - e a empresa responsável, Intersection Development, afirma que a construção começará no final de 2026 com um pro...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/fallout-season-2-streaming-ratings-down"
+      "url": "https://www.eurogamer.net/atari-hotel-closer-to-reality-new-designs-renders"
     },
     {
-      "id": "https://www.eurogamer.net/amazons-god-of-war-casts-thors-wife-sif",
-      "title": "God of War da Amazon escala a esposa de Thor, Sif",
-      "original_title": "Amazon's God of War casts Thor's wife, Sif",
-      "image": "https://assetsio.gnwcdn.com/Teresa-Palmer-next-to-an-image-of-Sif-in-God-of-War-Ragnarok_lUcKxSE.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/nintendo-switch-2-boosted-japan-console-market-in-2025",
+      "title": "As vendas do Nintendo Switch 2 podem estar um pouco atrasadas no Ocidente, mas seu impacto no mercado de consoles do Japão é inegável",
+      "original_title": "Nintendo Switch 2 sales may be lagging a bit in the West, but its impact on Japan's console market is undeniable",
+      "image": "https://assetsio.gnwcdn.com/Mario_stonks.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Outro nome foi adicionado à crescente lista de elenco da série de ação ao vivo God of War da Amazon. Leia mais...",
+      "date": "2026-01-20",
+      "summary": "Com a ameaça de aumento de preços pairando sobre cada peça de hardware de jogo e os relatórios do início de 2026 de que o Nintendo Switch 2 estava abaixo da curva de vendas do Switch 1 durante seu primeiro período de dezembro nos EUA e na Europa, muitos começaram a se perguntar se estávamos ansiosos...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/amazons-god-of-war-casts-thors-wife-sif"
+      "url": "https://www.eurogamer.net/nintendo-switch-2-boosted-japan-console-market-in-2025"
     },
     {
-      "id": "https://www.eurogamer.net/xbox-cloud-gaming-ad-support",
-      "title": "Parece que estamos recebendo um nível Xbox Cloud Gaming suportado por anúncios, e pode ser oficial ainda esta semana",
-      "original_title": "It looks like we're getting an ad-supported Xbox Cloud Gaming tier, and it could be official as soon as this week",
-      "image": "https://assetsio.gnwcdn.com/Fable---Xbox-Games-Showcase-1-13-screenshot.png?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/marathon-soars-to-steams-top-sellers-after-release-date-reveal",
+      "title": "Marathon atinge o posto de mais vendido do Steam após revelação da data de lançamento",
+      "original_title": "Marathon soars to Steam's Top Sellers after release date reveal",
+      "image": "https://assetsio.gnwcdn.com/marathon-trailer-crop-header.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "Os primeiros indicadores de que anúncios estão chegando ao serviço Xbox Cloud Gaming foram detectados pelos usuários, com mensagens informando que “tempo de jogo com suporte de anúncios” aparecendo para os usuários ao iniciar jogos. Leia mais...",
+      "date": "2026-01-20",
+      "summary": "Marathon subiu rapidamente na lista dos mais vendidos do Steam após a revelação de sua data de lançamento em 5 de março. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/xbox-cloud-gaming-ad-support"
+      "url": "https://www.eurogamer.net/marathon-soars-to-steams-top-sellers-after-release-date-reveal"
     },
     {
-      "id": "https://www.eurogamer.net/28-years-later-the-bone-temple-star-wants-dead-by-daylight-to-add-his-character-to-the-game-even-though-he-is-only-15",
-      "title": "28 anos depois: a estrela de Bone Temple quer que Dead by Daylight adicione seu personagem ao jogo, mesmo tendo apenas 15 anos",
-      "original_title": "28 Years Later: The Bone Temple star wants Dead by Daylight to add his character to the game, even though he is only 15",
-      "image": "https://assetsio.gnwcdn.com/Alfie-Williams-in-28-Years-Later.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "id": "https://www.eurogamer.net/cyberpunk-2077-vr-mod-removed-by-cd-projekt-after-its-creator-wouldnt-release-it-for-free",
+      "title": "Mod Cyberpunk 2077 VR removido pela CD Projekt depois que seu criador não o lançou gratuitamente",
+      "original_title": "Cyberpunk 2077 VR mod removed by CD Projekt after its creator wouldn't release it for free",
+      "image": "https://assetsio.gnwcdn.com/Cyberpunk-2077-image-showing-a-tattooed-male-with-blue-spiked-hair-weilding-a-sword-at-the-camera.jpg?width=690&quality=85&format=jpg&auto=webp",
       "source_count": 1,
       "reliability": "High",
       "category": "News",
-      "date": "2026-01-19",
-      "summary": "O jovem Alfie Williams avalia que Dead by Daylight deveria apresentar seu personagem de 28 anos depois: The Bone Temple no festival de terror multijogador. Leia mais...",
+      "date": "2026-01-20",
+      "summary": "Um mod para Cyberpunk 2077 que permitia que o jogo fosse jogável em VR foi removido após um aviso de remoção legal da CD Projekt. Leia mais...",
       "sources": [
         "Eurogamer"
       ],
-      "url": "https://www.eurogamer.net/28-years-later-the-bone-temple-star-wants-dead-by-daylight-to-add-his-character-to-the-game-even-though-he-is-only-15"
+      "url": "https://www.eurogamer.net/cyberpunk-2077-vr-mod-removed-by-cd-projekt-after-its-creator-wouldnt-release-it-for-free"
     },
     {
-      "id": "https://www.techpowerup.com/345341/windows-11-january-2026-update-triggers-black-screens-outlook-failures-and-emergency-patches",
-      "title": "A atualização do Windows 11 de janeiro de 2026 aciona telas pretas, falhas do Outlook e patches de emergência",
-      "original_title": "Windows 11 January 2026 Update Triggers Black Screens, Outlook Failures, and Emergency Patches",
-      "image": "https://tpucdn.com/img/adEU43I92eQsruow_thm.jpg",
+      "id": "https://www.techpowerup.com/345393/gamdias-releases-atlas-m4-mid-tower-pc-case",
+      "title": "(PR) Gamdias lança gabinete para PC torre média Atlas M4",
+      "original_title": "(PR) Gamdias Releases Atlas M4 Mid-Tower PC Case",
+      "image": "https://tpucdn.com/img/4U28wEK3tBqFgVcM_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-19",
-      "summary": "O primeiro Patch Tuesday de 2026 da Microsoft se tornou um pesadelo de solução de problemas para usuários do Windows 11. A atualização KB5074109 está causando problemas generalizados, afetando tudo, desde PCs domésticos até servidores corporativos. Lançado em 13 de janeiro para versões 24H2...",
+      "date": "2026-01-20",
+      "summary": "A Gamdias, marca líder em hardware para jogos de alto desempenho, tem o prazer de anunciar o ATLAS M4, um gabinete torre média projetado para oferecer visuais imersivos e fluxo de ar dinâmico. Como parte da visão 2026 da Gamdias, \"IMERSÃO AUMENTADA\", o ATLAS M4 re...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345341/windows-11-january-2026-update-triggers-black-screens-outlook-failures-and-emergency-patches"
+      "url": "https://www.techpowerup.com/345393/gamdias-releases-atlas-m4-mid-tower-pc-case"
     },
     {
-      "id": "https://www.techpowerup.com/345324/amd-reportedly-prioritizing-radeon-rx-9070-xt-over-non-xt-version",
-      "title": "AMD supostamente priorizando Radeon RX 9070 XT em vez da versão não XT",
-      "original_title": "AMD Reportedly Prioritizing Radeon RX 9070 XT Over Non-XT Version",
-      "image": "https://tpucdn.com/img/TCTcTChmjj376tXy_thm.jpg",
+      "id": "https://www.techpowerup.com/345391/terramaster-unveils-d1-ssd-pro-80-gbps-fanless-enclosure",
+      "title": "TerraMaster lança gabinete sem ventoinha D1 SSD Pro de 80 Gbps",
+      "original_title": "TerraMaster Unveils D1 SSD Pro 80 Gbps Fanless Enclosure",
+      "image": "https://tpucdn.com/img/Rd5gm5JhUs43AxEE_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-19",
-      "summary": "A AMD está supostamente mudando sua estratégia de produção para se concentrar mais nas placas gráficas Radeon RX 9070 XT em vez da versão não XT. De acordo com PROHARDVER, a AMD está realocando a capacidade interna para a Radeon RX 9070 XT de última geração, que tem...",
+      "date": "2026-01-20",
+      "summary": "A TerraMaster revelou hoje o D1 SSD Pro, um gabinete SSD portátil que pode transformar SSDs M.2 NVMe em SSDs portáteis. Este gabinete tem um design focado em desempenho e confiabilidade. Ele aproveita as interfaces Thunderbolt 5 e USB4 V2 de 80 Gbps, e...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345324/amd-reportedly-prioritizing-radeon-rx-9070-xt-over-non-xt-version"
+      "url": "https://www.techpowerup.com/345391/terramaster-unveils-d1-ssd-pro-80-gbps-fanless-enclosure"
     },
     {
-      "id": "https://www.eurogamer.net/rockstar-gives-terminally-ill-fan-early-access-to-gta-6",
-      "title": "Rockstar dá aos fãs com doenças terminais acesso antecipado ao GTA 6",
-      "original_title": "Rockstar gives terminally ill fan early access to GTA 6",
-      "image": "https://assetsio.gnwcdn.com/(567)-Grand-Theft-Auto-VI-Trailer-2-00-01-39.png?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-18",
-      "summary": "A Rockstar ajudou um fã com doença terminal a jogar GTA 6 antes da data de lançamento em novembro. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/rockstar-gives-terminally-ill-fan-early-access-to-gta-6"
-    },
-    {
-      "id": "https://www.eurogamer.net/that-pokemon-pricing-might-be-eye-watering-but-theres-never-been-a-better-time-to-love-lego-and-gaming-in-pretty-much-any-price-bracket",
-      "title": "O preço do Pokémon pode ser surpreendente, mas nunca houve melhor momento para amar Lego e jogos - em praticamente qualquer faixa de preço",
-      "original_title": "That Pokémon pricing might be eye-watering, but there's never been a better time to love Lego and gaming - in pretty much any price bracket",
-      "image": "https://assetsio.gnwcdn.com/pokemon-lego-header.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-18",
-      "summary": "É hora de ser alguém que adora videogames e Lego. De certa forma, talvez não devesse ser surpreendente que os mundos dos jogos digitais e dos brinquedos dinamarqueses de construção de peças estejam a colidir tão profundamente - o diagrama de Venn do público...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/that-pokemon-pricing-might-be-eye-watering-but-theres-never-been-a-better-time-to-love-lego-and-gaming-in-pretty-much-any-price-bracket"
-    },
-    {
-      "id": "https://www.techpowerup.com/345321/this-week-in-gaming-week-4",
-      "title": "Esta semana em jogos (semana 4)",
-      "original_title": "This Week in Gaming (Week 4)",
-      "image": "https://tpucdn.com/img/rTf4mE9CwVv1ysoa_thm.jpg",
+      "id": "https://www.techpowerup.com/345388/nvidia-upgrades-vera-rubin-memory-bandwidth-ahead-of-amd-instinct-mi400-launch",
+      "title": "NVIDIA atualiza largura de banda de memória “Vera Rubin” antes do lançamento do AMD Instinct MI400",
+      "original_title": "NVIDIA Upgrades \"Vera Rubin\" Memory Bandwidth Ahead of AMD Instinct MI400 Launch",
+      "image": "https://tpucdn.com/img/88CqYywaNVOMQrH2_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-18",
-      "summary": "Bem-vindo a mais uma semana de lançamentos de novos jogos e as coisas estão finalmente começando a esquentar um pouco no novo ano, mesmo que haja muitos jogos de acesso antecipado esta semana. O grande lançamento desta semana é uma abordagem diferente do gênero metroidvania...",
+      "date": "2026-01-20",
+      "summary": "Enquanto antecipamos as primeiras remessas do “Vera Rubin” da NVIDIA no final do verão, foi relatado que a NVIDIA atualizou seu superchip várias vezes desde março para competir melhor com a próxima série de aceleradores Instinct MI400 da AMD. De acordo com...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345321/this-week-in-gaming-week-4"
+      "url": "https://www.techpowerup.com/345388/nvidia-upgrades-vera-rubin-memory-bandwidth-ahead-of-amd-instinct-mi400-launch"
+    },
+    {
+      "id": "https://www.techpowerup.com/345387/global-ai-server-shipments-forecast-to-grow-over-28-yoy-in-2026-with-a-rising-share-of-asic-based-systems",
+      "title": "(PR) Prevê-se que as remessas globais de servidores de IA cresçam mais de 28% em relação ao ano anterior em 2026, com uma participação crescente de sistemas baseados em ASIC",
+      "original_title": "(PR) Global AI Server Shipments Forecast to Grow Over 28% YoY in 2026, with a Rising Share of ASIC-Based Systems",
+      "image": "https://tpucdn.com/img/co9yUnvj7Xd76kpw_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-20",
+      "summary": "Espera-se que os investimentos contínuos dos CSPs norte-americanos em infraestrutura de IA aumentem as remessas globais de servidores de IA em mais de 28% em relação ao ano anterior em 2026, de acordo com a última pesquisa de mercado da TrendForce. O rápido crescimento dos serviços de inferência de IA está...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345387/global-ai-server-shipments-forecast-to-grow-over-28-yoy-in-2026-with-a-rising-share-of-asic-based-systems"
+    },
+    {
+      "id": "https://www.techpowerup.com/345386/nvidia-n1-and-n1x-laptop-chips-scheduled-for-this-quarter",
+      "title": "Chips para laptop NVIDIA N1 e N1X programados para este trimestre",
+      "original_title": "NVIDIA N1 and N1X Laptop Chips Scheduled for This Quarter",
+      "image": "https://tpucdn.com/img/co5Qp3puvygvTRoX_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-20",
+      "summary": "Os tão esperados chips para laptops N1 e N1X da NVIDIA devem chegar no primeiro trimestre deste ano, de acordo com fontes próximas ao DigiTimes. O novo roteiro indica que a mais recente plataforma Windows-on-Arm da NVIDIA será lançada com os chips N1X neste trimestre...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345386/nvidia-n1-and-n1x-laptop-chips-scheduled-for-this-quarter"
+    },
+    {
+      "id": "https://www.techpowerup.com/345384/stellar-blade-2-may-cater-to-vast-chinese-audience-with-cyberpunk-chongqing-setting",
+      "title": "Stellar Blade 2 pode atender ao vasto público chinês com cenário Cyberpunk Chongqing",
+      "original_title": "Stellar Blade 2 May Cater to Vast Chinese Audience with Cyberpunk Chongqing Setting",
+      "image": "https://tpucdn.com/img/o5ZOMDfNEpaBVR7W_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-20",
+      "summary": "Houve muita discussão sobre a inspiração do mundo real para o mundo de Stellar Blade quando o jogo de sucesso foi lançado. Embora tenha sido ambientado em um mundo pós-apocalíptico e houvesse claras inspirações do mundo real em termos de estética, mas a realidade...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345384/stellar-blade-2-may-cater-to-vast-chinese-audience-with-cyberpunk-chongqing-setting"
+    },
+    {
+      "id": "https://www.techpowerup.com/345383/vxe-launches-55-g-dragonfly-r1s-gaming-mouse-at-usd-18-99",
+      "title": "VXE lança mouse para jogos Dragonfly R1S de 55 g por US$ 18,99",
+      "original_title": "VXE Launches 55 g Dragonfly R1S Gaming Mouse At $18.99",
+      "image": "https://tpucdn.com/img/sA3kKdu0xgsV1869_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-20",
+      "summary": "VXE, uma submarca ATK Gear, é conhecida por criar alternativas leves e acessíveis para alguns mouses para jogos de grandes marcas, e a marca parece estar levando as coisas a um novo nível com a última entrada em sua série Dragonfly R1. O VXE Dragonfly R1S, anu...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345383/vxe-launches-55-g-dragonfly-r1s-gaming-mouse-at-usd-18-99"
+    },
+    {
+      "id": "https://www.eurogamer.net/bungie-reveals-marathon-cast-baldurs-gate-3-clair-obscur",
+      "title": "Bungie revela elenco de vozes de Marathon e está cheio de nomes familiares de Baldur’s Gate 3 e Clair Obscur",
+      "original_title": "Bungie reveals Marathon voice cast and it's full of familiar names from Baldur's Gate 3 and Clair Obscur",
+      "image": "https://assetsio.gnwcdn.com/marathon-trailer-crop-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-19",
+      "summary": "Com a data de lançamento do Marathon em 5 de março agora oficial, a desenvolvedora Bungie começou a compartilhar outras informações sobre seu atirador de extração PvPvE, incluindo uma longa lista de elenco que - com nomes como Jennifer English e Ben Starr - parece um...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/bungie-reveals-marathon-cast-baldurs-gate-3-clair-obscur"
+    },
+    {
+      "id": "https://www.eurogamer.net/sega-sonic-35th-anniversary-puyo-puyo",
+      "title": "A Sega nos lembra que não está apenas comemorando o 35º aniversário do Sonic este ano, pois está lançando os chapéus de festa para outra série clássica",
+      "original_title": "Sega reminds us it's not just celebrating Sonic's 35th this year as it breaks out the party hats for another classic series",
+      "image": "https://assetsio.gnwcdn.com/sonic-puyo-header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-19",
+      "summary": "Sonic the Hedgehog pode estar no centro das atenções este ano, à medida que o 35º aniversário do lendário jogo de plataformas se aproxima, mas não é a única série clássica da Sega que comemora um marco importante em 2026. O adorado jogo de quebra-cabeças Puyo Puyo também está completando 35 anos e...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/sega-sonic-35th-anniversary-puyo-puyo"
+    },
+    {
+      "id": "https://www.techpowerup.com/345377/ubisoft-leak-tips-rainbow-6-turn-based-tactics-game",
+      "title": "Ubisoft Leak Tips Rainbow 6 Jogo de táticas baseadas em turnos",
+      "original_title": "Ubisoft Leak Tips Rainbow 6 Turn-Based Tactics Game",
+      "image": "https://tpucdn.com/img/raaJF2tG8pE9fVXo_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Rumor",
+      "date": "2026-01-19",
+      "summary": "De acordo com um novo vazamento do Insider Gaming, a Ubisoft está atualmente desenvolvendo um jogo tático baseado em turnos baseado no universo Rainbow Six. Embora pareça que o jogo ainda está em desenvolvimento inicial, com a data de lançamento a pelo menos dois anos de distância...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345377/ubisoft-leak-tips-rainbow-6-turn-based-tactics-game"
     },
     {
       "id": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35",
@@ -359,7 +458,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-17",
+      "date": "2026-01-19",
       "summary": "Pare de pagar taxas de renovação e obtenha uma licença vitalícia do Microsoft Office Professional 2021 para Windows por US$ 34,97 (MSRP US$ 219,99). Para muitos usuários do Windows, o Microsoft Office continua sendo o kit de ferramentas mais confiável para documentos, planilhas, e-mail e pres...",
       "sources": [
         "TechPowerUp"
@@ -367,94 +466,19 @@
       "url": "https://www.techpowerup.com/345172/stop-paying-annual-fees-and-own-microsoft-office-2021-outright-for-just-usd-35"
     },
     {
-      "id": "https://www.techpowerup.com/345307/interesting-amd-fch-on-a-stick-addon-card-gives-the-appearance-of-intel-cpu-on-amd-chipset",
-      "title": "Interessante placa adicional AMD FCH-on-a-Stick dá a aparência de CPU Intel no chipset AMD",
-      "original_title": "Interesting AMD FCH-on-a-Stick Addon Card Gives the Appearance of Intel CPU on AMD Chipset",
-      "image": "https://tpucdn.com/img/sDXNAgQZndxUc0PM_thm.jpg",
+      "id": "https://www.techpowerup.com/345375/marathon-anti-cheat-all-but-rules-out-linux-gamers-for-upcoming-shooter",
+      "title": "Marathon Anti-Cheat praticamente exclui jogadores de Linux para o próximo jogo de tiro",
+      "original_title": "Marathon Anti-Cheat All But Rules Out Linux Gamers for Upcoming Shooter",
+      "image": "https://tpucdn.com/img/iMSxnRr3DigfbddD_thm.jpg",
       "source_count": 1,
       "reliability": "High",
       "category": "Hardware",
-      "date": "2026-01-17",
-      "summary": "A AMD cria os principais chipsets X670E e X870E unindo dois chips AMD “Promontory 21” FCH no quadril. Cada um deles aceita uma conexão PCI-Express 4.0 x4 e oferece 8 pistas PCIe 4.0 e quatro portas SATA 6 Gbps que podem ser reconfiguradas como quatro...",
+      "date": "2026-01-19",
+      "summary": "O anti-cheat se tornou um tópico polêmico desde o lançamento do Steam Deck da Valve, com muitos desenvolvedores agora migrando para adicionar suporte Linux aos seus jogos para atender aos usuários do portátil de jogos com Linux da Valve. Dito isto, ainda há um punhado de l...",
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345307/interesting-amd-fch-on-a-stick-addon-card-gives-the-appearance-of-intel-cpu-on-amd-chipset"
-    },
-    {
-      "id": "https://www.techpowerup.com/345305/intel-core-ultra-9-290hx-plus-in-msi-laptop-stomps-285hx-in-leaked-passmark-run",
-      "title": "Intel Core Ultra 9 290HX Plus em laptop MSI pisa 285HX em vazamento de PassMark Run",
-      "original_title": "Intel Core Ultra 9 290HX Plus in MSI Laptop Stomps 285HX in Leaked PassMark Run",
-      "image": "https://tpucdn.com/img/hgMAxxdAVMcHrHu8_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Rumor",
-      "date": "2026-01-17",
-      "summary": "Apesar de não ter comparecido na CES 2026, os vazamentos ainda prevêem que a Intel lançará as CPUs móveis Arrow Lake Refresh em algum momento de março ou abril de 2026, e uma das CPUs com lançamento previsto é o carro-chefe móvel Core Ultra 9 290HX Plus, que incidiu...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345305/intel-core-ultra-9-290hx-plus-in-msi-laptop-stomps-285hx-in-leaked-passmark-run"
-    },
-    {
-      "id": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date",
-      "title": "Logitech Pro X2 Superstrike Gaming Mouse recebe data oficial de pré-encomenda",
-      "original_title": "Logitech Pro X2 Superstrike Gaming Mouse Gets Official Pre-Order Date",
-      "image": "https://tpucdn.com/img/qwihgOMQTkvANH5g_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-17",
-      "summary": "A Logitech anunciou o mouse para jogos Pro X2 Superstrike em setembro de 2025, alegando ser o primeiro mouse para jogos do setor com feedback tátil e distância de atuação de clique ajustável, este último obtido por meio de interruptores de indução. No entanto, enquanto o ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345304/logitech-pro-x2-superstrike-gaming-mouse-gets-official-pre-order-date"
-    },
-    {
-      "id": "https://www.techpowerup.com/345302/steam-ai-disclosure-gets-clarification-for-ai-in-dev-tools",
-      "title": "Divulgação de IA do Steam obtém esclarecimentos sobre IA em ferramentas de desenvolvimento",
-      "original_title": "Steam AI Disclosure Gets Clarification for AI in Dev Tools",
-      "image": "https://tpucdn.com/img/UibsuHa2F0gC4lIv_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-16",
-      "summary": "A Valve implementou anteriormente uma regra que forçava os desenvolvedores a divulgar o uso de IA generativa em qualquer jogo publicado no Steam. Essas novas diretrizes exigiam que os desenvolvedores divulgassem o uso generativo de IA quando resultasse em conteúdo gerado por IA no g...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345302/steam-ai-disclosure-gets-clarification-for-ai-in-dev-tools"
-    },
-    {
-      "id": "https://www.techpowerup.com/345294/wlmouse-teases-bright-red-limited-edition-huan-year-of-the-horse-wireless-gaming-mouse",
-      "title": "WLMouse provoca mouse para jogos sem fio Huan Year of the Horse de edição limitada Bright Red",
-      "original_title": "WLMouse Teases Bright Red Limited Edition Huan Year of the Horse Wireless Gaming Mouse",
-      "image": "https://tpucdn.com/img/ZJRfuHGQRxpgxBp9_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-16",
-      "summary": "O WLMouse Huan é um mouse para jogos leve e premium em liga de magnésio com uma estrutura sólida que lembra o Razer Viper Mini e pesa pouco menos de 50 g (48 g ± 2 g) e possui componentes internos emblemáticos. Como celebração do Ano Novo Chinês, WLMo...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345294/wlmouse-teases-bright-red-limited-edition-huan-year-of-the-horse-wireless-gaming-mouse"
-    },
-    {
-      "id": "https://www.techpowerup.com/345300/gigabyte-nvidia-strengthen-partnership-driving-innovation-in-ai-powered-gaming",
-      "title": "(PR) GIGABYTE e NVIDIA Fortalecem Parceria - Impulsionando a Inovação em Jogos com Inteligência Artificial",
-      "original_title": "(PR) GIGABYTE & NVIDIA Strengthen Partnership - Driving Innovation in AI-Powered Gaming",
-      "image": "https://tpucdn.com/img/WL5laOB3fb8HF6xc_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-16",
-      "summary": "GIGABYTE, marca líder mundial de computadores, fortalece sua parceria estratégica com a NVIDIA ao revelar uma nova geração de produtos emblemáticos construídos na mais recente plataforma da NVIDIA na CES 2026. A linha abrange novas placas gráficas GeForce RTX 5090, po...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345300/gigabyte-nvidia-strengthen-partnership-driving-innovation-in-ai-powered-gaming"
+      "url": "https://www.techpowerup.com/345375/marathon-anti-cheat-all-but-rules-out-linux-gamers-for-upcoming-shooter"
     }
   ]
 }
