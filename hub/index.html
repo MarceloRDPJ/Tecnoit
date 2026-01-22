@@ -116,6 +116,16 @@
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background-color: #00B4D8; /* Ciano ao passar o mouse */
         }
+
+        /* Terminal Cursor Animation */
+        .terminal-cursor::after {
+            content: '█';
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-vibrantCyan selection:text-white">
@@ -179,43 +189,35 @@
                     </div>
                 </div>
 
-                <!-- Real-time Status Panel -->
+                <!-- Terminal Section -->
                 <div class="md:w-1/2 flex justify-center md:justify-end relative">
-                     <div class="relative w-full max-w-md">
-                        <!-- Glow Effect -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-deepBlue/40 to-vibrantCyan/20 rounded-3xl blur-2xl opacity-60"></div>
-
-                        <!-- Dashboard Card -->
-                        <div class="glass-card rounded-2xl overflow-hidden border border-white/10 relative z-10 flex flex-col shadow-2xl">
-
-                            <!-- Panel Header -->
-                            <div class="px-6 py-4 border-b border-white/5 bg-slate-900/40 flex justify-between items-center">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-2 h-2 rounded-full bg-trustGreen animate-pulse"></div>
-                                    <span class="text-xs font-mono font-bold text-slate-300 tracking-widest uppercase">System Status</span>
+                    <div class="relative w-full max-w-md">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-deepBlue/40 to-vibrantCyan/20 rounded-3xl blur-2xl opacity-60"></div>
+                    <div class="glass-card rounded-2xl overflow-hidden border border-white/10 relative z-10 flex flex-col shadow-2xl min-h-[300px]">
+                        <!-- Cabeçalho do Terminal -->
+                        <div class="px-6 py-4 border-b border-white/5 bg-slate-900/40 flex justify-between items-center">
+                            <div class="flex items-center gap-3">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500/50"></div>
+                                    <div class="w-3 h-3 rounded-full bg-trustGreen/50"></div>
                                 </div>
-                                <div class="text-[10px] text-slate-500 font-mono flex items-center gap-2">
-                                    <i class="fa-solid fa-server"></i>
-                                    <span id="uptime-counter">Uptime: 99.9%</span>
-                                </div>
+                                <span class="text-xs font-mono font-bold text-slate-400 tracking-widest ml-2">RDP-CLI v2.0</span>
                             </div>
-
-                            <!-- Project List Container with CUSTOM SCROLLBAR -->
-                            <div id="project-status-list" class="p-2 space-y-1 bg-slate-900/20 max-h-[320px] overflow-y-auto custom-scrollbar">
-                                <!-- Items will be injected here via JS -->
-                                <div class="flex items-center justify-center p-8 text-slate-500">
-                                    <i class="fa-solid fa-circle-notch animate-spin text-2xl"></i>
-                                </div>
-                            </div>
-
-                            <!-- Panel Footer -->
-                            <div class="px-4 py-3 bg-black/40 border-t border-white/5">
-                                <div class="text-[10px] font-mono text-vibrantCyan/70 truncate flex items-center gap-2">
-                                    <i class="fa-solid fa-terminal"></i>
-                                    <span id="console-log">Inicializando monitoramento...</span>
-                                </div>
+                            <div class="text-[10px] text-slate-500 font-mono">
+                                <i class="fa-solid fa-lock mr-1"></i> SSH Secure
                             </div>
                         </div>
+                        <!-- Corpo do Terminal (Onde o texto é digitado) -->
+                        <div class="p-6 font-mono text-xs md:text-sm leading-relaxed overflow-y-auto custom-scrollbar flex-grow bg-slate-900/30" id="terminal-body">
+                            <div class="text-slate-500 mb-4">
+                                Last login: <span id="current-date"></span> on rdp-server<br>
+                            </div>
+                            <!-- O JS injeta o texto aqui -->
+                            <div id="typewriter-content" class="text-slate-300"></div>
+                            <div class="mt-2 text-vibrantCyan terminal-cursor"></div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </section>
@@ -417,100 +419,83 @@
         }
         document.addEventListener('DOMContentLoaded', fetchGitHubStats);
 
-        // --- REAL-TIME PROJECT STATUS DASHBOARD LOGIC ---
+        // --- 1. Lógica do Terminal (Efeito de Digitação) ---
+        const terminalContent = document.getElementById('typewriter-content');
 
-        // CONFIGURAÇÃO DOS PROJETOS (ATUALIZADA)
-        const projects = [
-            { id: 1, name: 'S.C.A.N.N.E.R. Epic', status: 'online', type: 'Intelligence', version: 'v4.2', ping: 24 },
-            { id: 2, name: 'Validador MAC', status: 'online', type: 'Security', version: 'v2.5', ping: 18 },
-            { id: 3, name: 'Assistente IA', status: 'online', type: 'Automation', version: 'v1.2-beta', ping: 12 },
-            { id: 4, name: 'Automação GLPI', status: 'online', type: 'DevOps', version: 'v4.0', ping: 32 }
-            // RDP Cloud Core removido como solicitado
+        // Lista de comandos que aparecem no terminal
+        const commands = [
+            { text: "./welcome.sh --mode=portfolio", type: 'command' }, // Comando mais "técnico"
+            { text: "Carregando módulos de engenharia...", type: 'info' },
+            { text: "> Cloud Architecture......... [OK]", type: 'success' },
+            { text: "> DevOps Pipelines........... [OK]", type: 'success' },
+            { text: "> AI Integration............. [OK]", type: 'success' },
+            { text: "Ambiente pronto. Seja bem-vindo!", type: 'highlight' }
         ];
 
-        // Status Map Colors
-        const statusConfig = {
-            'online': { color: 'text-trustGreen', bg: 'bg-trustGreen', label: 'Online', icon: 'fa-check' },
-            'maintenance': { color: 'text-energeticAmber', bg: 'bg-energeticAmber', label: 'Manutenção', icon: 'fa-triangle-exclamation' },
-            'soon': { color: 'text-slate-400', bg: 'bg-slate-500', label: 'Em Breve', icon: 'fa-clock' },
-            'offline': { color: 'text-red-500', bg: 'bg-red-500', label: 'Offline', icon: 'fa-xmark' }
-        };
+        let lineIndex = 0;
+        let charIndex = 0;
 
-        function renderProjects() {
-            const container = document.getElementById('project-status-list');
-            container.innerHTML = '';
+        function typeWriter() {
+            if (lineIndex < commands.length) {
+                const line = commands[lineIndex];
 
-            projects.forEach(proj => {
-                const conf = statusConfig[proj.status] || statusConfig['offline'];
+                // Cria uma nova linha se for o primeiro caractere
+                if (charIndex === 0) {
+                    const lineEl = document.createElement('div');
+                    lineEl.className = "mb-1.5"; // Espaçamento levemente maior para leitura
 
-                // Card do Projeto
-                const card = document.createElement('div');
-                card.className = "flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all group cursor-default";
+                    // Estilização baseada no tipo de mensagem
+                    if (line.type === 'command') {
+                        // Simula o prompt do usuário (root@rdp:~)
+                        lineEl.innerHTML = '<span class="text-trustGreen mr-2">root@rdp:~#</span>';
+                        lineEl.className += " mt-4 mb-2"; // Espaço extra antes de comandos novos
+                    }
+                    else if (line.type === 'success') lineEl.className += " text-trustGreen/90";
+                    else if (line.type === 'highlight') lineEl.className += " text-vibrantCyan font-bold mt-3 pb-2 border-b border-white/5 inline-block";
+                    else lineEl.className += " text-slate-300";
 
-                // HTML Interno
-                card.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <div class="relative">
-                            <div class="w-2.5 h-2.5 rounded-full ${conf.bg} ${proj.status === 'online' ? 'status-dot' : ''}"></div>
-                        </div>
-                        <div>
-                            <div class="text-sm font-bold text-slate-200 group-hover:text-white transition-colors">${proj.name}</div>
-                            <div class="text-[10px] text-slate-500 font-mono flex gap-2">
-                                <span>${proj.type}</span>
-                                <span class="text-slate-600">•</span>
-                                <span>${proj.version}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <div class="text-[10px] font-bold uppercase tracking-wider ${conf.color} bg-white/5 px-2 py-0.5 rounded border border-white/5">
-                            ${conf.label}
-                        </div>
-                        ${proj.status === 'online' ? `
-                            <div class="text-[9px] text-slate-500 font-mono mt-1 ping-value">
-                                <i class="fa-solid fa-bolt text-vibrantCyan/50 mr-1"></i>${proj.ping}ms
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+                    lineEl.id = `line-${lineIndex}`;
+                    terminalContent.appendChild(lineEl);
 
-        // Simulação de "Tempo Real" (Atualiza pings e console)
-        function simulateRealTime() {
-            // Atualiza Ping
-            const pingElements = document.querySelectorAll('.ping-value');
-            pingElements.forEach(el => {
-                const current = parseInt(el.innerText.replace(/\D/g, ''));
-                const variation = Math.floor(Math.random() * 10) - 5;
-                let newPing = current + variation;
-                if(newPing < 5) newPing = 5;
-                if(newPing > 150) newPing = 150;
-                el.innerHTML = `<i class="fa-solid fa-bolt text-vibrantCyan/50 mr-1"></i>${newPing}ms`;
-            });
+                    // Auto-scroll para o final
+                    const terminalBody = document.getElementById('terminal-body');
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }
 
-            // Atualiza Console Log Aleatório
-            const messages = [
-                "Verificando integridade dos nodes...",
-                "Sincronizando bancos de dados...",
-                "Monitorando tráfego de rede...",
-                "Atualizando caches de borda...",
-                "Validando certificados SSL...",
-                "Executando health-check..."
-            ];
-            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
-            const consoleEl = document.getElementById('console-log');
-            if(consoleEl && Math.random() > 0.7) { // 30% de chance de mudar a msg
-                consoleEl.innerHTML = `<span class="animate-pulse">_</span> ${randomMsg}`;
+                // Efeito de digitação letra por letra
+                const currentLineEl = document.getElementById(`line-${lineIndex}`);
+                if (charIndex < line.text.length) {
+                    const span = document.createElement('span');
+                    span.textContent = line.text.charAt(charIndex);
+                    currentLineEl.appendChild(span);
+                    charIndex++;
+                    // Digita comandos mais devagar (humano), output de sistema mais rápido
+                    const speed = line.type === 'command' ? Math.random() * 80 + 40 : 10;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeWriter, 400); // Pausa entre linhas
+                }
+            } else {
+                // Reinicia o loop após 8 segundos (tempo maior para ler)
+                setTimeout(() => {
+                    terminalContent.innerHTML = '';
+                    lineIndex = 0;
+                    charIndex = 0;
+                    typeWriter();
+                }, 8000);
             }
         }
 
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects();
-            setInterval(simulateRealTime, 2000);
-        });
+        // Define a data atual no terminal
+        const dateEl = document.getElementById('current-date');
+        if (dateEl) {
+             dateEl.textContent = new Date().toLocaleDateString('pt-BR');
+        }
+
+        // Pequeno delay inicial para parecer que o sistema está "bootando"
+        setTimeout(typeWriter, 1500);
 
         // --- MOBILE MENU LOGIC ---
         const menuBtn = document.getElementById('mobile-menu-btn');
