@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-01-24T12:41:09",
-  "display_date": "24/01/2026 12:41",
+  "last_updated": "2026-01-25T12:42:55",
+  "display_date": "25/01/2026 12:42",
   "status": "Active",
   "epic_data": {
     "status": "Online",
-    "latency": "420ms",
+    "latency": "337ms",
     "current_games": [
       {
         "title": "Rustler - Grand Theft Horse",
@@ -28,7 +28,7 @@
       },
       {
         "title": "Ghostrunner 2",
-        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
+        "description": "Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cibernética.",
         "image": "https://cdn1.epicgames.com/offer/708f57aaa04b42ef885be16c8288f0ac/EGS_Ghostrunner2_OneMoreLevel_S1_2560x1440-15845148fae1d0cfd7f3e98c9b3ba6ba",
         "url": "https://store.epicgames.com/p/ghostrunner-2",
         "price": "$39.99",
@@ -83,7 +83,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Free Games",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Torne-se um bandido medieval em um jogo de ação maluco de mundo aberto, cheio de referências da cultura pop. Complete missões insanas, mate heróis, roube cavalos, lute contra guardas, roube camponeses, ouça música de bardo e muito mais! Tudo embalado no estilo de jogo da velha escola!",
       "sources": [
         "Epic Games Store"
@@ -98,7 +98,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Disponível gratuitamente a partir de 09/02. Eternal Threads é um jogo de quebra-cabeça para um jogador, em primeira pessoa, baseado em uma história de manipulação, escolha e consequência do tempo.",
       "sources": [
         "Epic Games Store"
@@ -113,8 +113,8 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
-      "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cyber ninja.",
+      "date": "2026-01-25",
+      "summary": "Disponível gratuitamente a partir de 09/02. Ghostrunner 2 é um slasher FPP hardcore ambientado em um mundo cyberpunk pós-apocalíptico. Apresentando tudo o que os fãs adoraram em Ghostrunner, além de incríveis lutas contra chefes, nova história interativa, níveis emocionantes de motocicleta, habilidades aprimoradas e mais ação cibernética.",
       "sources": [
         "Epic Games Store"
       ],
@@ -128,7 +128,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Disponível gratuitamente a partir de 09/02. A Coleção de Aniversário de Castlevania da Konami traça as origens da histórica franquia de vampiros. Está incluído um e-book exclusivo com detalhes fornecidos por desenvolvedores, artistas e outros inspirados no legado de Castlevania, que lança uma nova luz sobre o mundo de Castlevania.",
       "sources": [
         "Epic Games Store"
@@ -143,7 +143,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Disponível gratuitamente a partir de 09/02. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
@@ -158,7 +158,7 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Disponível gratuitamente a partir de 30/03. Embarque em uma jornada de perdão através de ambientes impossíveis e quebra-cabeças ilusórios. Experimente este jogo meditativo e calmante manipulando monumentos e criando caminhos em evolução para explorar mundos novos, surreais e misteriosos.",
       "sources": [
         "Epic Games Store"
@@ -173,12 +173,132 @@
       "source_count": 1,
       "reliability": "High",
       "category": "Release Date",
-      "date": "2026-01-24",
+      "date": "2026-01-25",
       "summary": "Disponível gratuitamente a partir de 29/01. Definitivamente Not Fried Chicken é um simulador de gerenciamento de negócios com um toque especial! Aumente o seu comércio de drogas através de frentes legítimas, gerenciando ambos os lados do negócio. Adquira novos “negócios”, conheça nova clientela, desenvolva narcóticos mais potentes, ganhe muito dinheiro e deixe uma cidade em ruínas!",
       "sources": [
         "Epic Games Store"
       ],
       "url": "https://store.epicgames.com/p/6b5b8432768a423f848fd85a61c97623"
+    },
+    {
+      "id": "https://www.eurogamer.net/are-xbox-and-playground-making-the-right-move-sticking-so-closely-to-fables-history",
+      "title": "O Xbox e o Playground estão tomando a decisão certa, mantendo-se tão próximos da história de Fable?",
+      "original_title": "Are Xbox and Playground making the right move sticking so closely to Fable's history?",
+      "image": "https://assetsio.gnwcdn.com/big-question-fable.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-25",
+      "summary": "Você acredita que já se passou mais de uma década e meia desde a última Fábula propriamente dita? É uma longa espera para qualquer coisa, mas no mundo dos videogames é uma vida inteira - dos avanços tecnológicos às expectativas do público, as coisas mudaram muito...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/are-xbox-and-playground-making-the-right-move-sticking-so-closely-to-fables-history"
+    },
+    {
+      "id": "https://www.techpowerup.com/345599/this-week-in-gaming-week-5",
+      "title": "Esta semana em jogos (semana 5)",
+      "original_title": "This Week in Gaming (Week 5)",
+      "image": "https://tpucdn.com/img/QmiEKFnoMtsBuTc9_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-25",
+      "summary": "Bem-vindo à última semana de janeiro e finalmente voltamos a uma programação de lançamentos mais normal. Temos um grande lançamento único esta semana, que envolve acampar, escalar e tentar não morrer. Pela primeira vez nesta semana, temos um cenário bastante estranho...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345599/this-week-in-gaming-week-5"
+    },
+    {
+      "id": "https://www.techpowerup.com/345597/microsoft-provided-private-bitlocker-recovery-keys-to-the-fbi",
+      "title": "A Microsoft forneceu chaves privadas de recuperação do BitLocker ao FBI",
+      "original_title": "Microsoft Provided Private BitLocker Recovery Keys to the FBI",
+      "image": "https://tpucdn.com/img/1o117R2QU6QCr3uy_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-25",
+      "summary": "A Microsoft confirmou que a empresa atendeu ao pedido do Federal Bureau of Investigation (FBI) dos Estados Unidos para distribuir chaves de criptografia BitLocker para desbloquear dados de clientes em três laptops. De acordo com a Forbes, no início do ano passado o Facebook...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345597/microsoft-provided-private-bitlocker-recovery-keys-to-the-fbi"
+    },
+    {
+      "id": "https://www.eurogamer.net/a-deep-dive-highguard-showcase-will-finally-give-us-an-in-depth-look-at-the-mysterious-game-but-not-until-release-day",
+      "title": "Um showcase de “mergulho profundo” de Highguard finalmente nos dará uma “visão aprofundada” do jogo misterioso… mas não antes do dia do lançamento",
+      "original_title": "A \"deep dive\" Highguard showcase will finally give us an \"in-depth look\" at the mysterious game... but not until release day",
+      "image": "https://assetsio.gnwcdn.com/Highguard-horseriding.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-24",
+      "summary": "Highguard está definido para abrir a cortina com uma “visão aprofundada de Highguard direto do estúdio” em 26 de janeiro, que também é o mesmo dia em que o jogo de tiro de heróis de serviço ao vivo gratuito deve ser lançado. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/a-deep-dive-highguard-showcase-will-finally-give-us-an-in-depth-look-at-the-mysterious-game-but-not-until-release-day"
+    },
+    {
+      "id": "https://www.eurogamer.net/return-to-silent-hill-director-would-like-to-adapt-another-game-plenty-of-people-are-thinking-im-doing-a-pretty-good-job",
+      "title": "O diretor de Return to Silent Hill gostaria de adaptar “outro” jogo: “muita gente está pensando que estou fazendo um ótimo trabalho”",
+      "original_title": "Return to Silent Hill director would like to adapt \"another\" game: \"plenty of people are thinking I'm doing a pretty good job\"",
+      "image": "https://assetsio.gnwcdn.com/return-to-silent-hill-film.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-24",
+      "summary": "Apesar das ameaças de morte que enfrentou quando decidiu trazer a franquia de terror da Konami para a tela grande, o diretor do terceiro filme de Silent Hill, Return to Silent Hill, estaria aberto a adaptar outro jogo para a tela grande. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/return-to-silent-hill-director-would-like-to-adapt-another-game-plenty-of-people-are-thinking-im-doing-a-pretty-good-job"
+    },
+    {
+      "id": "https://www.eurogamer.net/this-first-person-horror-game-looks-like-a-blend-of-amnesia-bioshock-and-dishonored-and-its-out-soon",
+      "title": "Este jogo de terror em primeira pessoa parece uma mistura de Amnesia, BioShock e Dishonored, e será lançado em breve",
+      "original_title": "This first-person horror game looks like a blend of Amnesia, BioShock, and Dishonored, and it's out soon",
+      "image": "https://assetsio.gnwcdn.com/LTLOJDyg.png?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-24",
+      "summary": "A Blumhouse Games lançará o próximo jogo de aventura e terror em primeira pessoa da Vermila Studios, Crisol: Theatre of Idols, em 10 de fevereiro. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/this-first-person-horror-game-looks-like-a-blend-of-amnesia-bioshock-and-dishonored-and-its-out-soon"
+    },
+    {
+      "id": "https://www.eurogamer.net/the-fallout-76-team-is-looking-into-the-issues-youve-been-having-and-says-a-fix-is-coming-in-the-next-few-weeks",
+      "title": "A equipe do Fallout 76 está “investigando” os problemas que você tem enfrentado e diz que uma solução chegará nas próximas semanas",
+      "original_title": "The Fallout 76 team is \"looking into\" the issues you've been having and says a fix is coming in the next few weeks",
+      "image": "https://assetsio.gnwcdn.com/Fallout-76-Ghoul-character-with-headphones-resting-around-his-neck.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-24",
+      "summary": "A Bethesda está trabalhando para “abordar alguns dos tópicos que apareceram” após a atualização do Fallout 76 lançada no início desta semana. Leia mais...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/the-fallout-76-team-is-looking-into-the-issues-youve-been-having-and-says-a-fix-is-coming-in-the-next-few-weeks"
+    },
+    {
+      "id": "https://www.eurogamer.net/arknights-endfield-is-a-step-above-its-peers-thanks-to-three-core-pillars-action-aesthetics-and-a-really-good-base-building-mechanic",
+      "title": "Arknights Endfield está um passo acima de seus concorrentes graças a três pilares principais: ação, estética e... uma mecânica de construção de base realmente boa",
+      "original_title": "Arknights Endfield is a step above its peers thanks to three core pillars: action, aesthetics, and... a really good base-building mechanic",
+      "image": "https://assetsio.gnwcdn.com/Arknights-Endfield-Codes-Header.jpg?width=690&quality=85&format=jpg&auto=webp",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "News",
+      "date": "2026-01-24",
+      "summary": "Arknights Endfield é o grande lançamento mais recente no mundo dos jogos gacha e, acredite ou não, parece ser uma experiência genuinamente revigorante. O que o torna tão especial? Bem, para mim tudo se resume a três méritos principais: o estilo, a ação,...",
+      "sources": [
+        "Eurogamer"
+      ],
+      "url": "https://www.eurogamer.net/arknights-endfield-is-a-step-above-its-peers-thanks-to-three-core-pillars-action-aesthetics-and-a-really-good-base-building-mechanic"
     },
     {
       "id": "https://www.eurogamer.net/what-weve-been-playing-232",
@@ -196,6 +316,21 @@
       "url": "https://www.eurogamer.net/what-weve-been-playing-232"
     },
     {
+      "id": "https://www.techpowerup.com/345538/godeal24-winter-software-super-sale-is-live-great-prices-on-genuine-software",
+      "title": "A super promoção de software de inverno GoDeal24 está no ar! Ótimos preços em software genuíno",
+      "original_title": "GoDeal24 Winter Software Super Sale is Live! Great Prices on Genuine Software",
+      "image": "https://tpucdn.com/img/VJCduJdGhlz6VTfG_thm.jpg",
+      "source_count": 1,
+      "reliability": "High",
+      "category": "Hardware",
+      "date": "2026-01-24",
+      "summary": "GoDeal24 está aqui com a Super Promoção de Software de Inverno! Obtenha grandes descontos em software genuíno e globalmente válido que você precisa para configurar seu PC ou TI empresarial, minimizando os custos de software para abrir espaço para hardware mais caro. Obtenha o Office 2021 Professional genuíno ...",
+      "sources": [
+        "TechPowerUp"
+      ],
+      "url": "https://www.techpowerup.com/345538/godeal24-winter-software-super-sale-is-live-great-prices-on-genuine-software"
+    },
+    {
       "id": "https://www.techpowerup.com/345576/remedy-narrows-down-control-resonant-launch-to-q2-2026",
       "title": "Remedy restringe o lançamento de ‘Control Resonant’ até o segundo trimestre de 2026",
       "original_title": "Remedy Narrows Down 'Control Resonant' Launch to Q2 2026",
@@ -211,9 +346,9 @@
       "url": "https://www.techpowerup.com/345576/remedy-narrows-down-control-resonant-launch-to-q2-2026"
     },
     {
-      "id": "https://www.techpowerup.com/345573/nexus-mods-vortex-app-will-get-linux-support-in-2026-thanks-to-steam-deck-and-steam-machine",
-      "title": "O aplicativo Nexus Mods Vortex receberá suporte para Linux em 2026, graças ao Steam Deck e Steam Machine",
-      "original_title": "Nexus Mods Vortex App Will Get Linux Support in 2026, Thanks to Steam Deck and Steam Machine",
+      "id": "https://www.techpowerup.com/345573/nexus-mods-vortex-to-get-linux-support-in-2026-thanks-to-steam-hardware",
+      "title": "Nexus Mods Vortex para obter suporte para Linux em 2026, graças ao hardware Steam",
+      "original_title": "Nexus Mods Vortex To Get Linux Support in 2026, Thanks to Steam Hardware",
       "image": "https://tpucdn.com/img/MA9BcO99Twjd7OmK_thm.jpg",
       "source_count": 1,
       "reliability": "High",
@@ -223,22 +358,7 @@
       "sources": [
         "TechPowerUp"
       ],
-      "url": "https://www.techpowerup.com/345573/nexus-mods-vortex-app-will-get-linux-support-in-2026-thanks-to-steam-deck-and-steam-machine"
-    },
-    {
-      "id": "https://www.techpowerup.com/345538/godeal24-winter-software-super-sale-is-live-great-prices-on-genuine-software",
-      "title": "A super promoção de software de inverno GoDeal24 está no ar! Ótimos preços em software genuíno",
-      "original_title": "GoDeal24 Winter Software Super Sale is Live! Great Prices on Genuine Software",
-      "image": "https://tpucdn.com/img/VJCduJdGhlz6VTfG_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-24",
-      "summary": "GoDeal24 está aqui com a Super Promoção de Software de Inverno! Obtenha grandes descontos em software genuíno e globalmente válido que você precisa para configurar seu PC ou TI empresarial, minimizando os custos de software para abrir espaço para hardware mais caro. Obtenha o Office 2021 Professional genuíno ...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345538/godeal24-winter-software-super-sale-is-live-great-prices-on-genuine-software"
+      "url": "https://www.techpowerup.com/345573/nexus-mods-vortex-to-get-linux-support-in-2026-thanks-to-steam-hardware"
     },
     {
       "id": "https://www.techpowerup.com/345570/cannonkeys-launches-new-pff-profile-uniform-height-keycaps-for-mechanical-keyboards",
@@ -294,101 +414,11 @@
       "reliability": "High",
       "category": "News",
       "date": "2026-01-23",
-      "summary": "Big Hops é um jogo de plataforma 3D sobre um sapo, mas também é um jogo de plataforma 3D sobre jogos de plataforma 3D. Isso parece quase inevitável quando se trata do gênero de videogame mais nostálgico. Mas o que distingue Big Hops, eu acho, é o puro entusiasmo...",
+      "summary": "Big Hops é um jogo de plataforma 3D sobre um sapo, mas também é um jogo de plataforma 3D sobre jogos de plataforma 3D. Isso parece quase inevitável quando se trata do gênero de videogame mais nostálgico. Mas o que destaca Big Hops, eu acho, é o puro entusiasmo...",
       "sources": [
         "Eurogamer"
       ],
       "url": "https://www.eurogamer.net/big-hops-platforming-history-tomb-raider-galleon-distinct-wonderful"
-    },
-    {
-      "id": "https://www.eurogamer.net/vampire-survivors-highly-anticipated-deck-building-spin-off-is-getting-an-xbox-and-steam-demo-soon",
-      "title": "O tão aguardado spin-off de construção de deck de Vampire Survivors receberá uma demonstração para Xbox e Steam em breve",
-      "original_title": "Vampire Survivors' highly anticipated deck-building spin-off is getting an Xbox and Steam demo soon",
-      "image": "https://assetsio.gnwcdn.com/vampire-crawlers-header.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "Se você é uma das mais de 200 mil pessoas que já colocou na lista de desejos o tão aguardado spin-off de construção de deck de Vampire Survivors, Vampire Crawlers, há boas notícias para levá-lo até o fim de semana: uma demo está chegando para Steam e Xbox Game Pas...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/vampire-survivors-highly-anticipated-deck-building-spin-off-is-getting-an-xbox-and-steam-demo-soon"
-    },
-    {
-      "id": "https://www.eurogamer.net/only-a-relatively-small-team-from-pokemon-developer-game-freak-is-actually-working-on-beast-of-reincarnation",
-      "title": "Apenas uma equipe “relativamente pequena” do desenvolvedor Pokémon Game Freak está realmente trabalhando em Beast of Reincarnation",
-      "original_title": "Only a \"relatively small\" team from Pokémon developer Game Freak is actually working on Beast of Reincarnation",
-      "image": "https://assetsio.gnwcdn.com/Screenshot-from-Beast-of-Reincarnation-showing-a-sleeping-female-with-vines-coming-from-her-hair.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "A desenvolvedora Pokémon Game Freak está trabalhando com várias empresas parceiras em seu próximo lançamento, Beast of Reincarnation. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/only-a-relatively-small-team-from-pokemon-developer-game-freak-is-actually-working-on-beast-of-reincarnation"
-    },
-    {
-      "id": "https://www.eurogamer.net/fallout-season-two-prime-videos-sixth-biggest-season-of-all-time",
-      "title": "Apesar dos sinais de queda na audiência da segunda temporada de Fallout, a Amazon diz que é a sexta maior temporada do Prime Video de todos os tempos",
-      "original_title": "Despite signs of a Fallout season two viewership slump, Amazon say it's Prime Video's sixth biggest season of all time",
-      "image": "https://assetsio.gnwcdn.com/fallout-tv_pmPj3u2.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "Após sua primeira temporada, a adaptação de Fallout para a TV da Amazon, de acordo com relatos do início deste ano, enfrentou uma queda no segundo ano em termos de audiência. Mas apesar de uma aparente queda na popularidade, a Amazon já revelou pe...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/fallout-season-two-prime-videos-sixth-biggest-season-of-all-time"
-    },
-    {
-      "id": "https://www.eurogamer.net/ubisofts-long-in-the-works-beyond-good-and-evil-2-a-unique-proposition-in-the-open-world-adventure-market-studio-says",
-      "title": "Beyond Good and Evil 2, há muito em desenvolvimento da Ubisoft, é “uma proposta única” no mercado de aventura de mundo aberto, diz o estúdio",
-      "original_title": "Ubisoft's long-in-the-works Beyond Good and Evil 2 \"a unique proposition\" in the open world adventure market, studio says",
-      "image": "https://assetsio.gnwcdn.com/Beyond-Good-and-Evil-2-trailer-screemshot-showing-a-monkey-in-a-bandana-proudly-showing-a-lady-the-disk-he-has-stolen.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "A Ubisoft confirmou que Beyond Good and Evil 2 - que foi anunciado pela primeira vez há quase duas décadas - continua a ser uma prioridade para o estúdio e \"se enquadra na [sua] estratégia de focar em aventuras em mundo aberto\". Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/ubisofts-long-in-the-works-beyond-good-and-evil-2-a-unique-proposition-in-the-open-world-adventure-market-studio-says"
-    },
-    {
-      "id": "https://www.eurogamer.net/gog-reflects-on-devotion-delisting",
-      "title": "“Essa situação continua difícil de refletir” – a decisão do GOG de retirar o jogo de terror taiwanês Devotion ainda atormenta a empresa",
-      "original_title": "\"That situation remains difficult to reflect on\" - GOG's decision to pull Taiwanese horror game Devotion plagues the company still",
-      "image": "https://assetsio.gnwcdn.com/devotion-game-art.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "A loja digital de jogos online para PC GOG reconheceu que “prejudicou a confiança que nossos usuários depositam em nós” quando removeu abruptamente da venda o aclamado jogo de terror Devotion, há pouco mais de cinco anos. Leia mais...",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/gog-reflects-on-devotion-delisting"
-    },
-    {
-      "id": "https://www.eurogamer.net/sophie-turners-lara-croft-is-so-unashamedly-capable-tomb-raider-actor-says",
-      "title": "Lara Croft, de Sophie Turner, é “tão descaradamente capaz”, diz o ator de Tomb Raider",
-      "original_title": "Sophie Turner's Lara Croft is \"so unashamedly capable\", Tomb Raider actor says",
-      "image": "https://assetsio.gnwcdn.com/Screenshot-from-Tomb-Raider-Legacy-of-Atlantis-showing-Lara-climbing-the-side-of-a-large-ancient-contraption-with-an-image-of-classic-Lara-riding-a-motorbike-overlaid-on-top.jpg?width=690&quality=85&format=jpg&auto=webp",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "News",
-      "date": "2026-01-23",
-      "summary": "Sophie Turner vai estrelar como Lara Croft na próxima série de ação ao vivo Tomb Raider da Amazon, e parece que além da estética do figurino, a heroína itinerante também estará se inclinando para a personalidade mais confiante do personagem dos anos 90.",
-      "sources": [
-        "Eurogamer"
-      ],
-      "url": "https://www.eurogamer.net/sophie-turners-lara-croft-is-so-unashamedly-capable-tomb-raider-actor-says"
     },
     {
       "id": "https://www.techpowerup.com/345548/abxylute-n6-and-n9c-switch-2-controllers-boast-retro-looks-hall-effect-sticks-and-on-board-macros",
@@ -449,36 +479,6 @@
         "TechPowerUp"
       ],
       "url": "https://www.techpowerup.com/345560/focus-entertainment-highlights-mio-memories-in-orbits-critical-reception"
-    },
-    {
-      "id": "https://www.techpowerup.com/345559/microsoft-reportedly-considering-fable-switch-2-port-could-hinge-on-logistical-decision",
-      "title": "A Microsoft supostamente está considerando a porta do Fable Switch 2, pode depender de uma decisão “logística”",
-      "original_title": "Microsoft Reportedly Considering Fable Switch 2 Port, Could Hinge on \"Logistical\" Decision",
-      "image": "https://tpucdn.com/img/4F6FJyKzip4SXat6_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-23",
-      "summary": "Ontem, a Microsoft usou a quarta edição de seu showcase regular Developer_Direct para promover o caminho do Fable até o lançamento. A experiência de mundo aberto de fantasia cheia de comédia está projetada para ser lançada neste outono em plataformas de PC, bem como no Xbox Series X|S e...",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345559/microsoft-reportedly-considering-fable-switch-2-port-could-hinge-on-logistical-decision"
-    },
-    {
-      "id": "https://www.techpowerup.com/345558/narrative-rpg-aether-iron-coming-to-pc-in-spring-2026",
-      "title": "(PR) RPG narrativo Aether & Iron chegando ao PC na primavera de 2026",
-      "original_title": "(PR) Narrative RPG Aether & Iron Coming to PC in Spring 2026",
-      "image": "https://tpucdn.com/img/lbIyewfBxtu8O339_thm.jpg",
-      "source_count": 1,
-      "reliability": "High",
-      "category": "Hardware",
-      "date": "2026-01-23",
-      "summary": "Seismic Squirrel tem o prazer de anunciar que Aether & Iron será lançado para PC (Steam) na primavera de 2026. Este RPG baseado em narrativa convida os jogadores a se colocarem no lugar de Gia, uma contrabandista que navega no perigoso submundo de uma Nova York alternativa dos anos 1930.",
-      "sources": [
-        "TechPowerUp"
-      ],
-      "url": "https://www.techpowerup.com/345558/narrative-rpg-aether-iron-coming-to-pc-in-spring-2026"
     }
   ]
 }
